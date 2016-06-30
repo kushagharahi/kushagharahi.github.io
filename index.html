@@ -1,28 +1,22 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Kusha.me</title>
-</head>
-<body>
-<h2>Kusha.me</h2>
-<a href="./resume.html">Resume</a>
-<img id="imgKusha" src="" class="kushaImg">
-<style>
-.kushaImg {
-    margin-left: auto;
-    margin-right: auto;
-	display: block;	
-	width: 100%;
-	height: 100%;
-	max-width: 640px;
-	max-height: 640px;
-}
-</style>
-<script>
-	var ranNum = Math.floor(Math.random() * 6) + 1;
-	var imgSrc = "./me/" + ranNum + ".jpg"
-	document.getElementById("imgKusha").src = imgSrc;
-</script>
-</body>
-</html>
+<html  ng-app="app">
 
+<head>
+	<link rel="stylesheet" type="text/css" href="./res/css/app.css">
+	<link rel="stylesheet" href="./scripts/packages/angular-material/angular-material.css">
+
+	<title>Kusha.me</title>
+</head>
+
+<body>
+	<h2>Kusha.me</h2>
+
+	<script src="./scripts/packages/angular/angular.js"></script>
+	<script src="./scripts/packages/angular-route/angular-route.js"></script>
+	<script src="./scripts/packages/angular-aria/angular-aria.js"></script>
+	<script src="./scripts/packages/angular-animate/angular-animate.js"></script>
+	<script src="./scripts/packages/angular-material/angular-material.js"></script>
+	<script src="./scripts/app.js"></script>
+</body>
+
+</html>
