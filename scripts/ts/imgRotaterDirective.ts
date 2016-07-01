@@ -1,9 +1,9 @@
-// module kushame {
-//     "use strict";
-//     class ImgRotaterDirective implements ng.IDirective {
-//         constructor() { }
+module kushame {
+    "use strict";
+    class ImgRotaterDirective implements ng.IDirective {
+        constructor() { }
 
-//     }
+    }
 
-//     app.directive("imgRotaterDirective", ImgRotaterDirective);
-// }
+    app.directive("imgRotaterDirective", ImgRotaterDirective);
+}
