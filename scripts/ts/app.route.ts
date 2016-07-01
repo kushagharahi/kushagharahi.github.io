@@ -7,11 +7,11 @@ module kushame {
             .when("/", {
                 controller: "MainController",
                 templateUrl: "views/home.html",
+            })
+            .when("/resume", {
+                controller: "MainController",
+                templateUrl: "../views/resume.html",
             });
-            // .when("/resume", {
-            //     controller: "ResumeController",
-            //     templateUrl: "../views/layout.html",
-            // }
     }
 
     routes.$inject = ["$routeProvider"];
