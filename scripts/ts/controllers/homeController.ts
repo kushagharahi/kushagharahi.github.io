@@ -3,7 +3,7 @@ module kushame {
 
     interface HomeControllerScope extends ng.IScope {
         pageTitle: any;
-        pages: Array<string>;
+        isActive: any;
     }
 
   class HomeController {
@@ -14,6 +14,10 @@ module kushame {
             $scope.$watch(() => $location.url(), () => {
                     $scope.pageTitle = $route.routes[$location.url()].routeName;
                 });
+
+            $scope.isActive = function (path: string) {
+                return path === $location.url();
+            };
     }
   }
     app.controller("HomeController", HomeController);

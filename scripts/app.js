@@ -37,6 +37,9 @@ var kushame;
             $scope.$watch(function () { return $location.url(); }, function () {
                 $scope.pageTitle = $route.routes[$location.url()].routeName;
             });
+            $scope.isActive = function (path) {
+                return path === $location.url();
+            };
         }
         HomeController.$inject = ["$scope", "$route", "$location"];
         return HomeController;

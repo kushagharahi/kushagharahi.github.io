@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" ng-controller="HomeController">
 
 <head>
 	<link rel="stylesheet" type="text/css" href="./res/css/app.css">
 	<link rel="stylesheet" href="./scripts/packages/angular-material/angular-material.css">
 
-	<title>Kusha.me</title>
+	<title>{{pageTitle}} - Kusha.me</title>
 </head>
 
-<body ng-controller="HomeController">
+<body>
 	<div class="navBar">
-		<h2 class="navTitle">kusha.me - {{pageTitle}}</h2>
-		<a class="navLink" href="/#/">Home</a>
-		<a class="navLink" href="/#/resume">Resume</a>
+		<h2 class="navTitle">kusha.me</h2>
+		<a ng-class="{ active: isActive('/')}" class="navLink" href="/#/">Home</a>
+		<a ng-class="{ active: isActive('/resume')}" class="navLink" href="/#/resume">Resume</a>
 	</div>
 
 	<div ng-view>
