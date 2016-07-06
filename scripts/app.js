@@ -10,15 +10,38 @@ var kushame;
         $routeProvider
             .when("/", {
             controller: "MainController",
+            routeName: "Home",
             templateUrl: "views/home.html",
         })
             .when("/resume", {
             controller: "MainController",
+            routeName: "Resume",
             templateUrl: "../views/resume.html",
+        }).
+            otherwise({
+            redirectTo: "/",
         });
     }
     routes.$inject = ["$routeProvider"];
     kushame.app.config(routes);
+})(kushame || (kushame = {}));
+var kushame;
+(function (kushame) {
+    "use strict";
+    var HomeController = (function () {
+        function HomeController($scope, $route, $location) {
+            this.$scope = $scope;
+            this.$route = $route;
+            this.$location = $location;
+            $scope.pageTitle = $route.routes[$location.url()].routeName;
+            $scope.$watch(function () { return $location.url(); }, function () {
+                $scope.pageTitle = $route.routes[$location.url()].routeName;
+            });
+        }
+        HomeController.$inject = ["$scope", "$route", "$location"];
+        return HomeController;
+    }());
+    kushame.app.controller("HomeController", HomeController);
 })(kushame || (kushame = {}));
 var kushame;
 (function (kushame) {
@@ -32,7 +55,6 @@ var kushame;
         MainController.$inject = ["$scope", "$sce"];
         return MainController;
     }());
-    kushame.MainController = MainController;
     kushame.app.controller("MainController", MainController);
 })(kushame || (kushame = {}));
 //# sourceMappingURL=app.js.map

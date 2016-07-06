@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html  ng-app="app">
+<html ng-app="app">
 
 <head>
 	<link rel="stylesheet" type="text/css" href="./res/css/app.css">
@@ -8,10 +8,16 @@
 	<title>Kusha.me</title>
 </head>
 
-<body>
-	<h2>Kusha.me</h2>
+<body ng-controller="HomeController">
+<h2>kusha.me - {{pageTitle}}</h2>
+	<div>
+		<a href="/#/">Home</a>
+		<a href="/#/resume">Resume</a>
+	</div>
+
 	<div ng-view>
-		<div>
+		</div>
+
 	<script src="./scripts/packages/angular/angular.js"></script>
 	<script src="./scripts/packages/angular-route/angular-route.js"></script>
 	<script src="./scripts/packages/angular-aria/angular-aria.js"></script>

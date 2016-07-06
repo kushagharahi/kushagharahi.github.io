@@ -1,17 +1,25 @@
 module kushame {
     "use strict";
 
-    function routes($routeProvider: ng.route.IRouteProvider) {
+    export interface IRouteName extends ng.route.IRoute {
+    routeName: string;
+}
 
+    function routes($routeProvider: ng.route.IRouteProvider) {
         $routeProvider
-            .when("/", {
+            .when("/", <IRouteName>{
                 controller: "MainController",
+                routeName: "Home",
                 templateUrl: "views/home.html",
             })
-            .when("/resume", {
+            .when("/resume", <IRouteName>{
                 controller: "MainController",
+                routeName: "Resume",
                 templateUrl: "../views/resume.html",
-            });
+            }).
+                otherwise({
+                    redirectTo: "/",
+                });
     }
 
     routes.$inject = ["$routeProvider"];
