@@ -5,7 +5,7 @@ module kushame {
     routeName: string;
 }
 
-    function routes($routeProvider: ng.route.IRouteProvider) {
+    function routes($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
         $routeProvider
             .when("/", <IRouteName>{
                 controller: "MainController",

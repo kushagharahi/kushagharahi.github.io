@@ -6,7 +6,7 @@ var kushame;
 var kushame;
 (function (kushame) {
     "use strict";
-    function routes($routeProvider) {
+    function routes($routeProvider, $locationProvider) {
         $routeProvider
             .when("/", {
             controller: "MainController",
