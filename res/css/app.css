@@ -12,3 +12,25 @@ body {
 	max-width: 640px;
 	max-height: 640px;
 }
+
+.navBar {
+	background-color: #333;
+	padding: 10px;
+}
+
+.navLink {
+	text-decoration:none; 
+	padding: 10px;
+	color: white;
+    text-align: center;
+}
+
+.navLink:hover {
+	background-color: #111;
+}
+
+.navTitle {
+	display: inline;
+	color: white;
+}
+
