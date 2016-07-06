@@ -46,3 +46,10 @@ body {
 .content {
 	padding:10px;
 }
+.socialIcon {
+	float: right;
+	height: 25px;
+	width: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
