@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .kushaImg {
@@ -52,4 +53,13 @@ body {
 	width: 25px;
 	padding-left: 10px;
 	padding-right: 10px;
+}
+.docStyle {
+	max-width:800px;
+	margin: auto;
+	border: solid 1px lightgray;
+	padding: 10px;
+}
+.clearfix {
+	clear:both;
 }

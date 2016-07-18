@@ -1,7 +1,7 @@
 var kushame;
 (function (kushame) {
     "use strict";
-    kushame.app = angular.module("app", ["ngMaterial", "ngRoute"]);
+    kushame.app = angular.module("app", ["ngRoute"]);
 })(kushame || (kushame = {}));
 var kushame;
 (function (kushame) {
