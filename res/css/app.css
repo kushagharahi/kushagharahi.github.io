@@ -68,3 +68,9 @@ body {
 	height:87vh;
 	max-height:1080px;
 }
+#pogoMap
+{
+    position: relative;
+    height: 100%;
+    width: 100%; 
+}
