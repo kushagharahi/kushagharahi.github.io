@@ -15,12 +15,12 @@ module kushame {
             .when("/resume", <IRouteName>{
                 controller: "MainController",
                 routeName: "Resume",
-                templateUrl: "../views/resume.html",
+                templateUrl: "views/resume.html",
             })
             .when("/map ", <IRouteName>{
                 controller: "MainController",
                 routeName: "Map",
-                templateUrl: "../views/pogoMap.html",
+                templateUrl: "views/pogoMap.html",
             })
             .otherwise({
                     redirectTo: "/",
