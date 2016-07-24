@@ -16,8 +16,13 @@ module kushame {
                 controller: "MainController",
                 routeName: "Resume",
                 templateUrl: "../views/resume.html",
-            }).
-                otherwise({
+            })
+            .when("/map ", <IRouteName>{
+                controller: "MainController",
+                routeName: "Map",
+                templateUrl: "../views/pogoMap.html",
+            })
+            .otherwise({
                     redirectTo: "/",
                 });
     }
