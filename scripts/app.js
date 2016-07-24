@@ -16,9 +16,14 @@ var kushame;
             .when("/resume", {
             controller: "MainController",
             routeName: "Resume",
-            templateUrl: "../views/resume.html",
-        }).
-            otherwise({
+            templateUrl: "views/resume.html",
+        })
+            .when("/map ", {
+            controller: "MainController",
+            routeName: "Map",
+            templateUrl: "views/pogoMap.html",
+        })
+            .otherwise({
             redirectTo: "/",
         });
     }
