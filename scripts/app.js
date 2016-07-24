@@ -18,7 +18,7 @@ var kushame;
             routeName: "Resume",
             templateUrl: "views/resume.html",
         })
-            .when("/map ", {
+            .when("/map", {
             controller: "MainController",
             routeName: "Map",
             templateUrl: "views/pogoMap.html",
