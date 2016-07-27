@@ -66,4 +66,32 @@ var kushame;
     }());
     kushame.app.controller("MainController", MainController);
 })(kushame || (kushame = {}));
+var kushame;
+(function (kushame) {
+    "use strict";
+    var socialIconDirective = (function () {
+        function socialIconDirective() {
+        }
+        socialIconDirective.prototype.link = function (scope, element, attrs) {
+            var ImgLinkPrefix = "./img/social/" + attrs.SocialIconName;
+            scope.ImgLink = ImgLinkPrefix;
+            scope.Link = attrs.Link;
+            scope.$watch(scope.Hover, function () {
+                if (scope.Hover === "true") {
+                    scope.ImgLink = ImgLinkPrefix + "-Hover";
+                }
+                else {
+                    scope.ImgLink = ImgLinkPrefix;
+                }
+            });
+        };
+        ;
+        socialIconDirective.instance = function () {
+            return new socialIconDirective();
+        };
+        ;
+        return socialIconDirective;
+    }());
+    kushame.app.directive("socialIconDirective", socialIconDirective.instance);
+})(kushame || (kushame = {}));
 //# sourceMappingURL=app.js.map
