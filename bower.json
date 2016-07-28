@@ -1,8 +1,0 @@
-{
-  "name": "AngularTypeScript101",
-  "version": "1.5.7",
-  "dependencies": {
-    "angular": "~1.5.7",
-    "angular-route": "~1.5.7"
-    }
-}
