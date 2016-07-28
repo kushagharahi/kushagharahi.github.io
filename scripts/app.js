@@ -93,17 +93,13 @@ var kushame;
             };
         }
         SocialIconDirective.Factory = function () {
-            var directive = function () {
-                return new SocialIconDirective();
-            };
-            directive['$inject'] = [];
-            return directive;
+            return new SocialIconDirective();
         };
         ;
         return SocialIconDirective;
     }());
     ;
-    angular.module('app')
-        .directive("socialIcon", SocialIconDirective.Factory());
+    angular.module("app")
+        .directive("socialIcon", SocialIconDirective.Factory);
 })(kushame || (kushame = {}));
 //# sourceMappingURL=app.js.map

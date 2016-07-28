@@ -47,26 +47,37 @@ body {
 .content {
 	padding:10px;
 }
+
 .socialIcon {
 	float: right;
 	height: 24px;
 	width: 24px;
 	padding: 6px;
 }
+
+@media screen and (max-width : 44em){
+	.navLink {
+		width: 100%;
+	}
+}
+
 .docStyle {
 	max-width:800px;
 	margin: auto;
 	border: solid 1px lightgray;
 	padding: 10px;
 }
+
 .clearfix {
 	clear:both;
 }
+
 .docIFrame {
 	width:100%;
 	height:87vh;
 	max-height:1080px;
 }
+
 #pogoMap
 {
     position: relative;

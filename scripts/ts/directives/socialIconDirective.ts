@@ -14,6 +14,9 @@ module kushame {
     }
 
     class SocialIconDirective implements ng.IDirective {
+        public static Factory() {
+            return new SocialIconDirective();
+        };
 
         public template = '<a href="{{Link}}"><img ng-src="{{ImgLink}}"\
                             ng-mouseover="SetHover(true)" ng-mouseleave="SetHover(false)" class="socialIcon"/></a>';
@@ -38,19 +41,7 @@ module kushame {
                 };
             };
         }
-
-        public static Factory() {
-            var directive = (/*list of dependencies*/) => {
-                return new SocialIconDirective();
-            };
-            directive['$inject'] = [];
-            return directive;
-        };
-
     };
-
-
-
-    angular.module('app')
-        .directive("socialIcon", SocialIconDirective.Factory());
+    angular.module("app")
+        .directive("socialIcon", SocialIconDirective.Factory);
 }
