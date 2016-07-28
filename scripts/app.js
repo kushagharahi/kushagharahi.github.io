@@ -69,29 +69,41 @@ var kushame;
 var kushame;
 (function (kushame) {
     "use strict";
-    var socialIconDirective = (function () {
-        function socialIconDirective() {
+    var SocialIconDirective = (function () {
+        function SocialIconDirective() {
+            this.template = '<a href="{{Link}}"><img ng-src="{{ImgLink}}"\
+                            ng-mouseover="SetHover(true)" ng-mouseleave="SetHover(false)" class="socialIcon"/></a>';
+            this.restrict = 'E';
+            this.scope = {
+                socialIconName: '@',
+                link: '@'
+            };
+            SocialIconDirective.prototype.link = function (scope, element, attrs) {
+                var ImgLinkPrefix = "./res/img/social/" + attrs.socialIconName;
+                scope.ImgLink = ImgLinkPrefix + ".png";
+                scope.Link = attrs.link;
+                scope.SetHover = function (Hover) {
+                    if (Hover === true) {
+                        scope.ImgLink = ImgLinkPrefix + "-hover" + ".png";
+                    }
+                    else {
+                        scope.ImgLink = ImgLinkPrefix + ".png";
+                    }
+                };
+            };
         }
-        socialIconDirective.prototype.link = function (scope, element, attrs) {
-            var ImgLinkPrefix = "./img/social/" + attrs.SocialIconName;
-            scope.ImgLink = ImgLinkPrefix;
-            scope.Link = attrs.Link;
-            scope.$watch(scope.Hover, function () {
-                if (scope.Hover === "true") {
-                    scope.ImgLink = ImgLinkPrefix + "-Hover";
-                }
-                else {
-                    scope.ImgLink = ImgLinkPrefix;
-                }
-            });
+        SocialIconDirective.Factory = function () {
+            var directive = function () {
+                return new SocialIconDirective();
+            };
+            directive['$inject'] = [];
+            return directive;
         };
         ;
-        socialIconDirective.instance = function () {
-            return new socialIconDirective();
-        };
-        ;
-        return socialIconDirective;
+        return SocialIconDirective;
     }());
-    kushame.app.directive("socialIconDirective", socialIconDirective.instance);
+    ;
+    angular.module('app')
+        .directive("socialIcon", SocialIconDirective.Factory());
 })(kushame || (kushame = {}));
 //# sourceMappingURL=app.js.map

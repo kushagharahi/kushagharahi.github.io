@@ -14,9 +14,9 @@
 		<a ng-class="{ active: isActive('/')}" class="navLink" href="/#/">Home</a>
 		<a ng-class="{ active: isActive('/resume')}" class="navLink" href="/#/resume">Resume</a>
 		<a ng-class="{ active: isActive('/map')}" class="navLink" href="/#/map">Pokemon Map</a>
-		<a href="http://github.com/kushagharahi"><img ng-src="res/img/social/github{{hoverGit}}.png" ng-init="hoverGit=''" ng-mouseover="hoverGit='-hover'" ng-mouseleave="hoverGit=''" class="socialIcon"/></a>
-		<social-icon SocialIconName="github" Link="http://github.com/kushagharahi"></social-icon>
-		<a href="http://twitter.com/kushalulz"><img ng-src="res/img/social/twitter{{hoverTwitter}}.png" ng-init="hoverTwitter=''" ng-mouseover="hoverTwitter='-hover'" ng-mouseleave="hoverTwitter=''" class="socialIcon"/></a>
+		<social-icon social-icon-name="github" link="http://github.com/kushagharahi"></social-icon>
+		<social-icon social-icon-name="twitter" link="http://twitter.com/kushalulz"></social-icon>
+		<social-icon social-icon-name="linkedin" link="http://linkedin.com/kushagharahi"></social-icon>
 	</div>
 
 	<div ng-view class="content">

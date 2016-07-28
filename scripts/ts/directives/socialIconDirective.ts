@@ -1,44 +1,56 @@
 module kushame {
     "use strict";
 
-  interface SocialIconScope extends ng.IScope {
-     SocialIconName: string;
-     Link: string;
-     ImgLink: string;
-     Hover: string;
+    interface SocialIconScope extends ng.IScope {
+        SocialIconName: string;
+        Link: string;
+        ImgLink: string;
+        SetHover: any;
     }
 
     interface SocialIconAttrs extends ng.IAttributes {
-        SocialIconName: string;
-        Link: string;
+        socialIconName: string;
+        link: string;
     }
 
-  class socialIconDirective implements ng.IDirective  {
-    public template: '<a href="{{Link}}"><img ng-src="{{ImgLink}}"\
-     ng-mouseover="Hover=true" ng-mouseleave="Hover=false" class="socialIcon"/></a>';
-    public restrict: 'E';
-    public scope: {
-        SocialIconName: '@SocialIconName',
-        Link: '@Link'
-    };
-    public link(scope: SocialIconScope, element: ng.IAugmentedJQuery, attrs: SocialIconAttrs): void {
-        let ImgLinkPrefix = "./img/social/" + attrs.SocialIconName;
-        scope.ImgLink = ImgLinkPrefix;
-        scope.Link = attrs.Link;
-        scope.$watch(scope.Hover, function () {
-            if (scope.Hover === "true") {
-                scope.ImgLink = ImgLinkPrefix + "-Hover";
-            } else {
-                scope.ImgLink = ImgLinkPrefix;
-            }
-        });
+    class SocialIconDirective implements ng.IDirective {
+
+        public template = '<a href="{{Link}}"><img ng-src="{{ImgLink}}"\
+                            ng-mouseover="SetHover(true)" ng-mouseleave="SetHover(false)" class="socialIcon"/></a>';
+        public restrict = 'E';
+        public scope = {
+            socialIconName: '@',
+            link: '@'
+        };
+        public link: (scope: SocialIconScope, element: ng.IAugmentedJQuery, attrs: SocialIconAttrs) => void;
+
+        constructor() {
+            SocialIconDirective.prototype.link = (scope: SocialIconScope, element: ng.IAugmentedJQuery, attrs: SocialIconAttrs) => {
+                let ImgLinkPrefix = "./res/img/social/" + attrs.socialIconName;
+                scope.ImgLink = ImgLinkPrefix + ".png";
+                scope.Link = attrs.link;
+                scope.SetHover = function (Hover: boolean) {
+                    if (Hover === true){
+                        scope.ImgLink = ImgLinkPrefix + "-hover" + ".png";
+                    } else {
+                        scope.ImgLink = ImgLinkPrefix + ".png";
+                    }
+                };
+            };
+        }
+
+        public static Factory() {
+            var directive = (/*list of dependencies*/) => {
+                return new SocialIconDirective();
+            };
+            directive['$inject'] = [];
+            return directive;
+        };
+
     };
 
 
-    public static instance(): ng.IDirective {
-        return new socialIconDirective();
-    };
-}
 
-    app.directive("socialIconDirective", socialIconDirective.instance);
+    angular.module('app')
+        .directive("socialIcon", SocialIconDirective.Factory());
 }
