@@ -21,6 +21,7 @@ body {
     padding: 0; 
     overflow: hidden;
 }
+
 .nav li {
 	float: left;
     text-align: center;
