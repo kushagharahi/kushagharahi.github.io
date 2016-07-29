@@ -9,14 +9,16 @@
 </head>
 
 <body>
-	<div class="navBar">
-		<h2 class="navTitle">kusha.me</h2>
-		<a ng-class="{ active: isActive('/')}" class="navLink" href="/#/" >Home</a>
-		<a ng-class="{ active: isActive('/resume')}" class="navLink" href="/#/resume">Resume</a>
-		<a ng-class="{ active: isActive('/map')}" class="navLink" href="/#/map">Pokemon Map</a>
-		<social-icon social-icon-name="github" link="http://github.com/kushagharahi" target="_blank"></social-icon>
-		<social-icon social-icon-name="twitter" link="http://twitter.com/kushalulz" target="_blank"></social-icon>
-		<social-icon social-icon-name="linkedin" link="http://linkedin.com/kushagharahi" target="_blank"></social-icon>
+	<div class="nav">
+		<ul>
+			<li><h2 class="navTitle">kusha.me</h2></li>
+			<li><a ng-class="{ active: isActive('/')}" class="navLink" href="/#/" >Home</a></li>
+			<li><a ng-class="{ active: isActive('/resume')}" class="navLink" href="/#/resume">Resume</a></li>
+			<li><a ng-class="{ active: isActive('/map')}" class="navLink" href="/#/map">Pokemon Map</a></li>
+			<li class="socialIcon"><social-icon social-icon-name="github" link="http://github.com/kushagharahi" target="_blank"></social-icon></li>
+			<li class="socialIcon"><social-icon social-icon-name="twitter" link="http://twitter.com/kushalulz" target="_blank"></social-icon></li>
+			<li class="socialIcon"><social-icon social-icon-name="linkedin" link="http://linkedin.com/kushagharahi" target="_blank"></social-icon></li>
+		</ul>
 	</div>
 
 	<div ng-view class="content">

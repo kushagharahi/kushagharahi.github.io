@@ -1,0 +1,94 @@
+body {
+    padding: 0;
+    margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.kushaImg {
+    margin-left: auto;
+    margin-right: auto;
+	display: block;	
+	width: 100%;
+	height: 100%;
+	max-width: 640px;
+	max-height: 640px;
+}
+
+.nav ul {
+	background-color: #5f5f5f;
+	list-style: none;
+    margin: 0;
+    padding: 0; 
+    overflow: hidden;
+}
+.nav li {
+	float: left;
+    text-align: center;
+	overflow: hidden;
+}
+
+.nav li h2.navTitle {
+	color: white;
+	margin: 0;
+	padding: 10px;
+}
+
+.nav li a.navLink {
+  	text-decoration:none;
+	display: block;
+	padding: 15px;
+	color: white;
+}
+
+.nav li a.navLink:hover {
+	background-color: #111;
+}
+
+.nav li a.navLink.active {
+	 background-color: #4CAF50;
+}
+
+.nav li.socialIcon {
+	float: right;
+}
+
+.nav li social-icon {
+	display: block;
+	height: 24px;
+	width: 24px;
+	padding: 10px;
+}
+
+@media screen and (max-width : 44em){
+	.navTitle {
+		display: none;
+	}
+}
+
+.content {
+	padding:10px;
+}
+
+.docStyle {
+	max-width:800px;
+	margin: auto;
+	border: solid 1px lightgray;
+	padding: 10px;
+}
+
+.clearfix {
+	clear:both;
+}
+
+.docIFrame {
+	width:100%;
+	height:87vh;
+	max-height:1080px;
+}
+
+#pogoMap
+{
+    position: relative;
+    height: 85vh;
+    width: 100%; 
+}
