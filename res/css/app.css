@@ -19,13 +19,20 @@ body {
 	background-color: #333;
     margin: 0;
 	overflow: hidden;
+	text-align: center;
+}
+
+.navTitle {
+	display: inline;
+	color: white;
+	padding: 10px;
 }
 
 .navLink {
+	display: inline;
 	text-decoration:none; 
 	padding: 20px;
 	color: white;
-    text-align: center;
 }
 
 .navLink:hover {
@@ -34,13 +41,6 @@ body {
 
 .active {
 	 background-color: #4CAF50;
-}
-
-.navTitle {
-	display: inline;
-	color: white;
-	text-align: center;
-	padding: 10px;
 }
 
 .content {
@@ -55,8 +55,8 @@ body {
 }
 
 @media screen and (max-width : 44em){
-	.navLink {
-		width: 100%;
+	.navTitle {
+		display: none;
 	}
 }
 
