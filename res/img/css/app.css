@@ -48,9 +48,9 @@ body {
 	 background-color: #4CAF50;
 }
 
-.nav li.socialIcon {
+/*.nav li.socialIcon {
 	float: right;
-}
+}*/
 
 .nav li social-icon {
 	display: block;
