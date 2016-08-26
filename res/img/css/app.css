@@ -28,16 +28,15 @@ body {
 	overflow: hidden;
 }
 
-.nav li h2.navTitle {
+.nav li a.h2.navTitle {
+	text-decoration:none!important;
 	color: white;
 	margin: 0;
-	padding: 10px;
 }
 
 .nav li a.navLink {
   	text-decoration:none;
 	display: block;
-	padding: 15px;
 	color: white;
 }
 
