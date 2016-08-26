@@ -35,7 +35,8 @@ body {
 }
 
 .nav li a.navLink {
-  	text-decoration:none;
+  	text-decoration:none!important;
+	border: none;
 	display: block;
 	padding: 15px;
 	color: white;
@@ -64,10 +65,15 @@ body {
 	.navTitle {
 		display: none;
 	}
+
 }
 
 .content {
-	padding:10px;
+	margin: 0 auto;
+	line-height: 1.5;
+  	padding: 4em 1em;
+  	max-width: 50em;
+	color: #555;
 }
 
 .docStyle {
@@ -85,11 +91,4 @@ body {
 	width:100%;
 	height:87vh;
 	max-height:1080px;
-}
-
-#pogoMap
-{
-    position: relative;
-    height: 85vh;
-    width: 100%; 
 }
