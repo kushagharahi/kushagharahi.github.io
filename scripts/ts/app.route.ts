@@ -17,7 +17,7 @@ module kushame {
                 routeName: "Resume",
                 templateUrl: "views/resume.html",
             })
-            .when("/map", <IRouteName>{
+            .when("/projects", <IRouteName>{
                 controller: "ProjectsController",
                 routeName: "Projects",
                 templateUrl: "views/projects.html",

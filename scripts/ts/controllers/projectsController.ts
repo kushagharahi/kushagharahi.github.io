@@ -1,10 +1,10 @@
 module kushame {
     "use strict";
 
-    class ProjectController {
+    class ProjectsController {
         public static $inject = ["$scope", "$sce"];
-        constructor($scope: ng.IScope, $sce: ng.ISCEService) {
+    //     constructor($scope: ng.IScope, $sce: ng.ISCEService) {
+    // }
     }
-    }
-    app.controller("ProjectController", ProjectController);
+    app.controller("ProjectsController", ProjectsController);
 }

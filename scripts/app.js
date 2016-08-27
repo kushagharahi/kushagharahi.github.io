@@ -18,7 +18,7 @@ var kushame;
             routeName: "Resume",
             templateUrl: "views/resume.html",
         })
-            .when("/map", {
+            .when("/projects", {
             controller: "ProjectsController",
             routeName: "Projects",
             templateUrl: "views/projects.html",
@@ -68,13 +68,13 @@ var kushame;
 var kushame;
 (function (kushame) {
     "use strict";
-    var ProjectController = (function () {
-        function ProjectController($scope, $sce) {
+    var ProjectsController = (function () {
+        function ProjectsController() {
         }
-        ProjectController.$inject = ["$scope", "$sce"];
-        return ProjectController;
+        ProjectsController.$inject = ["$scope", "$sce"];
+        return ProjectsController;
     }());
-    kushame.app.controller("ProjectController", ProjectController);
+    kushame.app.controller("ProjectsController", ProjectsController);
 })(kushame || (kushame = {}));
 var kushame;
 (function (kushame) {
