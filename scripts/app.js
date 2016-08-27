@@ -38,9 +38,13 @@ var kushame;
             this.$scope = $scope;
             this.$route = $route;
             this.$location = $location;
+            $scope.mobileMenu = false;
             $scope.pageTitle = $route.routes[$location.url()].routeName;
             $scope.$watch(function () { return $location.url(); }, function () {
                 $scope.pageTitle = $route.routes[$location.url()].routeName;
+                if ($scope.mobileMenu) {
+                    $scope.mobileMenu = !$scope.mobileMenu;
+                }
             });
             $scope.isActive = function (path) {
                 return path === $location.url();
