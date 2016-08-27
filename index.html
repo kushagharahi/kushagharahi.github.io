@@ -10,11 +10,12 @@
 </head>
 
 <body>
-        <div class="navMobileBG"><input class="navMenu" type="checkbox" /><label for="navMenu"></label>
+        <div class="navMobileBG"><input class="navMenu" ng-model="mobileMenu" ng-true-value="false" ng-false-value="true" type="checkbox"/><label for="navMenu"></label>
 		<ul class="nav">
 			<li><a class="navTitle" ng-class="{ active: isActive('/')}" href="/#/">kusha.me</a></li>
 			<li><a class="navLink" ng-class="{ active: isActive('/')}"  href="/#/" >Home</a></li>
 			<li><a class="navLink" ng-class="{ active: isActive('/resume')}" href="/#/resume">Resume</a></li>
+			<li><a class="navLink" ng-class="{ active: isActive('/projects')}" href="/#/projects">Projects</a></li>
 			<li><social-icon social-icon-name="github" class="socialIcon" link="http://github.com/kushagharahi" target="_blank"></social-icon></li>
 			<li><social-icon social-icon-name="twitter" class="socialIcon" link="http://twitter.com/kushalulz" target="_blank"></social-icon></li>
 			<li><social-icon social-icon-name="linkedin" class="socialIcon"" link="http://linkedin.com/in/kushagharahi" target="_blank"></social-icon></li>

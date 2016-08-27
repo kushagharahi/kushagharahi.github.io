@@ -19,9 +19,9 @@ var kushame;
             templateUrl: "views/resume.html",
         })
             .when("/map", {
-            controller: "MainController",
-            routeName: "Map",
-            templateUrl: "views/pogoMap.html",
+            controller: "ProjectsController",
+            routeName: "Projects",
+            templateUrl: "views/projects.html",
         })
             .otherwise({
             redirectTo: "/",
@@ -64,6 +64,17 @@ var kushame;
         return MainController;
     }());
     kushame.app.controller("MainController", MainController);
+})(kushame || (kushame = {}));
+var kushame;
+(function (kushame) {
+    "use strict";
+    var ProjectController = (function () {
+        function ProjectController($scope, $sce) {
+        }
+        ProjectController.$inject = ["$scope", "$sce"];
+        return ProjectController;
+    }());
+    kushame.app.controller("ProjectController", ProjectController);
 })(kushame || (kushame = {}));
 var kushame;
 (function (kushame) {
