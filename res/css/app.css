@@ -96,6 +96,10 @@ a {
 	background-size:100%;
  	display: none;
 }
+.navMenu[type=checkbox]:checked + label {
+	background: url('../img/close.svg');
+	background-size:100%;
+}
 
 .navMenu[type=checkbox]:checked + label + .nav{
 	display: block;
