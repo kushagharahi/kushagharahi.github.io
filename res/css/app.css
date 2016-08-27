@@ -14,7 +14,8 @@ body {
 	max-height: 640px;
 }
 
-.nav ul {
+/*Nav bar start*/
+.nav {
 	background-color: #5f5f5f;
 	list-style: none;
     margin: 0;
@@ -22,58 +23,82 @@ body {
     overflow: hidden;
 }
 
-.nav li {
+.navTitle, .navLink {
 	float: left;
-    text-align: center;
-	overflow: hidden;
+	display: block;
+	color: white;
+    text-decoration:none;
 }
 
-.nav li h2.navTitle {
-	color: white;
-	margin: 0;
+.navTitle {
+	padding: 5px;
+	font-size: 20px;
+}
+
+.navLink {
 	padding: 10px;
 }
 
-.nav li a.navLink {
-  	text-decoration:none!important;
-	border: none;
-	display: block;
-	padding: 15px;
-	color: white;
-}
-
-.nav li a.navLink:hover {
+.navLink:hover {
 	background-color: #111;
 }
 
-.nav li a.navLink.active {
+.navLink.active {
 	 background-color: #4CAF50;
 }
 
-.nav li.socialIcon {
+.socialIcon {
 	float: right;
-}
-
-.nav li social-icon {
-	display: block;
 	height: 24px;
 	width: 24px;
-	padding: 10px;
+	padding: 5px;
 }
 
-@media (max-width: 600px) {
+.navMobileBG {
+	background-color: #5f5f5f;
+	width: 100%;
+	overflow: hidden;
+}
+
+.navMenu[type="checkbox"] {
+	position: absolute;
+	opacity: 0;
+}
+
+.navMenu[type=checkbox] + label {
+	background: url('../img/menu.svg');
+	background-size:100%;
+ 	display: none;
+	height: 30px;
+	width: 30px;
+	margin: 5px;
+}
+
+.navMenu[type=checkbox]:checked + label + .nav{
+	display: block;
+}
+
+@media screen and (max-width : 44em){
 	.navTitle {
 		display: none;
 	}
 
+	.nav {
+		display: none;
+	}
+
+	.navLink, .socialIcon {
+		float: none;
+	}
+
+	.navMenu[type=checkbox] + label {
+		display: block;
+	}
 }
+/*Nav bar end*/
 
 .content {
-	margin: 0 auto;
-	line-height: 1.5;
-  	padding: 4em 1em;
-  	max-width: 50em;
-	color: #555;
+	padding:10px;
 }
 
 .docStyle {

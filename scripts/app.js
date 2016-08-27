@@ -59,7 +59,6 @@ var kushame;
             $scope.helloWorld = "NG1 + TypeScript";
             $scope.resumeUrl =
                 $sce.trustAsResourceUrl("https://docs.google.com/document/d/1vnGrGLXtvXVZ9E_Ih02o7cxjp1oxX_wi3Vg2n-m7aXs/pub?embedded=true");
-            $scope.pogoMapUrl = $sce.trustAsResourceUrl("http://159.203.176.43:8000");
         }
         MainController.$inject = ["$scope", "$sce"];
         return MainController;
