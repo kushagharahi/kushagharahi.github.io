@@ -60,6 +60,12 @@ body {
 	overflow: hidden;
 }
 
+.navMenu[type="checkbox"], .navMenu[type=checkbox] + label  {
+	height: 30px;
+	width: 30px;
+	margin: 5px;
+}
+
 .navMenu[type="checkbox"] {
 	position: absolute;
 	opacity: 0;
@@ -69,9 +75,6 @@ body {
 	background: url('../img/menu.svg');
 	background-size:100%;
  	display: none;
-	height: 30px;
-	width: 30px;
-	margin: 5px;
 }
 
 .navMenu[type=checkbox]:checked + label + .nav{
