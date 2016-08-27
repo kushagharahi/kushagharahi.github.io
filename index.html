@@ -10,7 +10,9 @@
 </head>
 
 <body>
-        <div class="navMobileBG"><input class="navMenu" ng-model="mobileMenu" type="checkbox"/><label for="navMenu"></label>
+        <div class="navMobileBG"></div>
+			<input class="navMenu" ng-model="mobileMenu" type="checkbox"/><label for="navMenu"></label>
+		
 		<ul class="nav">
 			<li><a class="navTitle" ng-class="{ active: isActive('/')}" href="/#/">kusha.me</a></li>
 			<li><a class="navLink" ng-class="{ active: isActive('/')}"  href="/#/" >Home</a></li>
@@ -20,7 +22,7 @@
 			<li><social-icon social-icon-name="twitter" class="socialIcon" link="http://twitter.com/kushalulz" target="_blank"></social-icon></li>
 			<li><social-icon social-icon-name="linkedin" class="socialIcon"" link="http://linkedin.com/in/kushagharahi" target="_blank"></social-icon></li>
 		</ul>
-</div>
+
 	<div ng-view class="content">
 		</div>
 
