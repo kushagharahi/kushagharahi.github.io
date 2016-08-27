@@ -38,6 +38,29 @@ ul li {
 	word-break: break-all;
 }
 
+
+.content {
+	margin: 0 auto;
+ 	max-width: 50em;
+}
+
+.docStyle {
+	max-width:800px;
+	margin: auto;
+	border: solid 1px lightgray;
+	padding: 10px;
+}
+
+.clearfix {
+	clear:both;
+}
+
+.docIFrame {
+	width:100%;
+	height:87vh;
+	max-height:1080px;
+}
+
 /*Nav bar start*/
 .nav {
 	background-color: #5f5f5f;
@@ -109,7 +132,11 @@ ul li {
 	display: block;
 }
 
-@media screen and (max-width : 44em){
+@media screen and (max-width : 600px){
+	.content {
+		margin: 20px;
+	}
+
 	.navTitle {
 		display: none;
 	}
@@ -127,25 +154,3 @@ ul li {
 	}
 }
 /*Nav bar end*/
-
-.content {
-	margin: 0 auto;
- 	max-width: 50em;
-}
-
-.docStyle {
-	max-width:800px;
-	margin: auto;
-	border: solid 1px lightgray;
-	padding: 10px;
-}
-
-.clearfix {
-	clear:both;
-}
-
-.docIFrame {
-	width:100%;
-	height:87vh;
-	max-height:1080px;
-}
