@@ -28,6 +28,10 @@ ul li {
   margin-left:5px;
 }
 
+.project{
+	border: solid 2px #555;
+}
+
 .kushaImg {
     margin-left: auto;
     margin-right: auto;
