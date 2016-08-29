@@ -1,35 +1,6 @@
-<div class="project">
-    <h2><strong><a href="https://github.com/kushagharahi/YoutubeNotGif">[GitHub] YoutubeNotGif - Chrome Extention</a></strong></h2>
-    <p>Chrome extention that marks all youtube links as [YOUTUBE] in bold and hot pink on Reddit.</p>
-    <p>Tech used: <strong>JavaScript</strong></p>
-    <a href="https://chrome.google.com/webstore/detail/youtube-not-gif/aadpjpjgnjejmneflbdcckablmkjgken">Chrome Web Store Link</a>
-</div>
-
-<div class="project">
-    <h2><strong><a href="https://github.com/kushagharahi/YoutubeNotGif">[GitHub] kusha.me - My Portfolio Website</a></strong></h2>
-    <p>The website you are currently on.</p>
-    <p>Tech used: <strong>AngularJS 1</strong> | <strong>TypeScript</strong> | <strong>JavaScript</strong> | <strong>Html/CSS3</strong>        |<strong>Bower/NPM</strong> | <strong>node.js (to compile TS to ES5)</strong></p>
-    <a href="kusha.me">kusha.me (recursive loop! don't press!)</a> 
-</div>
-
-<div class="project">
-    <h2><strong><a href="https://github.com/kushagharahi/ProjectManagement">[GitHub] A Project Management App </a></strong></h2>
-    <p>A project management application which allows you to create boards for projects, tasks within those boards, and move
-        tasks to different stages of development. Made for my Human Computer Interactions as final project.</p>
-    <p>Tech used: <strong>ASP.Net MVC 5</strong> | <strong>SQL Server 2013</strong> | <strong>Razor/HTML/CSS</strong> | <strong>Razor/HTML/CSS</strong></p>
-    <a href="http://taskerhci.azurewebsites.net">Azure Link - Currently won't log in because I stopped paying for Azure. Will get sql server up and running soon.</a>    
-</div>
-
-<div class="project">
-    <h2><strong><a href="https://github.com/kushagharahi/Kinect-v2-Testing">[GitHub] Kinect-v2-Testing </a></strong></h2>
-    <p>This program was built to familiarize myself with the Kinect v2 C# SDK. The program dectects your palms and adds a ball with collisons ablities. Realistic 2D ball physics.</p>
-    <p>Tech used: <strong>C#</strong> | <strong>Kinect v2 SDK</strong> | <strong>WPF/XAML</strong></p>
-    <a href="https://github.com/kushagharahi/Kinect-v2-Testing">Github</a>    
-</div>
-
-<div class="project">
-    <h2><strong><a href="https://github.com/kushagharahi/Vectors">[GitHub] Vectors Library in Java </a></strong></h2>
-    <p>Just a simple Vector math library for reference and easy porting.</p>
-    <p>Tech used: <strong>Java</strong></p>
-    <a href="https://github.com/kushagharahi/Vectors">Github</a>
+<div class="project" ng-repeat="project in projects">
+    <h2><strong>{{project.title}}</strong></h2>
+    <span ng-repeat="site in project.urls"> <a href="{{site.url}}">{{site.desc}}</a><span ng-if="project.urls.length > 1 && $index != project.urls.length - 1"> | </span></span>
+    <p>{{project.blurb}}</p>
+    <p>Tech used: <strong ng-repeat="tech in project.techUsed">{{tech.name}}<span ng-if="project.techUsed.length > 1 && $index != project.techUsed.length - 1"> | </span></strong></p>
 </div>

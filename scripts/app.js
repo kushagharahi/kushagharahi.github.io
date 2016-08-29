@@ -73,9 +73,14 @@ var kushame;
 (function (kushame) {
     "use strict";
     var ProjectsController = (function () {
-        function ProjectsController() {
+        function ProjectsController($scope, $http, $location) {
+            $http.get("/models/projects.json").then(function (data) {
+                $scope.projects = data.data;
+            }, function (err) {
+                $scope.errMessage = err;
+            });
         }
-        ProjectsController.$inject = ["$scope", "$sce"];
+        ProjectsController.$inject = ["$scope", "$http", "$location"];
         return ProjectsController;
     }());
     kushame.app.controller("ProjectsController", ProjectsController);
