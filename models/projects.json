@@ -78,7 +78,7 @@
     },
     {
         "title": "Kinect-v2 Test Application",
-        "blurb": "This program was built to familiarize myself with the Kinect v2 C# SDK. The program dectects your palms and adds a ball with collisons ablities. Realistic 2D ball physics.",
+        "blurb": "This program was built to familiarize myself with the Kinect v2 C# SDK. The program dectects your palms and adds a ball with collisons ablities. Realistic 2D ball physics ported from 'Super Fill Up' game.",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/Kinect-v2-Testing",

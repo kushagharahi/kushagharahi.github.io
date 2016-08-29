@@ -9,7 +9,6 @@ module kushame {
     class ProjectsController {
         public static $inject = ["$scope", "$http", "$location"];
         constructor($scope: ProjectScope, $http: ng.IHttpService, $location: ng.ILocationService) {
-            //let webRoot = $location.
             $http.get("/models/projects.json").then(
                 (data) => {
                     $scope.projects = data.data;

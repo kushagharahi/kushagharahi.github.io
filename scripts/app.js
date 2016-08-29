@@ -60,9 +60,9 @@ var kushame;
     "use strict";
     var MainController = (function () {
         function MainController($scope, $sce) {
-            $scope.helloWorld = "NG1 + TypeScript";
+            var resumeUrl = "https://docs.google.com/document/d/1vnGrGLXtvXVZ9E_Ih02o7cxjp1oxX_wi3Vg2n-m7aXs/pub?embedded=true";
             $scope.resumeUrl =
-                $sce.trustAsResourceUrl("https://docs.google.com/document/d/1vnGrGLXtvXVZ9E_Ih02o7cxjp1oxX_wi3Vg2n-m7aXs/pub?embedded=true");
+                $sce.trustAsResourceUrl(resumeUrl);
         }
         MainController.$inject = ["$scope", "$sce"];
         return MainController;
