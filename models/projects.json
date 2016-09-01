@@ -4,12 +4,12 @@
         "blurb": "Chrome extention that marks all youtube links as [YOUTUBE] in bold and hot pink on Reddit.",
         "urls": [
             {
-                "url": "https://chrome.google.com/webstore/detail/youtube-not-gif/aadpjpjgnjejmneflbdcckablmkjgken",
-                "desc": "Chrome Web Store"
-            },
-            {
                 "url": "https://github.com/kushagharahi/YoutubeNotGif",
                 "desc": "GitHub"
+            },
+            {
+                "url": "https://chrome.google.com/webstore/detail/youtube-not-gif/aadpjpjgnjejmneflbdcckablmkjgken",
+                "desc": "Chrome Web Store"
             }
         ],
         "techUsed": [
@@ -22,6 +22,10 @@
         "title": "kusha.me - My Portfolio Website",
         "blurb": "The website you are currently on.",
         "urls": [
+            {
+                "url": "https://github.com/kushagharahi/kushagharahi.github.io",
+                "desc": "GitHub"
+            },
             {
                 "url": "http://kusha.me/",
                 "desc": "kusha.me (recursive loop! don't press!)"
