@@ -2,23 +2,14 @@
 // for the documentation about the tasks.json format
 {
     "version": "0.1.0",
-    "command": "cmd",
-    "args": ["/C"],
+    "command": "gulp",
     "isShellCommand": true,
     "showOutput": "always",
     "echoCommand": true,
     "tasks": [
         {
-            "taskName": "tsc",
-            "suppressTaskName": true,
-            // runs tsc -p DIRECTORY in cmd,  
-            "args": ["tsc","-p","."],
+            "taskName": "compile",
             "isBuildCommand": true
-        },
-        {
-            "taskName": "sass",
-            "suppressTaskName": true,
-            "args": ["mode-sass", "${workspaceRoot}/res/style/app.scss","${workspaceRoot}/res/style/app.css"]        
-            }
+        }
     ]
 }

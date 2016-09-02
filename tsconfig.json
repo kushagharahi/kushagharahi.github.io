@@ -10,5 +10,9 @@
         "noEmitOnError": true
         
     },
-  "compileOnSave": true
+  "compileOnSave": true,
+    "exclude": [
+        "node_modules",
+        "./scripts/packages/"
+    ]
 }
