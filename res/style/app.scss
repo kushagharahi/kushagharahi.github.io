@@ -1,8 +1,12 @@
+$primary-color: #5f5f5f;
+$secondary-color: #4CAF50;
+$text-color: #555;
+
 body {
     margin: 0;
 	font-family: 'Open Sans', sans-serif;
 	line-height: 1.5;
-	color: #555;
+	color: $text-color;
 }
 
 h1, h2, strong {
@@ -10,7 +14,7 @@ h1, h2, strong {
 }
 
 a {
-  color: #4CAF50;
+  color: $secondary-color;
 }
 
 ul li {
@@ -18,7 +22,7 @@ ul li {
 }
 
 .pre {
-  border-left: 2px solid #69c;
+  border-left: 2px solid $secondary-color;
   padding-left: 3px;
   margin-left:5px;
 }
@@ -64,8 +68,7 @@ ul li {
 
 /*Nav bar start*/
 .nav, .navMobileBG {
-	border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
+    background-color: $primary-color;
 	position: fixed;
     top: 0;
     width: 100%;
@@ -108,7 +111,7 @@ ul li {
 }
 
 .navLink.active {
-	 background-color: #4CAF50;
+	 background-color: $secondary-color;
 }
 
 .socialIcon {

@@ -14,7 +14,7 @@ ul li {
   word-break: break-all; }
 
 .pre {
-  border-left: 2px solid #69c;
+  border-left: 2px solid #4CAF50;
   padding-left: 3px;
   margin-left: 5px; }
 
@@ -53,8 +53,7 @@ ul li {
 
 /*Nav bar start*/
 .nav, .navMobileBG {
-  border: 1px solid #e7e7e7;
-  background-color: #f3f3f3;
+  background-color: #5f5f5f;
   position: fixed;
   top: 0;
   width: 100%; }
