@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kushagharahi/kushagharahi.github.io#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
     "gulp-minify": "0.0.14",
     "gulp-sass": "^2.3.2",
     "gulp-tsc": "^1.2.3",

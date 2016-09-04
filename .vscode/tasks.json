@@ -10,6 +10,9 @@
         {
             "taskName": "compile",
             "isBuildCommand": true
+        },
+        {
+            "taskName": "sass:watch"
         }
     ]
 }

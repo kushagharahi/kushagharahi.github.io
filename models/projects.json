@@ -45,10 +45,13 @@
                 "name": "Html/CSS3"
             },
             {
+                "name": "Sass"
+            },
+            {
                 "name": "Bower/NPM"
             },
             {
-                "name": "node.js (to compile TS to ES5)"
+                "name": "Gulp"
             }
         ]
     },

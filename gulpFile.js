@@ -5,11 +5,12 @@ var sass = require('gulp-sass');
 var ts = require('gulp-typescript');
 var tsProject = ts.createProject('tsconfig.json');
 var minify = require('gulp-minify');
-
+var concat = require('gulp-concat');
 
 gulp.task('sassCompile', function () {
   gulp.src('./res/style/sass/*.scss')
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+    .pipe(concat('app.css'))
     .pipe(gulp.dest('./res/style'));
 });
  
@@ -28,9 +29,13 @@ gulp.task('jsCompress', ['tsCompile'], function() {
             min:'-min.js'
         },
         exclude: ['tasks'],
-        ignoreFiles: ['.combo.js', '-min.js']
+        ignoreFiles: ['*-min.js']
     }))
     .pipe(gulp.dest('./scripts/'))
 });
 
 gulp.task('compile', ['tsCompile', 'sassCompile', 'jsCompress']);
+
+gulp.task('sass:watch', function () {
+  gulp.watch('./res/style/sass/*.scss', ['sassCompile']);
+});
