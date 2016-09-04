@@ -18,7 +18,7 @@ module kushame {
             return new SocialIconDirective();
         };
 
-        public template = '<a href="{{Link}}"><img ng-src="{{ImgLink}}"\
+        public template = '<a href="{{Link}}" target="_blank" rel="noopener"><img ng-src="{{ImgLink}}"\
                             ng-mouseover="SetHover(true)" ng-mouseleave="SetHover(false)" class="socialIcon"/></a>';
         public restrict = 'E';
         public scope = {

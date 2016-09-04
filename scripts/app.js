@@ -90,7 +90,7 @@ var kushame;
     "use strict";
     var SocialIconDirective = (function () {
         function SocialIconDirective() {
-            this.template = '<a href="{{Link}}"><img ng-src="{{ImgLink}}"\
+            this.template = '<a href="{{Link}}" target="_blank" rel="noopener"><img ng-src="{{ImgLink}}"\
                             ng-mouseover="SetHover(true)" ng-mouseleave="SetHover(false)" class="socialIcon"/></a>';
             this.restrict = 'E';
             this.scope = {
@@ -121,4 +121,3 @@ var kushame;
     angular.module("app")
         .directive("socialIcon", SocialIconDirective.Factory);
 })(kushame || (kushame = {}));
-//# sourceMappingURL=app.js.map

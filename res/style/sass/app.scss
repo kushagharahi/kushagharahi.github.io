@@ -15,10 +15,6 @@ a {
   color: $secondary-color;
 }
 
-ul li {
-	word-break: break-all;
-}
-
 .pre {
   border-left: 2px solid $secondary-color;
   padding-left: 3px;
@@ -51,7 +47,6 @@ ul li {
 	max-width:800px;
 	margin: auto;
 	border: solid 1px lightgray;
-	padding: 10px;
 }
 
 .clearfix {
