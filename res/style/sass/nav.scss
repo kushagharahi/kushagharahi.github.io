@@ -32,6 +32,15 @@
 	font-size: 20px;
 }
 
+.navMobileTitle {
+	position: fixed;
+	top: 0;
+ 	text-decoration:none;
+	display: none;
+	color: white;
+	vertical-align: middle;
+}
+
 .navLink {
 	padding: 10px;
 }
@@ -87,11 +96,7 @@
 		padding-top: 30px;
 	}
 
-	.navTitle {
-		display: none;
-	}
-
-	.navMobileBG {
+	.navMobileBG, .navMobileTitle, .navMenu[type=checkbox] + label {
 		display: block;
 	}
 
@@ -104,9 +109,5 @@
 
 	.navLink, .socialIcon {
 		float: none;
-	}
-
-	.navMenu[type=checkbox] + label {
-		display: block;
 	}
 }
