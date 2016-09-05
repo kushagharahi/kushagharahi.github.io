@@ -17,6 +17,7 @@
 .navMobileBG {
 	height: 40px;
 	margin-bottom:0px;
+	text-align: center;
 	display: none;
 }
 
@@ -33,12 +34,11 @@
 }
 
 .navMobileTitle {
-	position: fixed;
-	top: 0;
+	margin: 5px;
+	font-size: 20px;
  	text-decoration:none;
 	display: none;
 	color: white;
-	vertical-align: middle;
 }
 
 .navLink {
@@ -55,9 +55,12 @@
 
 .socialIcon {
 	float: right;
+	padding: 5px;
+}
+
+.socialIcon > a > img{
 	height: 24px;
 	width: 24px;
-	padding: 5px;
 }
 
 .navMenu[type="checkbox"], .navMenu[type=checkbox] + label  {
@@ -97,11 +100,14 @@
 	}
 
 	.navMobileBG, .navMobileTitle, .navMenu[type=checkbox] + label {
-		display: block;
+		display: inline-block;
+	}
+
+	.nav, .navTitle {
+		display: none;
 	}
 
 	.nav {
-		display: none;
 		border-bottom: 1px solid rgba(0,0,0,0.15);
     	box-shadow: 0 8px 10px rgba(0,0,0,0.15);
 		top: 40px;
@@ -109,5 +115,18 @@
 
 	.navLink, .socialIcon {
 		float: none;
+	}
+
+	.socialIcon {
+		padding: 0px;
+	}
+	
+	.socialIcon > a {
+		display: block;
+		padding: 5px;
+	}
+
+	.socialIcon > a > img {
+		padding-left: 5px;
 	}
 }
