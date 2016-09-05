@@ -23,12 +23,53 @@ var kushame;
             routeName: "Projects",
             templateUrl: "views/projects.html",
         })
+            .when("/contact", {
+            controller: "MainController",
+            routeName: "Contact",
+            templateUrl: "views/contact.html",
+        })
             .otherwise({
             redirectTo: "/",
         });
     }
     routes.$inject = ["$routeProvider"];
     kushame.app.config(routes);
+})(kushame || (kushame = {}));
+var kushame;
+(function (kushame) {
+    "use strict";
+    var SocialIconDirective = (function () {
+        function SocialIconDirective() {
+            this.template = '<a href="{{Link}}" target="_blank" rel="noopener"><img ng-src="{{ImgLink}}"\
+                            ng-mouseover="SetHover(true)" ng-mouseleave="SetHover(false)" class="socialIcon"/></a>';
+            this.restrict = 'E';
+            this.scope = {
+                socialIconName: '@',
+                link: '@'
+            };
+            SocialIconDirective.prototype.link = function (scope, element, attrs) {
+                var ImgLinkPrefix = "./res/img/social/" + attrs.socialIconName;
+                scope.ImgLink = ImgLinkPrefix + ".png";
+                scope.Link = attrs.link;
+                scope.SetHover = function (Hover) {
+                    if (Hover === true) {
+                        scope.ImgLink = ImgLinkPrefix + "-hover" + ".png";
+                    }
+                    else {
+                        scope.ImgLink = ImgLinkPrefix + ".png";
+                    }
+                };
+            };
+        }
+        SocialIconDirective.Factory = function () {
+            return new SocialIconDirective();
+        };
+        ;
+        return SocialIconDirective;
+    }());
+    ;
+    angular.module("app")
+        .directive("socialIcon", SocialIconDirective.Factory);
 })(kushame || (kushame = {}));
 var kushame;
 (function (kushame) {
@@ -84,40 +125,4 @@ var kushame;
         return ProjectsController;
     }());
     kushame.app.controller("ProjectsController", ProjectsController);
-})(kushame || (kushame = {}));
-var kushame;
-(function (kushame) {
-    "use strict";
-    var SocialIconDirective = (function () {
-        function SocialIconDirective() {
-            this.template = '<a href="{{Link}}" target="_blank" rel="noopener"><img ng-src="{{ImgLink}}"\
-                            ng-mouseover="SetHover(true)" ng-mouseleave="SetHover(false)" class="socialIcon"/></a>';
-            this.restrict = 'E';
-            this.scope = {
-                socialIconName: '@',
-                link: '@'
-            };
-            SocialIconDirective.prototype.link = function (scope, element, attrs) {
-                var ImgLinkPrefix = "./res/img/social/" + attrs.socialIconName;
-                scope.ImgLink = ImgLinkPrefix + ".png";
-                scope.Link = attrs.link;
-                scope.SetHover = function (Hover) {
-                    if (Hover === true) {
-                        scope.ImgLink = ImgLinkPrefix + "-hover" + ".png";
-                    }
-                    else {
-                        scope.ImgLink = ImgLinkPrefix + ".png";
-                    }
-                };
-            };
-        }
-        SocialIconDirective.Factory = function () {
-            return new SocialIconDirective();
-        };
-        ;
-        return SocialIconDirective;
-    }());
-    ;
-    angular.module("app")
-        .directive("socialIcon", SocialIconDirective.Factory);
 })(kushame || (kushame = {}));

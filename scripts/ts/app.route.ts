@@ -22,6 +22,11 @@ module kushame {
                 routeName: "Projects",
                 templateUrl: "views/projects.html",
             })
+            .when("/contact", <IRouteName>{
+                controller: "MainController",
+                routeName: "Contact",
+                templateUrl: "views/contact.html",
+            })
             .otherwise({
                     redirectTo: "/",
                 });
