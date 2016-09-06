@@ -23,7 +23,7 @@ module kushame {
                 templateUrl: "views/projects.html",
             })
             .when("/contact", <IRouteName>{
-                controller: "MainController",
+                controller: "ContactController",
                 routeName: "Contact",
                 templateUrl: "views/contact.html",
             })
