@@ -41,8 +41,17 @@ var kushame;
     var ContactController = (function () {
         function ContactController($scope) {
             this.$scope = $scope;
+            $scope.validation = "";
+            $scope.submit = this.submit();
         }
-        ContactController.$inject = ["$scope", "$route", "$location"];
+        ContactController.prototype.submit = function () {
+            if (this.$scope.validation.toLowerCase() != 'blue') {
+                this.$scope.message = 'Invalid answer to spam question. Try again.';
+                return false;
+            }
+            return true;
+        };
+        ContactController.$inject = ["$scope"];
         return ContactController;
     }());
     kushame.app.controller("ContactController", ContactController);

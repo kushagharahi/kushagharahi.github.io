@@ -1,7 +1,7 @@
 <p>Feel free to drop me a line using the form below! I generally will reply within 2 business days. I look forward to connecting
     with you.</p>
 
-<form name="contactForm" method="POST" action="http://flipmail.co/api/gxtl4TWLItuEr7j13gMh">
+<form name="contactForm" method="POST" ng-submit="submit()" action="http://flipmail.co/api/gxtl4TWLItuEr7j13gMh">
     <div class="form-group">
         <label for="fName">First Name:</label>
     </div>
@@ -27,14 +27,14 @@
         <textarea name="body" class="form-message" required></textarea>
     </div>
     <div class="form-group">
-        <label for="vaildation">What color is the sky on a clear day?</label>
+        <label for="validation">What color is the sky on a clear day?</label>
     </div>
     <div class="form-group">
-        <input class="form-input" ng-model="vaildation" name="vaildation" required>
+        <input class="form-input" ng-model="validation" name="validation" required>
     </div>
     <div class="form-group">
         <input type="submit" value="Send">
     </div>
-    <!--<p class="errorText" ng-show="">{{message}}</p>-->
+    <p class="errorText" ng-show="">{{message}}</p>
     <input type="hidden" name="_subject" value="Kusha.Me" />
 </form>
