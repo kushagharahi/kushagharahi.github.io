@@ -42,14 +42,13 @@ var kushame;
         function ContactController($scope) {
             this.$scope = $scope;
             $scope.validation = "";
-            $scope.submit = this.submit();
+            $scope.message = "";
+            $scope.submit = this.submit;
         }
         ContactController.prototype.submit = function () {
             if (this.$scope.validation.toLowerCase() != 'blue') {
                 this.$scope.message = 'Invalid answer to spam question. Try again.';
-                return false;
             }
-            return true;
         };
         ContactController.$inject = ["$scope"];
         return ContactController;

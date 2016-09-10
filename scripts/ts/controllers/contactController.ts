@@ -4,22 +4,23 @@ module kushame {
   interface ContactControllerScope extends ng.IScope {
     validation: string;
     message: string;
-    submit: any;
+    submit(): void;
   }
 
   class ContactController {
     public static $inject = ["$scope"];
     constructor(protected $scope: ContactControllerScope) {
-            $scope.validation = "";
-      $scope.submit = this.submit();
+      $scope.validation = "";
+      $scope.message = "";
+      $scope.submit = function () {
+        this.sendForm();
+      }
     }
 
-    private submit() {
+    public sendForm(): void {
       if (this.$scope.validation.toLowerCase() != 'blue') {
         this.$scope.message = 'Invalid answer to spam question. Try again.';
-        return false;
       }
-      return true;
     }
 
   }
