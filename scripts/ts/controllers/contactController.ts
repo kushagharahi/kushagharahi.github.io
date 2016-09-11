@@ -17,6 +17,7 @@ module kushame {
       $scope.message = "";
       $scope.validation = "";
       $scope.formData = {};
+      $scope.formDisabled = false;
       $scope.submit = function (validation: string) {
         if (validation.toLowerCase() !== "blue") {
           $scope.messageColor = "errorText";

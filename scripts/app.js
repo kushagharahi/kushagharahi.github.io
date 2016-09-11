@@ -46,6 +46,7 @@ var kushame;
             $scope.message = "";
             $scope.validation = "";
             $scope.formData = {};
+            $scope.formDisabled = false;
             $scope.submit = function (validation) {
                 if (validation.toLowerCase() !== "blue") {
                     $scope.messageColor = "errorText";
@@ -67,6 +68,7 @@ var kushame;
                         .success(function (data) {
                         $scope.messageColor = "validText";
                         $scope.message = "Form submitted. I look forward to connecting with you!";
+                        $scope.formDisabled = true;
                     }).error(function (data) {
                         $scope.messageColor = "errorText";
                         $scope.message = "There was an error processing the form, please try again \
