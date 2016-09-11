@@ -94,7 +94,7 @@ var kushame;
             $scope.mobileMenu = false;
             $scope.pageTitle = $route.routes[$location.url()].routeName;
             $scope.$watch(function () { return $location.url(); }, function () {
-                $scope.pageTitle = $route.routes[$location.url()].routeName + " - Kusha.me";
+                $scope.pageTitle = $route.routes[$location.url()].routeName + " - kusha.me";
                 if ($scope.mobileMenu) {
                     $scope.mobileMenu = !$scope.mobileMenu;
                 }
