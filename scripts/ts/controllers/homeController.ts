@@ -14,7 +14,7 @@ module kushame {
             $scope.mobileMenu = false;
             $scope.pageTitle = $route.routes[$location.url()].routeName;
             $scope.$watch(() => $location.url(), () => {
-                    $scope.pageTitle = $route.routes[$location.url()].routeName;
+                    $scope.pageTitle = $route.routes[$location.url()].routeName + " - Kusha.me";
                     if ($scope.mobileMenu) {
                         $scope.mobileMenu = !$scope.mobileMenu;
                     }
