@@ -39,18 +39,44 @@ var kushame;
 (function (kushame) {
     "use strict";
     var ContactController = (function () {
-        function ContactController($scope) {
+        function ContactController($scope, $http, $httpParamSerializerJQLike) {
             this.$scope = $scope;
-            $scope.validation = "";
+            this.$http = $http;
+            this.$httpParamSerializerJQLike = $httpParamSerializerJQLike;
             $scope.message = "";
-            $scope.submit = this.submit;
+            $scope.validation = "";
+            $scope.formData = {};
+            $scope.submit = function (validation) {
+                if (validation.toLowerCase() !== "blue") {
+                    $scope.messageColor = "errorText";
+                    $scope.message = "Invalid answer to spam question. Try again.";
+                }
+                else {
+                    var data = $httpParamSerializerJQLike({
+                        Email: $scope.formData._replyto,
+                        Message: $scope.formData.body,
+                        Name: $scope.formData.fName + " " + $scope.formData.lName,
+                    });
+                    var config = {
+                        headers: {
+                            "Accept": "application/json",
+                            "Content-Type": "application/x-www-form-urlencoded",
+                        },
+                    };
+                    $http.post("https://formspree.io/kushagharahi@gmail.com", data, config)
+                        .success(function (data) {
+                        $scope.messageColor = "validText";
+                        $scope.message = "Form submitted. I look forward to connecting with you!";
+                    }).error(function (data) {
+                        $scope.messageColor = "errorText";
+                        $scope.message = "There was an error processing the form, please try again \
+                                or contact the webmaster @ kushagharahi(dot)gmail.com. Error: ";
+                        $scope.message += data.error;
+                    });
+                }
+            };
         }
-        ContactController.prototype.submit = function () {
-            if (this.$scope.validation.toLowerCase() != 'blue') {
-                this.$scope.message = 'Invalid answer to spam question. Try again.';
-            }
-        };
-        ContactController.$inject = ["$scope"];
+        ContactController.$inject = ["$scope", "$http", "$httpParamSerializerJQLike"];
         return ContactController;
     }());
     kushame.app.controller("ContactController", ContactController);
