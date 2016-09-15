@@ -42,7 +42,7 @@
                 "name": "JavaScript"
             },
             {
-                "name": "Html/CSS3"
+                "name": "HTML/CSS3"
             },
             {
                 "name": "Sass"
@@ -106,7 +106,7 @@
     },
     {
         "title": "Vectors Library in Java",
-        "blurb": "Just a simple Vector math library for reference and easy porting.",
+        "blurb": "Just a simple vector math library for reference and easy porting.",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/Vectors",
@@ -115,7 +115,7 @@
         ],
         "techUsed": [
             {
-                "name": "JavaScript"
+                "name": "Java"
             }
         ]
     },
