@@ -2,6 +2,7 @@
     {
         "title": "YoutubeNotGif - Chrome Extention",
         "blurb": "Chrome extention that marks all youtube links as [YOUTUBE] in bold and hot pink on Reddit.",
+        "imgPreview": "youtubenotgif.png",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/YoutubeNotGif",
@@ -21,6 +22,7 @@
     {
         "title": "kusha.me - My Portfolio Website",
         "blurb": "The website you are currently on.",
+        "imgPreview": "kushame.png",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/kushagharahi.github.io",
@@ -42,7 +44,7 @@
                 "name": "JavaScript"
             },
             {
-                "name": "Html/CSS3"
+                "name": "HTML/CSS3"
             },
             {
                 "name": "Sass"
@@ -58,6 +60,7 @@
     {
         "title": "A Project Management App",
         "blurb": "A project management application which allows you to create boards for projects, tasks within those boards, and move tasks to different stages of development. Made for my Human Computer Interactions as final project.",
+        "imgPreview": "",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/ProjectManagement",
@@ -86,6 +89,7 @@
     {
         "title": "Kinect-v2 Test Application",
         "blurb": "This program was built to familiarize myself with the Kinect v2 C# SDK. The program dectects your palms and adds a ball with collisons ablities. Realistic 2D ball physics ported from 'Super Fill Up' game.",
+        "imgPreview": "",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/Kinect-v2-Testing",
@@ -106,7 +110,8 @@
     },
     {
         "title": "Vectors Library in Java",
-        "blurb": "Just a simple Vector math library for reference and easy porting.",
+        "blurb": "Just a simple vector math library for reference and easy porting.",
+        "imgPreview": "",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/Vectors",
@@ -115,13 +120,14 @@
         ],
         "techUsed": [
             {
-                "name": "JavaScript"
+                "name": "Java"
             }
         ]
     },
     {
         "title": "Super Fill Up - 2D Ball physics simulation",
         "blurb": "Classic Super Fill Up game written in Java for project in high school senior computer science. Notable features: realistic ball physics and collisions.",
+        "imgPreview": "",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/Super-Fill-up",
@@ -137,6 +143,7 @@
     {
         "title": "Speed Card Game",
         "blurb": "Speed is a game for two or more players of the shedding family of card games, in which each player tries to get rid of all of his or her cards. Local Multiplayer only, developed in java. Junior year of high school Computer Science project.",
+        "imgPreview": "",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/Speed",
@@ -152,6 +159,7 @@
     {
         "title": "LuckySe7ens - Dice Game",
         "blurb": "Under Over 7 dice game created for probability project in high school sophomore math class. Features simple animations using Java. The object of the game is to predict whether the dice will roll to a total of under 7 or over 7 or at 7.",
+        "imgPreview": "",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/LuckySe7ens",
