@@ -1,5 +1,7 @@
 @import '_base.scss';
 
+$projectImgWidth: 140px;
+
 body {
     margin: 0;
 	font-family: $font;
@@ -25,15 +27,22 @@ a {
 	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
 	padding: 10px;
 	margin-bottom: 20px;
-	overflow: hidden;
+}
+
+.project .projectImg {
+	    vertical-align: middle;
+
 }
 
 .projectImg {
-	vertical-align: middle;
-	width: 195px;
-	height: 195px;	
-	text-align: right;
-	float: left;
+	width: $projectImgWidth;
+	height: 80px;
+	float:left;
+  top: 50%;
+}
+
+.projectContent {
+	padding-left: $projectImgWidth + 10;
 }
 
 .kushaImg {
