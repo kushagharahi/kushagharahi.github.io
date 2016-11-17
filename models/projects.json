@@ -142,6 +142,7 @@
     },
     {
         "title": "Speed Card Game",
+        "hide": true,
         "blurb": "Speed is a game for two or more players of the shedding family of card games, in which each player tries to get rid of all of his or her cards. Local Multiplayer only, developed in java. Junior year of high school Computer Science project.",
         "imgPreview": "",
         "urls": [

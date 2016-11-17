@@ -1,4 +1,4 @@
-<div class="project" ng-repeat="project in projects">
+<div class="project" ng-repeat="project in projects" ng-hide="project.hide">
     <div class="projectPreview">
         <img class="projectImg" ng-if="project.imgPreview != ''" ng-src="./res/img/project/{{project.imgPreview}}"></img>
         <img class="projectImg" ng-if="project.imgPreview == ''" src="./res/img/project/somecode.png"></img>
