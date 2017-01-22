@@ -18,6 +18,16 @@ a {
   color: $secondary-color;
 }
 
+.loading {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -100px;
+}
+
 .pre {
   border-left: 2px solid $secondary-color;
   padding-left: 3px;

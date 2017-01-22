@@ -11,6 +11,9 @@
 </head>
 
 <body>
+	<div ng-if="false">
+		<div class="loading"><img alt="loading" src="./res/img/ball.svg"></img></div>
+	</div>
 	<div class="navMobileBG">
 		<a href="/#/" class="navMobileTitle" ng-bind="pageTitle"></a>
 	</div>
@@ -29,15 +32,15 @@
 			<social-icon social-icon-name="twitter" class="socialIcon" link="http://twitter.com/kushalulz" target="_blank"></social-icon>
 		</li>
 		<li>
-			<social-icon social-icon-name="linkedin" class="socialIcon" " link="http://linkedin.com/in/kushagharahi " target="_blank "></social-icon></li>
+			<social-icon social-icon-name="linkedin" class="socialIcon"  link="http://linkedin.com/in/kushagharahi " target="_blank "></social-icon></li>
 		</ul>
 
 	<div ng-view class="content ">
 		</div>
 
-	<script src="./scripts/packages/angular/angular.min.js "></script>
-	<script src="./scripts/packages/angular-route/angular-route.min.js "></script>
-	<script src="./scripts/app-min.js "></script>
+	<script src="./scripts/packages/angular/angular.min.js " defer></script>
+	<script src="./scripts/packages/angular-route/angular-route.min.js" defer></script>
+	<script src="./scripts/app-min.js " defer></script>
 </body>
 
 </html>
