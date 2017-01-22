@@ -30,9 +30,10 @@ module kushame {
             .otherwise({
                     redirectTo: "/",
                 });
+          $locationProvider.html5Mode(true);
     }
-
-    routes.$inject = ["$routeProvider"];
+    
+    routes.$inject = ["$routeProvider", "$locationProvider"];
 
     app.config(routes);
 }

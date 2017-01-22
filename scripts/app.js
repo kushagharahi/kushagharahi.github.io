@@ -31,8 +31,9 @@ var kushame;
             .otherwise({
             redirectTo: "/",
         });
+        $locationProvider.html5Mode(true);
     }
-    routes.$inject = ["$routeProvider"];
+    routes.$inject = ["$routeProvider", "$locationProvider"];
     kushame.app.config(routes);
 })(kushame || (kushame = {}));
 var kushame;
