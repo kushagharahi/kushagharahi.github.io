@@ -3,6 +3,20 @@
 $projectImgWidth: 210px;
 $projectImgHeight: 105px;
 
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../font/open-sans-v13-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans'), local('OpenSans'),
+       url('../font/open-sans-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/open-sans-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../font/open-sans-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../font/open-sans-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../font/open-sans-v13-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
 body {
 	font-family: 'Open Sans', Fallback, sans-serif;
     margin: 0;
@@ -17,20 +31,6 @@ h1, h2, strong {
 
 a {
   color: $secondary-color;
-}
-
-/* open-sans-regular - latin */
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../font/open-sans-v13-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Open Sans'), local('OpenSans'),
-       url('../font/open-sans-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../font/open-sans-v13-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../font/open-sans-v13-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../font/open-sans-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../font/open-sans-v13-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
 }
 
 .loading {
