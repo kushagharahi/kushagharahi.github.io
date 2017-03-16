@@ -1,3 +1,10 @@
+var path = require("path");
+// Hack for Ubuntu on Windows: interface enumeration fails with EINVAL, so return empty.
+try {
+  require('os').networkInterfaces();
+} catch (e) {
+  require('os').networkInterfaces = () => ({});
+}
 module.exports = {
   // This is the "main" file which should include all other modules
   entry: './scripts/main.js',
@@ -5,6 +12,7 @@ module.exports = {
   output: {
     // To the `scripts` folder
     path: './scripts',
+    publicPath: 'scripts/',
     // With the filename `app.js` so it's dist/app.js
     filename: 'app.js'
   },
@@ -17,11 +25,26 @@ module.exports = {
         // Transform it with babel
         loader: 'babel-loader',
         // don't transform node_modules folder (which don't need to be compiled)
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015']
+        }
+      },
+      // use vue-loader for all *.vue files
+      {
+        test: /.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.s[a|c]ss$/,
+        loader: 'style!css!sass'
       },
        {
-        test: /\.vue$/,
-        loader: 'vue'
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
+        }
       }
     ]
   },
@@ -29,7 +52,12 @@ module.exports = {
     loaders: {
       js: 'babel',
       scss: 'style!css!sass'
-
+    }
+  },
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.js',
+      'res': path.resolve(__dirname, './res')
     }
   }
 }
