@@ -8,6 +8,8 @@ import ProjectsComponent from './components/ProjectsComponent.vue';
 import ContactComponent from './components/ContactComponent.vue';
 import NavComponent from './components/NavComponent.vue';
 
+require('res/style/sass/app.scss')
+
 Vue.use(VueRouter);
 
 Vue.component('nav-component', NavComponent);

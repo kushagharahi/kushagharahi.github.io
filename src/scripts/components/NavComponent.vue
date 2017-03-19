@@ -6,7 +6,7 @@
 	<input class="navMenu" ng-model="mobileMenu" type="checkbox" /><label for="navMenu"></label>
     <ul class="nav">
 		<li><a class="navTitle" href="/">kusha.me</a></li>
-		<li><router-link class="navLink" active-class="active" to="/">Home</router-link></li>
+		<li><router-link class="navLink" active-class="active" to="/" exact>Home</router-link></li>
 		<li><router-link class="navLink" active-class="active" to="/resume">Resume</router-link></li>
 		<li><router-link class="navLink" active-class="active" to="/projects">Projects</router-link></li>
 		<li><router-link class="navLink" active-class="active" to="/contact">Contact</router-link></li>
@@ -28,7 +28,7 @@
         </script>
 
         <style lang="sass">
-             @import "~res/style/sass/_base.scss";
+             @import "~res/style/sass/_vars.scss";
 
 .nav, .navMobileBG {
     background-color: $primary-color;
@@ -124,10 +124,6 @@
 }
 
 @media screen and (max-width : 800px){
-	.content {
-		margin: 20px;
-		padding-top: 30px;
-	}
 
 	.navMobileBG, .navMobileTitle, .navMenu[type=checkbox] + label {
 		display: inline-block;

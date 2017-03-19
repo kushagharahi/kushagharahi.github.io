@@ -2,10 +2,9 @@
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="./res/style/app.css">
 	<meta name="viewport" content="width=device-width" />
 	<meta name="description" content="">
-	<title ></title>
+	<title></title>
 	<base href="/">
 </head>
 
@@ -16,10 +15,12 @@
 
 	<div class="app">
 		<nav-component></nav-component>
-		  <router-view></router-view>
+		<div class="content">
+			<router-view></router-view>
 		</div>
+	</div>
 
-	<script src="./scripts/app.js" defer></script>
+	<script src="bundle.js" defer></script>
 
 </body>
 

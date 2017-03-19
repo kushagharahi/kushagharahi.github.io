@@ -1,5 +1,5 @@
 <template>
-<div>
+<!--<div>
 <p>Feel free to drop me a line using the form below! I generally will reply within 2 business days. I look forward to connecting
     with you.</p>
 
@@ -40,5 +40,5 @@
     <p ng-style="messageColor" ng-show="message">{{message}}</p>
     <input type="hidden" ng-model="formData._subject" name="_subject" value="Kusha.Me" />
 </form>
-</div>
+</div>-->
 </template>

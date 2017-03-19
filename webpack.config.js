@@ -1,63 +1,53 @@
-var path = require("path");
 // Hack for Ubuntu on Windows: interface enumeration fails with EINVAL, so return empty.
 try {
   require('os').networkInterfaces();
 } catch (e) {
   require('os').networkInterfaces = () => ({});
 }
+
+var path = require("path");
+
 module.exports = {
-  // This is the "main" file which should include all other modules
-  entry: './scripts/main.js',
-  // Where should the compiled file go?
+  entry: './src/scripts/main.js',
   output: {
+    filename: 'bundle.js',
     // To the `scripts` folder
-    path: './scripts',
-    publicPath: 'scripts/',
-    // With the filename `app.js` so it's dist/app.js
-    filename: 'app.js'
-  },
-  module: {
-    // Special compilation rules
-    loaders: [
-      {
-        // Ask webpack to check: If this file ends with .js, then apply some transforms
-        test: /\.js$/,
-        // Transform it with babel
-        loader: 'babel-loader',
-        // don't transform node_modules folder (which don't need to be compiled)
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015']
-        }
-      },
-      // use vue-loader for all *.vue files
-      {
-        test: /.vue$/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.s[a|c]ss$/,
-        loader: 'style!css!sass'
-      },
-       {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
-      }
-    ]
-  },
-  vue: {
-    loaders: {
-      js: 'babel',
-      scss: 'style!css!sass'
-    }
+    path: path.resolve(__dirname, './dist')
   },
   resolve: {
     alias: {
       vue: 'vue/dist/vue.js',
-      'res': path.resolve(__dirname, './res')
+      res: path.resolve(__dirname, './src/res')
     }
+  },
+  module: {
+    // Special compilation rules
+    rules: [
+      // use vue-loader for all *.vue files
+      {
+        test: /.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            js: 'babel-loader',
+            exclude: [path.resolve(__dirname, 'node_modules')],
+          }
+        }
+      },
+      {
+        test: /\.s[a|c]ss$/,
+        loader: 'style-loader!css-loader!sass-loader'
+      },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]',
+          path: './files',
+          publicPath: 'files/',
+          outputPath: 'files/'
+        }
+      }
+    ]
   }
 }

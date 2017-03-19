@@ -35,5 +35,5 @@
    
 </script>
 
-<style lang="scss">
+<style lang="sass">
 </style>
