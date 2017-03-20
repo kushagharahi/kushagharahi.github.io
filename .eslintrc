@@ -5,7 +5,7 @@
     /* overrides -- vue/jsx-uses-vars is included in eslint-config-vue */
   },
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 5,
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": false

@@ -12327,6 +12327,38 @@ return Vue$3;
 //
 //
 
+var message = '';
+var formData = {};
+var formDisabled = false;
+module.exports = {
+  data: function data() {
+    return {
+      message: message,
+      formData: formData,
+      formDisaled: formDisabled,
+      submit: function submit() {
+        if (formData.validation.toLowerCase() !== 'blue') {
+          message = 'Invalid answer to spam dectection message.';
+        } else {
+          var xhr = new XMLHttpRequest();
+          var url = 'https://formspree.io/kushagharahi@gmail.com';
+          var params = {
+            Email: formData._replyto,
+            Message: formData.body,
+            Name: formData.fName + ' ' + formData.lName
+          };
+          xhr.open('POST', url, true);
+
+          // Send the proper header information along with the request
+          xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+          xhr.send(params);
+        }
+      }
+    };
+  }
+};
+
 /***/ }),
 /* 15 */
 /***/ (function(module, exports) {
@@ -15449,8 +15481,183 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div')
-},staticRenderFns: []}
+  return _c('div', [_c('p', [_vm._v("Feel free to drop me a line using the form below! I generally will reply within 2 business days. I look forward to connecting with you.")]), _vm._v(" "), _c('form', {
+    attrs: {
+      "name": "contactForm",
+      "novalidate": "",
+      "v.on:submit": "submit(validation)"
+    }
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.formData.fName),
+      expression: "formData.fName"
+    }],
+    staticClass: "form-input",
+    attrs: {
+      "name": "fName",
+      "disabled": _vm.formDisabled,
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.formData.fName)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.formData.fName = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.formData.lName),
+      expression: "formData.lName"
+    }],
+    staticClass: "form-input",
+    attrs: {
+      "name": "lName",
+      "disabled": _vm.formDisabled,
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.formData.lName)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.formData.lName = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.formData._replyto),
+      expression: "formData._replyto"
+    }],
+    staticClass: "form-email",
+    attrs: {
+      "type": "email",
+      "disabled": _vm.formDisabled,
+      "required": "",
+      "name": "_replyto"
+    },
+    domProps: {
+      "value": (_vm.formData._replyto)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.formData._replyto = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('textarea', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.formData.body),
+      expression: "formData.body"
+    }],
+    staticClass: "form-message",
+    attrs: {
+      "name": "body",
+      "disabled": _vm.formDisabled,
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.formData.body)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.formData.body = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _vm._m(4), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.formData.validation),
+      expression: "formData.validation"
+    }],
+    staticClass: "form-input",
+    attrs: {
+      "name": "validation",
+      "disabled": _vm.formDisabled,
+      "required": ""
+    },
+    domProps: {
+      "value": (_vm.formData.validation)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.formData.validation = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('input', {
+    attrs: {
+      "type": "submit",
+      "value": "Send",
+      "disabled": _vm.formDisabled
+    }
+  })]), _vm._v(" "), _vm._v("\"\n                   v-model=\"formData._subject\"\n                   name=\"_subject\"\n                   value=\"Contact - Kusha.Me\" />\n        ")])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "fName"
+    }
+  }, [_vm._v("First Name:")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "lName"
+    }
+  }, [_vm._v("Last Name:")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "_replyto"
+    }
+  }, [_vm._v("Email:")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "body"
+    }
+  }, [_vm._v("Message:")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', {
+    attrs: {
+      "for": "validation"
+    }
+  }, [_vm._v("What color is the sky on a clear day?")])])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
