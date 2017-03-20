@@ -2,7 +2,6 @@
     <div>
         <p>Feel free to drop me a line using the form below! I generally will reply within 2 business days. I look forward to connecting with you.</p>
         <form name="contactForm"
-              novalidate
               v-on:submit.prevent="submit()">
     
             <div class="form-group">
