@@ -27,10 +27,10 @@ module.exports = {
       {
         test: /.vue$/,
         loader: 'vue-loader',
+        exclude: [path.resolve(__dirname, 'node_modules')],
         options: {
           loaders: {
-            js: 'babel-loader',
-            exclude: [path.resolve(__dirname, 'node_modules')],
+            js: 'babel-loader'
           }
         }
       },

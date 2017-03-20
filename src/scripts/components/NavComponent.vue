@@ -11,20 +11,25 @@
 		<li><router-link class="navLink" active-class="active" to="/projects">Projects</router-link></li>
 		<li><router-link class="navLink" active-class="active" to="/contact">Contact</router-link></li>
 		<li>
-			<social-icon social-icon-name="github" class="socialIcon" link="http://github.com/kushagharahi" target="_blank"></social-icon>
+			<social-icon name="github" class="socialIcon" link="http://github.com/kushagharahi" target="_blank"></social-icon>
 		</li>
 		<li>
-			<social-icon social-icon-name="twitter" class="socialIcon" link="http://twitter.com/kushalulz" target="_blank"></social-icon>
+			<social-icon name="twitter" class="socialIcon" link="http://twitter.com/kushalulz" target="_blank"></social-icon>
 		</li>
 		<li>
-			<social-icon social-icon-name="linkedin" class="socialIcon"  link="http://linkedin.com/in/kushagharahi " target="_blank "></social-icon></li>
+			<social-icon name="linkedin" class="socialIcon"  link="http://linkedin.com/in/kushagharahi " target="_blank "></social-icon></li>
 		</ul>
 </div>
         </template>
 
 
         <script>
-
+		import SocialIcon from './SocialIconComponent.vue';
+ export default {
+	 components: {
+		SocialIcon
+	 }
+ }
         </script>
 
         <style lang="sass">
@@ -88,7 +93,7 @@
 	padding: 5px;
 }
 
-.socialIcon > a > img{
+.socialIcon > img{
 	height: 24px;
 	width: 24px;
 }
@@ -147,12 +152,12 @@
 		padding: 0px;
 	}
 	
-	.socialIcon > a {
+	.socialIcon{
 		display: block;
 		padding: 5px;
 	}
 
-	.socialIcon > a > img {
+	.socialIcon > img {
 		padding-left: 5px;
 	}
 }
