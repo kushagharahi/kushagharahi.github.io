@@ -3,7 +3,7 @@
         <p>Feel free to drop me a line using the form below! I generally will reply within 2 business days. I look forward to connecting with you.</p>
         <form name="contactForm"
               novalidate
-              v.on:submit="submit(validation)">
+              v-on:submit.prevent="submit()">
     
             <div class="form-group">
                 <label for="fName">First Name:</label>
@@ -72,44 +72,52 @@
                        v-bind:disabled="formDisabled">
             </div>
     
-            <p v-bind:class="{ errorText: message != '' }"
-               v-if="message != ''>{{message}}</p>
-        
-                <input type="hidden"
-                       v-model="formData._subject"
-                       name="_subject"
-                       value="Contact - Kusha.Me" />
+            
             </form>
+            <p v-bind:class="{errorText: error}">{{message}}</p>
         </div>
 </template>
 
 <script>
-var message = '';
-var formData = {};
-var formDisabled = false;
+var message = ''
+var formData = {
+  fName: '',
+  lName: '',
+  _replyto: '',
+  body: '',
+  validation: '',
+  _subject: 'Contact - Kusha.Me'
+}
+var formDisabled = false
+var error = false
 module.exports = {
   data: function () {
     return {
       message: message,
       formData: formData,
-      formDisaled: formDisabled,
+      formDisabled: formDisabled,
+      error: error,
       submit: function () {
         if (formData.validation.toLowerCase() !== 'blue') {
-          message = 'Invalid answer to spam dectection message.'
+          this.error = true
+          this.message = 'Invalid answer to spam dectection message.'
         } else {
-          var xhr = new XMLHttpRequest()
+          this.message = ''
+          this.error = false
           var url = 'https://formspree.io/kushagharahi@gmail.com'
           var params = {
-            Email: formData._replyto,
-            Message: formData.body,
-            Name: formData.fName + ' ' + formData.lName
+            Email: this.formData._replyto,
+            Message: this.formData.body,
+            Name: this.formData.fName + ' ' + formData.lName
           }
-          xhr.open('POST', url, true)
-
-                    // Send the proper header information along with the request
-          xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-
-          xhr.send(params)
+          this.$http.post(url, params, { 'Access-Control-Allow-Origin': true }).then(function (success) {
+            this.message = 'Form submitted. I look forward to connecting with you!'
+            this.formDisabled = true
+          }, function (err) {
+            this.error = true
+            this.message = 'There was an error processing the form, please try again or contact the webmaster @ kushagharahi(dot)gmail.com. Error: '
+            this.message += err
+          })
         }
       }
     }
@@ -118,4 +126,21 @@ module.exports = {
 </script>
 
 <style lang="sass">
+.form-group {
+	padding: 5px;
+}
+
+.form-message {
+	width:100%;
+	height:200px;
+}
+.form-input {
+	width:200px;
+	height:20px;
+}
+
+.form-email {
+	width:300px;
+	height:20px;
+}
 </style>
