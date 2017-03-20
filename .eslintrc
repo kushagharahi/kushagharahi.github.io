@@ -1,11 +1,17 @@
 {
-    "extends": [
-        "vue"
-    ],
-    "plugins": [
-        "vue", "html"
-    ],
-    "rules": {
-        "vue/jsx-uses-vars": 2
-    }
+  "plugins": ["html", "vue"],
+  "extends": ["vue"],
+  "rules": {
+    /* overrides -- vue/jsx-uses-vars is included in eslint-config-vue */
+  },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": false
+        }
+    },
+    "validate":[
+        ".vue"
+    ]
 }

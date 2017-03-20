@@ -1,25 +1,31 @@
 <template>
-<a :href="link" target="_blank" rel="noopener"><img :src="imgLink" v-on:mouseover="setHover(true)" v-on:mouseleave="setHover(false)" class="socialIcon"/></a>
+  <a :href="link"
+     target="_blank"
+     rel="noopener">
+    <img :src="imgLink"
+         v-on:mouseover="setHover(true)"
+         v-on:mouseleave="setHover(false)"
+         class="socialIcon" /></a>
 </template>
 
 <script>
 var imgLinkPrefix = require.context('res/img/social/', false, /\.png$/)
-                module.exports = {
-  props:[
-      'name', 'link'
+module.exports = {
+  props: [
+    'name', 'link'
   ],
-    data: function () {
+  data: function () {
     return {
-      imgLink: imgLinkPrefix('./' + this.name + ".png"),
+      imgLink: imgLinkPrefix('./' + this.name + '.png'),
       setHover: function (hover) {
-                    if (hover == true){
-                        this.imgLink = imgLinkPrefix('./' + this.name + "-hover" + ".png");
-                    } else {
-                        this.imgLink = imgLinkPrefix('./' + this.name + ".png");
-                    }
-                }
+        if (hover === true) {
+          this.imgLink = imgLinkPrefix('./' + this.name + '-hover' + '.png')
+        } else {
+          this.imgLink = imgLinkPrefix('./' + this.name + '.png')
+        }
+      }
     }
-  },
+  }
 }
 </script>
 

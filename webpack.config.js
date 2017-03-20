@@ -23,6 +23,15 @@ module.exports = {
   module: {
     // Special compilation rules
     rules: [
+       {
+        test: /.vue$/,
+        loader: 'eslint-loader',
+        exclude: [path.resolve(__dirname, 'node_modules')],
+        enforce: 'pre',
+        options: {
+          fix: true
+        }
+      },
       // use vue-loader for all *.vue files
       {
         test: /.vue$/,
