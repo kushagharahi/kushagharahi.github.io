@@ -8,7 +8,7 @@
     "echoCommand": true,
     "tasks": [
         {
-            "taskName": "compile",
+            "taskName": "webpack",
             "isBuildCommand": true
         },
         {
