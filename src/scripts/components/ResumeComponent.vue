@@ -21,7 +21,7 @@ module.exports = {
 <style lang="sass">
 .docIFrame {
 	width:100%;
-	height:600px;
+	height:800px;
 	margin: auto;
 	border: solid 1px lightgray;
 }
