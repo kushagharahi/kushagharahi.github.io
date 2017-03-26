@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="navMobileBG">
-      <a href="/#/"
+      <a href="/"
          class="navMobileTitle"
-         ng-bind="pageTitle"></a>
+         v-bind="mobilePageTitle"></a>
     </div>
     <input class="navMenu"
-           ng-model="mobileMenu"
+           v-model="mobileMenu"
            type="checkbox" />
     <label for="navMenu"></label>
     <ul class="nav">
@@ -59,8 +59,22 @@
 <script>
 import SocialIcon from './SocialIconComponent.vue'
 export default {
+  data: () => {
+    return {
+      mobilePageTitle: '',
+      mobileMenu: false
+    }
+  },
   components: {
     SocialIcon
+  },
+  watch: {
+    '$route' (to, from) {
+      this.pageTitle = to.meta.title + ' - kusha.me'
+      if (this.mobileMenu) {
+        this.mobileMenu = !this.mobileMenu
+      }
+    }
   }
 }
 </script>

@@ -5,13 +5,14 @@ try {
   require('os').networkInterfaces = () => ({})
 }
 
+var webpack = require('webpack')
 var path = require('path')
-//var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 module.exports = {
   entry: './src/scripts/main.js',
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js?[hash]',
+    chunkFilename: '[chunkhash].js',
     // To the `scripts` folder
     path: path.resolve(__dirname, './dist')
   },
@@ -40,6 +41,7 @@ module.exports = {
         loader: 'vue-loader',
         exclude: [path.resolve(__dirname, 'node_modules')],
         options: {
+          name: 'bundle',
           loaders: {
             js: 'babel-loader'
           }
@@ -68,12 +70,14 @@ module.exports = {
         }
       }
     ]
-  }// ,
-  // plugins: [
-  //   new PrerenderSpaPlugin(
-  //     // Absolute path to compiled SPA
-  //     path.join(__dirname, './dist'),
-  //     // List of routes to prerender
-  //     ['/', '/resume', '/projects', '/contact'])
-  // ]
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: function (module) {
+          // assumes vendor imports exist in the node_modules directory
+        return module.context && module.context.indexOf('node_modules') !== -1
+      }
+    })
+  ]
 }

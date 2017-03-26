@@ -20,9 +20,10 @@ module.exports = {
 
 <style lang="sass">
 .docIFrame {
-	width:100%;
-	height:800px;
-	margin: auto;
+  max-width: 826px; 
+  min-height: 1066px;
+	width: 100%;
+  margin: auto;
 	border: solid 1px lightgray;
 }
 </style>
