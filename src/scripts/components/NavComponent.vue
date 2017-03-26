@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import "~res/style/sass/_vars.scss";
+@import '~res/style/sass/_vars.scss';
 
 .nav, .navMobileBG {
 background-color: $primary-color;

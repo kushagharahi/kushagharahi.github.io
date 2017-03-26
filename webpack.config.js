@@ -1,11 +1,11 @@
 // Hack for Ubuntu on Windows: interface enumeration fails with EINVAL, so return empty.
 try {
-  require('os').networkInterfaces();
+  require('os').networkInterfaces()
 } catch (e) {
-  require('os').networkInterfaces = () => ({});
+  require('os').networkInterfaces = () => ({})
 }
 
-var path = require("path");
+var path = require('path')
 
 module.exports = {
   entry: './src/scripts/main.js',
@@ -16,14 +16,15 @@ module.exports = {
   },
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.js',
-      res: path.resolve(__dirname, './src/res')
+      'vue$': 'vue/dist/vue.esm.js',
+      'res': path.resolve(__dirname, './src/res'),
+      'models': path.resolve(__dirname, './src/models')
     }
   },
   module: {
     // Special compilation rules
     rules: [
-       {
+      {
         test: /.vue$/,
         loader: 'eslint-loader',
         exclude: [path.resolve(__dirname, 'node_modules')],

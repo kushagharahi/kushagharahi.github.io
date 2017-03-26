@@ -90,13 +90,13 @@ var formData = {
 var formDisabled = false
 var error = false
 module.exports = {
-  data: function () {
+  data: () => {
     return {
       message: message,
       formData: formData,
       formDisabled: formDisabled,
       error: error,
-      submit: function () {
+      submit: () => {
         if (formData.validation.toLowerCase() !== 'blue') {
           this.error = true
           this.message = 'Invalid answer to spam dectection message.'
@@ -109,10 +109,10 @@ module.exports = {
             Message: this.formData.body,
             Name: this.formData.fName + ' ' + formData.lName
           }
-          this.$http.post(url, params, { 'Access-Control-Allow-Origin': true }).then(function (success) {
+          this.$http.post(url, params, { 'Access-Control-Allow-Origin': true }).then((success) => {
             this.message = 'Form submitted. I look forward to connecting with you!'
             this.formDisabled = true
-          }, function (err) {
+          }, (err) => {
             this.error = true
             this.message = 'There was an error processing the form, please try again or contact the webmaster @ kushagharahi(dot)gmail.com. Error: '
             this.message += err

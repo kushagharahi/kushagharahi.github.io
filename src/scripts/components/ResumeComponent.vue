@@ -10,7 +10,7 @@
 
 <script>
 module.exports = {
-  data: function () {
+  data: () => {
     return {
       resumeUrl: 'https://docs.google.com/document/d/1vnGrGLXtvXVZ9E_Ih02o7cxjp1oxX_wi3Vg2n-m7aXs/pub?embedded=true'
     }
