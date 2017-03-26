@@ -6,6 +6,7 @@ try {
 }
 
 var path = require('path')
+//var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 module.exports = {
   entry: './src/scripts/main.js',
@@ -67,5 +68,12 @@ module.exports = {
         }
       }
     ]
-  }
+  }// ,
+  // plugins: [
+  //   new PrerenderSpaPlugin(
+  //     // Absolute path to compiled SPA
+  //     path.join(__dirname, './dist'),
+  //     // List of routes to prerender
+  //     ['/', '/resume', '/projects', '/contact'])
+  // ]
 }

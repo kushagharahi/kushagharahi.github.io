@@ -42,7 +42,7 @@
       <li>
         <social-icon name="twitter"
                      class="socialIcon"
-                     link="http://twitter.com/kushalulz"
+                     link="http://twitter.com/KKUUSSHHAA"
                      target="_blank"></social-icon>
       </li>
       <li>

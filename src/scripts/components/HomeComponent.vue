@@ -6,7 +6,7 @@
         TX
     </p>
 
-    <p>Hi, I'm Kusha, a developer building <a href="/#/projects">really cool stuff.</a> You can check out my <a href="/#/resume">resume</a>        or <a href="/#/contact/">contact me</a> as well.</p>
+    <p>Hi, I'm Kusha, a developer building <a href="/projects">really cool stuff.</a> You can check out my <a href="/resume">resume</a>        or <a href="/contact/">contact me</a> as well.</p>
 
     <hr></hr>
 

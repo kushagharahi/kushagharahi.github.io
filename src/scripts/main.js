@@ -19,14 +19,23 @@ Vue.component('nav-component', NavComponent)
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: HomeComponent },
-    { path: '/resume', component: ResumeComponent },
-    { path: '/projects', component: ProjectsComponent },
-    { path: '/contact', component: ContactComponent },
-    { path: '*', component: NotFoundComponent }
+    { path: '/', component: HomeComponent, meta: { title: 'Home' }},
+    { path: '/resume', component: ResumeComponent, meta: { title: 'Resume' }},
+    { path: '/projects', component: ProjectsComponent, meta: { title: 'Projects' }},
+    { path: '/contact', component: ContactComponent, meta: { title: 'Contact' }},
+    { path: '*', component: NotFoundComponent, meta: { title: 'Not Found' }}
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title + '  - kusha.me'
+  next()
 })
 
 const app = new Vue({
   router
-}).$mount('.app')
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+  app.$mount('.app')
+})
