@@ -3,4 +3,4 @@ node_modules/
 .vscode/settings.json
 dist/font/
 dist/imgs/
-dist/bundle.json
+dist/bundle.js
