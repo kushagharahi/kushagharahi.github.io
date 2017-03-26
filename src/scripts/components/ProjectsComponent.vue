@@ -32,7 +32,8 @@ export default {
 </script>
 
 <style lang="sass">
-@import '~res/style/sass/_vars.scss';
+$projectImgWidth: 210px;
+$projectImgHeight: 105px;
 
 .project{
 	display: inline-block;

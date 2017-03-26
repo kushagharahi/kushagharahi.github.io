@@ -78,25 +78,21 @@
 </template>
 
 <script>
-var formData = {
-  fName: '',
-  lName: '',
-  _replyto: '',
-  body: '',
-  validation: '',
-  _subject: 'Contact - Kusha.Me'
-}
-var formDisabled = false
-var error = false
 module.exports = {
   data: () => {
     return {
       message: '',
-      formData: formData,
-      formDisabled: formDisabled,
-      error: error,
+      formData: {
+        fName: '',
+        lName: '',
+        _replyto: '',
+        body: '',
+        validation: ''
+      },
+      formDisabled: false,
+      error: false,
       submit: () => {
-        if (formData.validation.toLowerCase() !== 'blue') {
+        if (this.formData.validation.toLowerCase() !== 'blue') {
           this.error = true
           this.message = 'Invalid answer to spam dectection message.'
         } else {
@@ -106,7 +102,7 @@ module.exports = {
           var params = {
             Email: this.formData._replyto,
             Message: this.formData.body,
-            Name: this.formData.fName + ' ' + formData.lName
+            Name: this.formData.fName + ' ' + this.formData.lName
           }
           this.$http.post(url, params, { 'Access-Control-Allow-Origin': true }).then((success) => {
             this.message = 'Form submitted. I look forward to connecting with you!'

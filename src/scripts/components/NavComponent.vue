@@ -1,17 +1,16 @@
 <template>
   <div>
     <div class="navMobileBG">
-      <a href="/"
-         class="navMobileTitle"
-         v-bind="mobilePageTitle"></a>
+      <router-link to="/"
+         class="navMobileTitle">{{mobilePageTitle}}</router-link>
     </div>
     <input class="navMenu"
            v-model="mobileMenu"
            type="checkbox" />
     <label for="navMenu"></label>
     <ul class="nav">
-      <li><a class="navTitle"
-           href="/">kusha.me</a></li>
+      <li><router-link class="navTitle"
+           to="/">kusha.me</router-link></li>
       <li>
         <router-link class="navLink"
                      active-class="active"
@@ -70,7 +69,7 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      this.pageTitle = to.meta.title + ' - kusha.me'
+      this.mobilePageTitle = to.meta.title + ' - kusha.me'
       if (this.mobileMenu) {
         this.mobileMenu = !this.mobileMenu
       }

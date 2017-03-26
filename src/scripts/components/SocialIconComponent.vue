@@ -14,10 +14,10 @@ module.exports = {
   props: [
     'name', 'link'
   ],
-  data: function () {
+  data: () => {
     return {
       imgLink: imgLinkPrefix('./' + this.name + '.png'),
-      setHover: function (hover) {
+      setHover: (hover) => {
         if (hover === true) {
           this.imgLink = imgLinkPrefix('./' + this.name + '-hover' + '.png')
         } else {
