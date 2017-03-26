@@ -14907,7 +14907,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', _vm._l((_vm.projects), function(project, index) {
+  return _c('div', _vm._l((_vm.projects), function(project) {
     return (!project.hide) ? _c('div', {
       staticClass: "project",
       staticStyle: {
@@ -14933,17 +14933,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticStyle: {
         "background-color": "#FFFFFF"
       }
-    }, [_c('h2', [_c('strong', [_vm._v(_vm._s(project.title))])]), _vm._v(" "), _vm._l((project.urls), function(site) {
+    }, [_c('h2', [_c('strong', [_vm._v(_vm._s(project.title))])]), _vm._v(" "), _vm._l((project.urls), function(site, siteIndex) {
       return _c('span', [_c('a', {
         attrs: {
           "target": "_blank",
           "rel": "noopener",
-          "to": site.url
+          "href": site.url
         }
-      }, [_vm._v(_vm._s(site.desc))]), (project.urls.length > 1 && index != project.urls.length - 1) ? _c('span', [_vm._v(" | ")]) : _vm._e()])
-    }), _vm._v(" "), _c('p', [_vm._v(_vm._s(project.blurb))]), _vm._v(" "), _c('p', [_vm._v("Tech used: "), _vm._l((project.techUsed), function(tech, index) {
-      return _c('strong', [_vm._v(_vm._s(tech.name))])
-    }), (project.techUsed.length > 1 && index != project.techUsed.length - 1) ? _c('span', [_vm._v(" | ")]) : _vm._e()], 2)], 2)]) : _vm._e()
+      }, [_vm._v(_vm._s(site.desc))]), (project.urls.length > 1 && siteIndex != project.urls.length - 1) ? _c('span', [_vm._v(" | ")]) : _vm._e()])
+    }), _vm._v(" "), _c('p', [_vm._v(_vm._s(project.blurb))]), _vm._v(" "), _c('p', [_vm._v("Tech used: "), _vm._l((project.techUsed), function(tech, techIndex) {
+      return _c('span', [_vm._v(_vm._s(tech.name)), (project.techUsed.length > 1 && techIndex != project.techUsed.length - 1) ? _c('span', [_vm._v(" | ")]) : _vm._e()])
+    })], 2)], 2)]) : _vm._e()
   }))
 },staticRenderFns: []}
 module.exports.render._withStripped = true
