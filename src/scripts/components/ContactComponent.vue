@@ -78,7 +78,6 @@
 </template>
 
 <script>
-var message = ''
 var formData = {
   fName: '',
   lName: '',
@@ -92,7 +91,7 @@ var error = false
 module.exports = {
   data: () => {
     return {
-      message: message,
+      message: '',
       formData: formData,
       formDisabled: formDisabled,
       error: error,

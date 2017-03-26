@@ -1,6 +1,6 @@
 <template>
 <div>
-  <p>I work full time currently at <a href="http://cagene.com" target="_blank" rel="noopener">CancerGene Connect</a> but am always interested in hearing what offers are available. Feel free to send inquiries <a :href="contact">here.</a></p>
+  <p>I work full time currently at <a href="http://cagene.com" target="_blank" rel="noopener">CancerGene Connect</a> but am always interested in hearing what offers are available. Feel free to send inquiries <router-link to="contact">here.</router-link></p>
     <iframe class="docIFrame" frameborder="0" :src="resumeUrl">Your browser does not support inline frames. Download the PDF down below.</iframe>
     <div class="clearfix"></div>
   <br />
