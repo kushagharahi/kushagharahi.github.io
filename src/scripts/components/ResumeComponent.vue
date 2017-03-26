@@ -19,11 +19,18 @@ module.exports = {
 </script>
 
 <style lang="sass">
+@import '~res/style/sass/_vars.scss';
+
 .docIFrame {
-  max-width: 826px; 
-  min-height: 1066px;
-	width: 100%;
+  width: 100%;
+  height: 1066px;
   margin: auto;
 	border: solid 1px lightgray;
+}
+
+@media screen and (max-width: $mobileMaxWidth) {
+  .docIFrame {
+    display: none;
+  }
 }
 </style>

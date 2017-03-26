@@ -32,4 +32,32 @@ export default {
 </script>
 
 <style lang="sass">
+@import '~res/style/sass/_vars.scss';
+
+.project{
+	display: inline-block;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+	width: 100%;
+	margin-bottom: 20px;
+  padding-top:10px;
+}
+
+.projectPreview, .projectContent {
+	display:inline-block;
+	vertical-align: middle;
+}
+
+.projectPreview {
+	padding: 10px;
+}
+
+.projectImg {
+	width: $projectImgWidth;
+	height: $projectImgHeight;
+}
+
+.projectContent {
+	padding: 10px;
+	max-width: $pageMaxWidth - $projectImgWidth - 45px;
+}
 </style>

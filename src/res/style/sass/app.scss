@@ -33,12 +33,12 @@ a {
 	margin: 0 auto;
  	max-width: $pageMaxWidth;
 	padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-@media screen and (max-width : 800px){
+@media screen and (max-width : $mobileMaxWidth){
 	.content {
 		margin: 20px;
-		padding-top: 25px;
-		padding:5px;
 	}
 }
 
@@ -60,33 +60,6 @@ a {
   top: 50%;
   left: 50%;
   margin: -60px 0 0 -60px;
-}
-
-
-.project{
-	display: inline-block;
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
-	width: 100%;
-	margin-bottom: 20px;
-}
-
-.projectPreview, .projectContent {
-	display:inline-block;
-	vertical-align: middle;
-}
-
-.projectPreview {
-	padding: 10px;
-}
-
-.projectImg {
-	width: $projectImgWidth;
-	height: $projectImgHeight;
-}
-
-.projectContent {
-	padding: 10px;
-	max-width: $pageMaxWidth - $projectImgWidth - 45px;
 }
 
 .kushaImg {

@@ -175,38 +175,37 @@ background-size:100%;
 display: block;
 }
 
-@media screen and (max-width : 800px){
+@media screen and (max-width : $mobileMaxWidth) {
+  .navMobileBG, .navMobileTitle, .navMenu[type=checkbox] + label {
+  display: inline-block;
+  }
 
-.navMobileBG, .navMobileTitle, .navMenu[type=checkbox] + label {
-display: inline-block;
-}
+  .nav, .navTitle {
+  display: none;
+  }
 
-.nav, .navTitle {
-display: none;
-}
+  .nav {
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 8px 10px rgba(0,0,0,0.15);
+  top: 40px;
+  }
 
-.nav {
-border-bottom: 1px solid rgba(0,0,0,0.15);
-box-shadow: 0 8px 10px rgba(0,0,0,0.15);
-top: 40px;
-}
+  .navLink, .socialIcon {
+  float: none;
+  }
 
-.navLink, .socialIcon {
-float: none;
-}
+  .socialIcon {
+  padding: 0px;
+  }
 
-.socialIcon {
-padding: 0px;
-}
+  .socialIcon{
+  display: block;
+  padding: 5px;
+  }
 
-.socialIcon{
-display: block;
-padding: 5px;
-}
-
-.socialIcon > img {
-padding-left: 5px;
-}
+  .socialIcon > img {
+  padding-left: 5px;
+  }
 }
 
 </style>
