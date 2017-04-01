@@ -68,6 +68,10 @@ module.exports = {
           publicPath: 'imgs/',
           outputPath: 'imgs/'
         }
+      },
+      {
+        test: /\.md$/,
+        loader: 'raw-loader'
       }
     ]
   },

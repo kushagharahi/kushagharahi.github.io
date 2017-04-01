@@ -1,11 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import NotFoundComponent from './components/NotFoundComponent.vue'
-import HomeComponent from './components/HomeComponent.vue'
-import ResumeComponent from './components/ResumeComponent.vue'
-import ProjectsComponent from './components/ProjectsComponent.vue'
-import ContactComponent from './components/ContactComponent.vue'
 import NavComponent from './components/NavComponent.vue'
 
 Vue.use(VueRouter)
@@ -21,7 +16,8 @@ const router = new VueRouter({
     { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume' }},
     { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects' }},
     { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact' }},
-    { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }}
+    { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }},
+    { path: '/blog', component: view('BlogPostComponent'), meta: { title: 'Blog Post' }}
   ]
 })
 

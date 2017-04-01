@@ -2,15 +2,17 @@
   <div>
     <div class="navMobileBG">
       <router-link to="/"
-         class="navMobileTitle">{{mobilePageTitle}}</router-link>
+                   class="navMobileTitle">{{mobilePageTitle}}</router-link>
     </div>
     <input class="navMenu"
            v-model="mobileMenu"
            type="checkbox" />
     <label for="navMenu"></label>
     <ul class="nav">
-      <li><router-link class="navTitle"
-           to="/">kusha.me</router-link></li>
+      <li>
+        <router-link class="navTitle"
+                     to="/">kusha.me</router-link>
+      </li>
       <li>
         <router-link class="navLink"
                      active-class="active"

@@ -28,6 +28,7 @@
     "eslint-plugin-vue": "^2.0.1",
     "file-loader": "^0.10.1",
     "node-sass": "^4.5.0",
+    "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
     "vue-loader": "^11.1.4",
@@ -43,6 +44,7 @@
     "kusha.me"
   ],
   "dependencies": {
+    "marked": "^0.3.6",
     "vue": "^2.2.4",
     "vue-router": "^2.3.0"
   }
