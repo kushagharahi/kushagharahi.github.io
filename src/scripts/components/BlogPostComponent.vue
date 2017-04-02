@@ -14,7 +14,7 @@ export default {
     }
   },
   computed: {
-    compiledMarkdown: () => {
+    compiledMarkdown: function () {
       return marked(this.rawMarkdown, { sanitize: true })
     }
   }

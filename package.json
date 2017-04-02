@@ -46,6 +46,7 @@
   "dependencies": {
     "marked": "^0.3.6",
     "vue": "^2.2.4",
+    "vue-resource": "^1.2.1",
     "vue-router": "^2.3.0"
   }
 }

@@ -1,9 +1,11 @@
 import Vue from 'vue'
+import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 
 import NavComponent from './components/NavComponent.vue'
 
 Vue.use(VueRouter)
+Vue.use(VueResource)
 
 require('res/style/sass/app.scss')
 
@@ -16,8 +18,8 @@ const router = new VueRouter({
     { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume' }},
     { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects' }},
     { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact' }},
-    { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }},
-    { path: '/blog', component: view('BlogPostComponent'), meta: { title: 'Blog Post' }}
+    { path: '/blog', component: view('BlogPostComponent'), meta: { title: 'Blog Post' }},
+    { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }}
   ]
 })
 

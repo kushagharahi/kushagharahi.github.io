@@ -91,7 +91,7 @@ module.exports = {
       },
       formDisabled: false,
       error: false,
-      submit: () => {
+      submit: function () {
         if (this.formData.validation.toLowerCase() !== 'blue') {
           this.error = true
           this.message = 'Invalid answer to spam dectection message.'
