@@ -1,5 +1,5 @@
 <template>
-  <a v-if="name" :href="link"
+  <a :href="link"
      target="_blank"
      rel="noopener">
     <img :src="imgLink"
@@ -11,18 +11,21 @@
 <script>
 var imgLinkPrefix = require.context('res/img/social/', false, /\.png$/)
 export default {
-  props: [
-    'name', 'link'
-  ],
-  data: () => {
+  props: ['name', 'link'],
+  data: function () {
     return {
-      imgLink: imgLinkPrefix('./' + this.name + '.png'),
-      setHover: (hover) => {
-        if (hover === true) {
-          this.imgLink = imgLinkPrefix('./' + this.name + '-hover.png')
-        } else {
-          this.imgLink = imgLinkPrefix('./' + this.name + '.png')
-        }
+      imgLink: ''
+    }
+  },
+  created: function () {
+    this.imgLink = imgLinkPrefix('./' + this.name + '.png')
+  },
+  methods: {
+    setHover (hover) {
+      if (hover === true) {
+        this.imgLink = imgLinkPrefix('./' + this.name + '-hover.png')
+      } else {
+        this.imgLink = imgLinkPrefix('./' + this.name + '.png')
       }
     }
   }

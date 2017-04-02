@@ -49,7 +49,7 @@
       <li>
         <social-icon name="linkedin"
                      class="socialIcon"
-                     link="http://linkedin.com/in/kushagharahi "
+                     link="http://linkedin.com/in/kushagharahi"
                      target="_blank "></social-icon>
       </li>
     </ul>
