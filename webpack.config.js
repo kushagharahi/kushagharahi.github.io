@@ -20,7 +20,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       'res': path.resolve(__dirname, './src/res'),
-      'models': path.resolve(__dirname, './src/models')
+      'models': path.resolve(__dirname, './src/models'),
+      'static': path.resolve(__dirname, './src/static')
     }
   },
   module: {
@@ -62,6 +63,15 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]',
+          publicPath: 'imgs/',
+          outputPath: 'imgs/'
+        }
+      },
+      {
+        test: /\.(ic)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]',
