@@ -29,13 +29,13 @@ const router = new VueRouter({
   ]
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach(function (to, from, next) {
   document.title = to.meta.title + '  - kusha.me'
   next()
 })
 
 const app = new Vue({
-  router
+  router: router
 })
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -47,5 +47,3 @@ function view (name) {
     require(['./components/' + name + '.vue'], resolve)
   }
 }
-
-export default router
