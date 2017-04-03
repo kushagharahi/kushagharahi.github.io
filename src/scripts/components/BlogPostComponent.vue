@@ -6,17 +6,16 @@
 
 <script>
 import marked from 'marked'
-import blogPostMarkdown from 'models/blog/posts/hello_world.md'
+var mdPrefix = require.context('models/blog/posts/', false, /\.md$/)
 export default {
   data: () => {
     return {
-      rawMarkdown: blogPostMarkdown
+      compiledMarkdown: ''
     }
   },
-  computed: {
-    compiledMarkdown: function () {
-      return marked(this.rawMarkdown, { sanitize: true })
-    }
+  created: function () {
+    var rawMarkdown = mdPrefix('./' + this.$route.query.name + '.md')
+    this.compiledMarkdown = marked(rawMarkdown, { sanitize: true })
   }
 }
 </script>

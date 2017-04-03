@@ -18,7 +18,8 @@ const router = new VueRouter({
     { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume' }},
     { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects' }},
     { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact' }},
-    { path: '/blog', component: view('BlogPostComponent'), meta: { title: 'Blog Post' }},
+    { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog' }},
+    { path: '/blog/post', component: view('BlogPostComponent'), meta: { title: 'Blog' }, query: { name: '' }},
     { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }}
   ]
 })
