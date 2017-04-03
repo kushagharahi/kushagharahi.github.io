@@ -15,6 +15,7 @@ export default {
   },
   created: function () {
     var rawMarkdown = mdPrefix('./' + this.$route.query.name + '.md')
+    this.$route.meta.title = this.$route.query.title
     this.compiledMarkdown = marked(rawMarkdown, { sanitize: true })
   }
 }

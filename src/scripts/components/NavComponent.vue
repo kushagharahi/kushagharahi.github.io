@@ -19,6 +19,16 @@
                      to="/"
                      exact>Home</router-link>
       </li>
+                <li>
+        <router-link class="navLink"
+                     active-class="active"
+                     to="/blog">Blog</router-link>
+      </li>
+            <li>
+        <router-link class="navLink"
+                     active-class="active"
+                     to="/projects">Projects</router-link>
+      </li>
       <li>
         <router-link class="navLink"
                      active-class="active"
@@ -27,17 +37,7 @@
       <li>
         <router-link class="navLink"
                      active-class="active"
-                     to="/projects">Projects</router-link>
-      </li>
-      <li>
-        <router-link class="navLink"
-                     active-class="active"
                      to="/contact">Contact</router-link>
-      </li>
-          <li>
-        <router-link class="navLink"
-                     active-class="active"
-                     to="/blog">Blog</router-link>
       </li>
       <li>
         <social-icon name="github"
