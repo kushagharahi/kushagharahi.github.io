@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rm -r dist/* && webpack",
     "buildprod": "rm -r dist/* && webpack -p",
-    "clean": "rm -r dist/*"
+    "clean": "rm -r dist/*",
+    "deployProd": "rm -r dist/* && webpack -p && git add . && git commit -m 'pushing new prod build' && git subtree push --prefix dist origin master"
   },
   "repository": {
     "type": "git",
