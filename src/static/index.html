@@ -20,6 +20,15 @@
 			<router-view></router-view>
 		</div>
 	</div>
+	<script>
+		(function(){
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect != location.href) {
+      history.replaceState(null, null, redirect);
+    }
+  })();
+		</script>
 	<script src="vendor.js"></script>
 	<script src="main.js"></script>
 
