@@ -1,5 +1,88 @@
 [
     {
+        "title": "kusha.me - My Portfolio Website",
+        "blurb": "The website you are currently on.",
+        "imgPreview": "kushame.png",
+        "urls": [
+            {
+                "url": "https://github.com/kushagharahi/kushagharahi.github.io",
+                "desc": "GitHub"
+            },
+            {
+                "url": "http://kusha.me/",
+                "desc": "kusha.me (recursive loop! don't press!)"
+            }
+        ],
+        "techUsed": [
+            {
+                "name": "VueJs 2.0"
+            },
+            {
+                "name": "Vue Router"
+            },
+            {
+                "name": "Vue Resource"
+            },
+            {
+                "name": "JavaScript/Es5"
+            },
+            {
+                "name": "HTML/CSS3"
+            },
+            {
+                "name": "Sass"
+            },
+            {
+                "name": "Webpack"
+            }
+        ]
+    },
+    {
+        "title": "MoodMusic - Built with IBM Watson",
+        "blurb": "A mood analyzing chatbot that uses IBM Watson's Natural Language Classifier to figure out a user's mood and searches our database of music classified by mood using IBM Watson's tone analyzer to generate a playlist of music of mood.",
+        "imgPreview": "",
+        "urls": [
+            {
+                "url": "https://github.com/kushagharahi/MoodMusic",
+                "desc": "GitHub"
+            }
+        ],
+        "techUsed": [
+            {
+                "name": "NodeJS"
+            },
+            {
+                "name": "PostgreSQL"
+            },
+            {
+                "name": "IBM Watson APIs"
+            },
+            {
+                "name": "Twitter's Bootstrap"
+            }
+        ]
+    },
+    {
+        "title": "DMSAddToCal - Chrome Extention",
+        "blurb": "A little extension to add a add to calendar button on the individual http://dallasmakerspace.org/ event pages.",
+        "imgPreview": "dmsaddtocal.png",
+        "urls": [
+            {
+                "url": "https://github.com/kushagharahi/DMSAddToCal",
+                "desc": "GitHub"
+            },
+            {
+                "url": "https://chrome.google.com/webstore/detail/add-dallas-makerspace-eve/ggamfjdgahgfkfdfjcoajoflbefhlbga",
+                "desc": "Chrome Web Store"
+            }
+        ],
+        "techUsed": [
+            {
+                "name": "JavaScript"
+            }
+        ]
+    },
+    {
         "title": "YoutubeNotGif - Chrome Extention",
         "blurb": "Chrome extention that marks all youtube links as [YOUTUBE] in bold and hot pink on Reddit.",
         "imgPreview": "youtubenotgif.png",
@@ -20,17 +103,13 @@
         ]
     },
     {
-        "title": "kusha.me - My Portfolio Website",
-        "blurb": "The website you are currently on.",
+        "title": "[OLD][v1]kusha.me - My Portfolio Website",
+        "blurb": "v1 of kusha.me",
         "imgPreview": "kushame.png",
         "urls": [
             {
-                "url": "https://github.com/kushagharahi/kushagharahi.github.io",
+                "url": "https://github.com/kushagharahi/kushagharahi.github.io/tree/AngularTS",
                 "desc": "GitHub"
-            },
-            {
-                "url": "http://kusha.me/",
-                "desc": "kusha.me (recursive loop! don't press!)"
             }
         ],
         "techUsed": [
