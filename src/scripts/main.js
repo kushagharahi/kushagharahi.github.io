@@ -9,10 +9,11 @@ Vue.use(VueResource)
 
 require('res/style/sass/app.scss')
 require('file-loader?name=[name].[ext]!static/index.html')
-require('file-loader?name=[name].[ext]!static/404.html') 
+require('file-loader?name=[name].[ext]!static/404.html')
 require('file-loader?name=[name].[ext]!static/favicon.ico')
 require('file-loader?name=[name]!static/CNAME')
 require('file-loader?name=[name].[ext]!static/robots.txt')
+require('file-loader?name=[name].[ext]!static/googledc065f3d00d77d9e.html')
 
 Vue.component('nav-component', NavComponent)
 
