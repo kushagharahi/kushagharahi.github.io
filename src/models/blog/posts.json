@@ -1,7 +1,7 @@
 [
     {
         "title": "First Blog Post",
-        "subtitle": "My first post about what the blog is and how I built it.",
+        "subtitle": "My 'Hello World' post",
         "name": "hello_world",
         "date_posted": "April 2nd 2016"
     }

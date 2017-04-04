@@ -168,7 +168,7 @@
     {
         "title": "Kinect-v2 Test Application",
         "blurb": "This program was built to familiarize myself with the Kinect v2 C# SDK. The program dectects your palms and adds a ball with collisons ablities. Realistic 2D ball physics ported from 'Super Fill Up' game.",
-        "imgPreview": "",
+        "imgPreview": "kinectv2.jpg",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/Kinect-v2-Testing",
@@ -239,7 +239,7 @@
     {
         "title": "LuckySe7ens - Dice Game",
         "blurb": "Under Over 7 dice game created for probability project in high school sophomore math class. Features simple animations using Java. The object of the game is to predict whether the dice will roll to a total of under 7 or over 7 or at 7.",
-        "imgPreview": "",
+        "imgPreview": "luckyse7ens.png",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/LuckySe7ens",

@@ -17,7 +17,7 @@
 
 <script>
 import projectJson from 'models/projects.json'
-var projectImgs = require.context('res/img/project/', false, /\.png$/)
+var projectImgs = require.context('res/img/project/', false, /\.(png|jpg)$/)
 export default {
   data: () => {
     return {
