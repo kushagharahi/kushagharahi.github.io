@@ -4,9 +4,13 @@
 ## Instructions
 * Clone repo
 * Make sure you have npm installed
-* do npm install
+* do `npm install`
 
 ### To compile
 * Dev: `npm run build`
 * Prod: `npm run buildprod`
 
+## Tech goals for kusha.me
+Hosted completely on GitHub pages
+
+### Bulit with VueJS
