@@ -14,3 +14,6 @@
 Hosted completely on GitHub pages
 
 ### Bulit with VueJS
+
+## Check out v1 built with AngularJs(1.0) and Typescript(2.0) here
+https://github.com/kushagharahi/kushagharahi.github.io/tree/AngularTS
