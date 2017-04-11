@@ -20,7 +20,7 @@ Vue.component('nav-component', NavComponent)
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: view('HomeComponent'), meta: { title: 'Home' }},
+    { path: '/', component: view('HomeComponent'), meta: { title: 'Kusha Gharahi - Software Engineer' }},
     { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume' }},
     { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects' }},
     { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact' }},
