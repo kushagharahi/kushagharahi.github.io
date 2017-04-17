@@ -2,7 +2,8 @@
     {
         "title": "First Blog Post",
         "subtitle": "My 'Hello World' post",
-        "name": "hello_world",
-        "date_posted": "April 2nd 2016"
+        "name": "first_blog_post",
+        "date_posted": "April 2nd 2016",
+        "author": "Kusha Gharahi"
     }
 ]

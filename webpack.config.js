@@ -7,6 +7,7 @@ try {
 
 var webpack = require('webpack')
 var path = require('path')
+var prerenderSpaPlugin = require('prerender-spa-plugin')
 
 module.exports = {
   entry: './src/scripts/main.js',
@@ -92,6 +93,12 @@ module.exports = {
           // assumes vendor imports exist in the node_modules directory
         return module.context && module.context.indexOf('node_modules') !== -1
       }
-    })
+    }),
+    new prerenderSpaPlugin(
+      // Absolute path to compiled SPA
+      path.join(__dirname, './dist'),
+      // List of routes to prerender
+      [ '/', '/blog', '/blog/first_blog_post', '/resume', '/contact' ]
+    )
   ]
 }

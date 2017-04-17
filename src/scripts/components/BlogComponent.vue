@@ -3,7 +3,7 @@
       <h1>Blog</h1>
       <div v-for="post in posts">
         <h2>
-          <router-link :to="'/blog/post?name=' + post.name + '&title='+ post.title">{{post.title}}</router-link>
+          <router-link :to="'/blog/' + post.name">{{post.title}}</router-link>
         </h2>
         <p>{{post.subtitle}}</p>
         <p>Date Posted: {{post.date_posted}} </p>

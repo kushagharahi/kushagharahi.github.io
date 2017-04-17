@@ -25,7 +25,7 @@ const router = new VueRouter({
     { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects' }},
     { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact' }},
     { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog' }},
-    { path: '/blog/post', component: view('BlogPostComponent'), meta: { title: 'Blog' }, query: { name: '' }},
+    { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog' }, params: { name: '' }},
     { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }}
   ]
 })
