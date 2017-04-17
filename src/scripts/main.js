@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
-
-import NavComponent from './components/NavComponent.vue'
+import App from './App.vue'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -14,8 +13,6 @@ require('file-loader?name=[name].[ext]!static/favicon.ico')
 require('file-loader?name=[name]!static/CNAME')
 require('file-loader?name=[name].[ext]!static/robots.txt')
 require('file-loader?name=[name].[ext]!static/googledc065f3d00d77d9e.html')
-
-Vue.component('nav-component', NavComponent)
 
 const router = new VueRouter({
   mode: 'history',
@@ -35,13 +32,18 @@ router.beforeEach(function (to, from, next) {
   next()
 })
 
-const app = new Vue({
-  router: router
+const root = new Vue({
+  el: '#app',
+  router: router,
+  render: function(h){
+    return h(App)
+  },
+  replace: false
 })
 
-document.addEventListener('DOMContentLoaded', function () {
-  app.$mount('.app')
-})
+// document.addEventListener('DOMContentLoaded', function () {
+//   root.$mount('#app')
+// })
 
 function view (name) {
   return function (resolve) {

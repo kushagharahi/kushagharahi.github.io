@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="app">
     <h2>Kusha Gharahi</h2>
     <p>Full Time - Full Stack Developer <br /> Full Time Student Pursuing Computer Science Degree at UT Dallas <br /> Dallas,
         TX
