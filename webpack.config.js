@@ -7,7 +7,7 @@
 
 var webpack = require('webpack')
 var path = require('path')
-var prerenderSpaPlugin = require('prerender-spa-plugin')
+var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 module.exports = {
   entry: './src/scripts/main.js',
@@ -28,6 +28,14 @@ module.exports = {
   module: {
     // Special compilation rules
     rules: [
+      {
+      test: /\.js$/,
+      loader: 'babel-loader',
+      include: [
+        path.join(__dirname, 'src')
+      ],
+      exclude: path.join(__dirname, 'node_modules')
+    },
       {
         test: /.vue$/,
         loader: 'eslint-loader',
@@ -94,11 +102,11 @@ module.exports = {
         return module.context && module.context.indexOf('node_modules') !== -1
       }
     }),
-    new prerenderSpaPlugin(
+    new PrerenderSpaPlugin(
       // Absolute path to compiled SPA
       path.join(__dirname, './dist'),
       // List of routes to prerender
-      [ '/', '/blog', '/blog/first_blog_post', '/resume', '/contact' ]
+       ['/', '/blog', '/blog/first_blog_post', '/resume', '/contact' ]
     )
   ]
 }

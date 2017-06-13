@@ -19,34 +19,28 @@ module.exports = __webpack_require__.p + "CNAME";
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "404.html";
+module.exports = __webpack_require__.p + "favicon.ico";
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "favicon.ico";
+module.exports = __webpack_require__.p + "googledc065f3d00d77d9e.html";
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "googledc065f3d00d77d9e.html";
+module.exports = __webpack_require__.p + "index.html";
 
 /***/ }),
 /* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "index.html";
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
 module.exports = __webpack_require__.p + "robots.txt";
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -72,7 +66,7 @@ if(false) {
 }
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -81,7 +75,7 @@ __webpack_require__(48)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(19),
+  __webpack_require__(18),
   /* template */
   __webpack_require__(45),
   /* scopeId */
@@ -110,10 +104,10 @@ module.exports = Component.exports
 
 
 /***/ }),
+/* 13 */,
 /* 14 */,
 /* 15 */,
-/* 16 */,
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -122,7 +116,7 @@ __webpack_require__(46)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(20),
+  __webpack_require__(19),
   /* template */
   __webpack_require__(43),
   /* scopeId */
@@ -151,7 +145,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -160,7 +154,7 @@ __webpack_require__(47)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(21),
+  __webpack_require__(20),
   /* template */
   __webpack_require__(44),
   /* scopeId */
@@ -189,12 +183,12 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_NavComponent_vue__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_NavComponent_vue__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_NavComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_NavComponent_vue__);
 //
 //
@@ -214,12 +208,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SocialIconComponent_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SocialIconComponent_vue__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SocialIconComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__SocialIconComponent_vue__);
 //
 //
@@ -308,7 +302,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -345,6 +339,58 @@ var imgLinkPrefix = __webpack_require__(50);
     }
   }
 });
+
+/***/ }),
+/* 21 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App_vue__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__App_vue__);
+
+
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]);
+__WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODULE_1_vue_resource__["a" /* default */]);
+
+__webpack_require__(11);
+__webpack_require__(9);
+// require('file-loader?name=[name].[ext]!static/404.html')
+__webpack_require__(7);
+__webpack_require__(6);
+__webpack_require__(10);
+__webpack_require__(8);
+
+var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
+  mode: 'history',
+  routes: [{ path: '/', component: view('HomeComponent'), meta: { title: 'Kusha Gharahi' } }, { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume' } }, { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects' } }, { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact' } }, { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog' } }, { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog' }, params: { name: '' } }, { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' } }]
+});
+
+router.beforeEach(function (to, from, next) {
+  document.title = to.meta.title + '  - kusha.me';
+  next();
+});
+
+var root = new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
+  el: '#app',
+  router: router,
+  render: function render(h) {
+    return h(__WEBPACK_IMPORTED_MODULE_3__App_vue___default.a);
+  },
+  replace: false
+}).$mount('#app');
+
+function view(name) {
+  return function (resolve) {
+    __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(51)("./" + name + '.vue')]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+  };
+}
 
 /***/ }),
 /* 22 */,
@@ -757,74 +803,9 @@ webpackContext.id = 50;
 /***/ }),
 /* 51 */,
 /* 52 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_resource__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_router__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App_vue__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__App_vue__);
-
-
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */])
-__WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODULE_1_vue_resource__["a" /* default */])
-
-__webpack_require__(12)
-__webpack_require__(10)
-__webpack_require__(7)
-__webpack_require__(8)
-__webpack_require__(6)
-__webpack_require__(11)
-__webpack_require__(9)
-
-const router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
-  mode: 'history',
-  routes: [
-    { path: '/', component: view('HomeComponent'), meta: { title: 'Kusha Gharahi' }},
-    { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume' }},
-    { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects' }},
-    { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact' }},
-    { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog' }},
-    { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog' }, params: { name: '' }},
-    { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }}
-  ]
-})
-
-router.beforeEach(function (to, from, next) {
-  document.title = to.meta.title + '  - kusha.me'
-  next()
-})
-
-const root = new __WEBPACK_IMPORTED_MODULE_0_vue__["a" /* default */]({
-  el: '#app',
-  router: router,
-  render: function(h){
-    return h(__WEBPACK_IMPORTED_MODULE_3__App_vue___default.a)
-  },
-  replace: false
-})
-
-// document.addEventListener('DOMContentLoaded', function () {
-//   root.$mount('#app')
-// })
-
-function view (name) {
-  return function (resolve) {
-    __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(51)("./" + name + '.vue')]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe)
-  }
-}
-
-
-/***/ }),
-/* 53 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ })
-],[52]);
+],[21]);

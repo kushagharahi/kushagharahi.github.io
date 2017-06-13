@@ -7,11 +7,11 @@ var map = {
 	"./BlogPostComponent.vue": 78,
 	"./ContactComponent.vue": 79,
 	"./HomeComponent.vue": 80,
-	"./NavComponent.vue": 17,
+	"./NavComponent.vue": 16,
 	"./NotFoundComponent.vue": 81,
 	"./ProjectsComponent.vue": 82,
 	"./ResumeComponent.vue": 83,
-	"./SocialIconComponent.vue": 18
+	"./SocialIconComponent.vue": 17
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -31,8 +31,7 @@ webpackContext.id = 51;
 
 /***/ }),
 /* 52 */,
-/* 53 */,
-/* 54 */
+/* 53 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -46,12 +45,12 @@ module.exports = [
 ];
 
 /***/ }),
-/* 55 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_models_blog_posts_json__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_models_blog_posts_json__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_models_blog_posts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_models_blog_posts_json__);
 //
 //
@@ -77,14 +76,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 56 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_marked__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_marked__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_marked___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_marked__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_models_blog_posts_json__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_models_blog_posts_json__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_models_blog_posts_json___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_models_blog_posts_json__);
 //
 //
@@ -123,7 +122,7 @@ var mdPrefix = __webpack_require__(98);
 });
 
 /***/ }),
-/* 57 */
+/* 56 */
 /***/ (function(module, exports) {
 
 //
@@ -249,6 +248,37 @@ module.exports = {
 };
 
 /***/ }),
+/* 57 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
 /* 58 */
 /***/ (function(module, exports) {
 
@@ -259,40 +289,9 @@ module.exports = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
 /* 59 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -332,7 +331,7 @@ var projectImgs = __webpack_require__(100);
 });
 
 /***/ }),
-/* 61 */
+/* 60 */
 /***/ (function(module, exports) {
 
 //
@@ -355,7 +354,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 62 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -364,6 +363,20 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 // module
 exports.push([module.i, "\n.project {\n  display: inline-block;\n  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);\n  width: 100%;\n  margin-bottom: 20px;\n  padding-top: 10px;\n}\n.projectPreview, .projectContent {\n  display: inline-block;\n  vertical-align: middle;\n}\n.projectPreview {\n  padding: 10px;\n}\n.projectImg {\n  width: 210px;\n  height: 105px;\n}\n.projectContent {\n  padding: 10px;\n  max-width: 595px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -391,7 +404,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\n.docIFrame {\n  width: 100%;\n  height: 1066px;\n  margin: auto;\n  border: solid 1px lightgray;\n}\n@media screen and (max-width: 850px) {\n.docIFrame {\n    display: none;\n}\n}\n", ""]);
 
 // exports
 
@@ -405,7 +418,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "\n.docIFrame {\n  width: 100%;\n  height: 1066px;\n  margin: auto;\n  border: solid 1px lightgray;\n}\n@media screen and (max-width: 850px) {\n.docIFrame {\n    display: none;\n}\n}\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -433,63 +446,49 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 68 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(0)(undefined);
-// imports
-
-
-// module
 exports.push([module.i, "\n.form-group {\n  padding: 5px;\n}\n.form-message {\n  width: 100%;\n  height: 200px;\n}\n.form-input {\n  width: 200px;\n  height: 20px;\n}\n.form-email {\n  width: 300px;\n  height: 20px;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 69 */
+/* 68 */
 /***/ (function(module, exports) {
 
 module.exports = "imgs/dmsaddtocal.png?30cee5d9f7c492b5d2ab344067685478";
 
 /***/ }),
-/* 70 */
+/* 69 */
 /***/ (function(module, exports) {
 
 module.exports = "imgs/kinectv2.jpg?68c8d428989c8250e83b01fd4e19e537";
 
 /***/ }),
-/* 71 */
+/* 70 */
 /***/ (function(module, exports) {
 
 module.exports = "imgs/kushame.png?de7383ae223ad48f3e9e0ef95d77447c";
 
 /***/ }),
-/* 72 */
+/* 71 */
 /***/ (function(module, exports) {
 
 module.exports = "imgs/luckyse7ens.png?72ed374ef05577c332d59fec2ff45d49";
 
 /***/ }),
-/* 73 */
+/* 72 */
 /***/ (function(module, exports) {
 
 module.exports = "imgs/somecode.png?3ac7ed970e773b1bdb5fdc9f1df85cc1";
 
 /***/ }),
-/* 74 */
+/* 73 */
 /***/ (function(module, exports) {
 
 module.exports = "imgs/youtubenotgif.png?4a588c13f6efd4221f70c1788fe10d89";
 
 /***/ }),
-/* 75 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -1782,6 +1781,12 @@ if (true) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
+/* 75 */
+/***/ (function(module, exports) {
+
+module.exports = "## CleanEarth.Life and my Earthack 2017 experience\n\n\n\n"
+
+/***/ }),
 /* 76 */
 /***/ (function(module, exports) {
 
@@ -1797,7 +1802,7 @@ __webpack_require__(95)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(55),
+  __webpack_require__(54),
   /* template */
   __webpack_require__(88),
   /* scopeId */
@@ -1835,7 +1840,7 @@ __webpack_require__(92)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(56),
+  __webpack_require__(55),
   /* template */
   __webpack_require__(85),
   /* scopeId */
@@ -1873,7 +1878,7 @@ __webpack_require__(97)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(57),
+  __webpack_require__(56),
   /* template */
   __webpack_require__(90),
   /* scopeId */
@@ -1911,7 +1916,7 @@ __webpack_require__(96)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(58),
+  __webpack_require__(57),
   /* template */
   __webpack_require__(89),
   /* scopeId */
@@ -1949,7 +1954,7 @@ __webpack_require__(93)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(59),
+  __webpack_require__(58),
   /* template */
   __webpack_require__(86),
   /* scopeId */
@@ -1987,7 +1992,7 @@ __webpack_require__(91)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(60),
+  __webpack_require__(59),
   /* template */
   __webpack_require__(84),
   /* scopeId */
@@ -2025,7 +2030,7 @@ __webpack_require__(94)
 
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(61),
+  __webpack_require__(60),
   /* template */
   __webpack_require__(87),
   /* scopeId */
@@ -2155,7 +2160,11 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('p', [_vm._v("I work full time currently at "), _c('a', {
+  return _c('div', {
+    attrs: {
+      "id": "content"
+    }
+  }, [_c('p', [_vm._v("I work full time currently at "), _c('a', {
     attrs: {
       "href": "http://cagene.com",
       "target": "_blank",
@@ -2458,7 +2467,7 @@ if (false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(62);
+var content = __webpack_require__(61);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2484,7 +2493,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(63);
+var content = __webpack_require__(62);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2510,7 +2519,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(64);
+var content = __webpack_require__(63);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2536,7 +2545,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(65);
+var content = __webpack_require__(64);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2562,7 +2571,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(66);
+var content = __webpack_require__(65);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2588,7 +2597,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(67);
+var content = __webpack_require__(66);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2614,7 +2623,7 @@ if(false) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(68);
+var content = __webpack_require__(67);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2638,6 +2647,7 @@ if(false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./cleanearthlife_and_my_earth_hack_experience.md": 75,
 	"./first_blog_post.md": 76
 };
 function webpackContext(req) {
@@ -2921,12 +2931,12 @@ module.exports = [
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./dmsaddtocal.png": 69,
-	"./kinectv2.jpg": 70,
-	"./kushame.png": 71,
-	"./luckyse7ens.png": 72,
-	"./somecode.png": 73,
-	"./youtubenotgif.png": 74
+	"./dmsaddtocal.png": 68,
+	"./kinectv2.jpg": 69,
+	"./kushame.png": 70,
+	"./luckyse7ens.png": 71,
+	"./somecode.png": 72,
+	"./youtubenotgif.png": 73
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
