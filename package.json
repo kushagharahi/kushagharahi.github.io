@@ -7,7 +7,7 @@
     "build": "rm -rf dist/* && webpack",
     "buildprod": "rm -rf dist/* && webpack -p",
     "clean": "rm -rf dist/*",
-    "deployprod": "git push origin `git subtree split --prefix dist master`:master --force"
+    "deployprod": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",
