@@ -369,11 +369,19 @@ __webpack_require__(8);
 
 var router = new __WEBPACK_IMPORTED_MODULE_2_vue_router__["a" /* default */]({
   mode: 'history',
-  routes: [{ path: '/', component: view('HomeComponent'), meta: { title: 'Kusha Gharahi' } }, { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume' } }, { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects' } }, { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact' } }, { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog' } }, { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog' }, params: { name: '' } }, { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' } }]
+  routes: [{ path: '/', component: view('HomeComponent'), meta: { title: 'Kusha Gharahi', description: 'Kusha Gharahi \ Software Engineer, Architect, Leader - Portfolio and Blog' } }, { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume', description: 'Kusha Gharahi \ Software Engineer, Architect, Leader - Resume' } }, { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects', description: 'Kusha Gharahi \ Software Engineer, Architect, Leader - Projects' } }, { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact', description: 'Kusha Gharahi \ Software Engineer, Architect, Leader - Contact Me' } }, { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog', description: 'Kusha Gharahi \ Software Engineer, Architect, Leader - Tech Blog' } }, { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog' }, params: { name: '' } }, { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' } }]
 });
 
 router.beforeEach(function (to, from, next) {
-  document.title = to.meta.title + '  - kusha.me';
+  var title = to.meta.title + '  - kusha.me';
+  document.title = title;
+  document.head.children["ogtitle"].content = title;
+  document.head.children["ogurl"].content = window.location.href;
+  document.head.children["ogdescription"].content = to.meta.description;
+  document.head.children["description"].content = to.meta.description;
+  document.head.children["twitter\\:card"].content = to.meta.description;
+  //To-Do Images
+  //document.head.children["ogimage"] = 
   next();
 });
 
