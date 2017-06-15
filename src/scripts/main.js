@@ -34,8 +34,11 @@ router.beforeEach(function (to, from, next) {
   document.head.children["ogurl"].content = window.location.href
   document.head.children["ogdescription"].content = to.meta.description
   document.head.children["description"].content = to.meta.description
+  document.head.children["twitter\:title"].content = title
+  document.head.children["twitter\:description"].content = to.meta.description
   //To-Do Images
   document.head.children["ogimage"].content = ""
+  document.head.children["twitter\:image"].content = ""
   next()
 })
 
