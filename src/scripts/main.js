@@ -17,11 +17,11 @@ require('file-loader?name=[name].[ext]!static/googledc065f3d00d77d9e.html')
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: view('HomeComponent'), meta: { title: 'Kusha Gharahi', description: 'Kusha Gharahi \\ Software Engineer, Architect, Leader - Portfolio and Blog' }},
-    { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume', description: 'Kusha Gharahi \\ Software Engineer, Architect, Leader - Resume' }},
-    { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects', description: 'Kusha Gharahi \\ Software Engineer, Architect, Leader - Projects' }},
-    { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact', description: 'Kusha Gharahi \\ Software Engineer, Architect, Leader - Contact Me' }},
-    { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog', description: 'Kusha Gharahi \\ Software Engineer, Architect, Leader - Tech Blog'}},
+    { path: '/', component: view('HomeComponent'), meta: { title: 'Kusha Gharahi', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Portfolio and Blog' }},
+    { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Resume' }},
+    { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Projects' }},
+    { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Contact Me' }},
+    { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Tech Blog'}},
     { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog' }, params: { name: '' }},
     { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }}
   ]
@@ -34,9 +34,9 @@ router.beforeEach(function (to, from, next) {
   document.head.children["ogurl"].content = window.location.href
   document.head.children["ogdescription"].content = to.meta.description
   document.head.children["description"].content = to.meta.description
-  document.head.children["twitter\\:card"].content = to.meta.description
+  document.head.children["twitter\:card"].content = to.meta.description
   //To-Do Images
-  //document.head.children["ogimage"] = 
+  document.head.children["ogimage"].content = ""
   next()
 })
 
