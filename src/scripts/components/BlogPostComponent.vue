@@ -26,7 +26,7 @@ export default {
     postsJson.forEach(p => {
       if (p.name === this.$route.params.name) {
         this.postMetadata = p
-        this.$route.meta.title = p.title + ' - kusha.me'
+        this.setMetaTags(p.title, p.subtitle, '')
       }
     })
   }
@@ -34,5 +34,4 @@ export default {
 </script>
 
 <style lang="sass">
-
 </style>

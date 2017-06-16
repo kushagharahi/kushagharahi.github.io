@@ -22,24 +22,9 @@ const router = new VueRouter({
     { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Projects' }},
     { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Contact Me' }},
     { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Tech Blog'}},
-    { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog' }, params: { name: '' }},
+    { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog', description: 'blog post'}, params: { name: '' }},
     { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }}
   ]
-})
-
-router.beforeEach(function (to, from, next) {
-  let title = to.meta.title + '  - kusha.me'
-  document.title = title
-  document.head.children["ogtitle"].content = title
-  document.head.children["ogurl"].content = window.location.href
-  document.head.children["ogdescription"].content = to.meta.description
-  document.head.children["description"].content = to.meta.description
-  document.head.children["twitter\:title"].content = title
-  document.head.children["twitter\:description"].content = to.meta.description
-  //To-Do Images
-  document.head.children["ogimage"].content = ""
-  document.head.children["twitter\:image"].content = ""
-  next()
 })
 
 const root = new Vue({
@@ -51,8 +36,31 @@ const root = new Vue({
   replace: false
 }).$mount('#app')
 
-function view (name) {
-  return function (resolve) {
-    require(['./components/' + name + '.vue'], resolve)
+Vue.mixin({
+  methods: {
+    setMetaTags: (title, description, image) => setMetaTags(title, description, image)
   }
+})
+
+function setMetaTags (title, description, image) { 
+        document.title = title
+        document.head.children["ogtitle"].content = title
+        document.head.children["ogurl"].content = window.location.href
+        document.head.children["ogdescription"].content = description
+        document.head.children["description"].content = description
+        document.head.children["twitter\:title"].content = title
+        document.head.children["twitter\:description"].content = description
+        document.head.children["ogimage"].content = image
+        document.head.children["twitter\:image"].content = image
 }
+
+
+function view (name) {
+  return resolve => 
+    require(['./components/'+ name + '.vue'], resolve)
+}
+
+router.afterEach(function (to, from) {
+  let title = to.meta.title + '  - kusha.me'
+  setMetaTags(title, to.meta.description, "")
+})

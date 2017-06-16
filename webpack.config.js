@@ -101,7 +101,7 @@ module.exports = {
           // assumes vendor imports exist in the node_modules directory
         return module.context && module.context.indexOf('node_modules') !== -1
       }
-    }),
+     }),
     new PrerenderSpaPlugin(
       // Absolute path to compiled SPA
       path.join(__dirname, './dist'),
