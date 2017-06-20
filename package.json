@@ -4,8 +4,8 @@
   "description": "## Instructions * Clone repo * Make sure you have npm installed * do npm install",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist/* && webpack",
-    "buildprod": "rm -rf dist/* && webpack -p",
+    "build": "rm -rf dist/* && webpack --config ./build/webpack.dev.config.js",
+    "buildprod": "rm -rf dist/* && webpack -p --config ./build/webpack.prod.config.js",
     "clean": "rm -rf dist/*",
     "deployprod": "git push origin `git subtree split --prefix dist dev`:master --force"
   },
@@ -38,7 +38,7 @@
     "style-loader": "^0.14.1",
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "^2.2.4",
-    "webpack": "^2.2.1"
+    "webpack": "^3.0.0"
   },
   "keywords": [
     "Kusha",
@@ -50,8 +50,8 @@
   ],
   "dependencies": {
     "marked": "^0.3.6",
-    "vue": "^2.2.4",
-    "vue-resource": "^1.2.1",
-    "vue-router": "^2.3.0"
+    "vue": "^2.3.4",
+    "vue-resource": "^1.3.4",
+    "vue-router": "^2.6.0"
   }
 }

@@ -1,65 +1,73 @@
-// Hack for Ubuntu on Windows: interface enumeration fails with EINVAL, so return empty.
-// try {
-//   require('os').networkInterfaces()
-// } catch (e) {
-//   require('os').networkInterfaces = () => ({})
-// }
-
 var webpack = require('webpack')
 var path = require('path')
-var PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 module.exports = {
   entry: './src/scripts/main.js',
   output: {
     filename: '[name].js?[hash]',
     chunkFilename: '[chunkhash].js',
-    // To the `scripts` folder
-    path: path.resolve(__dirname, './dist')
+    path: path.resolve(__dirname, '../dist')
   },
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'res': path.resolve(__dirname, './src/res'),
-      'models': path.resolve(__dirname, './src/models'),
-      'static': path.resolve(__dirname, './src/static')
+      'res': path.resolve(__dirname, '../src/res'),
+      'models': path.resolve(__dirname, '../src/models'),
+      'static': path.resolve(__dirname, '../src/static')
     }
   },
   module: {
     // Special compilation rules
     rules: [
       {
-      test: /\.js$/,
-      loader: 'babel-loader',
-      include: [
-        path.join(__dirname, 'src')
-      ],
-      exclude: path.join(__dirname, 'node_modules')
-    },
+        test: /\.js$/,
+        loader: 'babel-loader?presets=es2015',
+        include: [
+          path.join(__dirname, '../src')
+        ],
+        exclude: [path.resolve(__dirname, '../node_modules')]
+      },
       {
-        test: /.vue$/,
+        test: /\.js$/,
         loader: 'eslint-loader',
-        exclude: [path.resolve(__dirname, 'node_modules')],
+        exclude: [path.resolve(__dirname, '../node_modules')],
         enforce: 'pre',
         options: {
-          fix: true
+          fix: true,
+          configFile: './build/.eslintrc'
         }
       },
       // use vue-loader for all *.vue files
       {
         test: /.vue$/,
         loader: 'vue-loader',
-        exclude: [path.resolve(__dirname, 'node_modules')],
+        exclude: [path.resolve(__dirname, '../node_modules')],
         options: {
           name: 'bundle',
           loaders: {
-            js: 'babel-loader'
+            js: 'babel-loader?presets=es2015'
           }
         }
       },
       {
+        test: /.vue$/,
+        loader: 'eslint-loader',
+        exclude: [path.resolve(__dirname, '../node_modules')],
+        enforce: 'pre',
+        options: {
+          fix: true,
+          configFile: 'build/.eslintrc'
+        }
+      },
+      {
         test: /\.s[a|c]ss$/,
-        loader: 'style-loader!css-loader!sass-loader'
+        use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+        }, {
+          loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "sass-loader" // compiles Sass to CSS
+        }]
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
@@ -95,18 +103,5 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: function (module) {
-          // assumes vendor imports exist in the node_modules directory
-        return module.context && module.context.indexOf('node_modules') !== -1
-      }
-     }),
-    new PrerenderSpaPlugin(
-      // Absolute path to compiled SPA
-      path.join(__dirname, './dist'),
-      // List of routes to prerender
-       ['/', '/blog', '/blog/first_blog_post', '/resume', '/contact', '/projects' ]
-    )
   ]
 }

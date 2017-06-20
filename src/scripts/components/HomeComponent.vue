@@ -1,6 +1,7 @@
 <template>
 <div id="app">
-    <h2>Kusha Gharahi</h2>
+    <h1 class="fadeInDown">Hi,</h1>
+    <h1 class="fadeInDown">I'm Kusha</h1>
     <p>Full Time - Full Stack Developer <br /> Full Time Student Pursuing Computer Science Degree at UT Dallas <br /> Dallas,
         TX
     </p>
@@ -19,8 +20,7 @@
 
     <h2>About this website</h2>
     <p>Built with VueJs 2.0, my goal was to keep the site completely static and hosted on GitHub pages</p>
-    <a target="_blank" rel="noopener" href="https://github.com/kushagharahi/kushagharahi.github.io">GitHub repo</a> |
-    <a target="_blank" rel="noopener" href="https://trello.com/b/kTT3uS5b/kusha-me">Trello board/backlog</a>
+    <a target="_blank" rel="noopener" href="https://github.com/kushagharahi/kushagharahi.github.io">GitHub repo</a>
     </div>
 </template>
 
@@ -29,4 +29,5 @@
 </script>
 
 <style lang="sass">
+
 </style>

@@ -21,16 +21,16 @@ const router = new VueRouter({
     { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Resume' }},
     { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Projects' }},
     { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Contact Me' }},
-    { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Tech Blog'}},
-    { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog', description: 'blog post'}, params: { name: '' }},
+    { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Tech Blog' }},
+    { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog', description: 'blog post' }, params: { name: '' }},
     { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }}
   ]
 })
 
-const root = new Vue({
+new Vue({
   el: '#app',
   router: router,
-  render: function(h){
+  render: function (h) {
     return h(App)
   },
   replace: false
@@ -42,25 +42,24 @@ Vue.mixin({
   }
 })
 
-function setMetaTags (title, description, image) { 
-        document.title = title
-        document.head.children["ogtitle"].content = title
-        document.head.children["ogurl"].content = window.location.href
-        document.head.children["ogdescription"].content = description
-        document.head.children["description"].content = description
-        document.head.children["twitter\:title"].content = title
-        document.head.children["twitter\:description"].content = description
-        document.head.children["ogimage"].content = image
-        document.head.children["twitter\:image"].content = image
+function setMetaTags (title, description, image) {
+  document.title = title
+  document.head.children['ogtitle'].content = title
+  document.head.children['ogurl'].content = window.location.href
+  document.head.children['ogdescription'].content = description
+  document.head.children['description'].content = description
+  document.head.children['twitter\:title'].content = title
+  document.head.children['twitter\:description'].content = description
+  document.head.children['ogimage'].content = image
+  document.head.children['twitter\:image'].content = image
 }
 
-
 function view (name) {
-  return resolve => 
-    require(['./components/'+ name + '.vue'], resolve)
+  return resolve =>
+    require(['./components/' + name + '.vue'], resolve)
 }
 
 router.afterEach(function (to, from) {
-  let title = to.meta.title + '  - kusha.me'
-  setMetaTags(title, to.meta.description, "")
+  const title = to.meta.title + '  - kusha.me'
+  setMetaTags(title, to.meta.description, '')
 })
