@@ -17,7 +17,7 @@ config.plugins.push(new PrerenderSpaPlugin(
   // Absolute path to compiled SPA
   path.join(__dirname, '../dist'),
   // List of routes to prerender
-  ['/', '/blog', '/blog/first_blog_post', '/resume', '/contact', '/projects']
+  ['/', '/blog', '/blog/first_blog_post', '/resume', '/contact', '/projects', '/blog/access_localhost_from_vm_in_host_computer']
 ));
 
 module.exports = config;
