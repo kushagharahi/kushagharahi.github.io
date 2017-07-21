@@ -1,12 +1,11 @@
 <template>
 <div id="app">
     <h1 class="fadeInDown">Hi,</h1>
-    <h1 class="fadeInDown">I'm Kusha</h1>
-    <p>Full Time - Full Stack Developer <br /> Full Time Student Pursuing Computer Science Degree at UT Dallas <br /> Dallas,
+    <h1 class="fadeInDown">I'm Kusha, a developer building <a href="/projects">really cool stuff.</a> You can check out my <a href="/resume">resume</a>        or <a href="/contact/">contact me</a> here.</h1>
+   
+    <p>I am a: <br />Full Time - Full Stack Developer <br /> Full Time Student Pursuing Computer Science Degree at UT Dallas <br /> Dallas,
         TX
     </p>
-
-    <p>Hi, I'm Kusha, a developer building <a href="/projects">really cool stuff.</a> You can check out my <a href="/resume">resume</a>        or <a href="/contact/">contact me</a> as well.</p>
 
     <hr></hr>
 
