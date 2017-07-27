@@ -1,7 +1,7 @@
 [
     {
-        "title": "Expose ASP.NET running in Windows VM to host computer using VMWare Fusion 8",
-        "subtitle": "Access localhost in VM from your host computer ",
+        "title": "Access .NET app running in Windows VM from host computer using VMWare Fusion 8",
+        "subtitle": "Access localhost in VM from your Mac",
         "name": "access_localhost_from_vm_in_host_computer",
         "date_posted": "July 20th 2017",
         "author": "Kusha Gharahi"

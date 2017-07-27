@@ -1,9 +1,16 @@
-I spent a ton of time figuring this out today. Hope this helps!
+I spent a ton of time figuring this out today. We're in the process of moving from Windows to Macos and this makes .Net dev work a ton easier on Mac. Hope this helps! 
 
-* Make sure the Network Adapter for the VM is configured to share the ip of the VM with the host computer
-* Add an inbound rule to the windows firewall allowing connections from the port your project starts on
+Assumptions made for this tutorial:
+* VMWare Fusion 8
+* Windows 10 VM
+* IIS Express/Visual Studio project 
+
+
+* Make sure in your VM's Settings under `Network Adapter` is configured to share the ip of the VM with the host computer
+* Add an `inbound rule` to the Windows firewall allowing connections from the port your project starts on
 * Run `ipconfig` in CMD and get the ipv4 address of the Windows box
-* Go to project > (hidden folder) .vs > config > applicationhost.config and edit anywhere it says localhost to the ip you copied
-* instead of using localhost:{port} you use ip:{port}
+* Go to `$projectDirectory > (this is a hidden folder) .vs > config > applicationhost.config` and edit anywhere it says localhost to the ip you copied
+    * Note: Make sure under your project properties you have `Apply server settings to all users. (store in project file)` checked. Otherwise you need to edit the global IIS Express applcationhost.config settings.
+* Instead of using localhost:$port you can use ip:$port!
 
 Done! 
