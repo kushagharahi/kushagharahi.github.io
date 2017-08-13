@@ -1,14 +1,17 @@
 <template>
-    <div>
-      <h1>Blog</h1>
-      <div v-for="post in posts">
-        <h2>
-          <router-link :to="'/blog/' + post.name">{{post.title}}</router-link>
-        </h2>
-        <p>{{post.subtitle}}</p>
-        <p>Date Posted: {{post.date_posted}} </p>
-      </div>
+<div>
+  <h1>Blog</h1>
+  <div v-for="post in posts">
+    <div class="post">
+      <h2>
+        <router-link class="postTitle" :to="'/blog/' + post.name">{{post.title}}</router-link>
+      </h2>
+      <span class="postDate">{{post.date_posted}} </span>
+      <p>{{post.subtitle}}</p>
+      <p><router-link class="postTitle" :to="'/blog/' + post.name">Full post >></router-link></p>
     </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -23,5 +26,23 @@ export default {
 </script>
 
 <style lang="sass">
+h2 {
+  margin-bottom: .5rem;
+}
+.post {
+  margin-bottom: 4em;
+}
+.postTitle {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
+.postDate {
+    display: block;
+    margin-top: -.5rem;
+    margin-bottom: 1rem;
+    color: #9a9a9a;
+}
 </style>
