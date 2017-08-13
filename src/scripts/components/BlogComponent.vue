@@ -8,7 +8,7 @@
       </h2>
       <span class="postDate">{{post.date_posted}} </span>
       <p>{{post.subtitle}}</p>
-      <p><router-link class="postTitle" :to="'/blog/' + post.name">Full post >></router-link></p>
+      <p><router-link :to="'/blog/' + post.name">Full post >></router-link></p>
     </div>
   </div>
 </div>
@@ -26,11 +26,9 @@ export default {
 </script>
 
 <style lang="sass">
-h2 {
-  margin-bottom: .5rem;
-}
+
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 .postTitle {
   text-decoration: none;

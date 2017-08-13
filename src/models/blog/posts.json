@@ -3,14 +3,12 @@
         "title": "Access .NET app running in Windows VM from host computer using VMWare Fusion 8",
         "subtitle": "Access localhost in VM from your Mac",
         "name": "access_localhost_from_vm_in_host_computer",
-        "date_posted": "July 20th 2017",
-        "author": "Kusha Gharahi"
+        "date_posted": "July 20th 2017"
     },
     {
         "title": "First Blog Post",
         "subtitle": "My 'Hello World' post",
         "name": "first_blog_post",
-        "date_posted": "April 2nd 2016",
-        "author": "Kusha Gharahi"
+        "date_posted": "April 2nd 2016"
     }
 ]
