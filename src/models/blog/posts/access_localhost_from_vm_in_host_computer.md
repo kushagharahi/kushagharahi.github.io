@@ -10,7 +10,6 @@ Assumptions made for this tutorial:
 * Add an `inbound rule` to the Windows firewall allowing connections from the port your project starts on
 * Run `ipconfig` in CMD and get the ipv4 address of the Windows box
 * Go to `$projectDirectory > (this is a hidden folder) .vs > config > applicationhost.config` and edit anywhere it says localhost to the ip you copied
-    * Note: Make sure under your project properties you have `Apply server settings to all users. (store in project file)` checked. Otherwise you need to edit the global IIS Express applcationhost.config settings.
 * Instead of using localhost:$port you can use ip:$port!
 
 Done! 
