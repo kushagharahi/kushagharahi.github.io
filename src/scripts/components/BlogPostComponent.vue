@@ -26,7 +26,7 @@ export default {
       if (p.name === this.$route.params.name) {
         this.postMetadata = p
         if(firstImg != null)
-          this.setMetaTags(p.title, p.subtitle, firstImg.attributes.src.nodeValue)
+          this.setMetaTags(p.title, p.subtitle, window.location.origin + "/" + firstImg.attributes.src.nodeValue)
         else
           this.setMetaTags(p.title, p.subtitle, '')
       }
