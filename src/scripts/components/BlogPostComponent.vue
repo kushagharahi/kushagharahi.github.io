@@ -18,12 +18,17 @@ export default {
     }
   },
   created: function () {
-    var rawMarkdown = mdPrefix('./' + this.$route.params.name + '.md')
-    this.compiledMarkdown =rawMarkdown
+    this.compiledMarkdown = mdPrefix('./' + this.$route.params.name + '.md')
+    let parser = new DOMParser()
+    let doc = parser.parseFromString(this.compiledMarkdown, "text/xml")
+    let firstImg =doc.getElementsByTagName('img')[0]
     postsJson.forEach(p => {
       if (p.name === this.$route.params.name) {
         this.postMetadata = p
-        this.setMetaTags(p.title, p.subtitle, '')
+        if(firstImg != null)
+          this.setMetaTags(p.title, p.subtitle, firstImg.attributes.src.nodeValue)
+        else
+          this.setMetaTags(p.title, p.subtitle, '')
       }
     })
   }

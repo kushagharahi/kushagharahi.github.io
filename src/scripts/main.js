@@ -44,13 +44,13 @@ Vue.mixin({
 
 function setMetaTags (title, description, image) {
   document.title = title
-  document.head.children['ogtitle'].content = title
-  document.head.children['ogurl'].content = window.location.href
-  document.head.children['ogdescription'].content = description
+  document.head.children['og\:title'].content = title
+  document.head.children['og\:url'].content = window.location.href
+  document.head.children['og\:description'].content = description
   document.head.children['description'].content = description
   document.head.children['twitter\:title'].content = title
   document.head.children['twitter\:description'].content = description
-  document.head.children['ogimage'].content = image
+  document.head.children['og\:image'].content = image
   document.head.children['twitter\:image'].content = image
 }
 
