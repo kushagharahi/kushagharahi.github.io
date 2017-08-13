@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import marked from 'marked'
 import postsJson from 'models/blog/posts.json'
 var mdPrefix = require.context('models/blog/posts/', false, /\.md$/)
 export default {
@@ -20,7 +19,7 @@ export default {
   },
   created: function () {
     var rawMarkdown = mdPrefix('./' + this.$route.params.name + '.md')
-    this.compiledMarkdown = marked(rawMarkdown, { sanitize: true })
+    this.compiledMarkdown =rawMarkdown
     postsJson.forEach(p => {
       if (p.name === this.$route.params.name) {
         this.postMetadata = p

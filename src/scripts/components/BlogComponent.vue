@@ -30,12 +30,6 @@ export default {
 .post {
   margin-bottom: 2em;
 }
-.postTitle {
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}
 
 .postDate {
     display: block;

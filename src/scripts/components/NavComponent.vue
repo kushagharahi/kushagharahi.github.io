@@ -114,10 +114,16 @@ float: left;
 display: block;
 color: $nav-text-color;
 text-decoration:none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .navTitle {
-padding: 5px;
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 5px;
+padding-bottom: 5px;
 font-size: 20px;
 }
 
@@ -131,14 +137,12 @@ color: white;
 
 .navLink {
 padding: 10px;
-}
-
-.navLink:hover {
-background-color: #111;
-}
-
-.navLink.active {
-background-color: $secondary-color;
+  &:hover {
+    background-color: #111;
+  }
+  &.active {
+    background-color: $secondary-color;
+  }
 }
 
 .socialIcon {
