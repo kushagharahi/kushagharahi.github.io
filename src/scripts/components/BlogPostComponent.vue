@@ -42,4 +42,9 @@ export default {
     margin-bottom: 1rem;
     color: #9a9a9a;
 }
+img {
+  max-width: 100%; 
+  display:block; 
+  height: auto;
+}
 </style>

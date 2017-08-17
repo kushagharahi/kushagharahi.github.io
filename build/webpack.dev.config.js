@@ -99,13 +99,13 @@ module.exports = {
       {
         test: /\.md$/,
         use: [
-                    {
-                        loader: "vue-html-loader"
-                    },
-                    {
-                        loader: "markdown-loader"
-                    }
-                ]
+          {
+            loader: 'vue-html-loader'
+          },
+          {
+            loader: 'markdown-loader'
+          }
+        ]
       }
     ]
   },
