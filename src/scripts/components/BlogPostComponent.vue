@@ -1,7 +1,7 @@
 <template>
     <div class="post">
-        <h2>{{postMetadata.title}}</h2>
-        <span class="postDate">{{postMetadata.date_posted}} </span>
+        <h2>{{postMetaData.title}}</h2>
+        <span class="postDate">{{postMetaData.date_posted}} </span>
         <div v-html="compiledMarkdown"></div>
         <a target="_blank" rel="noopener" :href="'https://github.com/kushagharahi/kushagharahi.github.io/blob/dev/src/models/blog/posts/' + $route.params.name + '.md'">Suggest a change to this post here! (requires a GitHub account)</a>
     </div>
@@ -14,25 +14,30 @@ export default {
   data: () => {
     return {
       compiledMarkdown: '',
-      postMetadata: {}
+      postMetaData: {}
+    }
+  },
+  methods: {
+    getFirstImage: (htmlString) => {
+      let markdown =  htmlString
+      let parser = new DOMParser()
+      let doc = parser.parseFromString(markdown, "text/xml")
+      return doc.getElementsByTagName('img')[0]
     }
   },
   created: function () {
-    this.compiledMarkdown = mdPrefix('./' + this.$route.params.name + '.md')
-    let parser = new DOMParser()
-    let doc = parser.parseFromString(this.compiledMarkdown, "text/xml")
-    let firstImg =doc.getElementsByTagName('img')[0]
-    postsJson.forEach(p => {
-      if (p.name === this.$route.params.name) {
-        this.postMetadata = p
-        if(firstImg != null)
-          this.setMetaTags(p.title, p.subtitle, window.location.origin + "/" + firstImg.attributes.src.nodeValue)
-        else
-          this.setMetaTags(p.title, p.subtitle, '')
+    let markdown = mdPrefix('./' + this.$route.params.name + '.md')
+    this.compiledMarkdown = markdown
+    this.postMetaData = postsJson.filter(p => p.name == this.$route.params.name)[0]
+    var firstImg = this.getFirstImage(markdown)
+    if(firstImg != null) {
+      firstImg = firstImg.attributes.src.nodeValue
+      this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle, firstImg)
+    }
+    else
+      this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle, '')
       }
-    })
   }
-}
 </script>
 
 <style lang="sass">

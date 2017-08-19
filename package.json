@@ -4,7 +4,7 @@
   "description": "## Instructions * Clone repo * Make sure you have npm installed * do npm install",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist/* && webpack --config ./build/webpack.dev.config.js",
+    "build": "rm -rf dist/* && webpack --config ./build/webpack.dev.config.js --display-entrypoints",
     "buildprod": "rm -rf dist/* && webpack -p --config ./build/webpack.prod.config.js",
     "clean": "rm -rf dist/*",
     "deployprod": "git push origin `git subtree split --prefix dist dev`:master --force",
@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/kushagharahi/kushagharahi.github.io#readme",
   "devDependencies": {
-    "babel-core": "^6.24.0",
+    "babel-core": "^6.26.0",
     "babel-loader": "^6.4.1",
-    "babel-polyfill": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.0",
     "css-loader": "^0.27.3",
     "eslint": "^3.18.0",
@@ -34,13 +34,13 @@
     "file-loader": "^0.10.1",
     "markdown-loader": "^2.0.1",
     "node-sass": "^4.5.0",
-    "prerender-spa-plugin": "^2.0.1",
+    "prerender-spa-plugin": "^2.1.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^11.1.4",
-    "vue-template-compiler": "^2.2.4",
-    "webpack": "^3.0.0",
+    "vue-template-compiler": "^2.4.2",
+    "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1"
   },
   "keywords": [
@@ -52,7 +52,7 @@
     "kusha.me"
   ],
   "dependencies": {
-    "vue": "^2.3.4",
+    "vue": "^2.4.2",
     "vue-resource": "^1.3.4",
     "vue-router": "^2.6.0"
   }

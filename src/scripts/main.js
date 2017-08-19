@@ -27,14 +27,18 @@ const router = new VueRouter({
   ]
 })
 
-new Vue({
+var root = new Vue({
   el: '#app',
   router: router,
   render: function (h) {
     return h(App)
   },
   replace: false
-}).$mount('#app')
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+  root.$mount('#app')
+})
 
 Vue.mixin({
   methods: {
@@ -45,13 +49,15 @@ Vue.mixin({
 function setMetaTags (title, description, image) {
   document.title = title
   document.head.children['og\:title'].content = title
-  document.head.children['og\:url'].content = window.location.href
+  document.head.children['og\:url'].content = 'https://kusha.me' + window.location.pathname
   document.head.children['og\:description'].content = description
   document.head.children['description'].content = description
   document.head.children['twitter\:title'].content = title
   document.head.children['twitter\:description'].content = description
-  document.head.children['og\:image'].content = image
-  document.head.children['twitter\:image'].content = image
+  if (image != null && image !== '') {
+    document.head.children['og\:image'].content = 'https://kusha.me/' + image
+    document.head.children['twitter\:image'].content = 'https://kusha.me/' + image
+  }
 }
 
 function view (name) {
@@ -60,6 +66,8 @@ function view (name) {
 }
 
 router.afterEach(function (to, from) {
-  const title = to.meta.title + '  - kusha.me'
-  setMetaTags(title, to.meta.description, '')
+  if (to.meta.description !== 'blog post') {
+    const title = to.meta.title + '  - kusha.me'
+    setMetaTags(title, to.meta.description, '')
+  }
 })
