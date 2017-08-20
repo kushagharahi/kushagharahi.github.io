@@ -13,7 +13,7 @@ require('file-loader?name=[name].[ext]!static/favicon.ico')
 require('file-loader?name=[name]!static/CNAME')
 require('file-loader?name=[name].[ext]!static/robots.txt')
 require('file-loader?name=[name].[ext]!static/googledc065f3d00d77d9e.html')
-require('file-loader?name=[name].[ext]!res/img/logo/logo.png')
+require('file-loader?name=[name].[ext]&outputPath=imgs/!res/img/logo/logo.png')
 const router = new VueRouter({
   mode: 'history',
   routes: [
@@ -58,8 +58,8 @@ function setMetaTags (title, description, image) {
     document.head.children['og\:image'].content = 'https://kusha.me/' + image
     document.head.children['twitter\:image'].content = 'https://kusha.me/' + image
   } else {
-    document.head.children['og\:image'].content = 'https://kusha.me/img/logo.png'
-    document.head.children['twitter\:image'].content = 'https://kusha.me/logo.png'
+    document.head.children['og\:image'].content = 'https://kusha.me/imgs/logo.png'
+    document.head.children['twitter\:image'].content = 'https://kusha.me/imgs/logo.png'
   }
 }
 
