@@ -13,7 +13,7 @@ require('file-loader?name=[name].[ext]!static/favicon.ico')
 require('file-loader?name=[name]!static/CNAME')
 require('file-loader?name=[name].[ext]!static/robots.txt')
 require('file-loader?name=[name].[ext]!static/googledc065f3d00d77d9e.html')
-require('file-loader?name=[name].[ext]&outputPath=imgs/!res/img/logo/logo.png')
+require('res/img/logo/logo.png')
 const router = new VueRouter({
   mode: 'history',
   routes: [
