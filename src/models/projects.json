@@ -15,19 +15,13 @@
         ],
         "techUsed": [
             {
-                "name": "VueJs 2.0"
-            },
-            {
-                "name": "Vue Router"
+                "name": "VueJS 2.0"
             },
             {
                 "name": "Vue Resource"
             },
             {
-                "name": "JavaScript/Es5"
-            },
-            {
-                "name": "HTML/CSS3"
+                "name": "JavaScript"
             },
             {
                 "name": "Sass"
