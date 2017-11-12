@@ -14,8 +14,8 @@ export default {
       }
     },
    methods: {
-       terminalout: function (domElement, statement) {
-            return new Promise(function(resolve, reject) {
+       terminalOutCommand: (domElement, statement) => {
+            return new Promise((resolve, reject) => {
             let terminal = domElement;
             // if(terminal.innerHTML.length != 0)
             //     terminal.appendChild(document.createElement("br"));
@@ -25,16 +25,24 @@ export default {
                         if(statement.charAt(i) == "*")
                             terminal.appendChild(document.createElement("br"));
                         terminal.innerHTML += statement.charAt(i);
-                    }, 50 * i);
+                        if(i == statement.length -1)
+                          resolve();
+                    }, 100 * i);
                 }
+ 
+           })
+       },
+       terminalOutHtml: (domElement, html) => {
+            return new Promise((resolve, reject) => {
+            domElement.innerHTML += html;
                 resolve();
            })
-
        }
     },
     mounted:  function () {
-         this.terminalout(document.getElementById("shell-body"),"man about | cat *(about1)** Hi,*  I'm Kusha, a developer building really cool stuff. You can check out my resume or contact me</a> here.");
-         
+         this.terminalOutCommand(document.getElementById("shell-body"),"man about | cat").then(() => {
+          this.terminalOutHtml(document.getElementById("shell-body"), "<br />(about1)<br /> Hi,<br />  I'm Kusha, a developer building really cool stuff. You can check out my resume or contact me</a> here.")
+         });
     }
   }
 </script>
