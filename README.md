@@ -3,7 +3,7 @@ Personal Website
 
 Source code for [kusha.me](https://kusha.me), my static portfolio website and blog built on VueJS and hosted on GitHub pages.
 
-Essentials
+Essentials:
 * Clone repo
 * Make sure you have `npm` installed
 * Run `npm install` to restore dependencies 
