@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import MacConsoleComponent from './MacConsoleComponent.vue'
+import MacConsoleComponent from 'scripts/components/MacConsoleComponent.vue'
 
 export default {
   components: { MacConsoleComponent }

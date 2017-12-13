@@ -65,7 +65,7 @@ function setMetaTags (title, description, image) {
 
 function view (name) {
   return resolve =>
-    require(['./components/' + name + '.vue'], resolve)
+    require(['./components/pages/' + name + '.vue'], resolve)
 }
 
 router.afterEach(function (to, from) {

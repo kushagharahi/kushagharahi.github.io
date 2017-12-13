@@ -13,7 +13,8 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       'res': path.resolve(__dirname, '../src/res'),
       'models': path.resolve(__dirname, '../src/models'),
-      'static': path.resolve(__dirname, '../src/static')
+      'static': path.resolve(__dirname, '../src/static'),
+      'scripts': path.resolve(__dirname, '../src/scripts')
     }
   },
   module: {
