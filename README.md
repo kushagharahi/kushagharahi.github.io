@@ -4,7 +4,7 @@ Source code for [kusha.me](https://kusha.me), my static blog and portfolio websi
 
 ## Getting Started 
 
-You will need [npm](https://www.npmjs.com/) installed. The `dev` branch is for on-going development and `rc` branch is the code for the current `master` branch compiled site. 
+You will need [npm](https://www.npmjs.com/) installed. The `dev` branch is for on-going development. `master` is the current compiled site, and `rc` is the code for the current `master` compiled site.
 
 All commands assumed to be run in the root project directory.
 * Clone repo
