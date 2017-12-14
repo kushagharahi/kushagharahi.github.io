@@ -1,6 +1,7 @@
 <template>
 <div id="app">
     <mac-console-component class="shadow"></mac-console-component>
+    <br />
     <div id="center">
     <social-icon name="github"
                      class="socialIcon"
@@ -32,6 +33,7 @@ export default {
 
 <style lang="sass">
 #center {
+    display: flex;
     margin: 0 auto;
     width: 25px;
 }

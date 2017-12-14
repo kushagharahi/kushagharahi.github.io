@@ -1,17 +1,13 @@
 <template>
 <div class="projectContainer">
   <div class="project shadow hover" v-for="project in projects" v-if="!project.hide">
-      <div class="projectPreview">
           <img class="projectImg" v-if="project.imgPreview != ''" :src="pictureDir(project.imgPreview)"></img>
           <img class="projectImg" v-if="project.imgPreview == ''" :src="noPictureRes"></img>
-      </div>
-      <div class="projectContent">
+
           <h2><strong>{{project.title}}</strong></h2>
           <span v-for="(tech, techIndex) in project.techUsed"><span class="label">{{tech.name}}</span><span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1"></span>&nbsp;</span>
           <p><span v-for="(site, siteIndex) in project.urls"> <a target="_blank" rel="noopener" :href="site.url">{{site.desc}}</a><span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span></span></p>
-          <p>{{project.blurb}}</p>
-          
-      </div>
+          <p>{{project.blurb}}</p> 
     </div>
 </div>
 </template>
@@ -36,35 +32,27 @@ export default {
 @import '~res/style/sass/_vars.scss';
 
 .projectContainer{
-  display: flex;
-  flex-wrap: wrap;
+  display: flex; 
+  flex-flow: row wrap;
+  justify-content: center;
   position: absolute;
   z-index: -1;
   left: 0;
 }
 
 .project{
-  flex: 1 0 400px;
-  margin: 2em;
+  flex: 0 1 400px;
   padding: 2em;
-}
-
-.projectPreview {
-  max-height: 230px;
-  overflow: hidden;
+  margin: 2em;
 }
 
 .projectImg {
 	width: 100%;
 }
 
-.projectContent {
-  padding: 5px;
-}
-
 .label {
     background-color: #985e6d;
-    display: inline;
+    display: inline-block;
     padding: .2em .6em .3em;
     font-size: 75%;
     font-weight: 700;

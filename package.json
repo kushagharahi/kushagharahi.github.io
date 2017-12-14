@@ -8,7 +8,7 @@
     "buildprod": "rm -rf dist/* && webpack -p --config ./build/webpack.prod.config.js",
     "clean": "rm -rf dist/*",
     "deployprod": "git push origin `git subtree split --prefix dist dev`:master --force",
-    "start": "webpack-dev-server --config ./build/webpack.dev.config.js --content-base dist/ --history-api-fallback"
+    "start": "rm -rf dist/* && webpack-dev-server --config ./build/webpack.dev.config.js --content-base dist/ --history-api-fallback"
   },
   "repository": {
     "type": "git",
