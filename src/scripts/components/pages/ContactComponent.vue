@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <p>Feel free to drop me a line using the form below! I generally will reply within 2 business days. I look forward to connecting with you.</p>
+    <div class="shadow" style="padding: 2em">
+        <p>Feel free to drop me a line using the form below! I generally will reply within 1 business days. I look forward to connecting with you.</p>
         <form name="contactForm"
               v-on:submit.prevent="submit()">
     

@@ -18,11 +18,12 @@ body {
     margin: 0;
 	font-family: $font;
 	line-height: 1.5;
-	color: $text-color;
+  color: $text-color;
+  background: #192231
 }
 
 h1, h2, strong {
-  color: #333;
+  color: #aaaaaa;
 }
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
@@ -75,4 +76,14 @@ a {
 
 .vaildText {
 	color: $text-color;
+}
+
+.shadow {
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,.2),0 3px 3px 0 rgba(0,0,0,.14),0 4px 3px -1px rgba(0,0,0,.12);
+}
+
+.hover {
+  &:hover{
+    background-color: #161e2c;
+  }
 }

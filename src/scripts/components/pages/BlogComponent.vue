@@ -2,7 +2,7 @@
 <div>
   <h1>Blog</h1>
   <div v-for="post in posts">
-    <div class="post">
+    <div class="post shadow hover">
       <h2>
         <router-link class="postTitle" :to="'/blog/' + post.name">{{post.title}}</router-link>
       </h2>
@@ -28,7 +28,8 @@ export default {
 <style lang="sass">
 
 .post {
-  margin-bottom: 2em;
+  margin: 2em;
+  padding: 2em;
 }
 
 .postDate {

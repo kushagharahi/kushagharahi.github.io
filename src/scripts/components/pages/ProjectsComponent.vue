@@ -1,6 +1,6 @@
 <template>
 <div class="projectContainer">
-  <div class="project" v-for="project in projects" v-if="!project.hide">
+  <div class="project shadow hover" v-for="project in projects" v-if="!project.hide">
       <div class="projectPreview">
           <img class="projectImg" v-if="project.imgPreview != ''" :src="pictureDir(project.imgPreview)"></img>
           <img class="projectImg" v-if="project.imgPreview == ''" :src="noPictureRes"></img>
@@ -35,25 +35,18 @@ export default {
 <style lang="sass">
 @import '~res/style/sass/_vars.scss';
 
-.content {
-  max-width:100%;
-  margin:0;
-  padding: 0;
-  padding-top: 41px;
-}
-
 .projectContainer{
   display: flex;
   flex-wrap: wrap;
+  position: absolute;
+  z-index: -1;
+  left: 0;
 }
 
 .project{
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
   flex: 1 0 400px;
-  background-color: #192231;
-  &:hover{
-    background-color: #161e2c;
-  }
+  margin: 2em;
+  padding: 2em;
 }
 
 .projectPreview {
@@ -68,10 +61,6 @@ export default {
 
 .projectContent {
   padding: 5px;
-  h2 > strong {
-    color: #aaaaaa;
-  }
-  color: #aaaaaa;
 }
 
 .label {
