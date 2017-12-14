@@ -50,7 +50,6 @@ export default {
 }
 
 .projectPreview {
-  min-height: 230px;
   max-height: 230px;
   overflow: hidden;
 }
