@@ -34,7 +34,7 @@ export default {
 <style lang="sass">
 #center {
     display: flex;
-    margin: 0 auto;
-    width: 25px;
+    justify-content: center;
+    width: 100%
 }
 </style>
