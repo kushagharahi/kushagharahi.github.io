@@ -1,6 +1,6 @@
 {
   "name": "kusha.me",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "## Instructions * Clone repo * Make sure you have npm installed * do npm install",
   "main": "index.js",
   "scripts": {
