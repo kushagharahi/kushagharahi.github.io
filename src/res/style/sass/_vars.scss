@@ -1,7 +1,13 @@
 $primary-color: #494E6B;
 $secondary-color: #985E6D;
-$text-color: #555;
+$text-color: #aaaaaa;
 $nav-text-color: white; 
 $font: 'Open Sans', sans-serif;
 $pageMaxWidth: 850px;
 $mobileMaxWidth: 850px;
+
+@font-face {
+    font-family: "SF Display";
+    font-weight: 400;
+    src: url("https://sf.abarba.me/SF-UI-Display-Regular.otf");
+  }

@@ -4,40 +4,50 @@
         <span class="postDate">{{postMetaData.date_posted}} </span>
         <div v-html="compiledMarkdown"></div>
         <a target="_blank" rel="noopener" :href="'https://github.com/kushagharahi/kushagharahi.github.io/blob/dev/src/models/blog/posts/' + $route.params.name + '.md'">Suggest a change to this post here! (requires a GitHub account)</a>
+         <div class="comments">
+          <vue-disqus shortname="kusha-me" :identifier="this.$route.params.name" :url="canonicalURL"></vue-disqus>
+        </div>
     </div>
+
+ 
+
 </template>
 
 <script>
 import postsJson from 'models/blog/posts.json'
+
 var mdPrefix = require.context('models/blog/posts/', false, /\.md$/)
 export default {
+  components: {
+  },
   data: () => {
     return {
       compiledMarkdown: '',
-      postMetaData: {}
+      postMetaData: {},
+      canonicalURL: ''
     }
   },
   methods: {
     getFirstImage: (htmlString) => {
-      let markdown =  htmlString
-      let parser = new DOMParser()
-      let doc = parser.parseFromString(markdown, "text/xml")
+      const markdown = htmlString
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(markdown, 'text/xml')
       return doc.getElementsByTagName('img')[0]
     }
   },
   created: function () {
-    let markdown = mdPrefix('./' + this.$route.params.name + '.md')
+    this.canonicalURL = window.location.href;
+    const markdown = mdPrefix('./' + this.$route.params.name + '.md')
     this.compiledMarkdown = markdown
     this.postMetaData = postsJson.filter(p => p.name == this.$route.params.name)[0]
     var firstImg = this.getFirstImage(markdown)
-    if(firstImg != null) {
+    if (firstImg != null) {
       firstImg = firstImg.attributes.src.nodeValue
       this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle, firstImg)
-    }
-    else
-      this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle, '')
-      }
+    } else { this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle, '') }
   }
+  }
+
 </script>
 
 <style lang="sass">
@@ -47,9 +57,7 @@ export default {
     margin-bottom: 1rem;
     color: #9a9a9a;
 }
-img {
+.post img {
   max-width: 100%; 
-  display:block; 
-  height: auto;
 }
 </style>

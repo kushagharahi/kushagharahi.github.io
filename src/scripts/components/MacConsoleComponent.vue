@@ -41,7 +41,7 @@ export default {
     },
     mounted:  function () {
          this.terminalOutCommand(document.getElementById("shell-body"),"man about | cat").then(() => {
-          this.terminalOutHtml(document.getElementById("shell-body"), "<br />(about1)<br /> Hi,<br />  I'm Kusha, a developer building really cool stuff. You can check out my resume or contact me</a> here.")
+          this.terminalOutHtml(document.getElementById("shell-body"), "<br />(about1)<br /> Hi,<br />  I'm Kusha, a full stack software engineer <a href='/projects'>building really cool stuff</a> in my spare time.<br /> You can also check out my <a href='/resume'>resume here</a>. <br /> Or, drop me a line on my <a href='/contact'>contact page</a>.")
          });
     }
   }
@@ -82,15 +82,15 @@ export default {
   list-style: none;
   background: #141414;
   color: #45D40C;
-  font: 0.8em 'Andale Mono', Consolas, 'Courier New';
   line-height: 1.6em;
-
+  font: "SF Display";
   -webkit-border-bottom-right-radius: 3px;
   -webkit-border-bottom-left-radius: 3px;
   -moz-border-radius-bottomright: 3px;
   -moz-border-radius-bottomleft: 3px;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
+  min-height:300px;
 }
 
 #shell-body div:before {
@@ -104,6 +104,7 @@ export default {
   word-wrap: break-word;
   position: relative;
   padding: 0 0 0 15px;
+
 }
 
 </style>
