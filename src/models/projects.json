@@ -33,7 +33,7 @@
     },
     {
         "title": "MoodMusic - Built with IBM Watson",
-        "blurb": "A mood analyzing chatbot that uses IBM Watson's Natural Language Classifier to figure out a user's mood and searches our database of music classified by mood using IBM Watson's tone analyzer to generate a playlist of music of mood.",
+        "blurb": "A web based conversational chatbot that attempts to analyze a user’s mood to offer song suggestions based on how they’re feeling. Moodmusic uses IBM Watson's Natural Language Classifier to figure out a user's mood and searches our database of music classified by mood to generate a playlist of music of mood.",
         "imgPreview": "",
         "urls": [
             {
@@ -199,8 +199,8 @@
     },
     {
         "title": "Super Fill Up - 2D Ball physics simulation",
-        "blurb": "Classic Super Fill Up game written in Java for project in high school senior computer science. Notable features: realistic ball physics and collisions.",
-        "imgPreview": "",
+        "blurb": "Super Fill Up's objective is to fill the screen up with a limited supply of lives. Written in Java for project in high school senior computer science. Notable features: ball physics and collisions.",
+        "imgPreview": "superfillup.png",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/Super-Fill-up",

@@ -1,5 +1,11 @@
 [
     {
+        "title": "My Git command line cheat sheet!",
+        "subtitle": "A list I keep for Git command line syntax reference.",
+        "name": "git_command_line_cheat_sheet",
+        "date_posted": "December 17th 2017"
+    },
+    {
         "title": "Access .NET app running in Windows VM from host computer using VMWare Fusion 8",
         "subtitle": "Access localhost in VM from your Mac",
         "name": "access_localhost_from_vm_in_host_computer",

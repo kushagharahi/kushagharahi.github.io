@@ -10,17 +10,14 @@ var config = require('./webpack.dev.config')
 //     return module.context && module.context.indexOf('node_modules') !== -1
 //   }
 // }));
-config.plugins.push(new webpack.optimize.AggressiveMergingPlugin());
-config.plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
-config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+config.plugins.push(new webpack.optimize.AggressiveMergingPlugin())
+config.plugins.push(new webpack.optimize.ModuleConcatenationPlugin())
+config.plugins.push(new webpack.optimize.UglifyJsPlugin())
 config.plugins.push(new PrerenderSpaPlugin(
   // Absolute path to compiled SPA
   path.join(__dirname, '../dist'),
   // List of routes to prerender
-  ['/', '/blog', '/blog/first_blog_post', '/resume', '/contact', '/projects', '/blog/access_localhost_from_vm_in_host_computer']
-));
+  ['/', '/blog', '/blog/first_blog_post', '/resume', '/contact', '/projects', '/blog/access_localhost_from_vm_in_host_computer', '/blog/git_command_line_cheat_sheet']
+))
 
-module.exports = config;
-
-
- 
+module.exports = config
