@@ -1,7 +1,9 @@
 var webpack = require('webpack')
 var PrerenderSpaPlugin = require('prerender-spa-plugin')
+var SitemapPlugin = require('sitemap-webpack-plugin').default
 var path = require('path')
 var config = require('./webpack.dev.config')
+var paths = ['/', '/blog', '/blog/first_blog_post', '/resume', '/contact', '/projects', '/blog/access_localhost_from_vm_in_host_computer', '/blog/git_command_line_cheat_sheet']
 
 // config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
 //   name: 'vendor',
@@ -17,7 +19,14 @@ config.plugins.push(new PrerenderSpaPlugin(
   // Absolute path to compiled SPA
   path.resolve(__dirname, '../dist'),
   // List of routes to prerender
-  ['/', '/blog', '/blog/first_blog_post', '/resume', '/contact', '/projects', '/blog/access_localhost_from_vm_in_host_computer', '/blog/git_command_line_cheat_sheet']
+  paths,
+  {
+    ignoreJSErrors: true
+  }
 ))
+config.plugins.push(new SitemapPlugin(
+  'https://kusha.me', paths, {
+    skipGzip: true
+  }))
 
 module.exports = config
