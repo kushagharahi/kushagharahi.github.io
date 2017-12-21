@@ -4,9 +4,6 @@
         <span class="postDate">{{postMetaData.date_posted}} </span>
         <div v-html="compiledMarkdown"></div>
         <a target="_blank" rel="noopener" :href="'https://github.com/kushagharahi/kushagharahi.github.io/blob/dev/src/models/blog/posts/' + $route.params.name + '.md'">Suggest a change to this post here! (requires a GitHub account)</a>
-         <div class="comments">
-          <vue-disqus shortname="kusha-me" :identifier="this.$route.params.name" :url="canonicalURL"></vue-disqus>
-        </div>
     </div>
 
  
@@ -23,9 +20,8 @@ export default {
   data: () => {
     return {
       compiledMarkdown: '',
-      postMetaData: {},
-      canonicalURL: ''
-    }
+      postMetaData: {}
+      }
   },
   methods: {
     getFirstImage: (htmlString) => {
@@ -36,7 +32,6 @@ export default {
     }
   },
   created: function () {
-    this.canonicalURL = window.location.href;
     const markdown = mdPrefix('./' + this.$route.params.name + '.md')
     this.compiledMarkdown = markdown
     this.postMetaData = postsJson.filter(p => p.name == this.$route.params.name)[0]
