@@ -8,7 +8,7 @@
     "buildprodmac": "rm -rf dist/* && webpack -p --config ./build/webpack.prod.config.js",
     "buildprodwin": "rmdir dist /s /q && mkdir dist && webpack -p --config ./build/webpack.prod.config.js",
     "clean": "rm -rf dist/*",
-    "deployprod": "git push origin `git subtree split --prefix dist dev`:master --force",
+    "deployprod": "git push origin `git subtree split --prefix dist rc`:master --force",
     "start": "rm -rf dist/* && webpack-dev-server --config ./build/webpack.dev.config.js --content-base dist/ --history-api-fallback"
   },
   "repository": {
