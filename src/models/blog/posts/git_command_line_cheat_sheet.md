@@ -83,3 +83,8 @@ This is a list I keep of imporant Git commands that I try to keep updated:
     * `git fetch`
     * `git checkout <branch>`
 
+* Add new remote 
+    * `git remote add origin <url>`
+
+* Change remote url
+    * `git remote set-url origin <url>`
