@@ -9,15 +9,19 @@ You will need [npm](https://www.npmjs.com/) installed. The `dev` branch is for o
 All commands assumed to be run in the root project directory.
 * Clone repo
 * Run `npm install` to restore dependencies 
-* To compile without prerendering and JS Obfuscation run `npm run build`, it will output the compiled site to `/dist`
-* To compile with prerendering and JS Obfuscation: `npm run buildprod`, it will output the compiled site to `/dist`
-* To start a http server with hot-reloading run `npm start` This launches a [webpack-dev-server](https://github.com/webpack/webpack-dev-server) on `8080`. 
+* To compile without prerendering and JS Obfuscation: `npm run unix-dev-build/win-dev-build`
+** Outputs the compiled site to `/dist`
+* To compile with prerendering and JS Obfuscation: `npm run unix-prod-build/win-prod-build` 
+** Outputs the compiled site to `/dist`
+* To start a http server with hot-reloading: `npm run unix-start-dev-server/win-start-dev-server` This launches a [webpack-dev-server](https://github.com/webpack/webpack-dev-server) on `8080`. 
 
 ## Deployment
 
-You can modify the `deployProd` command in the `package.json` to force push the `/dist` folder contents to the branch specified. If GitHub pages is set up on the repository you can push to the branch that your site is hosted off of. Usage: `npm run deployProd`
+The `npm run unix-deploy-prod/win-deploy-prod` commands will build prod, clone the $branch_specified's (currently master) git history into the `dist/` folder, then commit the dist folder contents to the $branch_specified. 
 
-You can also use this command to push "revisions" of the compiled site onto another branch.
+You can also use these commands to push "revisions" of the compiled site onto another branch.
+
+Basically, these commands compile the site and pushes the compiled site to another branch. This makes it convenient for anyone hosting off of a git branch (like GitHub pages does).
 
 ## Built With
 
