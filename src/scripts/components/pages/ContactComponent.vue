@@ -119,7 +119,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 .form-group {
 	padding: 5px;
 }

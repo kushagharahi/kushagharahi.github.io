@@ -85,21 +85,21 @@ export default {
 }
 </script>
 
-<style lang="sass">
-@import '~res/style/sass/_vars.scss';
+<style lang="scss">
+@import '~res/style/scss/_vars.scss';
 
 .nav, .navMobileBG {
-background-color: $primary-color;
-position: fixed;
-top: 0;
-width: 100%;    
-overflow: hidden;
-margin: 0;
-padding: 0; 
+  background-color: $primary-color;
+  position: fixed;
+  top: 0;
+  width: 100%;    
+  overflow: hidden;
+  margin: 0;
+  padding: 0; 
 }
 
 .nav {
-list-style: none;
+  list-style: none;
 }
 
 .navMobileBG {

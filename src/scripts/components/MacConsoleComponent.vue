@@ -47,7 +47,7 @@ export default {
   }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 
 #shell-top-bar {
   text-align: center;

@@ -45,7 +45,7 @@ export default {
 
 </script>
 
-<style lang="sass">
+<style lang="scss">
 .postDate {
     display: block;
     margin-top: -.5rem;

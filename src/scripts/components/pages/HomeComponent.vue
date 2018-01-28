@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 #center {
     display: flex;
     justify-content: center;

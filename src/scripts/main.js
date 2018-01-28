@@ -6,7 +6,7 @@ import App from './App.vue'
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
-require('res/style/sass/app.scss')
+require('res/style/scss/app.scss')
 require('file-loader?name=[name].[ext]!static/index.html')
 require('file-loader?name=[name].[ext]!static/404.html')
 require('file-loader?name=[name].[ext]!static/favicon.ico')

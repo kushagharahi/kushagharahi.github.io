@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 
 .post {
   margin: 2em;

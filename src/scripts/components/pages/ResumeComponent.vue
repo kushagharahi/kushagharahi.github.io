@@ -20,8 +20,8 @@ module.exports = {
 }
 </script>
 
-<style lang="sass">
-@import '~res/style/sass/_vars.scss';
+<style lang="scss">
+@import '~res/style/scss/_vars.scss';
 
 .docIFrame {
   width: 100%;

@@ -34,7 +34,7 @@ module.exports = {
         enforce: 'pre',
         options: {
           fix: true,
-          configFile: './build/.eslintrc'
+          configFile: './build/.eslintrc.js'
         }
       },
       // use vue-loader for all *.vue files
@@ -56,17 +56,17 @@ module.exports = {
         enforce: 'pre',
         options: {
           fix: true,
-          configFile: 'build/.eslintrc'
+          configFile: 'build/.eslintrc.js'
         }
       },
       {
-        test: /\.s[a|c]ss$/,
+        test: /\.scss$/,
         use: [{
           loader: 'style-loader' // creates style nodes from JS strings
         }, {
           loader: 'css-loader' // translates CSS into CommonJS
         }, {
-          loader: 'sass-loader' // compiles Sass to CSS
+          loader: 'sass-loader' // compiles Scss to CSS
         }]
       },
       {
@@ -79,21 +79,10 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|ico)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]',
-          publicPath: 'imgs/',
-          outputPath: 'imgs/'
-        }
-      },
-      {
-        test: /\.(ic)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]',
-          publicPath: 'imgs/',
-          outputPath: 'imgs/'
+          name: '[name].[ext]?[hash]'
         }
       },
       {
