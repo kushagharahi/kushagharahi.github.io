@@ -3,32 +3,22 @@
 Source code for [kusha.me](https://kusha.me), my static blog and portfolio website built on VueJS and hosted on GitHub pages. 
 
 ## Getting Started 
-branch     | description
-
------------------------------------------------------
-
- `dev`     | on-going development. 
-
- `master`  | current compiled site
-
- `rc`      | source code for current `master` branch
+| branch    | description
+|:---------:|:----------------------------------------:|
+| `dev`     | on-going development.                    |
+| `master`  | current compiled site                    |
+| `rc`      | source code for current `master` branch  |
 
 You will need [npm](https://www.npmjs.com/) installed. 
 
 command                         | OS       | description
-
+:------------------------------:|:--------:|:------------------------------------------------------------------------------------------------------:|
 `npm install`                   | win/unix | restore dependencies
-
 `npm run unix-dev-build`        | unix     | Compile to `dist` w/o prerendering and JS Obfuscation
-
 `npm run win-dev-build`         | win      | ""
-
 `npm run unix-prod-build`       | unix     | Compile to `dist` with prerendering and JS Obfuscation
-
 `npm run win-prod-build`        | win      | ""
-
 `npm run unix-start-dev-server` | unix     | Starts a [http server](https://github.com/webpack/webpack-dev-server) on `8080` with hot-reloading 
-
 `npm run unix-start-dev-server` | win      | ""
 
 
