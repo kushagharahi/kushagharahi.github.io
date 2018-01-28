@@ -35,7 +35,8 @@ module.exports = {
         options: {
           fix: true,
           configFile: './build/.eslintrc.js'
-        }
+        },
+        exclude: [path.resolve(__dirname, '../node_modules')]
       },
       // use vue-loader for all *.vue files
       {
@@ -70,12 +71,10 @@ module.exports = {
         }]
       },
       {
-        test: /\.(eot|ttf|woff|woff2)$/,
+        test: /\.(eot|ttf|woff|woff2|otf)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]',
-          publicPath: 'font/',
-          outputPath: 'font/'
+          name: '[name].[ext]?[hash]'
         }
       },
       {
