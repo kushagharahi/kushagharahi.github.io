@@ -18,7 +18,7 @@ All commands assumed to be run in the root project directory.
 
 ## Deployment
 
-The `npm run unix-deploy-prod/win-deploy-prod` commands will build prod (prerender, minify, uglify, etc), clone the `remote/master` git history into `dist/.git`, then commit the `dist` contents to `master`. `master` branch is deployed to [GitHub Pages](https://pages.github.com/)).
+The `npm run unix-deploy-prod/win-deploy-prod` commands will build prod (prerender, minify, uglify, etc), clone the `remote/master` git history into `dist/.git`, then commit the `dist` contents to `master`. `master` branch is deployed to [GitHub Pages](https://pages.github.com/).
 
 tl;dr use `npm run unix-deploy-prod/win-deploy-prod` commands to push "revisions" of the compiled site onto another branch (master).
 
