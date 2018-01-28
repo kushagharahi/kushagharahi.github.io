@@ -26,7 +26,7 @@ module.exports = {
           path.resolve(__dirname, '../src')
         ],
         options: {
-          presets: ['babel-preset-env']
+          presets: ['env']
         },
         exclude: [path.resolve(__dirname, '../node_modules')]
       },
@@ -51,7 +51,7 @@ module.exports = {
           loaders: {
             js: 'babel-loader',
             options: {
-              presets: ['babel-preset-env']
+              presets: ['env']
             },
           }
         }

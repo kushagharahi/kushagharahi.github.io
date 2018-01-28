@@ -16,11 +16,11 @@ var paths = ['/', '/blog', '/blog/first_blog_post', '/resume', '/contact', '/pro
 config.plugins.push(new webpack.optimize.AggressiveMergingPlugin())
 config.plugins.push(new webpack.optimize.ModuleConcatenationPlugin())
 config.plugins.push(new UglifyJSPlugin({
-  sourceMap: true,
-  ecma:8,
-  compress: {
+  uglifyOptions: {
+    sourceMap: true,
+    ecma:8,
     warnings: false
-}
+  }
 }))
 config.plugins.push(new PrerenderSpaPlugin(
   // Absolute path to compiled SPA
