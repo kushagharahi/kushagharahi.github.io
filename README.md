@@ -14,13 +14,14 @@ You will need [npm](https://www.npmjs.com/) installed.
 command                         | OS       | description
 :------------------------------:|:--------:|:------------------------------------------------------------------------------------------------------:|
 `npm install`                   | win/unix | restore dependencies
+`npm run unix-start-dev-server` | unix     | Starts a [http server](https://github.com/webpack/webpack-dev-server) on `8080` with hot-reloading 
+`npm run unix-start-dev-server` | win      | ""
 `npm run unix-dev-build`        | unix     | Compile to `dist` w/o prerendering and JS Obfuscation
 `npm run win-dev-build`         | win      | ""
 `npm run unix-prod-build`       | unix     | Compile to `dist` with prerendering and JS Obfuscation
 `npm run win-prod-build`        | win      | ""
-`npm run unix-start-dev-server` | unix     | Starts a [http server](https://github.com/webpack/webpack-dev-server) on `8080` with hot-reloading 
-`npm run unix-start-dev-server` | win      | ""
-
+`npm run unix-deploy-prod`      | unix     | See deployment section
+`npm run win-deploy-prod`       | win      | ""
 
 ## Deployment
 
