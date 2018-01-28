@@ -15,7 +15,13 @@ var paths = ['/', '/blog', '/blog/first_blog_post', '/resume', '/contact', '/pro
 // }));
 config.plugins.push(new webpack.optimize.AggressiveMergingPlugin())
 config.plugins.push(new webpack.optimize.ModuleConcatenationPlugin())
-config.plugins.push(new UglifyJSPlugin())
+config.plugins.push(new UglifyJSPlugin({
+  sourceMap: true,
+  ecma:8,
+  compress: {
+    warnings: false
+}
+}))
 config.plugins.push(new PrerenderSpaPlugin(
   // Absolute path to compiled SPA
   path.resolve(__dirname, '../dist'),
