@@ -13,7 +13,8 @@ All commands assumed to be run in the root project directory.
     * Outputs the compiled site to `/dist`
 * To compile with prerendering and JS Obfuscation: `npm run unix-prod-build/win-prod-build` 
     * Outputs the compiled site to `/dist`
-* To start a http server with hot-reloading: `npm run unix-start-dev-server/win-start-dev-server` This launches a [webpack-dev-server](https://github.com/webpack/webpack-dev-server) on `8080`. 
+* To start a http server with hot-reloading: `npm run unix-start-dev-server/win-start-dev-server` 
+    * Launches a [webpack-dev-server](https://github.com/webpack/webpack-dev-server) on `8080`. 
 
 ## Deployment
 
