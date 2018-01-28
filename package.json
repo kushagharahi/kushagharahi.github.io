@@ -4,12 +4,24 @@
   "description": "## Instructions * Clone repo * Make sure you have npm installed * do npm install",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist/* && webpack --config ./build/webpack.dev.config.js --display-entrypoints",
-    "buildprodmac": "rm -rf dist/* && webpack -p --config ./build/webpack.prod.config.js",
-    "buildprodwin": "rmdir dist /s /q && mkdir dist && webpack -p --config ./build/webpack.prod.config.js",
-    "clean": "rm -rf dist/*",
-    "deployprod": "git push origin `git subtree split --prefix dist rc`:master --force",
-    "start": "rm -rf dist/* && webpack-dev-server --config ./build/webpack.dev.config.js --content-base dist/ --history-api-fallback"
+    "//": "build with precompiling",
+    "unix-prod-build": "rm -rf dist/* && webpack -p --config ./build/webpack.prod.config.js",
+    "win-prod-build": "npm run win-clean-dist && webpack -p --config ./build/webpack.prod.config.js",
+
+    "//": "build without precompiling",
+    "unix-dev-build": "rm -rf dist/* && webpack --config ./build/webpack.dev.config.js --display-entrypoints",
+    "win-dev-build": "npm run win-clean-dist && webpack --config ./build/webpack.dev.config.js --display-entrypoints",
+
+    "//": "start dev server with hot reload",
+    "unix-start-dev-server": "rm -rf dist/* && webpack-dev-server --config ./build/webpack.dev.config.js --content-base dist/ --history-api-fallback",
+    "win-start-dev-server": "npm run win-clean-dist && webpack-dev-server --config ./build/webpack.dev.config.js --content-base dist/ --history-api-fallback",
+
+    "//": "build prod, clone master git history, stage contents, commit, push",
+    "unix-deploy-prod": "npm run unix-prod-build && mkdir dist/.git/ && git clone --bare $(git config --get remote.origin.url) --branch master dist/.git/ && npm run deploy-prod",
+    "win-deploy-prod": "npm run win-prod-build && for /F \"delims=\" %A in ('git config --get remote.origin.url') do git clone --bare %A --branch master dist/.git/ && npm run deploy-prod",
+    "deploy-prod": "cd dist && git add --all && git commit -m \"Prod Release\" && git push",
+
+    "win-clean-dist": "(rd dist /s /q || echo dist not found, creating) && mkdir dist"
   },
   "repository": {
     "type": "git",
