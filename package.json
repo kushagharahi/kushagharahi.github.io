@@ -16,10 +16,7 @@
     "deploy-prod": "cd dist && git add --all && git commit -m \"Prod Release\" && git push",
     "win-clean-dist": "(rd dist /s /q || echo dist not found, creating) && mkdir dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kushagharahi/kushagharahi.github.io.git"
-  },
+  "repository": "git+https://github.com/kushagharahi/kushagharahi.github.io.git",
   "author": "Kusha Gharahi",
   "license": "MIT",
   "bugs": {
@@ -40,7 +37,6 @@
     "prerender-spa-plugin": "^2.1.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.20.1",
-    "uglifyjs-webpack-plugin": "^1.0.0-rc.0",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^13.7.0",
     "vue-template-compiler": "^2.5.13",
@@ -56,6 +52,7 @@
     "kusha.me"
   ],
   "dependencies": {
+    "uglifyjs-webpack-plugin": "^1.1.6",
     "vue": "^2.4.2",
     "vue-resource": "^1.3.4",
     "vue-router": "^3.0.1"
