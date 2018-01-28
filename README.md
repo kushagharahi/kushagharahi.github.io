@@ -10,9 +10,9 @@ All commands assumed to be run in the root project directory.
 * Clone repo
 * Run `npm install` to restore dependencies 
 * To compile without prerendering and JS Obfuscation: `npm run unix-dev-build/win-dev-build`
-** Outputs the compiled site to `/dist`
+    * Outputs the compiled site to `/dist`
 * To compile with prerendering and JS Obfuscation: `npm run unix-prod-build/win-prod-build` 
-** Outputs the compiled site to `/dist`
+    * Outputs the compiled site to `/dist`
 * To start a http server with hot-reloading: `npm run unix-start-dev-server/win-start-dev-server` This launches a [webpack-dev-server](https://github.com/webpack/webpack-dev-server) on `8080`. 
 
 ## Deployment
