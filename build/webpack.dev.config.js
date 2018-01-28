@@ -21,10 +21,13 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader?presets=es2015',
+        loader: 'babel-loader',
         include: [
           path.resolve(__dirname, '../src')
         ],
+        options: {
+          presets: ['babel-preset-env']
+        },
         exclude: [path.resolve(__dirname, '../node_modules')]
       },
       {
@@ -46,7 +49,10 @@ module.exports = {
         options: {
           name: 'bundle',
           loaders: {
-            js: 'babel-loader?presets=es2015'
+            js: 'babel-loader',
+            options: {
+              presets: ['babel-preset-env']
+            },
           }
         }
       },
