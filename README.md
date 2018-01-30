@@ -1,4 +1,4 @@
-# kusha.me
+# kusha.me ![build status](https://travis-ci.org/kushagharahi/kushagharahi.github.io.svg?branch=dev)
 
 Source code for [kusha.me](https://kusha.me), my static blog and portfolio website built on VueJS and hosted on GitHub pages. 
 
