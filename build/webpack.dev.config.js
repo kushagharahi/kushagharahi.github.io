@@ -21,13 +21,10 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: 'babel-loader?presets=es2015',
         include: [
           path.resolve(__dirname, '../src')
         ],
-        options: {
-          presets: ['env']
-        },
         exclude: [path.resolve(__dirname, '../node_modules')]
       },
       {
@@ -49,10 +46,7 @@ module.exports = {
         options: {
           name: 'bundle',
           loaders: {
-            js: 'babel-loader',
-            options: {
-              presets: ['env']
-            },
+            js: 'babel-loader?presets=es2015'
           }
         }
       },
@@ -80,14 +74,18 @@ module.exports = {
         test: /\.(eot|ttf|woff|woff2|otf)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: '[name].[ext]?[hash]',
+          publicPath: 'fonts/',
+          outputPath: 'fonts/'
         }
       },
       {
         test: /\.(png|jpg|gif|svg|ico)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: '[name].[ext]?[hash]',
+          publicPath: 'imgs/',
+          outputPath: 'imgs/'
         }
       },
       {
