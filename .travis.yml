@@ -4,3 +4,11 @@ node_js:
 install:
   - npm install
   - npm run unix-prod-build
+deploy:
+  - provider: pages
+  - skip_cleanup: true # keep files after build
+  - github-token: $GITHUB_TOKEN
+  - local-dir: dist
+  - target-branch: master
+    on:
+      - branch: rc
