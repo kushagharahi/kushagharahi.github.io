@@ -17,13 +17,13 @@ require('res/img/logo/logo.png')
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: view('HomeComponent'), meta: { title: 'Kusha Gharahi', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Portfolio and Blog' }},
-    { path: '/resume', component: view('ResumeComponent'), meta: { title: 'Resume', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Resume' }},
-    { path: '/projects', component: view('ProjectsComponent'), meta: { title: 'Projects', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Projects' }},
-    { path: '/contact', component: view('ContactComponent'), meta: { title: 'Contact', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Contact Me' }},
-    { path: '/blog', component: view('BlogComponent'), meta: { title: 'Blog', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Tech Blog' }},
-    { path: '/blog/:name', component: view('BlogPostComponent'), meta: { title: 'Blog', description: 'blog post' }, params: { name: '' }},
-    { path: '*', component: view('NotFoundComponent'), meta: { title: 'Not Found' }}
+    { path: '/', component: view('Home'), meta: { title: 'Kusha Gharahi', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Portfolio and Blog' }},
+    { path: '/resume', component: view('Resume'), meta: { title: 'Resume', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Resume' }},
+    { path: '/projects', component: view('Projects'), meta: { title: 'Projects', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Projects' }},
+    { path: '/contact', component: view('Contact'), meta: { title: 'Contact', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Contact Me' }},
+    { path: '/blog', component: view('Blog'), meta: { title: 'Blog', description: 'Blog | Kusha Gharahi' }},
+    { path: '/blog/:name', component: view('BlogPost'), meta: { title: 'Blog', description: 'blog post' }, params: { name: '' }},
+    { path: '*', component: view('NotFound'), meta: { title: 'Not Found' }}
   ]
 })
 
@@ -65,7 +65,7 @@ function setMetaTags (title, description, image) {
 
 function view (name) {
   return resolve =>
-    require(['./components/pages/' + name + '.vue'], resolve)
+    require(['./views/' + name + '.vue'], resolve)
 }
 
 router.afterEach(function (to, from) {

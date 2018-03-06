@@ -25,9 +25,14 @@
 import MacConsoleComponent from 'scripts/components/MacConsoleComponent.vue'
 import SocialIcon from 'scripts/components/SocialIconComponent.vue'
 
-
+import postsJson from 'models/blog/posts.json'
 export default {
-  components: { MacConsoleComponent, SocialIcon }
+  components: { MacConsoleComponent, SocialIcon },
+  data: () => {
+    return {
+      posts: postsJson
+    }
+  }
 }
 </script>
 

@@ -41,7 +41,16 @@ export default {
     },
     mounted:  function () {
          this.terminalOutCommand(document.getElementById("shell-body"),"man about | cat").then(() => {
-          this.terminalOutHtml(document.getElementById("shell-body"), "<br />(about1)<br /> Hi,<br />  I'm Kusha, a full stack software engineer <a href='/projects'>building really cool stuff</a> in my spare time.<br /> You can also check out my <a href='/resume'>resume here</a>. <br /> Or, drop me a line on my <a href='/contact'>contact page</a>.<br ><br > You can fork this site <a href='https://github.com/kushagharahi/kushagharahi.github.io'>here!</a>")
+          this.terminalOutHtml(document.getElementById("shell-body"), 
+          "<br />(about1)<br /> \
+          Hi,<br />  \
+          I'm Kusha, a software engineer <a href='/projects'>building really cool stuff</a> in my spare time.<br /> \
+          You can also check out my <a href='/resume'>resume here</a>. <br /> \
+          Or, drop me a line on my <a href='/contact'>contact page</a>.<br > \
+          Fork this site <a href='https://github.com/kushagharahi/kushagharahi.github.io'>here</a>!<br ><br > \
+          <span style='text-align:center; display:block'>\
+          >>>><a href='/contact'>PS. I freelance too</a><<<<\
+          <span>")
          });
     }
   }
