@@ -1,5 +1,9 @@
 <template>
-<div id="app">
+<div>
+    <h2>Latest Posts</h2>
+      <blog-listing-component v-bind:number-of-listings="2">
+  </blog-listing-component>
+  <br />
     <mac-console-component class="shadow"></mac-console-component>
     <br />
     <div id="center">
@@ -22,17 +26,12 @@
 </template>
 
 <script>
-import MacConsoleComponent from 'scripts/components/MacConsoleComponent.vue'
-import SocialIcon from 'scripts/components/SocialIconComponent.vue'
+import MacConsoleComponent from '../components/MacConsoleComponent.vue'
+import SocialIcon from '../components/SocialIconComponent.vue'
+import BlogListingComponent from '../components/BlogListingComponent.vue'
 
-import postsJson from 'models/blog/posts.json'
 export default {
-  components: { MacConsoleComponent, SocialIcon },
-  data: () => {
-    return {
-      posts: postsJson
-    }
-  }
+  components: { MacConsoleComponent, SocialIcon, BlogListingComponent }
 }
 </script>
 
