@@ -1,0 +1,7 @@
+node_modules
+npm-debug.log
+tests/*
+.gitignore
+.travis.yml
+LICENSE.md
+README.md
