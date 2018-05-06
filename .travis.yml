@@ -1,8 +1,10 @@
-language: node_js
+language: 
+  node_js
 node_js:
   "node"
 install:
   npm install
+script:
   npm run unix-prod-build
 deploy:
   provider: pages
