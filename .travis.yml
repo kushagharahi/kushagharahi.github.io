@@ -1,14 +1,14 @@
 language: node_js
 node_js:
-  - "node"
+  "node"
 install:
-  - npm install
-  - npm run unix-prod-build
+  npm install
+  npm run unix-prod-build
 deploy:
-  - provider: pages
-  - skip_cleanup: true # keep files after build
-  - github-token: $GITHUB_TOKEN
-  - local-dir: dist
-  - target-branch: master
-    on:
-      - branch: rc
+  provider: pages
+  skip_cleanup: true # keep files after build
+  github-token: $GITHUB_TOKEN
+  local-dir: dist
+  target-branch: master
+  on:
+    branch: rc
