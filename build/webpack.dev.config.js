@@ -1,7 +1,7 @@
 var path = require('path')
 
 module.exports = {
-  entry: './src/scripts/main.js',
+  entry: './src/vue/main.js',
   output: {
     filename: '[name].js?[hash]',
     chunkFilename: '[chunkhash].js',
