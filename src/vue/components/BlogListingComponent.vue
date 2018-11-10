@@ -1,7 +1,7 @@
 <template>
     <div>
-            <div id="center" v-for="post in splicedPosts" v-bind:key="post.name">
-                <div class="post shadow hover">
+        <div id="center" v-for="post in splicedPosts" v-bind:key="post.name">
+            <div class="post shadow hover">
                 <h2><router-link class="postTitle" :to="'/blog/' + post.name">{{post.title}}</router-link></h2>
                 <span class="postDate">{{post.date_posted}} </span>
                 <p>{{post.subtitle}}</p>

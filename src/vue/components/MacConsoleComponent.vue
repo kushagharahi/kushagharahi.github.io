@@ -1,10 +1,9 @@
 <template>
-<div id="app">
-        <div id="shell-top-bar">🏠 kusha.me ----- - bash --</div>
-        <div id="shell-body">
-        
+  <div id="app">
+    <div id="shell-top-bar">🏠 vistor@kusha.me: /</div>
+    <div id="shell-body">
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
