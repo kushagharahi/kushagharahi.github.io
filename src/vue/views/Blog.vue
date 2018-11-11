@@ -1,7 +1,7 @@
 <template>
 <div>
   <h1>Blog</h1>
-  <blog-listing-component v-bind:number-of-listings="3">
+  <blog-listing-component v-bind:number-of-listings="4">
   </blog-listing-component>
 </div>
 </template>

@@ -37,7 +37,7 @@ My screen at this point had super low resolution. To fix, I disabled `CSM` in bi
 ### Ethernet fix
 - Download [IONetworkingFamily.kext](https://www.tonymacx86.com/attachments/ionetworkingfamily-kext-zip.136513/) 
 -- This is the most reliable source I could find, if the link is dead please contact me and I will rehost it!
-- Also download (KextBeast)[https://www.tonymacx86.com/resources/kextbeast.32/]
+- Also download [KextBeast](https://www.tonymacx86.com/resources/kextbeast.32/)
 - Place both `KextBeast` and `IONetworkingFamily.kext` on the desktop and follow the KextBeast instructions to install the kext to `/System/Library/Extensions`
 - Reboot
 

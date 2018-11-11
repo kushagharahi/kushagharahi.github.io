@@ -5,9 +5,6 @@
         <div v-html="compiledMarkdown"></div>
         <a target="_blank" rel="noopener" :href="'https://github.com/kushagharahi/kushagharahi.github.io/blob/dev/src/models/blog/posts/' + $route.params.name + '.md'">Suggest a change to this post here! (requires a GitHub account)</a>
     </div>
-
- 
-
 </template>
 
 <script>

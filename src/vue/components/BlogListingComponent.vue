@@ -5,7 +5,7 @@
                 <h2><router-link class="postTitle" :to="'/blog/' + post.name">{{post.title}}</router-link></h2>
                 <span class="postDate">{{post.date_posted}} </span>
                 <p>{{post.subtitle}}</p>
-                <p><router-link :to="'/blog/' + post.name">Full post >></router-link></p>
+                <p><router-link :to="'/blog/' + post.name+ '/'">Full post >></router-link></p>
             </div>
         </div>
     </div>
