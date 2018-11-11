@@ -4,7 +4,7 @@ var SitemapPlugin = require('sitemap-webpack-plugin').default
 var path = require('path')
 var config = require('./webpack.dev.config')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-var paths = ['/', '/blog', '/resume', '/contact', '/projects', '/blog/first_blog_post', '/blog/access_localhost_from_vm_in_host_computer', '/blog/git_command_line_cheat_sheet']
+var paths = ['/', '/blog', '/resume', '/contact', '/projects', '/blog/first_blog_post', '/blog/access_localhost_from_vm_in_host_computer', '/blog/git_command_line_cheat_sheet', '/blog/asrock_z77_extreme4_gtx_970_high_sierra_hackintosh']
 
 // config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
 //   name: 'vendor',
