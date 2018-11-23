@@ -98,7 +98,7 @@ export default {
         } else {
           this.message = ''
           this.error = false
-          var url = 'https://formspree.io/kushagharahi@gmail.com'
+          var url = 'https://formspree.io/contact@gharahi.com'
           var params = {
             Email: this.formData._replyto,
             Message: this.formData.body,
