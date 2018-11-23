@@ -1,4 +1,4 @@
-![about this mac](~res/img/blog/aboutthismac.png)
+![about this mac](~posts/asrock_z77_extreme4_gtx_970_high_sierra_hackintosh/aboutthismac.png)
 
 # Hardware (that matters)
 - Motherboard: [Asrock Z77 Extreme4](https://www.asrock.com/mb/Intel/Z77%20Extreme4/)

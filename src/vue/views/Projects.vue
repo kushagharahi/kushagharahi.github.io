@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import projects from 'models/projects.json'
-var projectImgs = require.context('res/img/project/', false, /\.(png|jpg)$/)
+import projects from 'content/projects/projects.json'
+var projectImgs = require.context('content/projects/images/', false, /\.(png|jpg)$/)
 
 export default {
   data: () => {

@@ -1,4 +1,4 @@
-![Git](~res/img/blog/git.png)
+![Git](~posts/git_command_line_cheat_sheet/git.png)
 
 This is a list I keep of imporant Git commands that I try to keep updated:
 

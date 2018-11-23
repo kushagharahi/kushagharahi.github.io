@@ -1,4 +1,4 @@
-![Visual Studio](~res/img/blog/vs.png)
+![Visual Studio](~posts/access_localhost_from_vm_in_host_computer/vs.png)
 
 I spent a ton of time figuring this out today. We're in the process of moving from Windows to Macos and this makes .Net dev work a ton easier on Mac. Hope this helps! 
 

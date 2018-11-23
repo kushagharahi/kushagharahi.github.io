@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import posts from 'models/blog/posts.json'
+import posts from 'content/blog/posts.json'
 
 export default {
   data: () => {
