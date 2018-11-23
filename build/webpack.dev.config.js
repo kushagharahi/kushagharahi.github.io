@@ -85,7 +85,10 @@ module.exports = {
             }
           },
           {
-            loader: 'markdown-loader'
+            loader: 'markdown-loader',
+            options: {
+              xhtml: true
+            }
           }
         ]
       }
