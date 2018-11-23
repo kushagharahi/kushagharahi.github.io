@@ -68,5 +68,5 @@ At this point, your installation probably doesn't work without the bootable USB.
 ### To-Do
 - Figure out power management and sleep
 - Mojave upgrade guide 
-- - only thing missing seems to be acceleration in nvidia drivers. So when/if(?) Nvidia releases them then this guide should work, YNNV. Alternatively, you can get a "metal" supported GPU. 
+ - only thing missing seems to be acceleration in nvidia drivers. So when/if(?) Nvidia releases them then this guide should work, YMMV. Alternatively, you can get a "metal" supported GPU, also YMMV.
 
