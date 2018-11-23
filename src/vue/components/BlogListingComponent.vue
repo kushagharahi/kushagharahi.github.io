@@ -15,9 +15,6 @@
 import posts from 'models/blog/posts.json'
 
 export default {
-props: {
-    numberOfListings: Number
-},
   data: () => {
     return {
         posts
