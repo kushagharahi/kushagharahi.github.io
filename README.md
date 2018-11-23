@@ -10,9 +10,9 @@ Source code for [kusha.me](https://kusha.me), my static blog and portfolio websi
 ## Getting Started 
 | branch    | description
 |:---------:|:----------------------------------------:|
-| `dev`     | on-going development.                    |
-| `master`  | current compiled site                    |
-| `rc`      | source code for current `master` branch  |
+| `dev`     | on-going development                    |
+| `master`  | current (live) compiled site            |
+| `rc`      | source code for current `master` branch |
 
 You will need [npm](https://www.npmjs.com/) installed. 
 
