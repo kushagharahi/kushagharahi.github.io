@@ -1,6 +1,13 @@
-var path = require('path')
+const path = require('path')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
+  devServer: {
+    compress: false,
+    port: 8080,
+    historyApiFallback: true
+  },
   entry: './src/vue/main.js',
   output: {
     filename: '[name].js?[hash]',
@@ -20,15 +27,7 @@ module.exports = {
     // Special compilation rules
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader?presets=es2015',
-        include: [
-          path.resolve(__dirname, '../src')
-        ],
-        exclude: [path.resolve(__dirname, '../node_modules')]
-      },
-      {
-        test: /\.js$/,
+        test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         exclude: [path.resolve(__dirname, '../node_modules')],
         enforce: 'pre',
@@ -38,27 +37,18 @@ module.exports = {
         },
         exclude: [path.resolve(__dirname, '../node_modules')]
       },
-      // use vue-loader for all *.vue files
       {
-        test: /.vue$/,
-        loader: 'vue-loader',
-        exclude: [path.resolve(__dirname, '../node_modules')],
-        options: {
-          name: 'bundle',
-          loaders: {
-            js: 'babel-loader?presets=es2015'
-          }
-        }
+        test: /\.js$/,
+        loader: 'babel-loader', //transpile to plain ES5 JS
+        include: [
+          path.resolve(__dirname, '../src')
+        ],
+        exclude: [path.resolve(__dirname, '../node_modules')]
       },
       {
         test: /.vue$/,
-        loader: 'eslint-loader',
-        exclude: [path.resolve(__dirname, '../node_modules')],
-        enforce: 'pre',
-        options: {
-          fix: true,
-          configFile: 'build/.eslintrc.js'
-        }
+        loader: 'vue-loader', // use vue-loader for all *.vue files
+        exclude: [path.resolve(__dirname, '../node_modules')]
       },
       {
         test: /\.scss$/,
@@ -103,5 +93,6 @@ module.exports = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin()
   ]
 }
