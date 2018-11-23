@@ -34,7 +34,11 @@ command                         | OS       | description
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more details
+kushagharahi.github.io is licensed under GPLv3 except for `/src/content/blog/*` which contains blog content and subsequent compiled blog content on the `master` branch.
+
+Copyright (c) 2018 Kusha Gharahi <kusha.me>
+
+ - see [LICENSE.md](LICENSE.md) for more details
 
 ## Acknowledgments
 
