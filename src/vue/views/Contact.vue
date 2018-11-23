@@ -109,7 +109,7 @@ export default {
             this.formDisabled = true
           }, (err) => {
             this.error = true
-            this.message = 'There was an error processing the form, please try again or contact the webmaster @ kushagharahi(dot)gmail.com. Error: '
+            this.message = 'There was an error processing the form, please try again or contact the webmaster @ contact(dot)gharahi[dot]c0m. Error: '
             this.message += err
           })
         }
