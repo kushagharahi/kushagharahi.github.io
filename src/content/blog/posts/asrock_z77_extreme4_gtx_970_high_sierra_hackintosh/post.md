@@ -62,3 +62,8 @@ At this point, your installation probably doesn't work without the bootable USB.
 - Add a bios entry for Clover with `efibootmgr -c -L “Clover UEFI” -l “\EFI\CLOVER\CLOVERX64.EFI”`
 - Make it the first bios entry with `efibootmgr -o 0000`
 - If you screw this up, no biggie, just do a CMOS reset and try again! You can always fall back to booting from your macOS bootable USB
+
+## Congratulations you should have a mostly working Hackintosh now! 
+
+### To-Do
+- Figure out power management and sleep
