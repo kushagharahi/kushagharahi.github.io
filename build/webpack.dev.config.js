@@ -1,6 +1,5 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   devServer: {
