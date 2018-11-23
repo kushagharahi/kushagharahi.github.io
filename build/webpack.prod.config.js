@@ -1,21 +1,24 @@
-var webpack = require('webpack')
-var PrerenderSpaPlugin = require('prerender-spa-plugin')
-var SitemapPlugin = require('sitemap-webpack-plugin').default
-var path = require('path')
-var config = require('./webpack.dev.config')
+const webpack = require('webpack')
+const config = require('./webpack.dev.config')
+const PrerenderSpaPlugin = require('prerender-spa-plugin')
+const SitemapPlugin = require('sitemap-webpack-plugin').default
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-var paths = ['/', '/blog', '/resume', '/contact', '/projects', '/blog/first_blog_post', '/blog/access_localhost_from_vm_in_host_computer', '/blog/git_command_line_cheat_sheet', '/blog/asrock_z77_extreme4_gtx_970_high_sierra_hackintosh']
+const path = require('path')
+const paths = [ '/', 
+                '/blog', 
+                '/resume', 
+                '/contact', 
+                '/projects', 
+                '/blog/first_blog_post', 
+                '/blog/access_localhost_from_vm_in_host_computer', 
+                '/blog/git_command_line_cheat_sheet', 
+                '/blog/asrock_z77_extreme4_gtx_970_high_sierra_hackintosh']
 
-// config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
-//   name: 'vendor',
-//   minChunks: function (module) {
-//     // assumes vendor imports exist in the node_modules directory
-//     return module.context && module.context.indexOf('node_modules') !== -1
-//   }
-// }));
+/**A plugin for a more aggressive chunk merging strategy. 
+ * Even similar chunks are merged if the total size is reduced enough. 
+ * As option modules that are not common in these chunks can be moved up the chunk tree to the parents. */
 config.plugins.push(new webpack.optimize.AggressiveMergingPlugin())
-config.plugins.push(new webpack.optimize.ModuleConcatenationPlugin())
-config.plugins.push(new webpack.optimize.UglifyJsPlugin())
+
 config.plugins.push(new PrerenderSpaPlugin(
   // Absolute path to compiled SPA
   path.resolve(__dirname, '../dist'),

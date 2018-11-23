@@ -1,28 +1,42 @@
 <template>
 <div class="projectContainer">
-  <div class="project shadow hover" v-for="project in projects" v-if="!project.hide">
+  <div class="project shadow hover" v-for="project in projectsWithoutHidden" :key="project.title">
           <img class="projectImg" v-if="project.imgPreview != ''" :src="pictureDir(project.imgPreview)"></img>
           <img class="projectImg" v-if="project.imgPreview == ''" :src="noPictureRes"></img>
 
           <h2><strong>{{project.title}}</strong></h2>
-          <span v-for="(tech, techIndex) in project.techUsed"><span class="label">{{tech.name}}</span><span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1"></span>&nbsp;</span>
-          <p><span v-for="(site, siteIndex) in project.urls"> <a target="_blank" rel="noopener" :href="site.url">{{site.desc}}</a><span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span></span></p>
+          <span v-for="(tech, techIndex) in project.techUsed" :key="tech.name">
+            <span class="label">{{tech.name}}</span>
+            <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
+          </span>
+          ∂
+          <p>
+            <span v-for="(site, siteIndex) in project.urls" :key="site.url"> 
+              <a target="_blank" rel="noopener" :href="site.url">{{site.desc}}</a> 
+              <span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span>
+            </span>
+          </p>
           <p>{{project.blurb}}</p>
     </div>
 </div>
 </template>
 
 <script>
-import projectJson from 'models/projects.json'
+import projects from 'models/projects.json'
 var projectImgs = require.context('res/img/project/', false, /\.(png|jpg)$/)
 export default {
   data: () => {
     return {
-      projects: projectJson,
+      projects,
       noPictureRes: projectImgs('./somecode.png'),
       pictureDir: (imgName) => {
         return projectImgs('./' + imgName)
       }
+    }
+  },
+  computed: {
+    projectsWithoutHidden() {
+      return this.projects.filter(project => !project.hide)
     }
   }
 }

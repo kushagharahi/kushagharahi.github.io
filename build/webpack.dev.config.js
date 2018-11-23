@@ -94,5 +94,8 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin()
-  ]
+  ],
+  optimization: {
+    minimizer: []
+  }
 }
