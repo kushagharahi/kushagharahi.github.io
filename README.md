@@ -1,8 +1,8 @@
 # kusha.me 
 
-dev | rc 
-- | -
-[![Build Status](https://travis-ci.org/kushagharahi/kushagharahi.github.io.svg?branch=dev)](https://travis-ci.org/kushagharahi/kushagharahi.github.io)|[![Build Status](https://travis-ci.org/kushagharahi/kushagharahi.github.io.svg?branch=rc)](https://travis-ci.org/kushagharahi/kushagharahi.github.io)
+| dev | rc | 
+| :-: | :-:|
+| [![Build Status](https://travis-ci.org/kushagharahi/kushagharahi.github.io.svg?branch=dev)](https://travis-ci.org/kushagharahi/kushagharahi.github.io) | [![Build Status](https://travis-ci.org/kushagharahi/kushagharahi.github.io.svg?branch=rc)](https://travis-ci.org/kushagharahi/kushagharahi.github.io) |
 
 
 Source code for [kusha.me](https://kusha.me), my static blog and portfolio website built on VueJS and hosted on GitHub pages. 
