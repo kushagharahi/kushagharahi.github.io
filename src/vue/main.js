@@ -42,11 +42,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 Vue.mixin({
   methods: {
-    setMetaTags: (title, description, image) => setMetaTags(title, description, image)
+    setMetaTags: (title, description) => setMetaTags(title, description),
+    setMetaImg: (image) => setMetaImg(image)
   }
 })
 
-function setMetaTags (title, description, image) {
+function setMetaTags (title, description) {
   document.title = title
   document.head.children['og\:title'].content = title
   document.head.children['og\:url'].content = 'https://kusha.me' + window.location.pathname
@@ -54,7 +55,11 @@ function setMetaTags (title, description, image) {
   document.head.children['description'].content = description
   document.head.children['twitter\:title'].content = title
   document.head.children['twitter\:description'].content = description
-  if (image != null && image !== '') {
+
+}
+
+function setMetaImg (image) {
+  if (typeof image === undefined && image !== null && image !== '') {
     document.head.children['og\:image'].content = 'https://kusha.me/' + image
     document.head.children['twitter\:image'].content = 'https://kusha.me/' + image
   } else {
@@ -71,6 +76,6 @@ function view (name) {
 router.afterEach(function (to, from) {
   if (to.meta.description !== 'blog post') {
     const title = to.meta.title + '  - kusha.me'
-    setMetaTags(title, to.meta.description, '')
+    setMetaTags(title, to.meta.description)
   }
 })

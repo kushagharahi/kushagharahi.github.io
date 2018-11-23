@@ -12,8 +12,6 @@ import postsJson from 'models/blog/posts.json'
 
 var mdPrefix = require.context('models/blog/posts/', false, /\.md$/)
 export default {
-  components: {
-  },
   data: () => {
     return {
       compiledMarkdown: '',
@@ -21,23 +19,20 @@ export default {
       }
   },
   methods: {
-    getFirstImage: (htmlString) => {
-      const markdown = htmlString
-      const parser = new DOMParser()
-      const doc = parser.parseFromString(markdown, 'text/xml')
-      return doc.getElementsByTagName('img')[0]
+      getFirstImage: (htmlString) => {
+        const markdown = htmlString
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(markdown, 'text/html')
+        const firstImg = doc.getElementsByTagName('img')[0]
+        return firstImg != null ? firstImg.attributes.src.nodeValue : null
+      }
+    },
+    created() {
+      this.compiledMarkdown = mdPrefix('./' + this.$route.params.name + '.md')
+      this.postMetaData = postsJson.filter(p => p.name == this.$route.params.name)[0]
+      this.setMetaImg(this.getFirstImage(this.compiledMarkdown))
+      this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle)
     }
-  },
-  created: function () {
-    const markdown = mdPrefix('./' + this.$route.params.name + '.md')
-    this.compiledMarkdown = markdown
-    this.postMetaData = postsJson.filter(p => p.name == this.$route.params.name)[0]
-    var firstImg = this.getFirstImage(markdown)
-    if (firstImg != null) {
-      firstImg = firstImg.attributes.src.nodeValue
-      this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle, firstImg)
-    } else { this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle, '') }
-  }
   }
 
 </script>
