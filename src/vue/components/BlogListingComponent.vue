@@ -26,7 +26,8 @@ props: {
     computed: {
         splicedPosts: function() {
             let vm = this;
-            return vm.posts.splice(0, vm.numberOfListings);
+            return vm.posts
+            //return vm.posts.splice(0, vm.numberOfListings);
         }
     }
   }
