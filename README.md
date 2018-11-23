@@ -1,4 +1,9 @@
-# kusha.me ![build status](https://travis-ci.org/kushagharahi/kushagharahi.github.io.svg?branch=dev)
+# kusha.me 
+
+dev | rc 
+- | -
+[![Build Status](https://travis-ci.org/kushagharahi/kushagharahi.github.io.svg?branch=dev)](https://travis-ci.org/kushagharahi/kushagharahi.github.io)|[![Build Status](https://travis-ci.org/kushagharahi/kushagharahi.github.io.svg?branch=rc)](https://travis-ci.org/kushagharahi/kushagharahi.github.io)
+
 
 Source code for [kusha.me](https://kusha.me), my static blog and portfolio website built on VueJS and hosted on GitHub pages. 
 
@@ -16,18 +21,10 @@ command                         | OS       | description
 `npm install`                   | win/unix | restore dependencies
 `npm run unix-start-dev-server` | unix     | Starts a [http server](https://github.com/webpack/webpack-dev-server) on `8080` with hot-reloading 
 `npm run win-start-dev-server`  | win      | ""
-`npm run unix-dev-build`        | unix     | Compile to `dist` w/o prerendering and JS Obfuscation
+`npm run unix-dev-build`        | unix     | Compile to `dist` w/o prerendering
 `npm run win-dev-build`         | win      | ""
-`npm run unix-prod-build`       | unix     | Compile to `dist` with prerendering and JS Obfuscation
+`npm run unix-prod-build`       | unix     | Compile to `dist` with prerendering
 `npm run win-prod-build`        | win      | ""
-`npm run unix-deploy-prod`      | unix     | See deployment section
-`npm run win-deploy-prod`       | win      | ""
-
-## Deployment
-
-`npm run unix-deploy-prod/win-deploy-prod` commands will build prod (prerender, minify, uglify, etc), clone the `remote/master` git history into `dist/.git`, then commit the `dist` contents to `master`. `master` branch is deployed to [GitHub Pages](https://pages.github.com/).
-
-tl;dr use `npm run unix-deploy-prod/win-deploy-prod` commands to push "revisions" of the compiled site onto another branch (master).
 
 ## Built With
 
