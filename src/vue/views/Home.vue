@@ -24,10 +24,9 @@
 <script>
 import MacConsoleComponent from '../components/MacConsoleComponent.vue'
 import SocialIcon from '../components/SocialIconComponent.vue'
-import BlogListingComponent from '../components/BlogListingComponent.vue'
 
 export default {
-  components: { MacConsoleComponent, SocialIcon, BlogListingComponent }
+  components: { MacConsoleComponent, SocialIcon }
 }
 </script>
 
@@ -36,9 +35,5 @@ export default {
   justify-content: center;
   display: flex;
   width: 100%
-}
-
-#flex-inline {
-
 }
 </style>

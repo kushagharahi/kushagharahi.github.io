@@ -30,6 +30,7 @@ props: {
 .post {
   margin: 2em;
   padding: 2em;
+  min-width:100%;
 }
 
 .postDate {
