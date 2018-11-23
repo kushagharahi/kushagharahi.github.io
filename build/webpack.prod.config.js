@@ -2,7 +2,6 @@ const webpack = require('webpack')
 const config = require('./webpack.dev.config')
 const PrerenderSpaPlugin = require('prerender-spa-plugin')
 const SitemapPlugin = require('sitemap-webpack-plugin').default
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const path = require('path')
 const paths = [ '/', 
                 '/blog', 
