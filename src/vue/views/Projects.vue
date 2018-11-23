@@ -1,29 +1,30 @@
 <template>
 <div class="projectContainer">
-  <div class="project shadow hover" v-for="project in projectsWithoutHidden" :key="project.title">
-          <img class="projectImg" v-if="project.imgPreview != ''" :src="pictureDir(project.imgPreview)"></img>
-          <img class="projectImg" v-if="project.imgPreview == ''" :src="noPictureRes"></img>
+  <div class="project shadow hover" v-for="project in projectsNotHidden" :key="project.title">
+    <img class="projectImg" v-if="project.imgPreview != ''" :src="pictureDir(project.imgPreview)"></img>
+    <img class="projectImg" v-if="project.imgPreview == ''" :src="noPictureRes"></img>
 
-          <h2><strong>{{project.title}}</strong></h2>
-          <span v-for="(tech, techIndex) in project.techUsed" :key="tech.name">
-            <span class="label">{{tech.name}}</span>
-            <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
-          </span>
-          ∂
-          <p>
-            <span v-for="(site, siteIndex) in project.urls" :key="site.url"> 
-              <a target="_blank" rel="noopener" :href="site.url">{{site.desc}}</a> 
-              <span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span>
-            </span>
-          </p>
-          <p>{{project.blurb}}</p>
-    </div>
+    <h2><strong>{{project.title}}</strong></h2>
+    <span v-for="(tech, techIndex) in project.techUsed" :key="tech.name">
+      <span class="label">{{tech.name}}</span>
+      <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
+    </span>
+    
+    <p>
+      <span v-for="(site, siteIndex) in project.urls" :key="site.url"> 
+        <a target="_blank" rel="noopener" :href="site.url">{{site.desc}}</a> 
+        <span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span>
+      </span>
+    </p>
+    <p>{{project.blurb}}</p>
+  </div>
 </div>
 </template>
 
 <script>
 import projects from 'models/projects.json'
 var projectImgs = require.context('res/img/project/', false, /\.(png|jpg)$/)
+
 export default {
   data: () => {
     return {
@@ -35,7 +36,7 @@ export default {
     }
   },
   computed: {
-    projectsWithoutHidden() {
+    projectsNotHidden() {
       return this.projects.filter(project => !project.hide)
     }
   }
@@ -65,16 +66,16 @@ export default {
 }
 
 .label {
-    background-color: #985e6d;
-    display: inline-block;
-    padding: .2em .6em .3em;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25em;
+  background-color: #985e6d;
+  display: inline-block;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
 }
 </style>
