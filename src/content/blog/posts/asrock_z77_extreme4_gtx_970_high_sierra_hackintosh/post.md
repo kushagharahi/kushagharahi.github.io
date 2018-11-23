@@ -50,7 +50,7 @@ My screen at this point had super low resolution. To fix, I disabled `CSM` in bi
  - Install the latest nvidia drivers with [nVidia update](https://github.com/Benjamin-Dobell/nvidia-update) and install the latest mac [CUDA drivers](https://www.nvidia.com/object/mac-driver-archive.html)
 (At the time of this guide, I used 5.3.0.0)
  - Boot tab > Select nvda_drv=1 (deselect nv_disable=1 if applicable)
--Audio
+- Audio
  - Kexts Installer tab > Select the Lilu and AppleALC (Realtec ALC898 audio fix) kexts and OS Version of 10.13 and press download -- Boot tab > Select nvda_drv=1 (deselect nv_disable=1 if applicable)
 - Restart and you should have fully accelerated graphics and audio!
 
@@ -67,3 +67,4 @@ At this point, your installation probably doesn't work without the bootable USB.
 
 ### To-Do
 - Figure out power management and sleep
+- Mojave upgrade guide
