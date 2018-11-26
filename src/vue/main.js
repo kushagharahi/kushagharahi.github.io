@@ -59,7 +59,7 @@ function setMetaTags (title, description) {
 }
 
 function setMetaImg (image) {
-  if (typeof image === undefined && image !== null && image !== '') {
+  if (typeof image !== undefined && image !== null && image !== '') {
     document.head.children['og\:image'].content = 'https://kusha.me/' + image
     document.head.children['twitter\:image'].content = 'https://kusha.me/' + image
   } else {
