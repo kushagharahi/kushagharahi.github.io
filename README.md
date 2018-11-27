@@ -34,7 +34,7 @@ command                         | OS       | description
 
 ## License
 
-kushagharahi.github.io is licensed under GPLv3 except for `/src/content/blog/*` which contains blog content and subsequent compiled blog content on the `master` branch.
+Source code in this repository is licensed under GPLv3 except for any material from the `/src/content/blog/` directory or any subdirectories, or anywhere that content appears after compilation (e.g. any files created when running `npm run build`).
 
 Copyright (c) 2018 Kusha Gharahi <kusha.me>
 
