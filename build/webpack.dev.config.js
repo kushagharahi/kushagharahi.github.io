@@ -25,11 +25,10 @@ module.exports = {
     }
   },
   module: {
-    // Special compilation rules
     rules: [
       {
         test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
+        loader: 'eslint-loader', //js & vue linting
         exclude: [path.resolve(__dirname, '../node_modules')],
         enforce: 'pre',
         options: {

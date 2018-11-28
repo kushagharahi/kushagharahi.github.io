@@ -9,7 +9,6 @@
       <span class="label">{{tech.name}}</span>
       <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
     </span>
-    
     <p>
       <span v-for="(site, siteIndex) in project.urls" :key="site.url"> 
         <a target="_blank" rel="noopener" :href="site.url">{{site.desc}}</a> 
