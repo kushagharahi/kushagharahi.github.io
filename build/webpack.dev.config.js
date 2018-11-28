@@ -2,6 +2,7 @@ const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
+  mode: 'development',
   devServer: {
     compress: false,
     port: 8080,
