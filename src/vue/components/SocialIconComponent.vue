@@ -11,7 +11,16 @@
 <script>
 var imgLinkPrefix = require.context('res/img/social/', false, /\.png$/)
 export default {
-  props: ['name', 'link'],
+  props: {
+    name: {
+      type: String,
+      required: true
+      }, 
+    link: {
+      type: String,
+      required: true
+      }
+  },
   data: function () {
     return {
       imgLink: ''

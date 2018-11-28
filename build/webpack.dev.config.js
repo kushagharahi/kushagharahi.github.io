@@ -2,6 +2,7 @@ const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
+  mode: 'development',
   devServer: {
     compress: false,
     port: 8080,
@@ -24,11 +25,10 @@ module.exports = {
     }
   },
   module: {
-    // Special compilation rules
     rules: [
       {
         test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
+        loader: 'eslint-loader', //js & vue linting
         exclude: [path.resolve(__dirname, '../node_modules')],
         enforce: 'pre',
         options: {
@@ -43,7 +43,10 @@ module.exports = {
         include: [
           path.resolve(__dirname, '../src')
         ],
-        exclude: [path.resolve(__dirname, '../node_modules')]
+        exclude: [path.resolve(__dirname, '../node_modules')],
+        options: {
+          presets: ["@babel/preset-env"]  //Preset used for env setup
+         }
       },
       {
         test: /.vue$/,
