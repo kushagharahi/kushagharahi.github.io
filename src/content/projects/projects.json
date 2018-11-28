@@ -1,5 +1,34 @@
 [
     {
+        "title": "0waste - landfill/recycling/compost classifier",
+        "blurb": "A garbage classification application and website powered by image recognition. Won Best Environmental Hack at EarthxHack 2018 Hackathon.",
+        "imgPreview": "0waste.gif",
+        "urls": [
+            {
+                "url": "https://github.com/kushagharahi/0waste",
+                "desc": "GitHub"
+            },
+            {
+                "url": "https://devpost.com/software/0waste/",
+                "desc": "Devpost"
+            }
+        ],
+        "techUsed": [
+            {
+                "name": "Microsoft Vision APIs"
+            },
+            {
+                "name": "JavaScript"
+            },
+            {
+                "name": "CSS"
+            },
+            {
+                "name": "Html"
+            }
+        ]
+    },
+    {
         "title": "kusha.me - My Portfolio Website",
         "blurb": "The website you are currently on.",
         "imgPreview": "kushame.png",

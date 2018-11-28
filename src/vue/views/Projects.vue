@@ -22,7 +22,7 @@
 
 <script>
 import projects from 'content/projects/projects.json'
-var projectImgs = require.context('content/projects/images/', false, /\.(png|jpg)$/)
+var projectImgs = require.context('content/projects/images/', false, /\.(png|jpg|gif)$/)
 
 export default {
   data: () => {
