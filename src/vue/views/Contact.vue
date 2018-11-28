@@ -98,19 +98,19 @@ export default {
         } else {
           this.message = ''
           this.error = false
-          var url = 'https://formspree.io/contact@gharahi.com'
-          var params = {
+          const url = 'https://submit-form.com/bec5c59a-c529-4097-b121-5059403ada83'
+          let body = {
             Email: this.formData._replyto,
             Message: this.formData.body,
             Name: this.formData.fName + ' ' + this.formData.lName
           }
-          this.$http.post(url, params, { 'Access-Control-Allow-Origin': true }).then((success) => {
+          this.$http.post(url, body, { headers: {'Access-Control-Allow-Origin': '*' }}).then((success) => {
             this.message = 'Form submitted. I look forward to connecting with you!'
             this.formDisabled = true
           }, (err) => {
             this.error = true
-            this.message = 'There was an error processing the form, please try again or contact the webmaster @ contact(dot)gharahi[dot]c0m. Error: '
-            this.message += err
+            this.message = 'There was an error processing the form, please try again or contact the webmaster @ contact(dot)gharahi[dot]c0m.'
+            console.log(err)
           })
         }
       }
