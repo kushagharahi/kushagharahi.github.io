@@ -44,7 +44,10 @@ module.exports = {
         include: [
           path.resolve(__dirname, '../src')
         ],
-        exclude: [path.resolve(__dirname, '../node_modules')]
+        exclude: [path.resolve(__dirname, '../node_modules')],
+        options: {
+          presets: ["@babel/preset-env"]  //Preset used for env setup
+         }
       },
       {
         test: /.vue$/,
