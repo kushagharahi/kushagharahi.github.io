@@ -100,9 +100,10 @@ export default {
           this.error = false
           const url = 'https://submit-form.com/bec5c59a-c529-4097-b121-5059403ada83'
           let body = {
-            Email: this.formData._replyto,
-            Message: this.formData.body,
-            Name: this.formData.fName + ' ' + this.formData.lName
+            Email:    this.formData._replyto,
+            Message:  this.formData.body,
+            Name:     this.formData.fName + ' ' + this.formData.lName,
+           _redirect: false
           }
           this.$http.post(url, body, { headers: {'Access-Control-Allow-Origin': '*' }}).then((success) => {
             this.message = 'Form submitted. I look forward to connecting with you!'
