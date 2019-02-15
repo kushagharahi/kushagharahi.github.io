@@ -1,1 +1,0 @@
-A product or service is never truely free. Take any free service such as Facebook or Google and you will quickly see you are the product. You essentially pay for the services they offer via your data. 

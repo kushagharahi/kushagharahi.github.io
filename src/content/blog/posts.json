@@ -1,5 +1,11 @@
 [
     {
+        "title": "Manage SFDX Static Resource via yarn or npm",
+        "subtitle": "Stop manually upgrading your JavaScript dependencies",
+        "name": "managing_sfdx_static_resources_via_npm_or_yarn",
+        "date_posted": "February 14th 2019"
+    },
+    {
         "title": "My High Sierra Hackintosh - Asrock z77 Extreme4 & Nvidia 970",
         "subtitle": "Hackintosh Guide: Asrock z77 Extreme4, i5 3570K, Nvidia 970",
         "name": "asrock_z77_extreme4_gtx_970_high_sierra_hackintosh",
