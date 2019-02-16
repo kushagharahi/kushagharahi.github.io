@@ -25,7 +25,6 @@ export default {
 
 <style lang="scss">
 .postList {
-  min-width: 100%;
   margin: .5em;
   padding: 1em;
 }

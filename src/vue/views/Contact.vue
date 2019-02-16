@@ -135,7 +135,7 @@ export default {
 }
 
 .form-email {
-	width:300px;
+	width:200px;
 	height:20px;
 }
 </style>

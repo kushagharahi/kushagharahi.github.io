@@ -56,8 +56,8 @@ export default {
 
 .project{
   flex: 0 1 400px;
-  padding: 2em;
-  margin: 2em;
+  padding: 1em;
+  margin: 1em;
 }
 
 .projectImg {
