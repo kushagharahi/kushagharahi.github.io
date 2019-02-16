@@ -51,4 +51,10 @@ export default {
   .post img {
     max-width: 100%; 
   }
+
+  code {
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    display:block;
+  }
 </style>
