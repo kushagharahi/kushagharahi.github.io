@@ -57,4 +57,7 @@ export default {
     white-space: pre-wrap;
     display:block;
   }
+  a {
+    overflow-wrap: break-word;
+  }
 </style>
