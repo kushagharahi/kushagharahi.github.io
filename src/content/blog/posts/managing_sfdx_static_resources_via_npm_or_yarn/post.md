@@ -7,14 +7,14 @@ In the case of JavaScript libraries, you *have* to store them within static reso
 Enter [npm](https://www.npmjs.com/) and [yarn](https://yarnpkg.com/en/) JavaScript dependency managment tools. 
 
 # How?
-- Get either package manager installed and initiaze a project in your SFDX directory 
-- Get some packages installed
+- Get either package manager installed and initialize a project in your SFDX directory 
+- Get the JavaScript packages that you want to utilize in Salesforce installed
 - Install [cpx](https://github.com/mysticatea/cpx) using yarn/npm by doing a `yarn/npm install cpx --save` 
   - `cpx` is a JavaScript tool for file copying. We'll be using this to move files from `node_modules/` (where packages are installed), to the `staticresources/` folder
 - Create a folder for your resource within `force-app/main/default/staticresources/` named $resourceName
  - Make sure you don't commit the contents of this folder to source control, because otherwise what's the point?
- - Create accompanying metadata file in `force-app/main/default/staticresources/` named `$resourceName.resource-meta.xml` with the following structure:
-   - ```
+- Create accompanying metadata file in `force-app/main/default/staticresources/` named `$resourceName.resource-meta.xml` with the following structure:
+  - ```
     <StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
         <cacheControl>Private</cacheControl>
         <contentType>application/x-zip-compressed</contentType>

@@ -1,6 +1,6 @@
 [
     {
-        "title": "Manage SFDX Static Resource via yarn or npm",
+        "title": "Manage SFDX Static Resources via yarn or npm",
         "subtitle": "Stop manually upgrading your Salesforce JavaScript dependencies",
         "name": "managing_sfdx_static_resources_via_npm_or_yarn",
         "date_posted": "February 14th 2019"
