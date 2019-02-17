@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="center" v-for="post in posts" v-bind:key="post.name">
+        <div v-for="post in posts" v-bind:key="post.name">
             <div class="postList shadow hover">
                 <h2><router-link class="postTitle" :to="'/blog/' + post.name">{{post.title}}</router-link></h2>
                 <span class="postDate">{{post.date_posted}} </span>
