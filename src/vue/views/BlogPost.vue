@@ -36,6 +36,8 @@ export default {
 </script>
 
 <style lang="scss">
+  @import 'res/style/scss/app.scss';
+  
   .postDate {
     display: block;
     margin-top: -.5rem;
@@ -52,9 +54,24 @@ export default {
     max-width: 100%; 
   }
 
+  pre {
+    @extend %shadow-shared;
+    
+    background-color: black;
+    padding: 1em;
+    overflow-x: auto;
+
+    & code {
+      overflow-wrap: normal;
+      white-space: pre;
+    }
+}
+
   code {
-    overflow-wrap: break-word;
-    white-space: pre-wrap;
+    font-size: 1.2em;
+    padding: .2em;
+    line-height: 1.6;
+    background-color: black;
   }
   
   a {
