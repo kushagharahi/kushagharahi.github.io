@@ -34,7 +34,10 @@ a {
 }
 @media screen and (max-width : $mobileMaxWidth){
 	.content {
-		margin: 10px;
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-left: 1vw;
+    padding-right: 1vw;
 	}
 }
 
@@ -66,9 +69,13 @@ a {
 	color: $text-color;
 }
 
-.shadow {
+%shadow-shared {
   box-shadow: 0 3px 5px 0 rgba(0,0,0,.2),0 3px 3px 0 rgba(0,0,0,.14),0 4px 3px -1px rgba(0,0,0,.12);
   background-color: #1A2332;
+}
+
+.shadow {
+  @extend %shadow-shared;
 }
 
 .hover {
