@@ -14,6 +14,7 @@ Enter [npm](https://www.npmjs.com/) and [yarn](https://yarnpkg.com/en/) JavaScri
 4. Create a folder for your resource within `force-app/main/default/staticresources/` named $resourceName
  - Make sure you don't commit the contents of this folder to source control, because otherwise what's the point?
 5. Create accompanying metadata file in `force-app/main/default/staticresources/` named `$resourceName.resource-meta.xml` with the following structure:
+
 ```
 <StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
     <cacheControl>Private</cacheControl>
@@ -21,9 +22,14 @@ Enter [npm](https://www.npmjs.com/) and [yarn](https://yarnpkg.com/en/) JavaScri
     <description>$description</description>
 </StaticResource>
 ```
+
 6. Write a script in under the `scripts: {}` section of `package.json` called `copy-$resourceName` to copy the contents of the installed package from `node_modules/` into `staticresources/`
  - Here's an example script to move jquery from `node_modules/` to `staticresources/`: 
-   - `"copy-jquery": "cpx \"node_modules/jquery/dist/jquery.min.js\" \"force-app/main/default/staticresources/jQuery/\""`
+
+```
+"copy-jquery": "cpx \"node_modules/jquery/dist/jquery.min.js\" \"force-app/main/default/staticresources/jQuery/\""`
+```
+
 7. Do a `yarn run copy-$resourceName` + push to your org and you should see an entry on the Static Resources page under Setup with a new entry! 
 
 ![jQuery in Static Resources](~posts/managing_sfdx_static_resources_via_npm_or_yarn/jquery.png)
