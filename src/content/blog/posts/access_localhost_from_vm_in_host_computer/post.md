@@ -15,3 +15,5 @@ I spent a ton of time figuring this out today. We're in the process of moving fr
 * Instead of using localhost:$port you can use ip:$port!
 
 Done! 
+yes
+np
