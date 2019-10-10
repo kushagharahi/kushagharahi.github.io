@@ -7,3 +7,4 @@ module.exports = {
     "vue/no-v-html": false
   }
 }
+\
