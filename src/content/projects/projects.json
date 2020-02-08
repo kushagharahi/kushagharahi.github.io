@@ -47,9 +47,6 @@
                 "name": "VueJS 2.0"
             },
             {
-                "name": "Vue Resource"
-            },
-            {
                 "name": "JavaScript"
             },
             {
@@ -128,7 +125,7 @@
     {
         "title": "[OLD][v1]kusha.me - My Portfolio Website",
         "blurb": "v1 of kusha.me",
-        "imgPreview": "kushame.png",
+        "imgPreview": "kushameold.png",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/kushagharahi.github.io/tree/AngularTS",
