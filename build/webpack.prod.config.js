@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const config = require('./webpack.dev.config')
 const PrerenderSpaPlugin = require('prerender-spa-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default
 const path = require('path')
 const paths = [ '/', 
@@ -20,16 +20,16 @@ config.mode = 'production'
  * Even similar chunks are merged if the total size is reduced enough. 
  * As option modules that are not common in these chunks can be moved up the chunk tree to the parents. */
 config.plugins.push(new webpack.optimize.AggressiveMergingPlugin())
-config.optimization.minimizer.push(new UglifyJsPlugin())
-config.plugins.push(new PrerenderSpaPlugin(
+config.optimization.minimizer.push(new TerserPlugin({
+  cache: true,
+  extractComments: false
+}))
+config.plugins.push(new PrerenderSpaPlugin({
   // Absolute path to compiled SPA
-  path.resolve(__dirname, '../dist'),
+  staticDir: path.resolve(__dirname, '../dist'),
   // List of routes to prerender
-  paths,
-  {
-    ignoreJSErrors: true
-  }
-))
+  routes: paths
+}))
 config.plugins.push(new SitemapPlugin(
   'https://kusha.me', paths, {
     skipGzip: true

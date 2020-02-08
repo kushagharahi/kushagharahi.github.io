@@ -83,7 +83,7 @@ module.exports = {
         test: /\.md$/,
         use: [
           {
-            loader: 'vue-html-loader',
+            loader: 'html-loader',
             options: {
               minimize: false
             }

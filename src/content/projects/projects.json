@@ -167,10 +167,6 @@
             {
                 "url": "https://github.com/kushagharahi/ProjectManagement",
                 "desc": "GitHub"
-            },
-            {
-                "url": "http://taskerhci.azurewebsites.net",
-                "desc": "Azure Live Demo Link"
             }
         ],
         "techUsed": [
@@ -212,7 +208,7 @@
     },
     {
         "title": "Vectors Library in Java",
-        "blurb": "Just a simple vector math library for reference and easy porting.",
+        "blurb": "Just a simple vector math class",
         "imgPreview": "",
         "urls": [
             {
@@ -228,8 +224,8 @@
     },
     {
         "title": "Super Fill Up - 2D Ball physics simulation",
-        "blurb": "Super Fill Up's objective is to fill the screen up with a limited supply of lives. Written in Java for project in high school senior computer science. Notable features: ball physics and collisions.",
-        "imgPreview": "superfillup.png",
+        "blurb": "Super Fill Up's objective is to fill the screen up with a limited supply of lives. Notable features: ball physics and collisions.",
+        "imgPreview": "superfillup.gif",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/Super-Fill-up",
@@ -238,31 +234,15 @@
         ],
         "techUsed": [
             {
-                "name": "Java"
+                "name": "Java" 
             }
         ]
     },
-    {
-        "title": "Speed Card Game",
-        "hide": true,
-        "blurb": "Speed is a game for two or more players of the shedding family of card games, in which each player tries to get rid of all of his or her cards. Local Multiplayer only, developed in java. Junior year of high school Computer Science project.",
-        "imgPreview": "",
-        "urls": [
-            {
-                "url": "https://github.com/kushagharahi/Speed",
-                "desc": "GitHub"
-            }
-        ],
-        "techUsed": [
-            {
-                "name": "Java"
-            }
-        ]
-    },
+
     {
         "title": "LuckySe7ens - Dice Game",
-        "blurb": "Under Over 7 dice game created for probability project in high school sophomore math class. Features simple animations using Java. The object of the game is to predict whether the dice will roll to a total of under 7 or over 7 or at 7.",
-        "imgPreview": "luckyse7ens.png",
+        "blurb": "Under Over 7 dice game. Features dice animations. The object of the game is to predict whether the dice will roll to a total of under 7 or over 7 or at 7.",
+        "imgPreview": "luckysevens.gif",
         "urls": [
             {
                 "url": "https://github.com/kushagharahi/LuckySe7ens",
