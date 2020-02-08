@@ -14,16 +14,66 @@ require('file-loader?name=[name]!static/CNAME')
 require('file-loader?name=[name].[ext]!static/robots.txt')
 require('file-loader?name=[name].[ext]!static/googledc065f3d00d77d9e.html')
 require('res/img/logo/logo.png')
+
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: view('Home'), meta: { title: 'Kusha Gharahi', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Portfolio and Blog' }},
-    { path: '/resume', component: view('Resume'), meta: { title: 'Resume', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Resume' }},
-    { path: '/projects', component: view('Projects'), meta: { title: 'Projects', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Projects' }},
-    { path: '/contact', component: view('Contact'), meta: { title: 'Contact', description: 'Kusha Gharahi - Software Engineer, Architect, Leader - Contact Me' }},
-    { path: '/blog', component: view('Blog'), meta: { title: 'Blog', description: 'Blog | Kusha Gharahi' }},
-    { path: '/blog/:name', component: view('BlogPost'), meta: { title: 'Blog', description: 'blog post' }, params: { name: '' }},
-    { path: '*', component: view('NotFound'), meta: { title: 'Not Found' }}
+    { 
+      path: '/', 
+      component: view('Home'), 
+      meta: { 
+        title: 'Kusha Gharahi', 
+        description: 'kusha.me is an assortment of blog posts and projects regarding software and maybe robotics, occasionally other stuff.' 
+      }
+    },
+    { 
+      path: '/resume', 
+      component: view('Resume'), 
+      meta: { 
+        title: 'Resume', 
+        description: 'This my resume' 
+      }
+    },
+    { 
+      path: '/projects', 
+      component: view('Projects'), 
+      meta: { 
+        title: 'Projects', 
+        description: 'A record of my open source projects' 
+      }
+    },
+    { 
+      path: '/contact', 
+      component: view('Contact'), 
+      meta: { 
+        title: 'Contact Me', 
+        description: 'Get in touch with Kusha(.me)' 
+      }
+    },
+    { 
+      path: '/blog', 
+      component: view('Blog'), 
+      meta: { 
+        title: 'Blog', 
+        description: 'Blog about different software stuff' }
+      },
+    { 
+      path: '/blog/:name', 
+      component: view('BlogPost'), 
+      meta: { 
+        title: 'This is a generic blog post title because I didn\'t set a title', 
+        description: 'This is a generic blog post description because I didn\'t set a description' }, 
+        params: { 
+          name: '' 
+        }
+    },
+    { 
+      path: '*', 
+      component: view('NotFound'), 
+      meta: { 
+        title: '404 Not Found' 
+      }
+    }
   ]
 })
 
