@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="navMobileBG">
-      <router-link to="/"
+      <router-link style="width:85%" to="/"
                    class="navMobileTitle">{{mobilePageTitle}}</router-link>
     </div>
     <input class="navMenu"
@@ -76,7 +76,7 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      this.mobilePageTitle = to.meta.title + ' - kusha.me'
+      this.mobilePageTitle = document.title + ' - kusha.me'
       if (this.mobileMenu) {
         this.mobileMenu = !this.mobileMenu
       }
