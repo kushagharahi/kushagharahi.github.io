@@ -76,7 +76,7 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      this.mobilePageTitle = document.title + ' - kusha.me'
+      this.mobilePageTitle = document.title
       if (this.mobileMenu) {
         this.mobileMenu = !this.mobileMenu
       }
