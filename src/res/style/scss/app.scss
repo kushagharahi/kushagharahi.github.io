@@ -6,7 +6,7 @@ body {
 	font-family: $font;
 	line-height: 1.5;
   color: $text-color;
-  background: #192231
+  background: $tertiary-color;
 }
 
 h2 {
@@ -32,6 +32,7 @@ a {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 @media screen and (max-width : $mobileMaxWidth){
 	.content {
     margin: 0 auto;
@@ -80,6 +81,6 @@ a {
 
 .hover {
   &:hover{
-    background-color: #161e2c;
+    background-color: $tertiary-hover;
   }
 }

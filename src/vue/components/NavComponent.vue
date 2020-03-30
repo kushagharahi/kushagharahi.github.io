@@ -103,40 +103,40 @@ export default {
 }
 
 .navMobileBG {
-height: 40px;
-margin-bottom:0px;
-text-align: center;
-display: none;
+  height: 40px;
+  margin-bottom:0px;
+  text-align: center;
+  display: none;
 }
 
 .navTitle, .navLink {
-float: left;
-display: block;
-color: $nav-text-color;
-text-decoration:none;
-  &:hover {
-    text-decoration: none;
-  }
+  float: left;
+  display: block;
+  color: $nav-text-color;
+  text-decoration:none;
+    &:hover {
+      text-decoration: none;
+    }
 }
 
 .navTitle {
-padding-left: 10px;
-padding-right: 10px;
-padding-top: 5px;
-padding-bottom: 5px;
-font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
 }
 
 .navMobileTitle {
-margin: 5px;
-font-size: 20px;
-text-decoration:none;
-display: none;
-color: white;
+  margin: 5px;
+  font-size: 20px;
+  text-decoration:none;
+  display: none;
+  color: white;
 }
 
 .navLink {
-padding: 10px;
+  padding: 10px;
   &:hover {
     background-color: #111;
   }
@@ -146,75 +146,76 @@ padding: 10px;
 }
 
 .socialIcon {
-float: right;
-padding: 5px;
+  float: right;
+  padding: 5px;
 }
 
-.socialIcon > img{
-height: 24px;
-width: 24px;
+.socialIcon > img {
+  height: 24px;
+  width: 24px;
 }
 
 .navMenu[type="checkbox"], .navMenu[type=checkbox] + label  {
-height: 20px;
-width: 20px;
-margin: 10px;
-position: fixed;
-top: 0;
-left: 0;
+  height: 20px;
+  width: 20px;
+  margin: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .navMenu[type=checkbox] + label {
-z-index: 0;
+  z-index: 0;
 }
+
 .navMenu[type="checkbox"] {
-z-index: 1;
-opacity: 0;
+  z-index: 1;
+  opacity: 0;
 }
 
 .navMenu[type=checkbox] + label {
-background: url('~res/img/menu.svg');
-background-size:100%;
-display: none;
+  background: url('~res/img/menu.svg');
+  background-size:100%;
+  display: none;
 }
 .navMenu[type=checkbox]:checked + label {
-background: url('~res/img/close.svg');
-background-size:100%;
+  background: url('~res/img/close.svg');
+  background-size:100%;
 }
 
 .navMenu[type=checkbox]:checked + label + .nav{
-display: block;
+  display: block;
 }
 
 @media screen and (max-width : $mobileMaxWidth) {
   .navMobileBG, .navMobileTitle, .navMenu[type=checkbox] + label {
-  display: inline-block;
+    display: inline-block;
   }
 
   .nav, .navTitle {
-  display: none;
+    display: none;
   }
 
   .nav {
-  border-bottom: 1px solid rgba(0,0,0,0.15);
-  box-shadow: 0 8px 10px rgba(0,0,0,0.15);
-  top: 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    box-shadow: 0 8px 10px rgba(0,0,0,0.15);
+    top: 40px;
   }
 
   .navLink, .socialIcon {
-  float: none;
+    float: none;
   }
 
   .socialIcon {
-  padding: 0px;
+    padding: 0px;
   }
 
-  .socialIcon{
-  display: block;
-  padding: 5px;
+  .socialIcon {
+    display: block;
+    padding: 5px;
   }
 
   .socialIcon > img {
-  padding-left: 5px;
+    padding-left: 5px;
   }
 }
 

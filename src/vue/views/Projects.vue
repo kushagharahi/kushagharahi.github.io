@@ -65,7 +65,7 @@ export default {
 }
 
 .label {
-  background-color: #985e6d;
+  background-color: $secondary-color;
   display: inline-block;
   padding: .2em .6em .3em;
   font-size: 75%;
