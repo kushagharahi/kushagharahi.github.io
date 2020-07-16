@@ -1,0 +1,398 @@
+<!DOCTYPE html><html><head>
+		<!-- open graph -->
+		<meta name="og:title" property="og:title" content="Manage SFDX Static Resources via yarn or npm">
+		<meta name="og:type" property="og:type" content="Website">
+		<meta name="og:url" property="og:url" content="https://kusha.me/blog/managing_sfdx_static_resources_via_npm_or_yarn">
+		<meta name="og:description" property="og:description" content="Stop manually upgrading your Salesforce JavaScript dependencies">
+		<meta name="og:image" property="og:image" content="https://kusha.me/imgs/sflogo.png?3147d405ecc7ca5304ef25833a827869">
+
+		<!-- Twitter Cards -->
+		<meta name="twitter:site" content="@KKUUSSHHAA">
+		<meta name="twitter:creator" content="@KKUUSSHHAA">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Manage SFDX Static Resources via yarn or npm">
+		<meta name="twitter:description" content="Stop manually upgrading your Salesforce JavaScript dependencies">
+		<meta name="twitter:image" content="https://kusha.me/imgs/sflogo.png?3147d405ecc7ca5304ef25833a827869">
+
+		<meta name="viewport" content="width=device-width">
+		<meta name="author" content="Kusha Gharahi">
+		<meta name="description" content="Stop manually upgrading your Salesforce JavaScript dependencies">
+
+		<base href="/">
+	<style type="text/css"></style><style type="text/css">/*navbar*/
+/*navbar button activate, header2, links, pills*/
+@font-face {
+  font-family: "SF Display";
+  font-weight: 400;
+  src: url(fonts/sf-ui-display-regular.otf?f7e61417e7d1a968e9e01aa85f20a90e);
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b);
+  /* IE9 Compat Modes */
+  src: local("Open Sans"), local("OpenSans"), url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b?#iefix) format("embedded-opentype"), url(fonts/open-sans-v13-latin-regular.woff2?e64cab167bbdc04807429d10873901a0) format("woff2"), url(fonts/open-sans-v13-latin-regular.woff?ce659615885f33d928eb7fe276574106) format("woff"), url(imgs/open-sans-v13-latin-regular.svg?7e735d7ae17da9ead1360165b1dc3cfb#OpenSans) format("svg");
+  /* Legacy iOS */
+}
+.nav, .navMobileBG {
+  background-color: #494E6B;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  list-style: none;
+}
+.navMobileBG {
+  height: 40px;
+  margin-bottom: 0px;
+  text-align: center;
+  display: none;
+}
+.navTitle, .navLink {
+  float: left;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+.navTitle:hover, .navLink:hover {
+    text-decoration: none;
+}
+.navTitle {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+.navMobileTitle {
+  margin: 5px;
+  font-size: 20px;
+  text-decoration: none;
+  display: none;
+  color: white;
+}
+.navLink {
+  padding: 10px;
+}
+.navLink:hover {
+    background-color: #111;
+}
+.navLink.active {
+    background-color: #985E6D;
+}
+.socialIcon {
+  float: right;
+  padding: 5px;
+}
+.socialIcon > img {
+  height: 24px;
+  width: 24px;
+}
+.navMenu[type="checkbox"], .navMenu[type=checkbox] + label {
+  height: 20px;
+  width: 20px;
+  margin: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.navMenu[type=checkbox] + label {
+  z-index: 0;
+}
+.navMenu[type="checkbox"] {
+  z-index: 1;
+  opacity: 0;
+}
+.navMenu[type=checkbox] + label {
+  background: url(imgs/menu.svg?7c8eadc15bfe4d5deb76ca50115d2a47);
+  background-size: 100%;
+  display: none;
+}
+.navMenu[type=checkbox]:checked + label {
+  background: url(imgs/close.svg?6ab99ee581a8a3cf5c60819866fdeb1f);
+  background-size: 100%;
+}
+.navMenu[type=checkbox]:checked + label + .nav {
+  display: block;
+}
+@media screen and (max-width: 900px) {
+.navMobileBG, .navMobileTitle, .navMenu[type=checkbox] + label {
+    display: inline-block;
+}
+.nav, .navTitle {
+    display: none;
+}
+.nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+    top: 40px;
+}
+.navLink, .socialIcon {
+    float: none;
+}
+.socialIcon {
+    padding: 0px;
+}
+.socialIcon {
+    display: block;
+    padding: 5px;
+}
+.socialIcon > img {
+    padding-left: 5px;
+}
+}
+</style><style type="text/css"></style><style type="text/css">/*navbar*/
+/*navbar button activate, header2, links, pills*/
+@font-face {
+  font-family: "SF Display";
+  font-weight: 400;
+  src: url(fonts/sf-ui-display-regular.otf?f7e61417e7d1a968e9e01aa85f20a90e); }
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b);
+  /* IE9 Compat Modes */
+  src: local("Open Sans"), local("OpenSans"), url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b?#iefix) format("embedded-opentype"), url(fonts/open-sans-v13-latin-regular.woff2?e64cab167bbdc04807429d10873901a0) format("woff2"), url(fonts/open-sans-v13-latin-regular.woff?ce659615885f33d928eb7fe276574106) format("woff"), url(imgs/open-sans-v13-latin-regular.svg?7e735d7ae17da9ead1360165b1dc3cfb#OpenSans) format("svg");
+  /* Legacy iOS */ }
+
+body {
+  font-family: 'Open Sans', Fallback, sans-serif;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  color: #aaaaaa;
+  background: #1B2431; }
+
+h2 {
+  color: #985E6D; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem; }
+
+a {
+  color: #985E6D;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+.content {
+  margin: 0 auto;
+  max-width: 900px;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px; }
+
+@media screen and (max-width: 900px) {
+  .content {
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-left: 1vw;
+    padding-right: 1vw; } }
+
+.clearfix {
+  clear: both; }
+
+.pre {
+  border-left: 2px solid #985E6D;
+  padding-left: 3px;
+  margin-left: 5px; }
+
+.loading {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -60px 0 0 -60px; }
+
+.errorText {
+  color: red; }
+
+.vaildText {
+  color: #aaaaaa; }
+
+.shadow {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 4px 3px -1px rgba(0, 0, 0, 0.12);
+  background-color: #1A2332; }
+
+.hover:hover {
+  background-color: #161e2c; }
+</style><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script charset="utf-8" src="8b0a40e726192c772ade.js"></script><style type="text/css">/*navbar*/
+/*navbar button activate, header2, links, pills*/
+@font-face {
+  font-family: "SF Display";
+  font-weight: 400;
+  src: url(fonts/sf-ui-display-regular.otf?f7e61417e7d1a968e9e01aa85f20a90e);
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b);
+  /* IE9 Compat Modes */
+  src: local("Open Sans"), local("OpenSans"), url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b?#iefix) format("embedded-opentype"), url(fonts/open-sans-v13-latin-regular.woff2?e64cab167bbdc04807429d10873901a0) format("woff2"), url(fonts/open-sans-v13-latin-regular.woff?ce659615885f33d928eb7fe276574106) format("woff"), url(imgs/open-sans-v13-latin-regular.svg?7e735d7ae17da9ead1360165b1dc3cfb#OpenSans) format("svg");
+  /* Legacy iOS */
+}
+body {
+  font-family: 'Open Sans', Fallback, sans-serif;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  color: #aaaaaa;
+  background: #1B2431;
+}
+h2 {
+  color: #985E6D;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+}
+a {
+  color: #985E6D;
+  text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.content {
+  margin: 0 auto;
+  max-width: 900px;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (max-width: 900px) {
+.content {
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+}
+.clearfix {
+  clear: both;
+}
+.pre {
+  border-left: 2px solid #985E6D;
+  padding-left: 3px;
+  margin-left: 5px;
+}
+.loading {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -60px 0 0 -60px;
+}
+.errorText {
+  color: red;
+}
+.vaildText {
+  color: #aaaaaa;
+}
+.shadow, pre {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 4px 3px -1px rgba(0, 0, 0, 0.12);
+  background-color: #1A2332;
+}
+.hover:hover {
+  background-color: #161e2c;
+}
+.postDate {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+  color: #9a9a9a;
+}
+.post {
+  margin: .5em;
+  padding: 1em;
+}
+.post img {
+  max-width: 100%;
+}
+pre {
+  background-color: black;
+  padding: 1em;
+  overflow-x: auto;
+}
+pre code {
+    overflow-wrap: normal;
+    white-space: pre;
+}
+code {
+  font-size: 1.2em;
+  padding: .2em;
+  line-height: 1.6;
+  background-color: black;
+}
+a {
+  overflow-wrap: break-word;
+}
+</style><title>Manage SFDX Static Resources via yarn or npm</title></head>
+	<body>
+
+		<div id="app" class="layout"><div><div class="navMobileBG"><a href="/" class="navMobileTitle router-link-active" style="width: 85%;">Manage SFDX Static Resources via yarn or npm</a></div> <input type="checkbox" class="navMenu"> <label for="navMenu"></label> <ul class="nav"><li><a href="/" class="navTitle router-link-active">kusha.me</a></li> <li><a href="/" class="navLink">Home</a></li> <li><a href="/blog" class="navLink active">Blog</a></li> <li><a href="/projects" class="navLink">Projects</a></li> <li><a href="/resume" class="navLink">Resume</a></li> <li><a href="/contact" class="navLink">Contact</a></li> <li><a href="http://github.com/kushagharahi" target="_blank" rel="noopener" class="socialIcon"><img src="imgs/github.png?d56df49a807a9fd06eb1667a84d3810e" class="socialIcon"></a></li> <li><a href="http://twitter.com/KKUUSSHHAA" target="_blank" rel="noopener" class="socialIcon"><img src="imgs/twitter.png?2faa9d502b83dad010e5f77e2a6868af" class="socialIcon"></a></li> <li><a href="http://linkedin.com/in/kushagharahi" target="_blank " rel="noopener" class="socialIcon"><img src="imgs/linkedin.png?a9c9fb29bf21345b2734605283f862b9" class="socialIcon"></a></li></ul></div> <div class="content"><div class="post"><h2>Manage SFDX Static Resources via yarn or npm</h2> <!----> <span class="postDate">February 14th 2019 </span> <div><p><img src="imgs/sflogo.png?3147d405ecc7ca5304ef25833a827869" alt="Salesforce logo"></p>
+<p>Anyone who's developed with <a href="https://developer.salesforce.com/platform/dx">Salesforce DX (SFDX)</a> knows that package management via <a href="https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_resources.htm">static resources</a> is a huge pain. Essentially, static resources is for storing content such as JavaScript or images you need to reference elsewhere in Salesforce, like within a lightning component. </p>
+<p>In the case of JavaScript libraries, you <em>have</em> to store them within static resources to be able to reference elsewhere. Manually keeping all your libraries up to date is painful. You gotta manually check for updates, uploading newer libraries and repeat * ∞. Yikes 😳</p>
+<p>Enter <a href="https://www.npmjs.com/">npm</a> and <a href="https://yarnpkg.com/en/">yarn</a> JavaScript dependency managment tools. </p>
+<h1 id="how">How?</h1>
+<ol>
+<li>Get either package manager installed and initialize a project in your SFDX directory </li>
+<li>Get the JavaScript packages that you want to utilize in Salesforce installed</li>
+<li>Install <a href="https://github.com/mysticatea/cpx">cpx</a> using yarn/npm by doing a <code>yarn/npm install cpx --save</code> <ul>
+<li><code>cpx</code> is a JavaScript tool for file copying. We'll be using this to move files from <code>node_modules/</code> (where packages are installed), to the <code>staticresources/</code> folder</li>
+</ul>
+</li>
+<li>Create a folder for your resource within <code>force-app/main/default/staticresources/</code> named $resourceName<ul>
+<li>Make sure you don't commit the contents of this folder to source control, because otherwise what's the point?</li>
+</ul>
+</li>
+<li>Create accompanying metadata file in <code>force-app/main/default/staticresources/</code> named <code>$resourceName.resource-meta.xml</code> with the following structure:</li>
+</ol>
+<pre><code>&lt;StaticResource xmlns="http://soap.sforce.com/2006/04/metadata"&gt;
+    &lt;cacheControl&gt;Private&lt;/cacheControl&gt;
+    &lt;contentType&gt;application/x-zip-compressed&lt;/contentType&gt;
+    &lt;description&gt;$description&lt;/description&gt;
+&lt;/StaticResource&gt;</code></pre><ol start="6">
+<li>Write a script in under the <code>scripts: {}</code> section of <code>package.json</code> called <code>copy-$resourceName</code> to copy the contents of the installed package from <code>node_modules/</code> into <code>staticresources/</code><ul>
+<li>Here's an example script to move jquery from <code>node_modules/</code> to <code>staticresources/</code>: </li>
+</ul>
+</li>
+</ol>
+<pre><code>"copy-jquery": "cpx \"node_modules/jquery/dist/jquery.min.js\" \"force-app/main/default/staticresources/jQuery/\""`</code></pre><ol start="7">
+<li>Do a <code>yarn run copy-$resourceName</code> + push to your org and you should see an entry on the Static Resources page under Setup with a new entry! </li>
+</ol>
+<p><img src="imgs/jquery.png?e0c1191cb202fed252ea82820ef17323" alt="jQuery in Static Resources"></p>
+<p>That's all! Easy peasy :)</p>
+<p>Learn more about Static Resources here: <a href="https://trailhead.salesforce.com/en/content/learn/modules/visualforce_fundamentals/visualforce_static_resources">https://trailhead.salesforce.com/en/content/learn/modules/visualforce_fundamentals/visualforce_static_resources</a></p>
+</div> <a target="_blank" rel="noopener" href="https://github.com/kushagharahi/kushagharahi.github.io/tree/rc/src/content/blog/posts/managing_sfdx_static_resources_via_npm_or_yarn/post.md">Suggest a change to this post here! (requires a GitHub account)</a></div></div></div>
+		<!-- <script src="vendor.js"></script> -->
+		<script src="main.js"></script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101476968-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+
+			gtag('config', 'UA-101476968-1');
+		</script>
+	
+
+</body></html>

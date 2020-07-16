@@ -1,0 +1,454 @@
+<!DOCTYPE html><html><head>
+		<!-- open graph -->
+		<meta name="og:title" property="og:title" content="My High Sierra Hackintosh - Asrock z77 Extreme4 &amp; Nvidia 970">
+		<meta name="og:type" property="og:type" content="Website">
+		<meta name="og:url" property="og:url" content="https://kusha.me/blog/asrock_z77_extreme4_gtx_970_high_sierra_hackintosh">
+		<meta name="og:description" property="og:description" content="Catalina, Mojave, and High Siera Hackintosh Guide: Asrock z77 Extreme4, i5 3570K, Nvidia 970">
+		<meta name="og:image" property="og:image" content="https://kusha.me/imgs/aboutthismac.png?4297116568f93b86720d14e774fc3c9b">
+
+		<!-- Twitter Cards -->
+		<meta name="twitter:site" content="@KKUUSSHHAA">
+		<meta name="twitter:creator" content="@KKUUSSHHAA">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="My High Sierra Hackintosh - Asrock z77 Extreme4 &amp; Nvidia 970">
+		<meta name="twitter:description" content="Catalina, Mojave, and High Siera Hackintosh Guide: Asrock z77 Extreme4, i5 3570K, Nvidia 970">
+		<meta name="twitter:image" content="https://kusha.me/imgs/aboutthismac.png?4297116568f93b86720d14e774fc3c9b">
+
+		<meta name="viewport" content="width=device-width">
+		<meta name="author" content="Kusha Gharahi">
+		<meta name="description" content="Catalina, Mojave, and High Siera Hackintosh Guide: Asrock z77 Extreme4, i5 3570K, Nvidia 970">
+
+		<base href="/">
+	<style type="text/css"></style><style type="text/css">/*navbar*/
+/*navbar button activate, header2, links, pills*/
+@font-face {
+  font-family: "SF Display";
+  font-weight: 400;
+  src: url(fonts/sf-ui-display-regular.otf?f7e61417e7d1a968e9e01aa85f20a90e);
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b);
+  /* IE9 Compat Modes */
+  src: local("Open Sans"), local("OpenSans"), url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b?#iefix) format("embedded-opentype"), url(fonts/open-sans-v13-latin-regular.woff2?e64cab167bbdc04807429d10873901a0) format("woff2"), url(fonts/open-sans-v13-latin-regular.woff?ce659615885f33d928eb7fe276574106) format("woff"), url(imgs/open-sans-v13-latin-regular.svg?7e735d7ae17da9ead1360165b1dc3cfb#OpenSans) format("svg");
+  /* Legacy iOS */
+}
+.nav, .navMobileBG {
+  background-color: #494E6B;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  list-style: none;
+}
+.navMobileBG {
+  height: 40px;
+  margin-bottom: 0px;
+  text-align: center;
+  display: none;
+}
+.navTitle, .navLink {
+  float: left;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+.navTitle:hover, .navLink:hover {
+    text-decoration: none;
+}
+.navTitle {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+.navMobileTitle {
+  margin: 5px;
+  font-size: 20px;
+  text-decoration: none;
+  display: none;
+  color: white;
+}
+.navLink {
+  padding: 10px;
+}
+.navLink:hover {
+    background-color: #111;
+}
+.navLink.active {
+    background-color: #985E6D;
+}
+.socialIcon {
+  float: right;
+  padding: 5px;
+}
+.socialIcon > img {
+  height: 24px;
+  width: 24px;
+}
+.navMenu[type="checkbox"], .navMenu[type=checkbox] + label {
+  height: 20px;
+  width: 20px;
+  margin: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.navMenu[type=checkbox] + label {
+  z-index: 0;
+}
+.navMenu[type="checkbox"] {
+  z-index: 1;
+  opacity: 0;
+}
+.navMenu[type=checkbox] + label {
+  background: url(imgs/menu.svg?7c8eadc15bfe4d5deb76ca50115d2a47);
+  background-size: 100%;
+  display: none;
+}
+.navMenu[type=checkbox]:checked + label {
+  background: url(imgs/close.svg?6ab99ee581a8a3cf5c60819866fdeb1f);
+  background-size: 100%;
+}
+.navMenu[type=checkbox]:checked + label + .nav {
+  display: block;
+}
+@media screen and (max-width: 900px) {
+.navMobileBG, .navMobileTitle, .navMenu[type=checkbox] + label {
+    display: inline-block;
+}
+.nav, .navTitle {
+    display: none;
+}
+.nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+    top: 40px;
+}
+.navLink, .socialIcon {
+    float: none;
+}
+.socialIcon {
+    padding: 0px;
+}
+.socialIcon {
+    display: block;
+    padding: 5px;
+}
+.socialIcon > img {
+    padding-left: 5px;
+}
+}
+</style><style type="text/css"></style><style type="text/css">/*navbar*/
+/*navbar button activate, header2, links, pills*/
+@font-face {
+  font-family: "SF Display";
+  font-weight: 400;
+  src: url(fonts/sf-ui-display-regular.otf?f7e61417e7d1a968e9e01aa85f20a90e); }
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b);
+  /* IE9 Compat Modes */
+  src: local("Open Sans"), local("OpenSans"), url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b?#iefix) format("embedded-opentype"), url(fonts/open-sans-v13-latin-regular.woff2?e64cab167bbdc04807429d10873901a0) format("woff2"), url(fonts/open-sans-v13-latin-regular.woff?ce659615885f33d928eb7fe276574106) format("woff"), url(imgs/open-sans-v13-latin-regular.svg?7e735d7ae17da9ead1360165b1dc3cfb#OpenSans) format("svg");
+  /* Legacy iOS */ }
+
+body {
+  font-family: 'Open Sans', Fallback, sans-serif;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  color: #aaaaaa;
+  background: #1B2431; }
+
+h2 {
+  color: #985E6D; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem; }
+
+a {
+  color: #985E6D;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+.content {
+  margin: 0 auto;
+  max-width: 900px;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px; }
+
+@media screen and (max-width: 900px) {
+  .content {
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-left: 1vw;
+    padding-right: 1vw; } }
+
+.clearfix {
+  clear: both; }
+
+.pre {
+  border-left: 2px solid #985E6D;
+  padding-left: 3px;
+  margin-left: 5px; }
+
+.loading {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -60px 0 0 -60px; }
+
+.errorText {
+  color: red; }
+
+.vaildText {
+  color: #aaaaaa; }
+
+.shadow {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 4px 3px -1px rgba(0, 0, 0, 0.12);
+  background-color: #1A2332; }
+
+.hover:hover {
+  background-color: #161e2c; }
+</style><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script charset="utf-8" src="8b0a40e726192c772ade.js"></script><style type="text/css">/*navbar*/
+/*navbar button activate, header2, links, pills*/
+@font-face {
+  font-family: "SF Display";
+  font-weight: 400;
+  src: url(fonts/sf-ui-display-regular.otf?f7e61417e7d1a968e9e01aa85f20a90e);
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b);
+  /* IE9 Compat Modes */
+  src: local("Open Sans"), local("OpenSans"), url(fonts/open-sans-v13-latin-regular.eot?c35ad7c76819575781c833319c13711b?#iefix) format("embedded-opentype"), url(fonts/open-sans-v13-latin-regular.woff2?e64cab167bbdc04807429d10873901a0) format("woff2"), url(fonts/open-sans-v13-latin-regular.woff?ce659615885f33d928eb7fe276574106) format("woff"), url(imgs/open-sans-v13-latin-regular.svg?7e735d7ae17da9ead1360165b1dc3cfb#OpenSans) format("svg");
+  /* Legacy iOS */
+}
+body {
+  font-family: 'Open Sans', Fallback, sans-serif;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  color: #aaaaaa;
+  background: #1B2431;
+}
+h2 {
+  color: #985E6D;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+}
+a {
+  color: #985E6D;
+  text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.content {
+  margin: 0 auto;
+  max-width: 900px;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (max-width: 900px) {
+.content {
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+}
+.clearfix {
+  clear: both;
+}
+.pre {
+  border-left: 2px solid #985E6D;
+  padding-left: 3px;
+  margin-left: 5px;
+}
+.loading {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -60px 0 0 -60px;
+}
+.errorText {
+  color: red;
+}
+.vaildText {
+  color: #aaaaaa;
+}
+.shadow, pre {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 4px 3px -1px rgba(0, 0, 0, 0.12);
+  background-color: #1A2332;
+}
+.hover:hover {
+  background-color: #161e2c;
+}
+.postDate {
+  display: block;
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+  color: #9a9a9a;
+}
+.post {
+  margin: .5em;
+  padding: 1em;
+}
+.post img {
+  max-width: 100%;
+}
+pre {
+  background-color: black;
+  padding: 1em;
+  overflow-x: auto;
+}
+pre code {
+    overflow-wrap: normal;
+    white-space: pre;
+}
+code {
+  font-size: 1.2em;
+  padding: .2em;
+  line-height: 1.6;
+  background-color: black;
+}
+a {
+  overflow-wrap: break-word;
+}
+</style><title>My High Sierra Hackintosh - Asrock z77 Extreme4 &amp; Nvidia 970</title></head>
+	<body>
+
+		<div id="app" class="layout"><div><div class="navMobileBG"><a href="/" class="navMobileTitle router-link-active" style="width: 85%;">My High Sierra Hackintosh - Asrock z77 Extreme4 &amp; Nvidia 970</a></div> <input type="checkbox" class="navMenu"> <label for="navMenu"></label> <ul class="nav"><li><a href="/" class="navTitle router-link-active">kusha.me</a></li> <li><a href="/" class="navLink">Home</a></li> <li><a href="/blog" class="navLink active">Blog</a></li> <li><a href="/projects" class="navLink">Projects</a></li> <li><a href="/resume" class="navLink">Resume</a></li> <li><a href="/contact" class="navLink">Contact</a></li> <li><a href="http://github.com/kushagharahi" target="_blank" rel="noopener" class="socialIcon"><img src="imgs/github.png?d56df49a807a9fd06eb1667a84d3810e" class="socialIcon"></a></li> <li><a href="http://twitter.com/KKUUSSHHAA" target="_blank" rel="noopener" class="socialIcon"><img src="imgs/twitter.png?2faa9d502b83dad010e5f77e2a6868af" class="socialIcon"></a></li> <li><a href="http://linkedin.com/in/kushagharahi" target="_blank " rel="noopener" class="socialIcon"><img src="imgs/linkedin.png?a9c9fb29bf21345b2734605283f862b9" class="socialIcon"></a></li></ul></div> <div class="content"><div class="post"><h2>My High Sierra Hackintosh - Asrock z77 Extreme4 &amp; Nvidia 970</h2> <span class="postDate">Last Updated July 15th 2020</span> <!----> <div><p><img src="imgs/aboutthismac.png?4297116568f93b86720d14e774fc3c9b" alt="about this mac"></p>
+<h3 id="note-this-guide-will-work-for-high-sierra-mojave-and-catalina-mojave-and-catalina-do-not-support-nvidia-gpus-you-will-need-to-use-a-metal-gpu-more-information-at-bottom-of-post-regarding-mojave-and-catalina">Note: This guide will work for High Sierra, Mojave and Catalina. Mojave and Catalina do not support Nvidia GPUs, you will need to use a Metal GPU. More information at bottom of post regarding Mojave and Catalina.</h3>
+<h1 id="hardware-that-matters">Hardware (that matters)</h1>
+<ul>
+<li>Motherboard: <a href="https://www.asrock.com/mb/Intel/Z77%20Extreme4/">Asrock Z77 Extreme4</a></li>
+<li>CPU: <a href="https://ark.intel.com/products/65520">Intel i5-3570K</a> Ivy Bridge -- CPU shouldn't matter since it will be intel with this specific MOBO</li>
+<li>GPU: <a href="https://www.geforce.com/hardware/desktop-gpus/geforce-gtx-970">Nvidia GTX 970</a></li>
+</ul>
+<p>You need to have mostly the same hardware for this to work. </p>
+<h1 id="installation">Installation</h1>
+<h3 id="bios-update">Bios update</h3>
+<p><a href="https://www.asrock.com/mb/Intel/Z77%20Extreme4/#BIOS">Download</a> the latest Asrock Z77 Extreme4 bios and flash it (2.90 at the time of this guide)</p>
+<h3 id="macos-bootable-usb">macOS bootable USB</h3>
+<ul>
+<li>You need access to a computer running macOS and a 10gb+ USB drive</li>
+<li>Download <a href="https://itunes.apple.com/us/app/macos-high-sierra/id1246284741?mt=12&amp;l=en-us&amp;ls=1">High Sierra from the app store</a></li>
+<li>Use <code>Disk Utility</code> to erase the USB drive and format with <code>Mac OS Extended (Journaled)</code> and (if asked) <code>GUID Partition map</code> scheme </li>
+<li>Use the <a href="https://www.tonymacx86.com/resources/unibeast-8-3-2-high-sierra.383/"><code>tonymacx86</code> High Sierra Unibeast tool</a> to flash the installer to the USB<ul>
+<li>Options: UEFI boot mode on Bootloader Configuration, no selection on Graphics Configuration</li>
+</ul>
+</li>
+</ul>
+<h3 id="installation-1">Installation</h3>
+<ul>
+<li>Boot from the USB <ul>
+<li>turn on computer, <code>f11</code> during inital spalsh screen to select USB drive</li>
+</ul>
+</li>
+<li>At the Clover boot screen choose <code>Boot macOS Installer from USB</code></li>
+<li>Run through the installation, format your drive with <code>Mac OS Extended (Journaled)</code> and GUID Partition map scheme (if asked)</li>
+</ul>
+<p>Congrats you should have a semi working installation at this point!</p>
+<h3 id="resolution-fix">Resolution fix</h3>
+<p>My screen at this point had super low resolution. To fix, I disabled <code>CSM</code> in bios.</p>
+<h3 id="ethernet-fix">Ethernet fix</h3>
+<ul>
+<li>Download <a href="https://www.tonymacx86.com/attachments/ionetworkingfamily-kext-zip.136513/">IONetworkingFamily.kext</a> </li>
+<li><ul>
+<li>This is the most reliable source I could find, if the link is dead please <a href="https://kusha.me/contact">contact</a> me and I will rehost it!</li>
+</ul>
+</li>
+<li>Also download <a href="https://www.tonymacx86.com/resources/kextbeast.32/">KextBeast</a></li>
+<li>Place both <code>KextBeast</code> and <code>IONetworkingFamily.kext</code> on the desktop and follow the KextBeast instructions to install the kext to <code>/System/Library/Extensions</code></li>
+<li>Reboot</li>
+</ul>
+<h3 id="enabling-bluetooth-for-airpods-magic-keyboardmouse-handoff">Enabling bluetooth for <a href="https://amzn.to/2WpzgNw">Airpods</a>, <a href="https://amzn.to/3fteVyh">Magic Keyboard/Mouse</a>, Handoff</h3>
+<p>This <a href="https://amzn.to/38ZgbGY">$10 USB Bluetooth adapter</a> works well for me. No need for an expensive PCI bluetooth like some enthusiasts claim. My <a href="https://amzn.to/2WpzgNw">Airpods</a>, <a href="https://amzn.to/3fteVyh">Magic Keyboard/Mouse</a>, and Handoff from my iPhone work beautifically. </p>
+<h3 id="audio-fix">Audio Fix</h3>
+<ul>
+<li><a href="https://mackie100projects.altervista.org/download-clover-configurator/">Clover Configurator</a> setup<ul>
+<li>Download <a href="https://mackie100projects.altervista.org/download-clover-configurator/">Clover Configurator</a> and mount your EFI partition and select your clover plist</li>
+<li>Mount EFI tab &gt; Mount your EFI partition on your hard disk (Not usb!!)</li>
+<li>Home screen button &gt; select your <code>config.plist</code> in <code>EFI/CLOVER/</code></li>
+</ul>
+</li>
+<li>Kexts Installer tab &gt; Select the Lilu and AppleALC (Realtec ALC898 audio fix) kexts and OS Version of 10.13 and press download -- Boot tab &gt; Select nvda_drv=1 (deselect nv_disable=1 if applicable)</li>
+<li>Restart and you should have full audio!</li>
+</ul>
+<h3 id="nvidia-graphics-fix">Nvidia Graphics Fix</h3>
+<ul>
+<li><a href="https://mackie100projects.altervista.org/download-clover-configurator/">Clover Configurator</a> setup<ul>
+<li>Download <a href="https://mackie100projects.altervista.org/download-clover-configurator/">Clover Configurator</a> and mount your EFI partition and select your clover plist</li>
+<li>Mount EFI tab &gt; Mount your EFI partition on your hard disk (Not usb!!)</li>
+<li>Home screen button &gt; select your <code>config.plist</code> in <code>EFI/CLOVER/</code></li>
+</ul>
+</li>
+<li>Install the latest nvidia drivers with <a href="https://github.com/Benjamin-Dobell/nvidia-update">nVidia update</a> and install the latest mac <a href="https://www.nvidia.com/object/mac-driver-archive.html">CUDA drivers</a>
+(At the time of this guide, I used 5.3.0.0)</li>
+<li>Boot tab &gt; Select nvda_drv=1 (deselect nv_disable=1 if applicable)</li>
+</ul>
+<h3 id="bootloader-fix---boot-without-usb">Bootloader fix - Boot without USB</h3>
+<p>At this point, your installation probably doesn't work without the bootable USB. </p>
+<ul>
+<li>Download and flash a Linux live USB distro to another USB drive, I used <a href="https://en.altlinux.org/Rescue">Alt Linux Rescue</a></li>
+<li>Make sure only your macOS hard drive is plugged in for simplicity</li>
+<li>Boot into a linux shell</li>
+<li>Add a bios entry for Clover with <code>efibootmgr -c -L “Clover UEFI” -l “\EFI\CLOVER\CLOVERX64.EFI”</code></li>
+<li>Make it the first bios entry with <code>efibootmgr -o 0000</code></li>
+<li>If you screw this up, no biggie, just do a CMOS reset and try again! You can always fall back to booting from your macOS bootable USB</li>
+</ul>
+<h2 id="congratulations-you-should-have-a-mostly-working-hackintosh-now">Congratulations you should have a mostly working Hackintosh now!</h2>
+<h3 id="mojavecatalina-upgrade-guide">Mojave/Catalina upgrade guide</h3>
+<ul>
+<li>Only thing missing is Nvidia drivers because Apple and Nvidia have some beef and there isn't a driver made. So when/if(?) Nvidia releases them then this guide should work. </li>
+<li>You can use a <a href="https://support.apple.com/en-us/HT202239">Metal</a> supported GPU instead of Nvidia. I personally have used a <a href="https://amzn.to/3h2IWFt">AMD Radeon RX 560</a> GPU to install Mojave and Catalina successfully (via the AppStore and clean installs) using this guide.</li>
+</ul>
+<h3 id="to-do">To-Do</h3>
+<ul>
+<li>Figure out why some USB ports don't work (Needs a missing Kext)</li>
+</ul>
+</div> <a target="_blank" rel="noopener" href="https://github.com/kushagharahi/kushagharahi.github.io/tree/rc/src/content/blog/posts/asrock_z77_extreme4_gtx_970_high_sierra_hackintosh/post.md">Suggest a change to this post here! (requires a GitHub account)</a></div></div></div>
+		<!-- <script src="vendor.js"></script> -->
+		<script src="main.js"></script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-101476968-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+
+			gtag('config', 'UA-101476968-1');
+		</script>
+	
+
+</body></html>
