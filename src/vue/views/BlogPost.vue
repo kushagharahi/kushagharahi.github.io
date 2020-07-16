@@ -1,7 +1,8 @@
 <template>
   <div class="post">
     <h2>{{postMetaData.title}}</h2>
-    <span class="postDate">{{postMetaData.date_posted}} </span>
+    <span class="postDate" v-if="postMetaData.last_updated">Last Updated {{postMetaData.last_updated}}</span>
+    <span class="postDate" v-if="!postMetaData.last_updated">{{postMetaData.date_posted}} </span>
     <div v-html="compiledMarkdown"></div>
     <a target="_blank" rel="noopener" :href="'https://github.com/kushagharahi/kushagharahi.github.io/tree/rc/src/content/blog/posts/' + $route.params.name + '/post.md'">Suggest a change to this post here! (requires a GitHub account)</a>
   </div>

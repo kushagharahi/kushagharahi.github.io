@@ -1,5 +1,7 @@
 ![about this mac](~posts/asrock_z77_extreme4_gtx_970_high_sierra_hackintosh/aboutthismac.png)
 
+### Note: This guide will work for High Sierra, Mojave and Catalina. Mojave and Catalina do not support Nvidia GPUs, you will need to use a Metal GPU. More information at bottom of post regarding Mojave and Catalina.
+
 # Hardware (that matters)
 - Motherboard: [Asrock Z77 Extreme4](https://www.asrock.com/mb/Intel/Z77%20Extreme4/)
 - CPU: [Intel i5-3570K](https://ark.intel.com/products/65520) Ivy Bridge -- CPU shouldn't matter since it will be intel with this specific MOBO
@@ -46,18 +48,23 @@ My screen at this point had super low resolution. To fix, I disabled `CSM` in bi
 
 This [$10 USB Bluetooth adapter](https://amzn.to/38ZgbGY) works well for me. No need for an expensive PCI bluetooth like some enthusiasts claim. My [Airpods](https://amzn.to/2WpzgNw), [Magic Keyboard/Mouse](https://amzn.to/3fteVyh), and Handoff from my iPhone work beautifically. 
 
+### Audio Fix
+- [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) setup
+    - Download [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) and mount your EFI partition and select your clover plist
+    - Mount EFI tab > Mount your EFI partition on your hard disk (Not usb!!)
+    - Home screen button > select your `config.plist` in `EFI/CLOVER/`
+- Kexts Installer tab > Select the Lilu and AppleALC (Realtec ALC898 audio fix) kexts and OS Version of 10.13 and press download -- Boot tab > Select nvda_drv=1 (deselect nv_disable=1 if applicable)
+- Restart and you should have full audio!
 
-### Nvidia Graphics Fix & Audio Fix
-- Download [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) and mount your EFI partition and select your clover plist
- - Mount EFI tab > Mount your EFI partition on your hard disk (Not usb!!)
- - Home screen button > select your `config.plist` in `EFI/CLOVER/`
-- Graphics
- - Install the latest nvidia drivers with [nVidia update](https://github.com/Benjamin-Dobell/nvidia-update) and install the latest mac [CUDA drivers](https://www.nvidia.com/object/mac-driver-archive.html)
+### Nvidia Graphics Fix  
+- [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) setup
+    - Download [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/) and mount your EFI partition and select your clover plist
+    - Mount EFI tab > Mount your EFI partition on your hard disk (Not usb!!)
+    - Home screen button > select your `config.plist` in `EFI/CLOVER/`
+- Install the latest nvidia drivers with [nVidia update](https://github.com/Benjamin-Dobell/nvidia-update) and install the latest mac [CUDA drivers](https://www.nvidia.com/object/mac-driver-archive.html)
 (At the time of this guide, I used 5.3.0.0)
- - Boot tab > Select nvda_drv=1 (deselect nv_disable=1 if applicable)
-- Audio
- - Kexts Installer tab > Select the Lilu and AppleALC (Realtec ALC898 audio fix) kexts and OS Version of 10.13 and press download -- Boot tab > Select nvda_drv=1 (deselect nv_disable=1 if applicable)
-- Restart and you should have fully accelerated graphics and audio!
+- Boot tab > Select nvda_drv=1 (deselect nv_disable=1 if applicable)
+
 
 ### Bootloader fix - Boot without USB 
 At this point, your installation probably doesn't work without the bootable USB. 
@@ -70,9 +77,11 @@ At this point, your installation probably doesn't work without the bootable USB.
 
 ## Congratulations you should have a mostly working Hackintosh now! 
 
+### Mojave/Catalina upgrade guide 
+ - Only thing missing is Nvidia drivers because Apple and Nvidia have some beef and there isn't a driver made. So when/if(?) Nvidia releases them then this guide should work. 
+ - You can use a [Metal](https://support.apple.com/en-us/HT202239) supported GPU instead of Nvidia. I personally have used a [AMD Radeon RX 560](https://amzn.to/3h2IWFt) GPU to install Mojave and Catalina successfully (via the AppStore and clean installs) using this guide.
+
 ### To-Do
 - Figure out why some USB ports don't work (Needs a missing Kext)
-- Mojave/Catalina upgrade guide 
- - only thing missing is Nvidia drivers because Apple and Nvidia have some beef and there isn't a driver made. So when/if(?) Nvidia releases them then this guide should work, YMMV. 
- - Alternatively, you can get a [Metal](https://support.apple.com/en-us/HT202239) supported GPU. I personally have used a [AMD Radeon RX 560](https://amzn.to/3h2IWFt) GPU to update successfully using this guide.
+
 

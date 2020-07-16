@@ -13,9 +13,10 @@
     },
     {
         "title": "My High Sierra Hackintosh - Asrock z77 Extreme4 & Nvidia 970",
-        "subtitle": "Hackintosh Guide: Asrock z77 Extreme4, i5 3570K, Nvidia 970",
+        "subtitle": "Catalina, Mojave, and High Siera Hackintosh Guide: Asrock z77 Extreme4, i5 3570K, Nvidia 970",
         "name": "asrock_z77_extreme4_gtx_970_high_sierra_hackintosh",
-        "date_posted": "November 10th 2018"
+        "date_posted": "November 10th 2018",
+        "last_updated": "July 15th 2020"
     },
     {
         "title": "My Git Cheat Sheet",
