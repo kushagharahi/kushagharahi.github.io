@@ -36,7 +36,7 @@ My screen at this point had super low resolution. To fix, I disabled `CSM` in bi
 
 ### Ethernet fix
 - Download [IONetworkingFamily.kext](https://www.tonymacx86.com/attachments/ionetworkingfamily-kext-zip.136513/) 
--- This is the most reliable source I could find, if the link is dead please contact me and I will rehost it!
+-- This is the most reliable source I could find, if the link is dead please [contact](https://kusha.me/contact) me and I will rehost it!
 - Also download [KextBeast](https://www.tonymacx86.com/resources/kextbeast.32/)
 - Place both `KextBeast` and `IONetworkingFamily.kext` on the desktop and follow the KextBeast instructions to install the kext to `/System/Library/Extensions`
 - Reboot
@@ -65,8 +65,14 @@ At this point, your installation probably doesn't work without the bootable USB.
 
 ## Congratulations you should have a mostly working Hackintosh now! 
 
+### Enabling bluetooth for Airpods, Magic Keyboard/Mouse, [Handoff](https://support.apple.com/guide/mac-help/hand-off-between-devices-mchl732d3c0a/mac)
+
+This [$10 USB Bluetooth adapter](https://amzn.to/38ZgbGY) works well for me. No need for an expensive PCI bluetooth like some enthusiasts claim. My Airpods, Magic Keyboard/Mouse, and Handoff from my iPhone work beautifically. 
+
 ### To-Do
-- Figure out power management and sleep
-- Mojave upgrade guide 
- - only thing missing seems to be acceleration in nvidia drivers. So when/if(?) Nvidia releases them then this guide should work, YMMV. Alternatively, you can get a "metal" supported GPU, also YMMV.
+- Figure out why some USB ports don't work (Needs a missing Kext)
+- Mojave/Catalina upgrade guide 
+ - only thing missing is Nvidia drivers because Apple and Nvidia have some beef and there isn't a driver made. So when/if(?) Nvidia releases them then this guide should work, YMMV. 
+ - Alternatively, you can get a [Metal](https://support.apple.com/en-us/HT202239) supported GPU. I personally have used a [AMD Radeon RX 560](https://amzn.to/3h2IWFt) GPU to update successfully using this guide.
+ -
 
