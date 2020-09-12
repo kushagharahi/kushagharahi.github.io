@@ -1,7 +1,7 @@
 {
   "name": "kusha.me",
   "version": "3.0.0",
-  "description": "## Instructions * Clone repo * Make sure you have npm installed * do npm install",
+  "description": "Just another static blog and portfolio website built on VueJS and hosted on GitHub pages.",
   "main": "index.js",
   "scripts": {
     "prd-build": "rimraf dist/* && webpack --config ./build/webpack.prod.config.js",
@@ -10,7 +10,7 @@
   },
   "repository": "git+https://github.com/kushagharahi/kushagharahi.github.io.git",
   "author": "Kusha Gharahi",
-  "license": "MIT",
+  "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/kushagharahi/kushagharahi.github.io/issues"
   },

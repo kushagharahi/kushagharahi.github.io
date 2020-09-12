@@ -1,6 +1,6 @@
-Source code in this repository is licensed under GPLv3 except for any material from the `/src/content/blog/` directory or any subdirectories, or anywhere that content appears after compilation (e.g. any files created when running `npm run *-*-build`).
+Source code in this repository is licensed under GPLv3 except for all blog material from the `/src/content/blog/` directory or any subdirectories, or anywhere that blog content appears after compilation.
 
-Copyright (c) 2018 Kusha Gharahi <kusha.me>
+Copyright (c) 2020 Kusha Gharahi <kusha.me>
 
 
 GNU GENERAL PUBLIC LICENSE
