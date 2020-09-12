@@ -34,6 +34,6 @@ config.plugins.push(new PrerenderSpaPlugin({
 config.plugins.push(new SitemapPlugin(
   'https://kusha.me', paths, {
     skipGzip: true
-  }))
+}))
 
 module.exports = config

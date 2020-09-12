@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <div id="shell-top-bar">{{topBarText}}</div>
-    <div id="shell-body">
+    <div id="shell-top-bar">
+      {{ topBarText }}
     </div>
+    <div id="shell-body" />
   </div>
 </template>
 
@@ -15,6 +16,21 @@
         topBarText : "🏠 vistor@kusha.me: /",
         latestPostMetadata: posts[0]
       }
+    },  
+    mounted: function() {
+      this.terminalOutCommand(document.getElementById("shell-body"),"man about | cat").then(() => {
+        this.terminalOutHtml(document.getElementById("shell-body"), 
+          "<br />(about1)<br /> \
+          Hi,<br /> \
+          I'm Kusha, a software engineer <a href='/projects/'>building really cool stuff</a> in my spare time.<br /> \
+          📃 Check out my <a href='/resume/'>resume here</a>. <br /> \
+          📬 Drop me a line on my <a href='/contact/'>contact page</a>.<br /> \
+          🍴 Fork this site <a href='https://github.com/kushagharahi/kushagharahi.github.io'>here</a>!<br /> \
+          👀 Peep the latest blog post -> <a href='/blog/" + this.latestPostMetadata.name + "/'>" + this.latestPostMetadata.title + "</a> <br /><br /> \
+          <span style='text-align:center; display:block'> \
+            >>>><a href='/contact'>PS. I freelance too</a><<<< \
+          <span>")
+      });
     },
     methods: {
       terminalOutCommand: (domElement, statement) => {
@@ -44,21 +60,6 @@
                 resolve();
             })
       }
-    },  
-    mounted: function() {
-      this.terminalOutCommand(document.getElementById("shell-body"),"man about | cat").then(() => {
-        this.terminalOutHtml(document.getElementById("shell-body"), 
-          "<br />(about1)<br /> \
-          Hi,<br /> \
-          I'm Kusha, a software engineer <a href='/projects/'>building really cool stuff</a> in my spare time.<br /> \
-          📃 Check out my <a href='/resume/'>resume here</a>. <br /> \
-          📬 Drop me a line on my <a href='/contact/'>contact page</a>.<br /> \
-          🍴 Fork this site <a href='https://github.com/kushagharahi/kushagharahi.github.io'>here</a>!<br /> \
-          👀 Peep the latest blog post -> <a href='/blog/" + this.latestPostMetadata.name + "/'>" + this.latestPostMetadata.title + "</a> <br /><br /> \
-          <span style='text-align:center; display:block'> \
-            >>>><a href='/contact'>PS. I freelance too</a><<<< \
-          <span>")
-      });
     }
   }
 </script>

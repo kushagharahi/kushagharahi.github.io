@@ -1,10 +1,20 @@
 <template>
   <div class="post">
-    <h2>{{postMetaData.title}}</h2>
-    <span class="postDate" v-if="postMetaData.last_updated">Last Updated {{postMetaData.last_updated}}</span>
-    <span class="postDate" v-if="!postMetaData.last_updated">{{postMetaData.date_posted}} </span>
-    <div v-html="compiledMarkdown"></div>
-    <a target="_blank" rel="noopener" :href="'https://github.com/kushagharahi/kushagharahi.github.io/tree/rc/src/content/blog/posts/' + $route.params.name + '/post.md'">Suggest a change to this post here! (requires a GitHub account)</a>
+    <h2>{{ postMetaData.title }}</h2>
+    <span
+      v-if="postMetaData.last_updated"
+      class="postDate"
+    >Last Updated {{ postMetaData.last_updated }}</span>
+    <span
+      v-if="!postMetaData.last_updated"
+      class="postDate"
+    >{{ postMetaData.date_posted }} </span>
+    <div v-html="compiledMarkdown" />
+    <a
+      target="_blank"
+      rel="noopener"
+      :href="'https://github.com/kushagharahi/kushagharahi.github.io/tree/rc/src/content/blog/posts/' + $route.params.name + '/post.md'"
+    >Suggest a change to this post here! (requires a GitHub account)</a>
   </div>
 </template>
 
@@ -18,6 +28,12 @@ export default {
       postMetaData: {}
       }
   },
+  created() {
+    this.compiledMarkdown = require('posts/' + this.$route.params.name + '/post.md')
+    this.postMetaData = postsJson.filter(p => p.name == this.$route.params.name)[0]
+    this.setMetaImg(this.getFirstImage(this.compiledMarkdown))
+    this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle)
+  },
   methods: {
     getFirstImage: (html) => {
       const parser = new DOMParser()
@@ -25,12 +41,6 @@ export default {
       const firstImg = doc.getElementsByTagName('img')[0]
       return firstImg != null ? firstImg.attributes.src.nodeValue : null
     }
-  },
-  created() {
-    this.compiledMarkdown = require('posts/' + this.$route.params.name + '/post.md')
-    this.postMetaData = postsJson.filter(p => p.name == this.$route.params.name)[0]
-    this.setMetaImg(this.getFirstImage(this.compiledMarkdown))
-    this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle)
   }
 }
 

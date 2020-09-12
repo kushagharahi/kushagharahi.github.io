@@ -1,24 +1,30 @@
 <template>
-<div>
-  <mac-console-component class="shadow"></mac-console-component>
-  <br />
-  <div id="center">
-      <social-icon name="github"
-                    class="socialIcon"
-                    link="http://github.com/kushagharahi"
-                    target="_blank"></social-icon>
+  <div>
+    <mac-console-component class="shadow" />
+    <br>
+    <div id="center">
+      <social-icon
+        name="github"
+        class="socialIcon"
+        link="http://github.com/kushagharahi"
+        target="_blank"
+      />
 
-      <social-icon name="twitter"
-                    class="socialIcon"
-                    link="http://twitter.com/KKUUSSHHAA"
-                    target="_blank"></social-icon>
+      <social-icon
+        name="twitter"
+        class="socialIcon"
+        link="http://twitter.com/KKUUSSHHAA"
+        target="_blank"
+      />
 
-      <social-icon name="linkedin"
-                    class="socialIcon"
-                    link="http://linkedin.com/in/kushagharahi"
-                    target="_blank "></social-icon>
+      <social-icon
+        name="linkedin"
+        class="socialIcon"
+        link="http://linkedin.com/in/kushagharahi"
+        target="_blank "
+      />
+    </div>
   </div>
-</div>
 </template>
 
 <script>

@@ -1,14 +1,28 @@
 <template>
-    <div>
-        <div v-for="post in posts" v-bind:key="post.name">
-            <div class="postList shadow hover">
-                <h2><router-link class="postTitle" :to="'/blog/' + post.name">{{post.title}}</router-link></h2>
-                <span class="postDate">{{post.date_posted}} </span>
-                <p>{{post.subtitle}}</p>
-                <p><router-link :to="'/blog/' + post.name">Full post >></router-link></p>
-            </div>
-        </div>
+  <div>
+    <div
+      v-for="post in posts"
+      :key="post.name"
+    >
+      <div class="postList shadow hover">
+        <h2>
+          <router-link
+            class="postTitle"
+            :to="'/blog/' + post.name"
+          >
+            {{ post.title }}
+          </router-link>
+        </h2>
+        <span class="postDate">{{ post.date_posted }} </span>
+        <p>{{ post.subtitle }}</p>
+        <p>
+          <router-link :to="'/blog/' + post.name">
+            Full post >>
+          </router-link>
+        </p>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>

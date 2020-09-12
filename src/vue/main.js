@@ -124,7 +124,6 @@ function view (name) {
 }
 
 router.afterEach(function (to, from) {
-  console.log(to.meta)
   if (to.meta.description !== 'blog post') {
     const title = to.meta.title + '  - kusha.me'
     setMetaTags(title, to.meta.description)

@@ -1,44 +1,48 @@
 <template>
-  <a :href="link"
-     target="_blank"
-     rel="noopener">
-    <img :src="imgLink"
-         v-on:mouseover="setHover(true)"
-         v-on:mouseleave="setHover(false)"
-         class="socialIcon" /></a>
+  <a
+    :href="link"
+    target="_blank"
+    rel="noopener"
+  >
+    <img
+      :src="imgLink"
+      class="socialIcon"
+      @mouseover="setHover(true)"
+      @mouseleave="setHover(false)"
+    ></a>
 </template>
 
 <script>
-var imgLinkPrefix = require.context('res/img/social/', false, /\.png$/)
-export default {
-  props: {
-    name: {
-      type: String,
-      required: true
-      }, 
-    link: {
-      type: String,
-      required: true
+  let socialIconMap = require.context('res/img/social/', false, /\.png$/)
+  export default {
+    props: {
+      name: {
+        type: String,
+        required: true
+        }, 
+      link: {
+        type: String,
+        required: true
+        }
+    },
+    data: function () {
+      return {
+        imgLink: ''
       }
-  },
-  data: function () {
-    return {
-      imgLink: ''
-    }
-  },
-  created: function () {
-    this.imgLink = imgLinkPrefix('./' + this.name + '.png')
-  },
-  methods: {
-    setHover (hover) {
-      if (hover === true) {
-        this.imgLink = imgLinkPrefix('./' + this.name + '-hover.png')
-      } else {
-        this.imgLink = imgLinkPrefix('./' + this.name + '.png')
+    },
+    created: function () {
+      this.setHover(false)
+    },
+    methods: {
+      setHover (hover) {
+        if (hover === true) {
+          this.imgLink = socialIconMap('./' + this.name + '-hover.png').default
+        } else {
+          this.imgLink = socialIconMap('./' + this.name + '.png').default
+        }
       }
     }
   }
-}
 </script>
 
 <style lang="scss">

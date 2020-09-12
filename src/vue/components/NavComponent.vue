@@ -1,61 +1,98 @@
 <template>
   <div>
     <div class="navMobileBG">
-      <router-link style="width:85%" to="/"
-                   class="navMobileTitle">{{mobilePageTitle}}</router-link>
+      <router-link
+        style="width:85%"
+        to="/"
+        class="navMobileTitle"
+      >
+        {{ mobilePageTitle }}
+      </router-link>
     </div>
-    <input class="navMenu"
-           v-model="mobileMenu"
-           type="checkbox" />
-    <label for="navMenu"></label>
+    <input
+      v-model="mobileMenu"
+      class="navMenu"
+      type="checkbox"
+    >
+    <label for="navMenu" />
     <ul class="nav">
       <li>
-        <router-link class="navTitle"
-                     to="/">kusha.me</router-link>
+        <router-link
+          class="navTitle"
+          to="/"
+        >
+          kusha.me
+        </router-link>
       </li>
       <li>
-        <router-link class="navLink"
-                     active-class="active"
-                     to="/"
-                     exact>Home</router-link>
-      </li>
-                <li>
-        <router-link class="navLink"
-                     active-class="active"
-                     to="/blog">Blog</router-link>
-      </li>
-            <li>
-        <router-link class="navLink"
-                     active-class="active"
-                     to="/projects">Projects</router-link>
+        <router-link
+          class="navLink"
+          active-class="active"
+          to="/"
+          exact
+        >
+          Home
+        </router-link>
       </li>
       <li>
-        <router-link class="navLink"
-                     active-class="active"
-                     to="/resume">Resume</router-link>
+        <router-link
+          class="navLink"
+          active-class="active"
+          to="/blog"
+        >
+          Blog
+        </router-link>
       </li>
       <li>
-        <router-link class="navLink"
-                     active-class="active"
-                     to="/contact">Contact</router-link>
+        <router-link
+          class="navLink"
+          active-class="active"
+          to="/projects"
+        >
+          Projects
+        </router-link>
       </li>
       <li>
-        <social-icon name="github"
-                     class="socialIcon"
-                     link="http://github.com/kushagharahi"
-                     target="_blank"></social-icon>
+        <router-link
+          class="navLink"
+          active-class="active"
+          to="/resume"
+        >
+          Resume
+        </router-link>
       </li>
       <li>
-        <social-icon name="twitter"
-                     class="socialIcon"
-                     link="http://twitter.com/KKUUSSHHAA"
-                     target="_blank"></social-icon>
+        <router-link
+          class="navLink"
+          active-class="active"
+          to="/contact"
+        >
+          Contact
+        </router-link>
       </li>
       <li>
-        <social-icon name="linkedin"
-                     class="socialIcon"
-                     link="http://linkedin.com/in/kushagharahi"
-                     target="_blank "></social-icon>
+        <social-icon
+          name="github"
+          class="socialIcon"
+          link="http://github.com/kushagharahi"
+          target="_blank"
+        />
+      </li>
+      <li>
+        <social-icon
+          name="twitter"
+          class="socialIcon"
+          link="http://twitter.com/KKUUSSHHAA"
+          target="_blank"
+        />
+      </li>
+      <li>
+        <social-icon
+          name="linkedin"
+          class="socialIcon"
+          link="http://linkedin.com/in/kushagharahi"
+          target="_blank "
+        />
       </li>
     </ul>
   </div>
@@ -65,14 +102,14 @@
 <script>
 import SocialIcon from './SocialIconComponent.vue'
 export default {
+  components: {
+    SocialIcon
+  },
   data: () => {
     return {
       mobilePageTitle: '',
       mobileMenu: false
     }
-  },
-  components: {
-    SocialIcon
   },
   watch: {
     '$route' (to, from) {

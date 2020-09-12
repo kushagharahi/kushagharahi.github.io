@@ -1,8 +1,8 @@
 <template>
-<div>
-  <h1>Blog</h1>
-  <blog-listing-component></blog-listing-component>
-</div>
+  <div>
+    <h1>Blog</h1>
+    <blog-listing-component />
+  </div>
 </template>
 
 <script>

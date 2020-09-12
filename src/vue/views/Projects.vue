@@ -1,36 +1,58 @@
 <template>
-<div class="projectContainer">
-  <div class="project shadow hover" v-for="project in projectsNotHidden" :key="project.title">
-    <img class="projectImg" v-if="project.imgPreview != ''" :src="pictureDir(project.imgPreview)"></img>
-    <img class="projectImg" v-if="project.imgPreview == ''" :src="noPictureRes"></img>
+  <div class="projectContainer">
+    <div
+      v-for="project in projectsNotHidden"
+      :key="project.title"
+      class="project shadow hover"
+    >
+      <img
+        v-if="project.imgPreview != ''"
+        class="projectImg"
+        :src="pictureDir(project.imgPreview)"
+      ></img>
+      <img
+        v-if="project.imgPreview == ''"
+        class="projectImg"
+        :src="noPictureRes"
+      ></img>
 
-    <h2><strong>{{project.title}}</strong></h2>
-    <span v-for="(tech, techIndex) in project.techUsed" :key="tech.name">
-      <span class="label">{{tech.name}}</span>
-      <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
-    </span>
-    <p>
-      <span v-for="(site, siteIndex) in project.urls" :key="site.url"> 
-        <a target="_blank" rel="noopener" :href="site.url">{{site.desc}}</a> 
-        <span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span>
+      <h2><strong>{{ project.title }}</strong></h2>
+      <span
+        v-for="(tech, techIndex) in project.techUsed"
+        :key="tech.name"
+      >
+        <span class="label">{{ tech.name }}</span>
+        <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
       </span>
-    </p>
-    <p>{{project.blurb}}</p>
+      <p>
+        <span
+          v-for="(site, siteIndex) in project.urls"
+          :key="site.url"
+        > 
+          <a
+            target="_blank"
+            rel="noopener"
+            :href="site.url"
+          >{{ site.desc }}</a> 
+          <span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span>
+        </span>
+      </p>
+      <p>{{ project.blurb }}</p>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
 import projects from 'content/projects/projects.json'
-var projectImgs = require.context('content/projects/images/', false, /\.(png|jpg|gif)$/)
+let projectImgsMap = require.context('content/projects/images/', false, /\.(png|jpg|gif)$/)
 
 export default {
   data: () => {
     return {
       projects,
-      noPictureRes: projectImgs('./somecode.png'),
+      noPictureRes: projectImgsMap('./somecode.png').default,
       pictureDir: (imgName) => {
-        return projectImgs('./' + imgName)
+        return projectImgsMap('./' + imgName).default
       }
     }
   },
