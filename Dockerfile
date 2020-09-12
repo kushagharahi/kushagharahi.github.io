@@ -19,6 +19,6 @@ RUN npm install --only-production
 COPY . .
 
 #run prod build
-RUN npm run unix-prod-build
+RUN npm run prod-build
 
 RUN python -m SimpleHTTPServer 8080 dist/
