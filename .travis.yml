@@ -3,9 +3,9 @@ language:
 node_js:
   "node"
 install:
-  npm install
+  npm install --only-production
 script:
-  npm run unix-prod-build
+  npm run prod-build
 deploy:
   provider: pages
   skip_cleanup: true # keep files after build
