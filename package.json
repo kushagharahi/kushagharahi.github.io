@@ -4,13 +4,9 @@
   "description": "## Instructions * Clone repo * Make sure you have npm installed * do npm install",
   "main": "index.js",
   "scripts": {
-    "unix-prod-build": "rm -rf dist/* && webpack --config ./build/webpack.prod.config.js",
-    "win-prod-build": "npm run win-clean-dist && webpack --config ./build/webpack.prod.config.js",
-    "unix-dev-build": "rm -rf dist/* && webpack --config ./build/webpack.dev.config.js --display-entrypoints",
-    "win-dev-build": "npm run win-clean-dist && webpack --config ./build/webpack.dev.config.js --display-entrypoints",
-    "unix-start-dev-server": "rm -rf dist/* && webpack-dev-server --config ./build/webpack.dev.config.js",
-    "win-start-dev-server": "npm run win-clean-dist && webpack-dev-server --config ./build/webpack.dev.config.js",
-    "win-clean-dist": "(rd dist /s /q || echo dist not found, creating) && mkdir dist"
+    "prd-build": "rimraf dist/* && webpack --config ./build/webpack.prod.config.js",
+    "dev-build": "rimraf dist/* && webpack --config ./build/webpack.dev.config.js --display-entrypoints",
+    "hotreload": "rimraf dist/* && webpack-dev-server --config ./build/webpack.dev.config.js"
   },
   "repository": "git+https://github.com/kushagharahi/kushagharahi.github.io.git",
   "author": "Kusha Gharahi",
@@ -32,6 +28,7 @@
     "markdown-loader": "^5.1.0",
     "node-sass": "^4.14.1",
     "prerender-spa-plugin": "^3.4.0",
+    "rimraf": "^3.0.2",
     "sass-loader": "^10.0.2",
     "sitemap-webpack-plugin": "^0.8.1",
     "style-loader": "^1.2.1",

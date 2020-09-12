@@ -16,15 +16,12 @@ Source code for [kusha.me](https://kusha.me), my static blog and portfolio websi
 
 You will need [npm](https://www.npmjs.com/) installed. 
 
-command                         | OS       | description
-:------------------------------:|:--------:|:------------------------------------------------------------------------------------------------------:|
-`npm install`                   | win/unix | restore dependencies
-`npm run unix-start-dev-server` | unix     | Starts a [http server](https://github.com/webpack/webpack-dev-server) on `8080` with hot-reloading 
-`npm run win-start-dev-server`  | win      | ""
-`npm run unix-dev-build`        | unix     | Compile to `dist` w/o prerendering
-`npm run win-dev-build`         | win      | ""
-`npm run unix-prod-build`       | unix     | Compile to `dist` with prerendering
-`npm run win-prod-build`        | win      | ""
+command                         | description
+:------------------------------:|:------------------------------------------------------------------------------------------------------:|
+`npm install`              | restore dependencies
+`npm run hotreload`        | Starts a [http server](https://github.com/webpack/webpack-dev-server) on `8080` with hot-reloading 
+`npm run dev-build`        | Compile to `dist` w/o prerendering
+`npm run prod-build`       | Compile to `dist` with prerendering
 
 ## Built With
 
