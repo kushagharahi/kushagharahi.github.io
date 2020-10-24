@@ -70,6 +70,7 @@ This [$10 USB Bluetooth adapter](https://amzn.to/38ZgbGY) works well for me. No 
 At this point, your installation probably doesn't work without the bootable USB. 
 - Download and flash a Linux live USB distro to another USB drive, I used [Alt Linux Rescue](https://en.altlinux.org/Rescue)
 - Make sure only your macOS hard drive is plugged in for simplicity
+  - If you use Alt Linux Rescue, boot with UEFI mode and not USB mode. Pick the 'EFI shell' option.
 - Boot into a linux shell
 - Add a bios entry for Clover with `efibootmgr -c -L “Clover UEFI” -l “\EFI\CLOVER\CLOVERX64.EFI”`
 - Make it the first bios entry with `efibootmgr -o 0000`
