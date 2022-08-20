@@ -1,10 +1,7 @@
-import Vue from 'vue'
+import { createApp, h } from 'vue'
 import VueResource from 'vue-resource'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-
-Vue.use(VueRouter)
-Vue.use(VueResource)
 
 require('res/style/scss/app.scss')
 require('file-loader?name=[name].[ext]!static/index.html')
@@ -15,8 +12,8 @@ require('file-loader?name=[name].[ext]!static/robots.txt')
 require('file-loader?name=[name].[ext]!static/googledc065f3d00d77d9e.html')
 require('res/img/logo/logo.png')
 
-const router = new VueRouter({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(),
   routes: [
     { 
       path: '/', 
@@ -68,7 +65,7 @@ const router = new VueRouter({
         }
     },
     { 
-      path: '*', 
+      path: '/:pathMatch(.*)*', 
       component: view('NotFound'), 
       meta: { 
         title: '404 Not Found' 
@@ -77,20 +74,22 @@ const router = new VueRouter({
   ]
 })
 
-var root = new Vue({
-  el: '#app',
+var root = createApp({
+  //el: '#app',
   router: router,
-  render: function (h) {
+  render: function () {
     return h(App)
   },
   replace: false
 })
 
+root.use(router)
+
 document.addEventListener('DOMContentLoaded', function () {
-  root.$mount('#app')
+  root.mount('#app')
 })
 
-Vue.mixin({
+root.mixin({
   methods: {
     setMetaTags: (title, description) => setMetaTags(title, description),
     setMetaImg: (image) => setMetaImg(image)
@@ -119,8 +118,8 @@ function setMetaImg (image) {
 }
 
 function view (name) {
-  return resolve =>
-    require(['./views/' + name + '.vue'], resolve)
+  return () =>
+    import('./views/' + name + 'Page.vue')
 }
 
 router.afterEach(function (to, from) {

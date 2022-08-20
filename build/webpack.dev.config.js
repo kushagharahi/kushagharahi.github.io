@@ -1,5 +1,6 @@
 const path = require('path')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const { VueLoaderPlugin } = require('vue-loader')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -16,7 +17,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      'vue$': 'vue/dist/vue.runtime.esm-bundler.js',
       vue: '@vue/compat',
       'res': path.resolve(__dirname, '../src/res'),
       'content': path.resolve(__dirname, '../src/content'),
@@ -27,17 +28,6 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader', //js & vue linting
-        exclude: [path.resolve(__dirname, '../node_modules')],
-        enforce: 'pre',
-        options: {
-          fix: true,
-          configFile: './build/.eslintrc.js'
-        },
-        exclude: [path.resolve(__dirname, '../node_modules')]
-      },
       {
         test: /\.js$/,
         loader: 'babel-loader', //transpile to plain ES5 JS
@@ -52,7 +42,14 @@ module.exports = {
       {
         test: /.vue$/,
         loader: 'vue-loader', // use vue-loader for all *.vue files
-        exclude: [path.resolve(__dirname, '../node_modules')]
+        exclude: [path.resolve(__dirname, '../node_modules')],
+        options: {
+          compilerOptions: {
+            compatConfig: {
+              MODE: 3
+            }
+          }
+        }
       },
       {
         test: /\.scss$/,
@@ -100,9 +97,29 @@ module.exports = {
     ]
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new ESLintPlugin({
+      extensions: [`js`, `jsx`, `vue`],
+      cache: true,
+      exclude: [
+        path.resolve(__dirname, '../node_modules')
+      ],
+      fix: true,
+      overrideConfigFile: './build/.eslintrc.js',
+      useEslintrc: true,
+    })
   ],
   optimization: {
     minimizer: []
   }
 }
+// {
+//   test: /\.(js|vue)$/,
+//   loader: 'eslint-loader', //js & vue linting
+//   exclude: [path.resolve(__dirname, '../node_modules')],
+//   enforce: 'pre',
+//   options: {
+//     fix: true,
+//     configFile: './build/.eslintrc.js'
+//   },
+// },
