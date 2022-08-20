@@ -35,5 +35,9 @@ config.plugins.push(new SitemapPlugin(
   'https://kusha.me', paths, {
     skipGzip: true
 }))
+// Exclude Vue options API during production compile time.
+config.plugins.webpack.definePlugin({
+  __VUE_OPTIONS_API__: false
+})
 
 module.exports = config

@@ -75,9 +75,8 @@ const router = createRouter({
 })
 
 var root = createApp({
-  //el: '#app',
   router: router,
-  render: function () {
+  render() {
     return h(App)
   },
   replace: false
