@@ -4,8 +4,12 @@
 
 ### Features
 * Dev server with hot-reloading
-* Static prerendered production site
 * Markdown blog posts
+
+* SEO Features
+  * Sitemap generation
+  * Prerendered html (Crawlable by search bots)
+  * Rich Opengraph for blog posts
 
 ### Built With
 

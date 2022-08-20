@@ -121,10 +121,19 @@ export default {
             Name:     this.formData.fName + ' ' + this.formData.lName,
            _redirect: false
           }
-          this.$http.post(url, body, { headers: {'Access-Control-Allow-Origin': '*' }}).then((success) => {
+          let requestOptions = {
+            body: JSON.stringify(body),
+            headers: {
+              'Access-Control-Allow-Origin': '*', 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            method: "POST"
+          }
+          fetch(url, requestOptions).then((data) => {
             this.message = 'Form submitted. I look forward to connecting with you!'
             this.formDisabled = true
-          }, (err) => {
+          }).catch((err) => {
             this.error = true
             this.message = 'There was an error processing the form, please try again or contact the webmaster @ contact(dot)gharahi[dot]c0m.'
             console.log(err)

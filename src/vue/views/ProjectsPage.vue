@@ -9,12 +9,12 @@
         v-if="project.imgPreview != ''"
         class="projectImg"
         :src="pictureDir(project.imgPreview)"
-      ></img>
+      >
       <img
         v-if="project.imgPreview == ''"
         class="projectImg"
         :src="noPictureRes"
-      ></img>
+      >
 
       <h2><strong>{{ project.title }}</strong></h2>
       <span
@@ -50,9 +50,9 @@ export default {
   data: () => {
     return {
       projects,
-      noPictureRes: projectImgsMap('./somecode.png').default,
+      noPictureRes: projectImgsMap('./somecode.png'),
       pictureDir: (imgName) => {
-        return projectImgsMap('./' + imgName).default
+        return projectImgsMap('./' + imgName)
       }
     }
   },
