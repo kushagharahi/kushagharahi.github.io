@@ -46,13 +46,14 @@
 import projects from 'content/projects/projects.json'
 let projectImgsMap = require.context('content/projects/images/', false, /\.(png|jpg|gif)$/)
 
+
 export default {
   data: () => {
     return {
       projects,
-      noPictureRes: projectImgsMap('./somecode.png').default,
+      noPictureRes: projectImgsMap('./somecode.png'),
       pictureDir: (imgName) => {
-        return projectImgsMap('./' + imgName).default
+        return projectImgsMap('./' + imgName)
       }
     }
   },
