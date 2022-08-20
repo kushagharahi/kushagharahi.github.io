@@ -1,5 +1,4 @@
 import { createApp, h } from 'vue'
-import VueResource from 'vue-resource'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 

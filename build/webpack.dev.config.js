@@ -93,7 +93,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new ESLintPlugin({
       extensions: [`js`, `jsx`, `vue`],
-      cache: true,
+      cache: false,
       exclude: [
         path.resolve(__dirname, '../node_modules')
       ],
