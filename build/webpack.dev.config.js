@@ -29,13 +29,6 @@ module.exports = {
   module: {
     rules: [
       {
-        resourceQuery: /raw/,
-        type: 'asset/resource',
-        generator: {
-          filename: '[name][ext]'
-        }
-      },
-      {
         test: /\.js$/,
         loader: 'babel-loader', //transpile to plain ES5 JS
         include: [
@@ -49,8 +42,7 @@ module.exports = {
       {
         test: /.vue$/,
         loader: 'vue-loader', // use vue-loader for all *.vue files
-        exclude: [path.resolve(__dirname, '../node_modules')],
-        type: 'javascript/auto'
+        exclude: [path.resolve(__dirname, '../node_modules')]
       },
       {
         test: /\.scss$/,
@@ -60,8 +52,7 @@ module.exports = {
           loader: 'css-loader' // translates CSS into CommonJS
         }, {
           loader: 'sass-loader' // compiles Scss to CSS
-        }],
-        type: 'javascript/auto'
+        }]
       },
       {
         test: /\.(eot|ttf|woff|woff2|otf)$/,
@@ -89,11 +80,17 @@ module.exports = {
           {
             loader: 'markdown-loader',
             options: {
-              xhtml: true
+//              xhtml: true
             }
           }
-        ],
-        type: 'javascript/auto'
+        ]
+      },
+      {
+        resourceQuery: /raw/,
+        type: 'asset/resource',
+        generator: {
+          filename: '[name][ext]'
+        }
       }
     ]
   },
