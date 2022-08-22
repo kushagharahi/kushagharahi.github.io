@@ -74,13 +74,14 @@ module.exports = {
           {
             loader: 'html-loader',
             options: {
-              minimize: false
+              minimize: false,
+              esModule: false
             }
           },
           {
             loader: 'markdown-loader',
             options: {
-//              xhtml: true
+              xhtml: true
             }
           }
         ]

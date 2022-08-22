@@ -29,7 +29,6 @@
           class="navLink"
           active-class="active"
           to="/"
-          exact
         >
           Home
         </router-link>
@@ -39,6 +38,7 @@
           class="navLink"
           active-class="active"
           to="/blog"
+          :class="{'active': $route.path.includes('/blog')}"
         >
           Blog
         </router-link>
