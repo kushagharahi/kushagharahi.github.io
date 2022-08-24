@@ -13,7 +13,6 @@ require('res/img/logo/logo.png')
 
 const router = createRouter({
   history: createWebHistory(),
-
   routes: [
     { 
       path: '/', 
