@@ -1,5 +1,5 @@
 import { createApp, h } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, RouterView } from 'vue-router'
 import App from './App.vue'
 
 require('res/style/scss/app.scss')
@@ -49,22 +49,28 @@ const router = createRouter({
     },
     { 
       path: '/blog', 
-      component: view('Blog'),
-      meta: { 
-        title: 'Blog', 
-        description: 'Blog about different software stuff' 
-      }
-    },
-    { 
-      path: '/blog/:name', 
-      component: view('BlogPost'), 
-      meta: { 
-        title: 'This is a generic blog post title because I didn\'t set a title', 
-        description: 'This is a generic blog post description because I didn\'t set a description' 
-      }, 
-      params: { 
-        name: '' 
-      }
+      component: { render: () => h(RouterView) },
+      children: [
+        {
+          path: '',
+          component: view('Blog'),
+          meta: { 
+            title: 'Blog', 
+            description: 'Blog about different software stuff' 
+          }
+        },
+        {
+          path: '/blog/:name', 
+          component: view('BlogPost'), 
+          meta: { 
+            title: 'This is a generic blog post title because I didn\'t set a title', 
+            description: 'This is a generic blog post description because I didn\'t set a description' 
+          }, 
+          params: { 
+            name: '' 
+          }
+        }
+      ]
     },
     { 
       path: '/:pathMatch(.*)*', 
