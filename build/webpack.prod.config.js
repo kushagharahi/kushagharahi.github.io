@@ -21,8 +21,8 @@ config.mode = 'production'
  * Even similar chunks are merged if the total size is reduced enough. 
  * As option modules that are not common in these chunks can be moved up the chunk tree to the parents. */
 config.plugins.push(new webpack.optimize.AggressiveMergingPlugin())
+// plugin uses terser to minify/minimize your JavaScript. Built into webpack5
 config.optimization.minimizer.push(new TerserPlugin({
-  cache: true,
   extractComments: false
 }))
 config.plugins.push(new PrerenderSpaPlugin({
@@ -31,13 +31,18 @@ config.plugins.push(new PrerenderSpaPlugin({
   // List of routes to prerender
   routes: paths
 }))
-config.plugins.push(new SitemapPlugin(
-  'https://kusha.me', paths, {
+config.plugins.push(new SitemapPlugin({
+  base: 'https://kusha.me', 
+  paths: paths, 
+  options: {
     skipGzip: true
+  }
 }))
 // Exclude Vue options API during production compile time.
-config.plugins.webpack.definePlugin({
-  __VUE_OPTIONS_API__: false
-})
+plugins: [
+  new webpack.DefinePlugin({
+    __VUE_OPTIONS_API__: false
+  })
+]
 
 module.exports = config
