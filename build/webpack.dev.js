@@ -4,11 +4,8 @@ const webpack = require('webpack')
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'inline-source-map',
   devServer: {
     compress: false,
-    port: 8080,
-    historyApiFallback: true,
   },
   plugins: [
     new webpack.DefinePlugin({

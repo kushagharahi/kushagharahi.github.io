@@ -3,7 +3,6 @@ import { createRouter, createWebHistory, RouterView } from 'vue-router'
 import App from './App.vue'
 
 require('res/style/scss/app.scss')
-require('static/index.html?raw')
 require('static/404.html?raw')
 require('static/favicon.ico?raw')
 require('static/CNAME?raw')

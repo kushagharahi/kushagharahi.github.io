@@ -5,8 +5,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default
 const path = require('path')
 const PrerendererWebpackPlugin = require('@prerenderer/webpack-plugin')
-const PuppeteerRenderer = require('@prerenderer/renderer-puppeteer');
-const { executablePath } = require('puppeteer');
 
 const paths = [ '/', 
                 '/blog', 
@@ -22,11 +20,20 @@ const paths = [ '/',
 
 module.exports = merge(common, {
   mode: 'production',
+  devServer: {
+    compress: true,
+  },
   optimization: { 
     minimizer: [
       // plugin uses terser to minify/minimize your JavaScript. Built into webpack5
       new TerserPlugin({
-        extractComments: false
+        // remove both the license file and the comments inside the bundle
+        extractComments: false,
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+        },
       })
     ]
   },
@@ -42,30 +49,16 @@ module.exports = merge(common, {
       base: 'https://kusha.me', 
       paths: paths, 
       options: {
-        skipGzip: true
+        skipgzip: true
       }
     }),
     new PrerendererWebpackPlugin({
-      // Required - The path to the webpack-outputted app to prerender.
-      staticDir: path.resolve(__dirname, '../dist'),
-      renderer: '@prerenderer/renderer-puppeteer',
-      // Required - Routes to render.
       routes: paths,
-      postProcess (renderedRoute) {
-        // Remove /index.html from the output path if the dir name ends with a .html file extension.
-        // For example: /dist/dir/special.html/index.html -> /dist/dir/special.html
-        if (renderedRoute.route.endsWith('.html')) {
-          renderedRoute.outputPath = path.resolve(__dirname, '../dist', renderedRoute.route)
-        }
-
-      },
       rendererOptions: {
-        executablePath: "",
-        headless: false,
-        launchOptions: {
-          executablePath: "/usr/bin/google-chrome-stable"
-        }
+        //headless: false,
+        //maxConcurrentRoutes: 1,
+        timeout: 30000,
       }
-    })
+    }),
   ]
 })

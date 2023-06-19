@@ -1,11 +1,17 @@
 const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const ESLintPlugin = require('eslint-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  devtool: 'inline-source-map',
+  devServer: {
+    port: 8080,
+    historyApiFallback: true,
+  },
   entry: path.resolve(__dirname, '../src') + '/vue/main.js',
   output: {
-    filename: '[name].js?[hash]',
+    filename: '[name]_bundle.js',
     chunkFilename: '[chunkhash].js',
     path: path.resolve(__dirname, '../dist'),
     clean: true
@@ -34,7 +40,7 @@ module.exports = {
          }
       },
       {
-        test: /.vue$/,
+        test: /\.vue$/,
         loader: 'vue-loader', // use vue-loader for all *.vue files
         exclude: [path.resolve(__dirname, '../node_modules')]
       },
@@ -81,6 +87,7 @@ module.exports = {
         ]
       },
       {
+        exclude: /index.html/,
         resourceQuery: /raw/,
         type: 'asset/resource',
         generator: {
@@ -101,5 +108,9 @@ module.exports = {
       overrideConfigFile:  path.resolve(__dirname, '.eslintrc.js'),
       useEslintrc: true,
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, '../src/static/index.html'),
+      hash: true
+    })
   ],
 }
