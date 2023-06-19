@@ -24,41 +24,46 @@ jobs:
       - name: Run Lighthouse
         run: npm install -g @lhci/cli@0.11.x && lhci autorun --upload.target=temporary-public-storage --config=.github/workflows/.lighthouserc.js
       
-      - name: Format lighthouse score
-        id: format_lighthouse_score
-        uses: actions/github-script@v3
+      - name: Comment Lighthouse Scores
+        uses: actions/github-script@v4
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const result = ${{ steps.lighthouse_audit.outputs.manifest }}[0].summary
-            const links = ${{ steps.lighthouse_audit.outputs.links }}
+            const fs = require('fs');
+            const path = require('path');
+            const { execSync } = require('child_process');
+            const prNumber = context.payload.pull_request.number;
+            const reportFiles = fs.readdirSync('./', { withFileTypes: true })
+              .filter(dirent => dirent.isFile() && dirent.name.startsWith('lighthouse-report-'))
+              .map(dirent => dirent.name);
 
-            const formatResult = (res) => Math.round((res * 100))
-            Object.keys(result).forEach(key => result[key] = formatResult(result[key]))
+            let comment = '## Lighthouse Scores\n\n';
+            for (const reportFile of reportFiles) {
+              const pagePath = reportFile.replace('lighthouse-report-', '').replace('.json', '');
+              const score = execSync(`npx lighthouse-score ${reportFile} --json`).toString();
+              comment += `- ${pagePath}\n\`\`\`\n${score}\n\`\`\`\n`;
+            }
 
-            const score = res => res >= 90 ? '🟢' : res >= 50 ? '🟠' : '🔴'
+            const octokit = context.github;
+            const comments = await octokit.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+            const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'));
 
-            const comment = [
-                `⚡️ [Lighthouse report](${Object.values(links)[0]}) for the changes in this PR:`,
-                '| Category | Score |',
-                '| --- | --- |',
-                `| ${score(result.performance)} Performance | ${result.performance} |`,
-                `| ${score(result.accessibility)} Accessibility | ${result.accessibility} |`,
-                `| ${score(result['best-practices'])} Best practices | ${result['best-practices']} |`,
-                `| ${score(result.seo)} SEO | ${result.seo} |`,
-                `| ${score(result.pwa)} PWA | ${result.pwa} |`,
-                ' ',
-                `*Lighthouse ran on [${Object.keys(links)[0]}](${Object.keys(links)[0]})*`
-            ].join('\n')
-
-             core.setOutput("comment", comment); 
-             
-      - name: Add comment to PR
-        id: comment_to_pr
-        uses: marocchino/sticky-pull-request-comment@v1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          number: ${{ github.event.issue.number }}
-          header: lighthouse
-          message: |
-            ${{ steps.format_lighthouse_score.outputs.comment }}
+            if (existingComment) {
+              await octokit.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existingComment.id,
+                body: comment,
+              });
+            } else {
+              await octokit.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: comment,
+              });
+            }
