@@ -4,7 +4,6 @@ const ESLintPlugin = require('eslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  devtool: 'inline-source-map',
   devServer: {
     port: 8080,
     historyApiFallback: true,
@@ -55,20 +54,6 @@ module.exports = {
         }]
       },
       {
-        test: /\.(eot|ttf|woff|woff2|otf)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'fonts/[hash][ext][query]'
-        }
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'imgs/[hash][ext][query]'
-        }
-      },
-      {
         test: /\.md$/,
         use: [
           {
@@ -85,6 +70,20 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2|otf)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'imgs/[hash][ext][query]'
+        }
       },
       {
         // Any file that has the query ?raw that is imported will get included in the build as a resource
