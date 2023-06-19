@@ -14,9 +14,9 @@
     
       <div class="form-group">
         <input
+          id="fName"
           v-model="formData.fName"
           class="form-input"
-          id="fName"
           name="fName"
           :disabled="formDisabled"
           required
@@ -29,9 +29,9 @@
     
       <div class="form-group">
         <input
+          id="lName"
           v-model="formData.lName"
           class="form-input"
-          id="lName"
           name="lName"
           :disabled="formDisabled"
           required
@@ -44,12 +44,12 @@
     
       <div class="form-group">
         <input
+          id="_replyto"
           v-model="formData._replyto"
           class="form-email"
           type="email"
           :disabled="formDisabled"
           required
-          id="_replyto"
           name="_replyto"
         >
       </div>
@@ -60,8 +60,8 @@
     
       <div class="form-group">
         <textarea
-          v-model="formData.body"
           id="body"
+          v-model="formData.body"
           name="body"
           class="form-message"
           :disabled="formDisabled"
@@ -75,9 +75,9 @@
     
       <div class="form-group">
         <input
+          id="validation"
           v-model="formData.validation"
           class="form-input"
-          id="validation"
           name="validation"
           :disabled="formDisabled"
           required
