@@ -22,4 +22,4 @@ jobs:
         run: npm run prd-build
 
       - name: Run Lighthouse
-        run: npm install -g @lhci/cli@0.11.x && lhci autorun --upload.target=temporary-public-storage
+        run: npm install -g @lhci/cli@0.11.x && lhci autorun --upload.target=temporary-public-storage  --config=.lighthouserc.js
