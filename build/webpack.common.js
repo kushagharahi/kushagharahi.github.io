@@ -87,7 +87,7 @@ module.exports = {
         ]
       },
       {
-        exclude: /index.html/,
+        // Any file that has the query ?raw that is imported will get included in the build as a resource
         resourceQuery: /raw/,
         type: 'asset/resource',
         generator: {

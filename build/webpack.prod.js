@@ -3,7 +3,6 @@ const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js');
 const TerserPlugin = require('terser-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default
-const path = require('path')
 const PrerendererWebpackPlugin = require('@prerenderer/webpack-plugin')
 
 const paths = [ '/', 
@@ -43,7 +42,8 @@ module.exports = merge(common, {
          As option modules that are not common in these chunks can be moved up the chunk tree to the parents. */
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.DefinePlugin({
-      __VUE_OPTIONS_API__: true
+      __VUE_OPTIONS_API__: true,
+      'process.env.NODE_ENV': '"production"'
     }),
     new SitemapPlugin({
       base: 'https://kusha.me', 
