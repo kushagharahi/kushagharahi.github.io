@@ -22,7 +22,7 @@ jobs:
         run: npm run prd-build
 
       - name: Start web server
-        run: npx http-server dist -p 8080
+        run: npx http-server dist -p 8080 &
 
       - name: Run Lighthouse
         run: npx lighthouse http://localhost:8080 --output json --output-path lighthouse-report.json
