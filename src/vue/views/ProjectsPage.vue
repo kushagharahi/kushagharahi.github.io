@@ -9,11 +9,13 @@
         v-if="project.imgPreview != ''"
         class="projectImg"
         :src="pictureDir(project.imgPreview)"
+        :alt="project.title"
       >
       <img
         v-if="project.imgPreview == ''"
         class="projectImg"
         :src="noPictureRes"
+        :alt="project.title"
       >
 
       <h2><strong>{{ project.title }}</strong></h2>

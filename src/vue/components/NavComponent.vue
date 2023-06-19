@@ -13,6 +13,7 @@
       v-model="mobileMenu"
       class="navMenu"
       type="checkbox"
+      aria-label="menu"
     >
     <label for="navMenu" />
     <ul class="nav">
