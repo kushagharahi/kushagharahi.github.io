@@ -1,22 +1,17 @@
-import Vue from 'vue'
-import VueResource from 'vue-resource'
-import VueRouter from 'vue-router'
+import { createApp, h } from 'vue'
+import { createRouter, createWebHistory, RouterView } from 'vue-router'
 import App from './App.vue'
 
-Vue.use(VueRouter)
-Vue.use(VueResource)
-
 require('res/style/scss/app.scss')
-require('file-loader?name=[name].[ext]!static/index.html')
-require('file-loader?name=[name].[ext]!static/404.html')
-require('file-loader?name=[name].[ext]!static/favicon.ico')
-require('file-loader?name=[name]!static/CNAME')
-require('file-loader?name=[name].[ext]!static/robots.txt')
-require('file-loader?name=[name].[ext]!static/googledc065f3d00d77d9e.html')
+require('static/404.html?raw')
+require('static/favicon.ico?raw')
+require('static/CNAME?raw')
+require('static/robots.txt?raw')
+require('static/googledc065f3d00d77d9e.html?raw')
 require('res/img/logo/logo.png')
 
-const router = new VueRouter({
-  mode: 'history',
+const router = createRouter({
+  history: createWebHistory(),
   routes: [
     { 
       path: '/', 
@@ -52,23 +47,31 @@ const router = new VueRouter({
     },
     { 
       path: '/blog', 
-      component: view('Blog'), 
-      meta: { 
-        title: 'Blog', 
-        description: 'Blog about different software stuff' }
-      },
-    { 
-      path: '/blog/:name', 
-      component: view('BlogPost'), 
-      meta: { 
-        title: 'This is a generic blog post title because I didn\'t set a title', 
-        description: 'This is a generic blog post description because I didn\'t set a description' }, 
-        params: { 
-          name: '' 
+      component: { render: () => h(RouterView) },
+      children: [
+        {
+          path: '',
+          component: view('Blog'),
+          meta: { 
+            title: 'Blog', 
+            description: 'Blog about different software stuff' 
+          }
+        },
+        {
+          path: '/blog/:name', 
+          component: view('BlogPost'), 
+          meta: { 
+            title: 'This is a generic blog post title because I didn\'t set a title', 
+            description: 'This is a generic blog post description because I didn\'t set a description' 
+          }, 
+          params: { 
+            name: '' 
+          }
         }
+      ]
     },
     { 
-      path: '*', 
+      path: '/:pathMatch(.*)*', 
       component: view('NotFound'), 
       meta: { 
         title: '404 Not Found' 
@@ -77,20 +80,21 @@ const router = new VueRouter({
   ]
 })
 
-var root = new Vue({
-  el: '#app',
+var root = createApp({
   router: router,
-  render: function (h) {
+  render() {
     return h(App)
   },
   replace: false
 })
 
+root.use(router)
+
 document.addEventListener('DOMContentLoaded', function () {
-  root.$mount('#app')
+  root.mount('#app')
 })
 
-Vue.mixin({
+root.mixin({
   methods: {
     setMetaTags: (title, description) => setMetaTags(title, description),
     setMetaImg: (image) => setMetaImg(image)
@@ -119,8 +123,8 @@ function setMetaImg (image) {
 }
 
 function view (name) {
-  return resolve =>
-    require(['./views/' + name + '.vue'], resolve)
+  return () =>
+    import('./views/' + name + 'Page.vue')
 }
 
 router.afterEach(function (to, from) {

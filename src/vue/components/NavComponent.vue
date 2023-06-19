@@ -29,7 +29,6 @@
           class="navLink"
           active-class="active"
           to="/"
-          exact
         >
           Home
         </router-link>

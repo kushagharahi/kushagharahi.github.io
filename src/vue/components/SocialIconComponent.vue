@@ -36,9 +36,9 @@
     methods: {
       setHover (hover) {
         if (hover === true) {
-          this.imgLink = socialIconMap('./' + this.name + '-hover.png').default
+          this.imgLink = socialIconMap('./' + this.name + '-hover.png')
         } else {
-          this.imgLink = socialIconMap('./' + this.name + '.png').default
+          this.imgLink = socialIconMap('./' + this.name + '.png')
         }
       }
     }

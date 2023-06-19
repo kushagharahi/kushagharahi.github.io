@@ -1,42 +1,32 @@
 const path = require('path')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const { VueLoaderPlugin } = require('vue-loader')
+const ESLintPlugin = require('eslint-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
   devServer: {
-    compress: false,
     port: 8080,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
-  entry: './src/vue/main.js',
+  entry: path.resolve(__dirname, '../src') + '/vue/main.js',
   output: {
-    filename: '[name].js?[hash]',
+    filename: '[name]_bundle.js',
     chunkFilename: '[chunkhash].js',
-    path: path.resolve(__dirname, '../dist')
+    path: path.resolve(__dirname, '../dist'),
+    clean: true
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      'vue$': 'vue/dist/vue.runtime.esm-bundler.js',
       'res': path.resolve(__dirname, '../src/res'),
       'content': path.resolve(__dirname, '../src/content'),
       'posts': path.resolve(__dirname, '../src/content/blog/posts'),
       'static': path.resolve(__dirname, '../src/static'),
       'scripts': path.resolve(__dirname, '../src/scripts')
-    }
+    },
   },
   module: {
     rules: [
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader', //js & vue linting
-        exclude: [path.resolve(__dirname, '../node_modules')],
-        enforce: 'pre',
-        options: {
-          fix: true,
-          configFile: './build/.eslintrc.js'
-        },
-        exclude: [path.resolve(__dirname, '../node_modules')]
-      },
       {
         test: /\.js$/,
         loader: 'babel-loader', //transpile to plain ES5 JS
@@ -49,7 +39,7 @@ module.exports = {
          }
       },
       {
-        test: /.vue$/,
+        test: /\.vue$/,
         loader: 'vue-loader', // use vue-loader for all *.vue files
         exclude: [path.resolve(__dirname, '../node_modules')]
       },
@@ -64,28 +54,13 @@ module.exports = {
         }]
       },
       {
-        test: /\.(eot|ttf|woff|woff2|otf)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]',
-          outputPath: 'fonts/'
-        }
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]',
-          outputPath: 'imgs/'
-        }
-      },
-      {
         test: /\.md$/,
         use: [
           {
             loader: 'html-loader',
             options: {
-              minimize: false
+              minimize: false,
+              esModule: false
             }
           },
           {
@@ -95,13 +70,46 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2|otf)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'imgs/[hash][ext][query]'
+        }
+      },
+      {
+        // Any file that has the query ?raw that is imported will get included in the build as a resource
+        resourceQuery: /raw/,
+        type: 'asset/resource',
+        generator: {
+          filename: '[name][ext]'
+        }
       }
     ]
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new ESLintPlugin({
+      extensions: [`js`, `jsx`, `vue`],
+      cache: false,
+      exclude: [
+        path.resolve(__dirname, '../node_modules')
+      ],
+      fix: true,
+      overrideConfigFile:  path.resolve(__dirname, '.eslintrc.js'),
+      useEslintrc: true,
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, '../src/static/index.html'),
+      hash: true
+    })
   ],
-  optimization: {
-    minimizer: []
-  }
 }
