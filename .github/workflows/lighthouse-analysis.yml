@@ -25,4 +25,5 @@ jobs:
         run: npx http-server dist -p 8080 &
 
       - name: Run Lighthouse
-        run: npx lighthouse http://localhost:8080 --output json --output-path lighthouse-report.json
+        - run: npm install && npm install -g @lhci/cli@0.11.x
+        - run: lhci autorun
