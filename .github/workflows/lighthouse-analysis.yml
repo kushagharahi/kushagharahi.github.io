@@ -1,0 +1,28 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [dev]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [dev]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run prd-build
+
+      - name: Start web server
+        run: npx http-server dist -p 8080
+
+      - name: Run Lighthouse
+        run: npx lighthouse http://localhost:8080 --output json --output-path lighthouse-report.json
