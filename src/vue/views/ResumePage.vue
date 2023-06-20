@@ -2,10 +2,10 @@
   <div id="content">
     <p>
       I currently work full time at <a
-        href="http://www.toyotaconnected.com/"
+        href="http://www.grail.com/"
         target="_blank"
         rel="noopener"
-      >Toyota Connected</a> but am always interested in hearing what offers are available. Feel free to send inquiries <router-link to="contact">
+      >Grail</a> but am always interested in hearing what offers are available. Feel free to send inquiries <router-link to="contact">
         here.
       </router-link>
     </p>
@@ -14,6 +14,7 @@
         class="docIFrame"
         frameborder="0"
         :src="resumeUrl"
+        loading="lazy"
       >Your browser does not support inline frames. Download the PDF down below.</iframe>
     </div>
     <div class="clearfix" />

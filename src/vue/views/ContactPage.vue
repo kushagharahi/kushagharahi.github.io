@@ -14,6 +14,7 @@
     
       <div class="form-group">
         <input
+          id="fName"
           v-model="formData.fName"
           class="form-input"
           name="fName"
@@ -28,6 +29,7 @@
     
       <div class="form-group">
         <input
+          id="lName"
           v-model="formData.lName"
           class="form-input"
           name="lName"
@@ -42,6 +44,7 @@
     
       <div class="form-group">
         <input
+          id="_replyto"
           v-model="formData._replyto"
           class="form-email"
           type="email"
@@ -57,6 +60,7 @@
     
       <div class="form-group">
         <textarea
+          id="body"
           v-model="formData.body"
           name="body"
           class="form-message"
@@ -71,6 +75,7 @@
     
       <div class="form-group">
         <input
+          id="validation"
           v-model="formData.validation"
           class="form-input"
           name="validation"

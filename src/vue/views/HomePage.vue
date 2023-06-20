@@ -10,12 +10,12 @@
         target="_blank"
       />
 
-      <social-icon
+      <!-- <social-icon
         name="twitter"
         class="socialIcon"
         link="http://twitter.com/KKUUSSHHAA"
         target="_blank"
-      />
+      /> -->
 
       <social-icon
         name="linkedin"

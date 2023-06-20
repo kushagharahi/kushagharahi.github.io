@@ -25,7 +25,7 @@
           I'm Kusha, a software engineer <a href='/projects/'>building really cool stuff</a> in my spare time.<br /> \
           📃 Check out my <a href='/resume/'>resume here</a>. <br /> \
           📬 Drop me a line on my <a href='/contact/'>contact page</a>.<br /> \
-          🍴 Fork this site <a href='https://github.com/kushagharahi/kushagharahi.github.io'>here</a>!<br /> \
+          🍴 <a href='https://github.com/kushagharahi/kushagharahi.github.io'>Fork this site here</a>!<br /> \
           👀 Peep the latest blog post -> <a href='/blog/" + this.latestPostMetadata.name + "/'>" + this.latestPostMetadata.title + "</a> <br /><br /> \
           <span style='text-align:center; display:block'> \
             >>>><a href='/contact'>PS. I freelance too</a><<<< \

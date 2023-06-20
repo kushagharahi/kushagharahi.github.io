@@ -3,10 +3,12 @@
     :href="link"
     target="_blank"
     rel="noopener"
+    :aria-label="name"
   >
     <img
       :src="imgLink"
       class="socialIcon"
+      :alt="name"
       @mouseover="setHover(true)"
       @mouseleave="setHover(false)"
     ></a>
