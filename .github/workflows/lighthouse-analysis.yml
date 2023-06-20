@@ -39,11 +39,10 @@ jobs:
               repo: "kushagharahi.github.io",
               issue_number: prNumber,
             });
-            const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'));
+            const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'))[0]
 
         
             console.log(existingComment)
-            console.log(comments)
             if (existingComment) {
               await github.rest.issues.updateComment({
                 owner: "kushagharahi",
