@@ -32,7 +32,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const comment = require(.github/workflows/lighthousescores.js)
+            const comment = require('.github/workflows/lighthousescores.js')
             const prNumber = context.payload.pull_request.number;
             const comments = await github.rest.issues.listComments({
               owner: context.repo.owner,
