@@ -45,10 +45,10 @@ jobs:
             console.log(existingComment)
             console.log(comments)
             if (existingComment) {
-              await github.rest.issues.createComment({
+              await github.rest.issues.updateComment({
                 owner: "kushagharahi",
                 repo: "kushagharahi.github.io",
-                comment_id: existingComment[0].id,
+                comment_id: existingComment.id,
                 issue_number: prNumber,
                 body: body,
               });
