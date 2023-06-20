@@ -48,6 +48,7 @@ jobs:
                 owner: "kushagharahi",
                 repo: "kushagharahi.github.io",
                 comment_id: existingComment.id,
+                issue_number: prNumber,
                 body: body,
               });
             } else {
