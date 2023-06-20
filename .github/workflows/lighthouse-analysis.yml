@@ -39,8 +39,8 @@ jobs:
               repo: "kushagharahi.github.io",
               issue_number: prNumber,
             });
-            const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'))[0]
-            
+            const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'))
+
             console.log(existingComment)
             if (existingComment) {
               await github.rest.issues.updateComment({
