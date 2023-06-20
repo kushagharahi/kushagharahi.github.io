@@ -35,13 +35,11 @@ jobs:
             const body = require('./.github/workflows/lighthousescores.js')
             const prNumber = context.payload.pull_request.number;
             const comments = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
               issue_number: prNumber,
             });
             const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'));
 
-            console.log(context)
+            console.log(context.repository.owner)
             if (existingComment) {
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
