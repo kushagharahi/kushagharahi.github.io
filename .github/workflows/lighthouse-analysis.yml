@@ -37,12 +37,12 @@ jobs:
             const { execSync } = require('child_process');
             const prNumber = context.payload.pull_request.number;
             const reportFiles = fs.readdirSync('./', { withFileTypes: true })
-              .filter(dirent => dirent.isFile() && dirent.name.startsWith('lighthouse-report-'))
+              .filter(dirent => dirent.isFile() && dirent.name.startsWith('lhr'))
               .map(dirent => dirent.name);
 
             let comment = '## Lighthouse Scores\n\n';
             for (const reportFile of reportFiles) {
-              const pagePath = reportFile.replace('lighthouse-report-', '').replace('.json', '');
+              const pagePath = reportFile.replace('lhr-', '').replace('.json', '');
               const score = execSync(`npx lighthouse-score ${reportFile} --json`).toString();
               comment += `- ${pagePath}\n\`\`\`\n${score}\n\`\`\`\n`;
             }
@@ -62,7 +62,7 @@ jobs:
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                comment_id: existingComment.id,
+                comment_id: existingComment.data['id'],
                 body: comment,
               });
             } else {
