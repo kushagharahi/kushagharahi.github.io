@@ -44,9 +44,7 @@ jobs:
               comment += `- ${pagePath}\n\`\`\`\n${score}\n\`\`\`\n`;
             }
 
-            const { Octokit } = require('@octokit/rest');
-            const octokit = new Octokit();
-            const comments = await octokit.issues.listComments({
+            const comments = await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
@@ -54,14 +52,14 @@ jobs:
             const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'));
 
             if (existingComment) {
-              await octokit.issues.updateComment({
+              await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: existingComment.id,
                 body: comment,
               });
             } else {
-              await octokit.issues.createComment({
+              await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: prNumber,
