@@ -13,5 +13,5 @@ module.exports = merge(common, {
           // Drop Options API from bundle
           __VUE_PROD_DEVTOOLS__: false
     }),
-    ]
+  ]
 });

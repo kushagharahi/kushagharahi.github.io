@@ -8,13 +8,12 @@ let comment = '## Lighthouse Scores\n\n';
 for (const reportFile of reportFiles) {
     const reportContent = fs.readFileSync('./.lighthouseci/'+reportFile, 'utf8');
     const report = JSON.parse(reportContent);
-    const scores = []
+    var scores = new Map();
     Object.keys(report.categories).forEach((title) => {
         scores[title] = report.categories[title].score * 100;
     });
     const scoreTable = Object.entries(scores).map(([category, score]) => `- ${category}: ${score}`).join('\n');
     comment += `- ${report.requestedUrl}\n\`\`\`\n${scoreTable}\n\`\`\`\n`;
 }
-console.log(comment)
 
 module.exports = comment
