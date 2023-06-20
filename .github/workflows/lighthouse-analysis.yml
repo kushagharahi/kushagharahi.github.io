@@ -47,6 +47,8 @@ jobs:
               comment += `- ${pagePath}\n\`\`\`\n${score}\n\`\`\`\n`;
             }
 
+            console.log(comment)
+
             const comments = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -61,7 +63,6 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 comment_id: existingComment.id,
-                issue_number: prNumber,
                 body: comment,
               });
             } else {
