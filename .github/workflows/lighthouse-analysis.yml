@@ -37,7 +37,7 @@ jobs:
             const { execSync } = require('child_process');
             const prNumber = context.payload.pull_request.number;
             const reportFiles = fs.readdirSync('./.lighthouseci', { withFileTypes: true })
-              .filter(dirent => dirent.isFile() && dirent.name.startsWith('lhr'))
+              .filter(dirent => dirent.isFile() && dirent.name.startsWith('lhr') && !dirent.name.endsWith('.html'))
               .map(dirent => dirent.name);
 
             let comment = '## Lighthouse Scores\n\n';
