@@ -35,8 +35,8 @@ jobs:
             const body = require('./.github/workflows/lighthousescores.js')
             const prNumber = context.payload.pull_request.number;
             const comments = await github.rest.issues.listComments({
-              owner: context.payload.repository.owner.name,
-              repo: context.payload.repository.html_url,
+              owner: "kushagharahi",
+              repo: "kushagharahi.github.io",
               issue_number: prNumber,
             });
             const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'));
@@ -45,15 +45,15 @@ jobs:
             console.log(context.payload)
             if (existingComment) {
               await github.rest.issues.createComment({
-                owner: context.payload.repository.owner.name,
-                repo: context.payload.repository.html_url,
+                owner: "kushagharahi",
+                repo: "kushagharahi.github.io",
                 comment_id: existingComment.id,
                 body: body,
               });
             } else {
               await github.rest.issues.createComment({
-                owner: context.payload.repository.owner.name,
-                repo: context.payload.repository.html_url,
+                owner: "kushagharahi",
+                repo: "kushagharahi.github.io",
                 issue_number: prNumber,
                 body: body,
               });
