@@ -43,11 +43,15 @@ jobs:
             let comment = '## Lighthouse Scores\n\n';
             for (const reportFile of reportFiles) {
               const pagePath = reportFile.replace('lhr-', '').replace('.json', '');
-              const score = execSync(`npx lighthouse-score ${reportFile} --json`).toString();
-              comment += `- ${pagePath}\n\`\`\`\n${score}\n\`\`\`\n`;
+              const reportContent = fs.readFileSync('./lighthouseci/'+reportFile, 'utf8');
+              const report = JSON.parse(reportContent);
+              const scores = report.categories.reduce((acc, category) => {
+                acc[category.title] = category.score * 100;
+                return acc;
+              }, {});
+              const scoreTable = Object.entries(scores).map(([category, score]) => `- ${category}: ${score}`).join('\n');
+              comment += `- ${pagePath}\n\`\`\`\n${scoreTable}\n\`\`\`\n`;
             }
-
-            console.log(comment)
 
             const comments = await github.rest.issues.listComments({
               owner: context.repo.owner,
