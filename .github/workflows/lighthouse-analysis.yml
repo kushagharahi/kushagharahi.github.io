@@ -36,7 +36,7 @@ jobs:
             const path = require('path');
             const { execSync } = require('child_process');
             const prNumber = context.payload.pull_request.number;
-            const reportFiles = fs.readdirSync('./', { withFileTypes: true })
+            const reportFiles = fs.readdirSync('./.lighthouseci', { withFileTypes: true })
               .filter(dirent => dirent.isFile() && dirent.name.startsWith('lhr'))
               .map(dirent => dirent.name);
 
@@ -54,7 +54,6 @@ jobs:
               repo: context.repo.repo,
               issue_number: prNumber,
             });
-            console.log(comments)
             const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'));
 
             console.log(existingComment)
@@ -62,7 +61,7 @@ jobs:
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                comment_id: id,
+                comment_id: existingComment.id,
                 body: comment,
               });
             } else {
