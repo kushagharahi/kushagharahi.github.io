@@ -43,7 +43,7 @@ jobs:
             let comment = '## Lighthouse Scores\n\n';
             for (const reportFile of reportFiles) {
               const pagePath = reportFile.replace('lhr-', '').replace('.json', '');
-              const reportContent = fs.readFileSync('./lighthouseci/'+reportFile, 'utf8');
+              const reportContent = fs.readFileSync('./.lighthouseci/'+reportFile, 'utf8');
               const report = JSON.parse(reportContent);
               const scores = report.categories.reduce((acc, category) => {
                 acc[category.title] = category.score * 100;
