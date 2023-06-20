@@ -52,8 +52,10 @@ jobs:
               repo: context.repo.repo,
               issue_number: prNumber,
             });
+            console.log(comments)
             const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'));
 
+            console.log(existingComment)
             if (existingComment) {
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
