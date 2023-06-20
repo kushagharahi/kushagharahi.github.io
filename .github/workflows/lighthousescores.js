@@ -8,7 +8,7 @@ let comment = '## Lighthouse Scores\n\n';
 for (const reportFile of reportFiles) {
     const reportContent = fs.readFileSync('./.lighthouseci/'+reportFile, 'utf8');
     const report = JSON.parse(reportContent);
-    const scores = {}
+    const scores = []
     Object.keys(report.categories).forEach((title) => {
         scores[title] = report.categories[title].score * 100;
     });

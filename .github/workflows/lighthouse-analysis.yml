@@ -33,15 +33,16 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const body = require('./.github/workflows/lighthousescores.js')
+            
             const prNumber = context.payload.pull_request.number;
             const comments = await github.rest.issues.listComments({
               owner: "kushagharahi",
               repo: "kushagharahi.github.io",
               issue_number: prNumber,
             });
+
             const existingComment = comments.data.find(comment => comment.body.includes('## Lighthouse Scores'))
 
-            console.log(existingComment)
             if (existingComment) {
               await github.rest.issues.updateComment({
                 owner: "kushagharahi",
