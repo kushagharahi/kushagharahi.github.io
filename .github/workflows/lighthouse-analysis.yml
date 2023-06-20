@@ -62,7 +62,7 @@ jobs:
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                comment_id: existingComment.data['id'],
+                comment_id: id,
                 body: comment,
               });
             } else {
