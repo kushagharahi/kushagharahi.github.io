@@ -80,12 +80,20 @@
       </li>
       <li>
         <social-icon
+          name="hackernews"
+          class="socialIcon"
+          link="https://news.ycombinator.com/user?id=kusha"
+          target="_blank "
+        />
+      </li>
+      <!-- <li>
+        <social-icon
           name="twitter"
           class="socialIcon"
           link="http://twitter.com/KKUUSSHHAA"
           target="_blank"
         />
-      </li>
+      </li> -->
       <li>
         <social-icon
           name="linkedin"

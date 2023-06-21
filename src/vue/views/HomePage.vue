@@ -18,6 +18,13 @@
       /> -->
 
       <social-icon
+        name="hackernews"
+        class="socialIcon"
+        link="https://news.ycombinator.com/user?id=kusha"
+        target="_blank "
+      />
+
+      <social-icon
         name="linkedin"
         class="socialIcon"
         link="http://linkedin.com/in/kushagharahi"
