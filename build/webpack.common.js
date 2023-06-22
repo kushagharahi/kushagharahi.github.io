@@ -2,6 +2,17 @@ const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
 const ESLintPlugin = require('eslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const marked = require('marked')
+
+// if links are not localhost, have them open in a new tab
+const renderer = new marked.Renderer()
+const linkRenderer = renderer.link
+renderer.link = (href, title, text) => {
+  const localLink = href.startsWith(`http//127.0.0.1`) ||  href.startsWith(`http//localhost`) ||  href.startsWith(`http//0.0.0.0`) 
+  ||  href.startsWith(`127.0.0.1`) || href.startsWith(`localhost`) || href.startsWith(`0.0.0.0`)
+  const html = linkRenderer.call(renderer, href, title, text)
+  return localLink ? html : html.replace(/^<a /, `<a target="_blank" rel="noreferrer noopener nofollow" `)
+}
 
 module.exports = {
   devServer: {
@@ -66,7 +77,8 @@ module.exports = {
           {
             loader: 'markdown-loader',
             options: {
-              xhtml: true
+              xhtml: true,
+              renderer: renderer
             }
           }
         ]
