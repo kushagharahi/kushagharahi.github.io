@@ -17,11 +17,6 @@
 * [npm](https://www.npmjs.com/) - Dependency Management
 * [webpack](https://webpack.js.org/) - Build/Bundle Tool
 
-| dev | rc | 
-| :-: | :-:|
-| [![Build Status](https://travis-ci.org/kushagharahi/kushagharahi.github.io.svg?branch=dev)](https://travis-ci.org/kushagharahi/kushagharahi.github.io) | [![Build Status](https://travis-ci.org/kushagharahi/kushagharahi.github.io.svg?branch=rc)](https://travis-ci.org/kushagharahi/kushagharahi.github.io) |
-
-
 ## Getting Started 
 You will need [npm](https://www.npmjs.com/) installed. 
 
