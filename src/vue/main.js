@@ -1,6 +1,7 @@
 import { createApp, h } from 'vue'
 import { createRouter, createWebHistory, RouterView } from 'vue-router'
 import App from './App.vue'
+import logo from '../res/img/logo/logo.png'
 
 require('res/style/scss/app.scss')
 require('static/404.html?raw')
@@ -8,7 +9,6 @@ require('static/favicon.ico?raw')
 require('static/CNAME?raw')
 require('static/robots.txt?raw')
 require('static/googledc065f3d00d77d9e.html?raw')
-require('res/img/logo/logo.png')
 
 const router = createRouter({
   history: createWebHistory(),
@@ -126,9 +126,9 @@ function setMetaImg (image) {
     document.head.children['og\:image\:alt'].content = image
     document.head.children['twitter\:image'].content =  image
   } else {
-    document.head.children['og\:image'].content = 'imgs/logo.png'
+    document.head.children['og\:image'].content = logo
     document.head.children['og\:image\:alt'].content = 'logo'
-    document.head.children['twitter\:image'].content = 'imgs/logo.png'
+    document.head.children['twitter\:image'].content = logo
   }
 }
 
@@ -141,5 +141,6 @@ router.afterEach(function (to, from) {
   if (to.meta.description !== 'blog post') {
     const title = to.meta.title + '  - kusha.me'
     setMetaTags(title, to.meta.description)
+    setMetaImg(null)
   }
 })
