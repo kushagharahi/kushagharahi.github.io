@@ -47,11 +47,12 @@ module.exports = merge(common, {
         //headless: false,
         //maxConcurrentRoutes: 1,
         timeout: 30000,
+        renderAfterTime: 2000
       },
       postProcess: function (renderedRoute) {
         renderedRoute.html= renderedRoute.html.replace(
           /http:\/\/127.0.0.1:8000/g, ''
-        );
+        )
       },
     }),
   ]
