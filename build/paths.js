@@ -1,6 +1,7 @@
 module.exports = [ 
     '/', 
     '/blog', 
+    '/open-source',
     '/resume', 
     '/contact', 
     '/projects', 

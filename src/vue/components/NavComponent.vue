@@ -47,6 +47,15 @@
         <router-link
           class="navLink"
           active-class="active"
+          to="/open-source"
+        >
+          Open Source
+        </router-link>
+      </li>
+      <li>
+        <router-link
+          class="navLink"
+          active-class="active"
           to="/projects"
         >
           Projects
