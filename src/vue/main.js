@@ -113,19 +113,21 @@ function setMetaTags (title, description) {
   document.title = title
   document.head.children['og\:title'].content = title
   document.head.children['og\:url'].content = 'https://kusha.me' + window.location.pathname
+  document.head.children['og\:site_name'].content = 'kusha.me'
   document.head.children['og\:description'].content = description
   document.head.children['description'].content = description
   document.head.children['twitter\:title'].content = title
   document.head.children['twitter\:description'].content = description
-
 }
 
 function setMetaImg (image) {
   if (typeof image !== undefined && image !== null && image !== '') {
     document.head.children['og\:image'].content = 'https://kusha.me/' + image
+    document.head.children['og\:image\:alt'].content = image
     document.head.children['twitter\:image'].content = 'https://kusha.me/' + image
   } else {
     document.head.children['og\:image'].content = 'https://kusha.me/imgs/logo.png'
+    document.head.children['og\:image\:alt'].content = 'logo'
     document.head.children['twitter\:image'].content = 'https://kusha.me/imgs/logo.png'
   }
 }
