@@ -30,6 +30,14 @@ const router = createRouter({
       }
     },
     { 
+      path: '/open-source', 
+      component: view('OpenSource'), 
+      meta: { 
+        title: 'Open Source Contributions', 
+        description: 'Contributions I\'ve made to packages not owned or maintained by me' 
+      }
+    },
+    { 
       path: '/projects', 
       component: view('Projects'), 
       meta: { 
