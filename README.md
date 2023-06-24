@@ -8,8 +8,8 @@
 
 * SEO Features
   * Sitemap generation
-  * Prerendered html (Crawlable by search bots)
-  * Rich Opengraph for blog posts
+  * Prerendered html, static files so you can view the site without JS, crawlable by search bots
+  * Rich Opengraph for all pages
 
 ### Built With
 
@@ -22,11 +22,12 @@ You will need [npm](https://www.npmjs.com/) installed.
 
 command                    | description
 :-------------------------:|:-------------------------------------------------------------------------------------------------:|
-`npm install`              | restore dependencies
-`npm run hotreload`        | Starts a [http server](https://github.com/webpack/webpack-dev-server) on `8080` with hot-reloading 
-`npm run dev-build`        | Compile to `dist` w/o prerendering
-`npm run prod-build`       | Compile to `dist` with prerendering
-
+`npm install`                  | restore dependencies
+`npm run hotreload`            | Starts a [http server](https://github.com/webpack/webpack-dev-server) on `8080` with hot-reloading 
+`npm run dev-build`            | Compile to `dist` w/o prerendering
+`npm run prd-build`            | Compile to `dist` with prerendering
+`npm run run-prd-build`        | Compile to `dist` with prerendering and runs a python 3 webserver
+`npm run lighthouse`           | Runs Google Lighthouse on all the paths in /build/paths.js
 ### Docker
 
 command                                                 | description
