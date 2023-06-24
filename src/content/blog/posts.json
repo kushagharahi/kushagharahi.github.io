@@ -1,5 +1,11 @@
 [
     {
+        "title": "Wanhao Duplicator 6 // Monoprice Maker Ultimate configs",
+        "subtitle": "Klipper and SuperSlicer configs + my recommended modifications for the Wanhao D6//MPMU",
+        "name": "wanhao_d6_config",
+        "date_posted":"June 24th 2023"
+    },
+    {
         "title": "Reset the root password of a Raspbian image",
         "subtitle": "Don't know an user password? Use QEMU to boot the filesystem partition as root to reset it",
         "name": "reset_the_root_password_raspbian_image",

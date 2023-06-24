@@ -7,6 +7,7 @@
     "prd-build": "webpack --config ./build/webpack.prod.js",
     "dev-build": "webpack --config ./build/webpack.dev.js",
     "hotreload": "webpack serve --config ./build/webpack.dev.js",
+    "run-prd-build": "npm run prd-build && python3 -m http.server --directory dist/",
     "lighthouse": "npm run prd-build && lhci autorun --upload.target=temporary-public-storage --config=.github/workflows/.lighthouserc.js"
   },
   "repository": "git+https://github.com/kushagharahi/kushagharahi.github.io.git",
