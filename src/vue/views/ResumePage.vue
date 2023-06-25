@@ -5,7 +5,7 @@
         href="http://www.grail.com/"
         target="_blank"
         rel="noopener"
-      >Grail</a> but am always interested in hearing what offers are available. Feel free to send inquiries <router-link to="contact">
+      >GRAIL</a> but am always interested in hearing what offers are available. Feel free to send inquiries <router-link to="contact">
         here.
       </router-link>
     </p>

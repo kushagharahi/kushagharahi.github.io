@@ -1,45 +1,49 @@
 <template>
-  <div class="projectContainer">
-    <div
-      v-for="project in projectsNotHidden"
-      :key="project.title"
-      class="project shadow hover"
-    >
-      <img
-        v-if="project.imgPreview != ''"
-        class="projectImg"
-        :src="pictureDir(project.imgPreview)"
-        :alt="project.title"
+  <div class="projects">
+    <h1>Open Source Projects</h1>
+    <h2>These are open source projects I've (co)built and sometimes actively maintain.</h2> 
+    <div class="projectContainer">
+      <div
+        v-for="project in projectsNotHidden"
+        :key="project.title"
+        class="project shadow hover"
       >
-      <img
-        v-if="project.imgPreview == ''"
-        class="projectImg"
-        :src="noPictureRes"
-        :alt="project.title"
-      >
+        <img
+          v-if="project.imgPreview != ''"
+          class="projectImg"
+          :src="pictureDir(project.imgPreview)"
+          :alt="project.title"
+        >
+        <img
+          v-if="project.imgPreview == ''"
+          class="projectImg"
+          :src="noPictureRes"
+          :alt="project.title"
+        >
 
-      <h2><strong>{{ project.title }}</strong></h2>
-      <span
-        v-for="(tech, techIndex) in project.techUsed"
-        :key="tech.name"
-      >
-        <span class="label">{{ tech.name }}</span>
-        <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
-      </span>
-      <p>
+        <h2><strong>{{ project.title }}</strong></h2>
         <span
-          v-for="(site, siteIndex) in project.urls"
-          :key="site.url"
-        > 
-          <a
-            target="_blank"
-            rel="noopener"
-            :href="site.url"
-          >{{ site.desc }}</a> 
-          <span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span>
+          v-for="(tech, techIndex) in project.techUsed"
+          :key="tech.name"
+        >
+          <span class="label">{{ tech.name }}</span>
+          <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
         </span>
-      </p>
-      <p>{{ project.blurb }}</p>
+        <p>
+          <span
+            v-for="(site, siteIndex) in project.urls"
+            :key="site.url"
+          > 
+            <a
+              target="_blank"
+              rel="noopener"
+              :href="site.url"
+            >{{ site.desc }}</a> 
+            <span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span>
+          </span>
+        </p>
+        <p>{{ project.blurb }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -68,6 +72,11 @@ export default {
 
 <style lang="scss">
 @import '~res/style/scss/_vars.scss';
+
+.projects {
+  margin: .5em;
+  padding: 1em;
+}
 
 .projectContainer{
   display: flex; 
