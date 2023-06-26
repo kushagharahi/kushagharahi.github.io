@@ -27,7 +27,7 @@
       "@type": "BlogPosting",
       "headline": "{{ postMetaData.title }}",
       "datePublished": "{{ iso8601DateCreated }}",
-      "image": ["{{ firstImage }}"]
+      "image": ["{{ firstImage }}"],
       "dateModified": "{{ iso8601DateModified }}",
       "author": [{
       "@type": "Person",

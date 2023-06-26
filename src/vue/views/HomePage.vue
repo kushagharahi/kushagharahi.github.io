@@ -43,9 +43,8 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "kusha.me",
-      "alternateName": "Kusha Gharahi"
+      "alternateName": "Kusha Gharahi",
       "url": "https://kusha.me",
-      "logo": "https://kusha.me/favicon.ico"
       }
     </component>
   </div>
