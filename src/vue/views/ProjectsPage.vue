@@ -1,7 +1,7 @@
 <template>
   <div class="projects">
     <h1>Open Source Projects</h1>
-    <h2>These are open source projects I've (co)built and sometimes actively maintain.</h2> 
+    <h2>Things (co)built by me.</h2> 
     <div class="projectContainer">
       <div
         v-for="project in projectsNotHidden"

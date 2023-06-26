@@ -1,6 +1,6 @@
 # Open Source Contributions
 
-## These are contributions I've made to packages not owned or maintained by me
+## Contributions I've made to packages not owned or maintained by me
 ### I also have a bunch of first party open source packages! Check out my [projects page](/projects) for a list of those!
 ![a git visual](~content/open-source/git.png)
 
