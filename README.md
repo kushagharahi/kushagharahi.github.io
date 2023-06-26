@@ -45,9 +45,9 @@ command                                                 | description
 
 ## License
 
-Source code in this repository is licensed under GPLv3 except for all blog material from the `/src/content/blog/` directory or any subdirectories, or anywhere that blog content appears after compilation.
+Source code in this repository is licensed under GPLv3 except for all content material from the `/src/content/*` directory or any subdirectories, or anywhere that content material appears after compilation.
 
-Copyright (c) 2020 Kusha Gharahi <kusha.me>
+Copyright (c) 2023 Kusha Gharahi <kusha.me>
 
  - see [LICENSE.md](LICENSE.md) for more details
 

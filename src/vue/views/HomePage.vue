@@ -31,6 +31,23 @@
         target="_blank "
       />
     </div>
+    <link
+      rel="icon"
+      href="/favicon.ico"
+    >
+    <component
+      :is="'script'"
+      type="application/ld+json"
+    >
+      {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "kusha.me",
+      "alternateName": "Kusha Gharahi"
+      "url": "https://kusha.me",
+      "logo": "https://kusha.me/favicon.ico"
+      }
+    </component>
   </div>
 </template>
 
