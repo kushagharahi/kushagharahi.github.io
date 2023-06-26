@@ -99,73 +99,73 @@
 </template>
 
 <script>
-export default {
-  data: () => {
-    return {
-      message: '',
-      formData: {
-        fName: '',
-        lName: '',
-        _replyto: '',
-        body: '',
-        validation: ''
-      },
-      formDisabled: false,
-      error: false,
-      submit: function () {
-        if (this.formData.validation.toLowerCase() !== 'blue') {
-          this.error = true
-          this.message = 'Invalid answer to spam dectection message.'
-        } else {
-          this.message = ''
-          this.error = false
-          const url = 'https://submit-form.com/bec5c59a-c529-4097-b121-5059403ada83'
-          let body = {
-            Email:    this.formData._replyto,
-            Message:  this.formData.body,
-            Name:     this.formData.fName + ' ' + this.formData.lName,
-           _redirect: false
-          }
-          let requestOptions = {
-            body: JSON.stringify(body),
-            headers: {
-              'Access-Control-Allow-Origin': '*', 
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            },
-            method: "POST"
-          }
-          fetch(url, requestOptions).then((data) => {
-            this.message = 'Form submitted. I look forward to connecting with you!'
-            this.formDisabled = true
-          }).catch((err) => {
+  export default {
+    data: () => {
+      return {
+        message: '',
+        formData: {
+          fName: '',
+          lName: '',
+          _replyto: '',
+          body: '',
+          validation: ''
+        },
+        formDisabled: false,
+        error: false,
+        submit: function () {
+          if (this.formData.validation.toLowerCase() !== 'blue') {
             this.error = true
-            this.message = 'There was an error processing the form, please try again or contact the webmaster @ contact(dot)gharahi[dot]c0m.'
-            console.log(err)
-          })
+            this.message = 'Invalid answer to spam dectection message.'
+          } else {
+            this.message = ''
+            this.error = false
+            const url = 'https://submit-form.com/bec5c59a-c529-4097-b121-5059403ada83'
+            let body = {
+              Email:    this.formData._replyto,
+              Message:  this.formData.body,
+              Name:     this.formData.fName + ' ' + this.formData.lName,
+            _redirect: false
+            }
+            let requestOptions = {
+              body: JSON.stringify(body),
+              headers: {
+                'Access-Control-Allow-Origin': '*', 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              method: "POST"
+            }
+            fetch(url, requestOptions).then(() => {
+              this.message = 'Form submitted. I look forward to connecting with you!'
+              this.formDisabled = true
+            }).catch((err) => {
+              this.error = true
+              this.message = 'There was an error processing the form, please try again or contact the webmaster @ contact(dot)gharahi[dot]c0m.'
+              console.log(err)
+            })
+          }
         }
       }
     }
   }
-}
 </script>
 
 <style lang="scss">
-.form-group {
-	padding: 5px;
-}
+  .form-group {
+    padding: 5px;
+  }
 
-.form-message {
-	width:100%;
-	height:200px;
-}
-.form-input {
-	width:200px;
-	height:20px;
-}
+  .form-message {
+    width:100%;
+    height:200px;
+  }
+  .form-input {
+    width:200px;
+    height:20px;
+  }
 
-.form-email {
-	width:200px;
-	height:20px;
-}
+  .form-email {
+    width:200px;
+    height:20px;
+  }
 </style>

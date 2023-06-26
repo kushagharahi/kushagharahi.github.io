@@ -111,24 +111,24 @@ root.mixin({
 
 function setMetaTags (title, description) {
   document.title = title
-  document.head.children['og\:title'].content = title
-  document.head.children['og\:url'].content = 'https://kusha.me' + window.location.pathname
-  document.head.children['og\:site_name'].content = 'kusha.me'
-  document.head.children['og\:description'].content = description
+  document.head.children['og:title'].content = title
+  document.head.children['og:url'].content = 'https://kusha.me' + window.location.pathname
+  document.head.children['og:site_name'].content = 'kusha.me'
+  document.head.children['og:description'].content = description
   document.head.children['description'].content = description
-  document.head.children['twitter\:title'].content = title
-  document.head.children['twitter\:description'].content = description
+  document.head.children['twitter:title'].content = title
+  document.head.children['twitter:description'].content = description
 }
 
 function setMetaImg (image) {
-  if (typeof image !== undefined && image !== null && image !== '') {
-    document.head.children['og\:image'].content = image
-    document.head.children['og\:image\:alt'].content = image
-    document.head.children['twitter\:image'].content =  image
+  if (typeof image !== "undefined" && image !== null && image !== '') {
+    document.head.children['og:image'].content = image
+    document.head.children['og:image:alt'].content = image
+    document.head.children['twitter:image'].content =  image
   } else {
-    document.head.children['og\:image'].content = logo
-    document.head.children['og\:image\:alt'].content = 'logo'
-    document.head.children['twitter\:image'].content = logo
+    document.head.children['og:image'].content = logo
+    document.head.children['og:image:alt'].content = 'logo'
+    document.head.children['twitter:image'].content = logo
   }
 }
 
@@ -137,7 +137,7 @@ function view (name) {
     import('./views/' + name + 'Page.vue')
 }
 
-router.afterEach(function (to, from) {
+router.afterEach((to) => {
   if (to.meta.description !== 'blog post') {
     const title = to.meta.title + '  - kusha.me'
     setMetaTags(title, to.meta.description)

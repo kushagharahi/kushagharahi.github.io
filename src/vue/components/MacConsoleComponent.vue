@@ -34,7 +34,7 @@
     },
     methods: {
       terminalOutCommand: (domElement, statement) => {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           let terminal = domElement;
           
           terminal.innerHTML += "kusha.me:/ vistor$ ";
@@ -55,7 +55,7 @@
         })
       },
       terminalOutHtml: (domElement, html) => {
-          return new Promise((resolve, reject) => {
+          return new Promise((resolve) => {
             domElement.innerHTML += html;
                 resolve();
             })
