@@ -39,7 +39,10 @@
               rel="noopener"
               :href="site.url"
             >{{ site.desc }}</a> 
-            <span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span>
+            <span
+              v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"
+              class="projectUrlSpacer"
+            > | </span>
           </span>
         </p>
         <p>{{ project.blurb }}</p>
@@ -71,43 +74,47 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~res/style/scss/_vars.scss';
+  @import '~res/style/scss/_vars.scss';
 
-.projects {
-  margin: .5em;
-  padding: 1em;
-}
+  .projects {
+    margin: .5em;
+    padding: 1em;
+  }
 
-.projectContainer{
-  display: flex; 
-  flex-flow: row wrap;
-  justify-content: center;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-}
+  .projectContainer{
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: center;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+  }
 
-.project{
-  flex: 0 1 400px;
-  padding: 1em;
-  margin: 1em;
-}
+  .project{
+    flex: 0 1 400px;
+    padding: 1em;
+    margin: 1em;
+  }
 
-.projectImg {
-	width: 100%;
-}
+  .projectImg {
+    width: 100%;
+  }
 
-.label {
-  background-color: $secondary-color;
-  display: inline-block;
-  padding: .2em .6em .3em;
-  font-size: 75%;
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: .25em;
-}
+  .label {
+    background-color: $secondary-color;
+    display: inline-block;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+  }
+
+  .projectUrlSpacer {
+    margin: 0 8px 0 8px;
+  }
 </style>
