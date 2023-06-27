@@ -1,6 +1,7 @@
 # Open Source Contributions
 
-## These are contributions I've made to packages not owned or maintained by me
+## Contributions I've made to packages not owned or maintained by me
+### I also have a bunch of first party open source packages! Check out my [projects page](/projects) for a list of those!
 ![a git visual](~content/open-source/git.png)
 
 ### [Prerenderer](https://github.com/Tofandel/prerenderer/) --- [add warning if html-webpack-plugin is not found](https://github.com/Tofandel/prerenderer/commit/410ae86a6ffb1022a3706877dbf2408ba9f87a50)

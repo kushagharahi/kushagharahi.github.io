@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="blog">
     <h1>Blog</h1>
     <blog-listing-component />
   </div>
@@ -13,4 +13,8 @@
 </script>
 
 <style lang="scss">
+  .blog {
+    margin: .5em;
+    padding: 1em;
+  }
 </style>

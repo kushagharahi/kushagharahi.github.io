@@ -1,45 +1,52 @@
 <template>
-  <div class="projectContainer">
-    <div
-      v-for="project in projectsNotHidden"
-      :key="project.title"
-      class="project shadow hover"
-    >
-      <img
-        v-if="project.imgPreview != ''"
-        class="projectImg"
-        :src="pictureDir(project.imgPreview)"
-        :alt="project.title"
+  <div class="projects">
+    <h1>Open Source Projects</h1>
+    <h2>Things (co)built by me.</h2> 
+    <div class="projectContainer">
+      <div
+        v-for="project in projectsNotHidden"
+        :key="project.title"
+        class="project shadow hover"
       >
-      <img
-        v-if="project.imgPreview == ''"
-        class="projectImg"
-        :src="noPictureRes"
-        :alt="project.title"
-      >
+        <img
+          v-if="project.imgPreview != ''"
+          class="projectImg"
+          :src="pictureDir(project.imgPreview)"
+          :alt="project.title"
+        >
+        <img
+          v-if="project.imgPreview == ''"
+          class="projectImg"
+          :src="noPictureRes"
+          :alt="project.title"
+        >
 
-      <h2><strong>{{ project.title }}</strong></h2>
-      <span
-        v-for="(tech, techIndex) in project.techUsed"
-        :key="tech.name"
-      >
-        <span class="label">{{ tech.name }}</span>
-        <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
-      </span>
-      <p>
+        <h2><strong>{{ project.title }}</strong></h2>
         <span
-          v-for="(site, siteIndex) in project.urls"
-          :key="site.url"
-        > 
-          <a
-            target="_blank"
-            rel="noopener"
-            :href="site.url"
-          >{{ site.desc }}</a> 
-          <span v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"> | </span>
+          v-for="(tech, techIndex) in project.techUsed"
+          :key="tech.name"
+        >
+          <span class="label">{{ tech.name }}</span>
+          <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
         </span>
-      </p>
-      <p>{{ project.blurb }}</p>
+        <p>
+          <span
+            v-for="(site, siteIndex) in project.urls"
+            :key="site.url"
+          > 
+            <a
+              target="_blank"
+              rel="noopener"
+              :href="site.url"
+            >{{ site.desc }}</a> 
+            <span
+              v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"
+              class="projectUrlSpacer"
+            > | </span>
+          </span>
+        </p>
+        <p>{{ project.blurb }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -67,38 +74,47 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~res/style/scss/_vars.scss';
+  @import '~res/style/scss/_vars.scss';
 
-.projectContainer{
-  display: flex; 
-  flex-flow: row wrap;
-  justify-content: center;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-}
+  .projects {
+    margin: .5em;
+    padding: 1em;
+  }
 
-.project{
-  flex: 0 1 400px;
-  padding: 1em;
-  margin: 1em;
-}
+  .projectContainer{
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: center;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+  }
 
-.projectImg {
-	width: 100%;
-}
+  .project{
+    flex: 0 1 400px;
+    padding: 1em;
+    margin: 1em;
+  }
 
-.label {
-  background-color: $secondary-color;
-  display: inline-block;
-  padding: .2em .6em .3em;
-  font-size: 75%;
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: .25em;
-}
+  .projectImg {
+    width: 100%;
+  }
+
+  .label {
+    background-color: $secondary-color;
+    display: inline-block;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+  }
+
+  .projectUrlSpacer {
+    margin: 0 8px 0 8px;
+  }
 </style>

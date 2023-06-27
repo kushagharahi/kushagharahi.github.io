@@ -1,6 +1,8 @@
 <template>
   <div class="post">
-    <h2>{{ postMetaData.title }}</h2>
+    <h2>
+      {{ postMetaData.title }}
+    </h2>
     <span
       v-if="postMetaData.last_updated"
       class="postDate"
@@ -15,6 +17,25 @@
       rel="noopener"
       :href="'https://github.com/kushagharahi/kushagharahi.github.io/tree/rc/src/content/blog/posts/' + $route.params.name + '/post.md'"
     >Suggest a change to this post here! (requires a GitHub account)</a>
+    
+    <component
+      :is="'script'"
+      type="application/ld+json"
+    >
+      {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "{{ postMetaData.title }}",
+      "datePublished": "{{ iso8601DateCreated }}",
+      "image": ["{{ firstImage }}"],
+      "dateModified": "{{ iso8601DateModified }}",
+      "author": [{
+      "@type": "Person",
+      "name": "Kusha Gharahi",
+      "url": "https://kusha.me"
+      }]
+      }
+    </component>
   </div>
 </template>
 
@@ -25,14 +46,20 @@ export default {
   data: () => {
     return {
       compiledMarkdown: '',
-      postMetaData: {}
+      postMetaData: {},
+      iso8601DateCreated: '',
+      iso8601DateModified: '',
+      firstImage: ''
       }
   },
   created() {
     this.compiledMarkdown = require('posts/' + this.$route.params.name + '/post.md')
     this.postMetaData = postsJson.filter(p => p.name == this.$route.params.name)[0]
-    this.setMetaImg(this.getFirstImage(this.compiledMarkdown))
+    this.firstImage = this.getFirstImage(this.compiledMarkdown)
+    this.setMetaImg(this.firstImage)
     this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle)
+    this.iso8601DateCreated = new Date(this.postMetaData.date_posted.replace(/(\d)(th|rd|nd)/, '')).toISOString()
+    this.iso8601DateModified = new Date((this.postMetaData.last_updated ? this.postMetaData.last_updated : this.postMetaData.date_posted).replace(/(\d)(th|rd|nd)/, '')).toISOString()
   },
   methods: {
     getFirstImage: (html) => {

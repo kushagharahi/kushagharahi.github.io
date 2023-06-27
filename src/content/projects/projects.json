@@ -1,5 +1,25 @@
 [
     {
+        "title": "homebridge-dahua-alerts - a HomeKit Smart Home Plugin Over 10k Downloads",
+        "blurb": "Routes motion alerts for Dahua, Alhua, Amcrest and Lorex camera streams to homebridge-camera-ffmpeg",
+        "imgPreview": "dahuaalerts.jpg",
+        "urls": [
+            {
+                "url": "https://www.npmjs.com/package/homebridge-dahua-alerts",
+                "desc": "NPM"
+            },
+            {
+                "url": "https://github.com/kushagharahi/homebridge-dahua-alerts",
+                "desc": "GitHub"
+            }
+        ],
+        "techUsed": [
+            {
+                "name": "TypeScript"
+            }
+        ]
+    },
+    {
         "title": "0waste - landfill/recycling/compost classifier",
         "blurb": "A garbage classification application and website powered by image recognition. Won Best Environmental Hack at EarthxHack 2018 Hackathon.",
         "imgPreview": "0waste.gif",

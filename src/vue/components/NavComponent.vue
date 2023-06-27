@@ -129,7 +129,7 @@ export default {
     }
   },
   watch: {
-    '$route' (to, from) {
+    '$route' () {
       this.mobilePageTitle = document.title
       if (this.mobileMenu) {
         this.mobileMenu = !this.mobileMenu

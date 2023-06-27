@@ -23,10 +23,11 @@ You will need [npm](https://www.npmjs.com/) installed.
 command                    | description
 :-------------------------:|:-------------------------------------------------------------------------------------------------:|
 `npm install`                  | restore dependencies
-`npm run hotreload`            | Starts a [http server](https://github.com/webpack/webpack-dev-server) on `8080` with hot-reloading 
+`npm start`            | Starts a [http server](https://github.com/webpack/webpack-dev-server) on `8080` with hot-reloading 
 `npm run dev-build`            | Compile to `dist` w/o prerendering
 `npm run prd-build`            | Compile to `dist` with prerendering
 `npm run run-prd-build`        | Compile to `dist` with prerendering and runs a python 3 webserver
+`npm run lint`                 | Runs linting against all .vue/.js files in src/*
 `npm run lighthouse`           | Runs Google Lighthouse on all the paths in /build/paths.js
 ### Docker
 
@@ -44,9 +45,9 @@ command                                                 | description
 
 ## License
 
-Source code in this repository is licensed under GPLv3 except for all blog material from the `/src/content/blog/` directory or any subdirectories, or anywhere that blog content appears after compilation.
+Source code in this repository is licensed under GPLv3 except for all content material from the `/src/content/*` directory or any subdirectories, or anywhere that content material appears after compilation.
 
-Copyright (c) 2020 Kusha Gharahi <kusha.me>
+Copyright (c) 2023 Kusha Gharahi <kusha.me>
 
  - see [LICENSE.md](LICENSE.md) for more details
 
