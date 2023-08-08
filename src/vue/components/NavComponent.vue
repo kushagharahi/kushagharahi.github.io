@@ -130,10 +130,12 @@ export default {
   },
   watch: {
     '$route' () {
-      this.mobilePageTitle = document.title
-      if (this.mobileMenu) {
-        this.mobileMenu = !this.mobileMenu
-      }
+      this.$nextTick( () => {
+        this.mobilePageTitle = document.title
+        if (this.mobileMenu) {
+          this.mobileMenu = !this.mobileMenu
+        }
+    })
     }
   }
 }
