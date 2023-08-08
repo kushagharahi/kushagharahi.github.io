@@ -138,7 +138,7 @@ function view (name) {
 }
 
 router.afterEach((to) => {
-  if (to.meta.description !== 'blog post') {
+  if (!to.meta.description.includes('generic blog post')) {
     const title = to.meta.title + '  - kusha.me'
     setMetaTags(title, to.meta.description)
     setMetaImg(null)
