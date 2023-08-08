@@ -58,8 +58,8 @@ export default {
     this.firstImage = this.getFirstImage(this.compiledMarkdown)
     this.setMetaImg(this.firstImage)
     this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle)
-    this.iso8601DateCreated = new Date(this.postMetaData.date_posted.replace(/(\d)(th|rd|nd)/, '')).toISOString()
-    this.iso8601DateModified = new Date((this.postMetaData.last_updated ? this.postMetaData.last_updated : this.postMetaData.date_posted).replace(/(\d)(th|rd|nd)/, '')).toISOString()
+    this.iso8601DateCreated = new Date(this.postMetaData.date_posted.replace(/(th |rd |nd )/, ' ')).toISOString()
+    this.iso8601DateModified = new Date((this.postMetaData.last_updated ? this.postMetaData.last_updated : this.postMetaData.date_posted).replace(/(th |rd |nd )/, ' ')).toISOString()
   },
   methods: {
     getFirstImage: (html) => {

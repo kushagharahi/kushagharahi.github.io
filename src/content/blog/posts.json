@@ -1,5 +1,11 @@
 [
     {
+        "title": "Playing with Stable Diffusion XL 1.0",
+        "subtitle": "Seeing what the latest and greatest image generation AI can do. Plus a quick tutorial on how to create your own!",
+        "name": "playing_with_stable_diffusion_xl",
+        "date_posted":"August 8th 2023"
+    },
+    {
         "title": "Wanhao Duplicator 6 // Monoprice Maker Ultimate configs",
         "subtitle": "Klipper and SuperSlicer configs + my recommended modifications for the Wanhao D6//MPMU",
         "name": "wanhao_d6_config",
