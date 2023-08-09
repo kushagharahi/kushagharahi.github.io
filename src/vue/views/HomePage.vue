@@ -37,7 +37,7 @@
       "@type": "WebSite",
       "name": "kusha.me",
       "alternateName": "Kusha Gharahi",
-      "url": "https://kusha.me",
+      "url": "https://kusha.me"
       }
     </component>
   </div>
