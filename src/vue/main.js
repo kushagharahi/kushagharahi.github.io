@@ -8,7 +8,6 @@ require('static/404.html?raw')
 require('static/favicon.ico?raw')
 require('static/CNAME?raw')
 require('static/robots.txt?raw')
-require('static/googledc065f3d00d77d9e.html?raw')
 
 const router = createRouter({
   history: createWebHistory(),

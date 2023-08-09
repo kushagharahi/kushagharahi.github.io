@@ -95,14 +95,6 @@
           target="_blank "
         />
       </li>
-      <!-- <li>
-        <social-icon
-          name="twitter"
-          class="socialIcon"
-          link="http://twitter.com/KKUUSSHHAA"
-          target="_blank"
-        />
-      </li> -->
       <li>
         <social-icon
           name="linkedin"
@@ -131,11 +123,19 @@ export default {
   watch: {
     '$route' () {
       this.$nextTick( () => {
-        this.mobilePageTitle = document.title
+        this.setMobileTitle()
         if (this.mobileMenu) {
           this.mobileMenu = !this.mobileMenu
         }
     })
+    }
+  },
+  created() {
+    this.setMobileTitle()
+  },
+  methods: {
+    setMobileTitle() {
+      this.mobilePageTitle = document.title
     }
   }
 }
