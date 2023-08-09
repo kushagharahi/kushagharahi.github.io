@@ -95,14 +95,6 @@
           target="_blank "
         />
       </li>
-      <!-- <li>
-        <social-icon
-          name="twitter"
-          class="socialIcon"
-          link="http://twitter.com/KKUUSSHHAA"
-          target="_blank"
-        />
-      </li> -->
       <li>
         <social-icon
           name="linkedin"
