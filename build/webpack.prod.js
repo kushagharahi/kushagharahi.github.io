@@ -6,6 +6,15 @@ const SitemapPlugin = require('sitemap-webpack-plugin').default
 const PrerendererWebpackPlugin = require('@prerenderer/webpack-plugin')
 const paths = require('./paths')
 
+// We want paths with the trailing slash for building the Sitemap.xml so the paths are the prerendered static pages, not javascript pages.
+const pathsWithTrailingSlash = paths.map(path => 
+  {
+    if(path !== '/')
+      return `${path}/`
+    else
+      return path
+  })
+
 module.exports = merge(common, {
   mode: 'production',
   devServer: {
@@ -36,7 +45,7 @@ module.exports = merge(common, {
     }),
     new SitemapPlugin({
       base: 'https://kusha.me', 
-      paths: paths, 
+      paths: pathsWithTrailingSlash, 
       options: {
         skipgzip: true
       }
