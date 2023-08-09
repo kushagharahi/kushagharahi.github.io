@@ -10,13 +10,6 @@
         target="_blank"
       />
 
-      <!-- <social-icon
-        name="twitter"
-        class="socialIcon"
-        link="http://twitter.com/KKUUSSHHAA"
-        target="_blank"
-      /> -->
-
       <social-icon
         name="hackernews"
         class="socialIcon"
