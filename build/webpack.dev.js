@@ -11,7 +11,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new ESLintPlugin({
-      extensions: [`js`, `jsx`, `vue`],
+      extensions: [`js`, `vue`],
       cache: false,
       exclude: [path.resolve(__dirname, '../node_modules')],
       fix: true,

@@ -9,7 +9,7 @@
     "start": "webpack serve --config ./build/webpack.dev.js",
     "run-prd-build": "npm run prd-build && python3 -m http.server --directory dist/",
     "lighthouse": "npm run prd-build && lhci autorun --upload.target=temporary-public-storage --config=.github/workflows/.lighthouserc.js",
-    "lint": "eslint . -c build/.eslintrc.js"
+    "lint": "eslint . -c build/.eslintrc.js --ext .js,.vue"
   },
   "repository": "git+https://github.com/kushagharahi/kushagharahi.github.io.git",
   "author": "Kusha Gharahi",
