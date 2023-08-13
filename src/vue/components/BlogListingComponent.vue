@@ -10,7 +10,9 @@
         <span class="postDate">{{ post.date_posted }} </span>
         <p>{{ post.subtitle }}</p>
         <p>
-          <router-link :to="'/blog/' + post.name"> Full post >> </router-link>
+          <router-link :to="'/blog/' + post.name"> 
+            
+            Full post >> </router-link>
         </p>
       </div>
     </div>
