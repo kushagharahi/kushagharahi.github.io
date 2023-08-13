@@ -24,4 +24,6 @@ JSON.parse(reportLinks, (url, reportLink) => {
         comment += `\n \`${url}\` : ${reportLink}`
 })
 
+console.log(comment)
+
 module.exports = comment

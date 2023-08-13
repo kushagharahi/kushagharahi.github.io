@@ -8,7 +8,7 @@
     "dev-build": "webpack --config ./build/webpack.dev.js",
     "start": "webpack serve --config ./build/webpack.dev.js",
     "run-prd-build": "npm run prd-build && python3 -m http.server --directory dist/",
-    "lighthouse": "npm run prd-build && lhci autorun --upload.target=temporary-public-storage --config=.github/workflows/.lighthouserc.js",
+    "lighthouse": "npm run prd-build && lhci autorun --config=.github/workflows/.lighthouserc.js && node .github/workflows/lighthousescores.js",
     "lint": "eslint . -c build/.eslintrc.js --ext .js,.vue"
   },
   "repository": "git+https://github.com/kushagharahi/kushagharahi.github.io.git",
