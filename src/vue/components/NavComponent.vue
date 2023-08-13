@@ -1,11 +1,7 @@
 <template>
   <div>
     <div class="navMobileBG">
-      <router-link
-        style="width:85%"
-        to="/"
-        class="navMobileTitle"
-      >
+      <router-link style="width: 85%" to="/" class="navMobileTitle">
         {{ mobilePageTitle }}
       </router-link>
     </div>
@@ -14,68 +10,39 @@
       class="navMenu"
       type="checkbox"
       aria-label="menu"
-    >
+    />
     <label for="navMenu" />
     <ul class="nav">
       <li>
-        <router-link
-          class="navTitle"
-          to="/"
-        >
-          kusha.me
-        </router-link>
+        <router-link class="navTitle" to="/"> kusha.me </router-link>
       </li>
       <li>
-        <router-link
-          class="navLink"
-          active-class="active"
-          to="/"
-        >
+        <router-link class="navLink" active-class="active" to="/">
           Home
         </router-link>
       </li>
       <li>
-        <router-link
-          class="navLink"
-          active-class="active"
-          to="/blog"
-        >
+        <router-link class="navLink" active-class="active" to="/blog">
           Blog
         </router-link>
       </li>
       <li>
-        <router-link
-          class="navLink"
-          active-class="active"
-          to="/open-source"
-        >
+        <router-link class="navLink" active-class="active" to="/open-source">
           Open Source
         </router-link>
       </li>
       <li>
-        <router-link
-          class="navLink"
-          active-class="active"
-          to="/projects"
-        >
+        <router-link class="navLink" active-class="active" to="/projects">
           Projects
         </router-link>
       </li>
       <li>
-        <router-link
-          class="navLink"
-          active-class="active"
-          to="/resume"
-        >
+        <router-link class="navLink" active-class="active" to="/resume">
           Resume
         </router-link>
       </li>
       <li>
-        <router-link
-          class="navLink"
-          active-class="active"
-          to="/contact"
-        >
+        <router-link class="navLink" active-class="active" to="/contact">
           Contact
         </router-link>
       </li>
@@ -107,28 +74,27 @@
   </div>
 </template>
 
-
 <script>
 import SocialIcon from './SocialIconComponent.vue'
 export default {
   components: {
-    SocialIcon
+    SocialIcon,
   },
   data: () => {
     return {
       mobilePageTitle: '',
-      mobileMenu: false
+      mobileMenu: false,
     }
   },
   watch: {
-    '$route' () {
-      this.$nextTick( () => {
+    $route() {
+      this.$nextTick(() => {
         this.setMobileTitle()
         if (this.mobileMenu) {
           this.mobileMenu = !this.mobileMenu
         }
-    })
-    }
+      })
+    },
   },
   created() {
     this.setMobileTitle()
@@ -136,22 +102,23 @@ export default {
   methods: {
     setMobileTitle() {
       this.mobilePageTitle = document.title
-    }
-  }
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 @import '~res/style/scss/_vars.scss';
 
-.nav, .navMobileBG {
+.nav,
+.navMobileBG {
   background-color: $primary-color;
   position: fixed;
   top: 0;
-  width: 100%;    
+  width: 100%;
   overflow: hidden;
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 .nav {
@@ -160,19 +127,20 @@ export default {
 
 .navMobileBG {
   height: 40px;
-  margin-bottom:0px;
+  margin-bottom: 0px;
   text-align: center;
   display: none;
 }
 
-.navTitle, .navLink {
+.navTitle,
+.navLink {
   float: left;
   display: block;
   color: $nav-text-color;
-  text-decoration:none;
-    &:hover {
-      text-decoration: none;
-    }
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .navTitle {
@@ -186,7 +154,7 @@ export default {
 .navMobileTitle {
   margin: 5px;
   font-size: 20px;
-  text-decoration:none;
+  text-decoration: none;
   display: none;
   color: white;
 }
@@ -211,7 +179,8 @@ export default {
   width: 24px;
 }
 
-.navMenu[type="checkbox"], .navMenu[type=checkbox] + label  {
+.navMenu[type='checkbox'],
+.navMenu[type='checkbox'] + label {
   height: 20px;
   width: 20px;
   margin: 10px;
@@ -219,45 +188,49 @@ export default {
   top: 0;
   left: 0;
 }
-.navMenu[type=checkbox] + label {
+.navMenu[type='checkbox'] + label {
   z-index: 0;
 }
 
-.navMenu[type="checkbox"] {
+.navMenu[type='checkbox'] {
   z-index: 1;
   opacity: 0;
 }
 
-.navMenu[type=checkbox] + label {
+.navMenu[type='checkbox'] + label {
   background: url('~res/img/menu.svg');
-  background-size:100%;
+  background-size: 100%;
   display: none;
 }
-.navMenu[type=checkbox]:checked + label {
+.navMenu[type='checkbox']:checked + label {
   background: url('~res/img/close.svg');
-  background-size:100%;
+  background-size: 100%;
 }
 
-.navMenu[type=checkbox]:checked + label + .nav{
+.navMenu[type='checkbox']:checked + label + .nav {
   display: block;
 }
 
-@media screen and (max-width : $mobileMaxWidth) {
-  .navMobileBG, .navMobileTitle, .navMenu[type=checkbox] + label {
+@media screen and (max-width: $mobileMaxWidth) {
+  .navMobileBG,
+  .navMobileTitle,
+  .navMenu[type='checkbox'] + label {
     display: inline-block;
   }
 
-  .nav, .navTitle {
+  .nav,
+  .navTitle {
     display: none;
   }
 
   .nav {
-    border-bottom: 1px solid rgba(0,0,0,0.15);
-    box-shadow: 0 8px 10px rgba(0,0,0,0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
     top: 40px;
   }
 
-  .navLink, .socialIcon {
+  .navLink,
+  .socialIcon {
     float: none;
   }
 
@@ -274,5 +247,4 @@ export default {
     padding-left: 5px;
   }
 }
-
 </style>

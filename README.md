@@ -27,7 +27,7 @@ command                    | description
 `npm run dev-build`            | Compile to `dist` w/o prerendering
 `npm run prd-build`            | Compile to `dist` with prerendering
 `npm run run-prd-build`        | Compile to `dist` with prerendering and runs a python 3 webserver
-`npm run lint`                 | Runs linting against all .vue/.js files in src/*
+`npm run lint`                 | Runs linting against all .vue/.js files not in build/* (run `npm run lint -- --fix` to autofix)
 `npm run lighthouse`           | Runs Google Lighthouse on all the paths in /build/paths.js
 ### Docker
 
