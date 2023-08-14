@@ -1,7 +1,7 @@
 <template>
   <div>
     <mac-console-component class="shadow" />
-    <br>
+    <br />
     <div id="center">
       <social-icon
         name="github"
@@ -24,21 +24,10 @@
         target="_blank "
       />
     </div>
-    <link
-      rel="icon"
-      href="/favicon.ico"
-    >
-    <component
-      :is="'script'"
-      type="application/ld+json"
-    >
-      {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "kusha.me",
-      "alternateName": "Kusha Gharahi",
-      "url": "https://kusha.me"
-      }
+    <link rel="icon" href="/favicon.ico" />
+    <component :is="'script'" type="application/ld+json">
+      { "@context": "https://schema.org", "@type": "WebSite", "name":
+      "kusha.me", "alternateName": "Kusha Gharahi", "url": "https://kusha.me" }
     </component>
   </div>
 </template>
@@ -48,7 +37,7 @@ import MacConsoleComponent from '../components/MacConsoleComponent.vue'
 import SocialIcon from '../components/SocialIconComponent.vue'
 
 export default {
-  components: { MacConsoleComponent, SocialIcon }
+  components: { MacConsoleComponent, SocialIcon },
 }
 </script>
 
@@ -56,6 +45,6 @@ export default {
 #center {
   justify-content: center;
   display: flex;
-  width: 100%
+  width: 100%;
 }
 </style>

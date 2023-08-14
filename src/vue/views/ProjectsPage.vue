@@ -1,7 +1,7 @@
 <template>
   <div class="projects">
     <h1>Open Source Projects</h1>
-    <h2>Things (co)built by me.</h2> 
+    <h2>Things (co)built by me.</h2>
     <div class="projectContainer">
       <div
         v-for="project in projectsNotHidden"
@@ -13,36 +13,40 @@
           class="projectImg"
           :src="pictureDir(project.imgPreview)"
           :alt="project.title"
-        >
+        />
         <img
           v-if="project.imgPreview == ''"
           class="projectImg"
           :src="noPictureRes"
           :alt="project.title"
-        >
+        />
 
-        <h2><strong>{{ project.title }}</strong></h2>
-        <span
-          v-for="(tech, techIndex) in project.techUsed"
-          :key="tech.name"
-        >
+        <h2>
+          <strong>{{ project.title }}</strong>
+        </h2>
+        <span v-for="(tech, techIndex) in project.techUsed" :key="tech.name">
           <span class="label">{{ tech.name }}</span>
-          <span v-if="project.techUsed.length > 1 && techIndex != project.techUsed.length - 1">&nbsp;</span>
+          <span
+            v-if="
+              project.techUsed.length > 1 &&
+              techIndex != project.techUsed.length - 1
+            "
+            >&nbsp;</span
+          >
         </span>
         <p>
-          <span
-            v-for="(site, siteIndex) in project.urls"
-            :key="site.url"
-          > 
-            <a
-              target="_blank"
-              rel="noopener"
-              :href="site.url"
-            >{{ site.desc }}</a> 
+          <span v-for="(site, siteIndex) in project.urls" :key="site.url">
+            <a target="_blank" rel="noopener" :href="site.url">{{
+              site.desc
+            }}</a>
             <span
-              v-if="project.urls.length > 1 && siteIndex != project.urls.length - 1"
+              v-if="
+                project.urls.length > 1 && siteIndex != project.urls.length - 1
+              "
               class="projectUrlSpacer"
-            > | </span>
+            >
+              |
+            </span>
           </span>
         </p>
         <p>{{ project.blurb }}</p>
@@ -53,7 +57,11 @@
 
 <script>
 import projects from 'content/projects/projects.json'
-let projectImgsMap = require.context('content/projects/images/', false, /\.(png|jpg|gif)$/)
+let projectImgsMap = require.context(
+  'content/projects/images/',
+  false,
+  /\.(png|jpg|gif)$/,
+)
 
 export default {
   data: () => {
@@ -62,59 +70,59 @@ export default {
       noPictureRes: projectImgsMap('./somecode.png'),
       pictureDir: (imgName) => {
         return projectImgsMap('./' + imgName)
-      }
+      },
     }
   },
   computed: {
     projectsNotHidden() {
-      return this.projects.filter(project => !project.hide)
-    }
-  }
+      return this.projects.filter((project) => !project.hide)
+    },
+  },
 }
 </script>
 
 <style lang="scss">
-  @import '~res/style/scss/_vars.scss';
+@import '~res/style/scss/_vars.scss';
 
-  .projects {
-    margin: .5em;
-    padding: 1em;
-  }
+.projects {
+  margin: 0.5em;
+  padding: 1em;
+}
 
-  .projectContainer{
-    display: flex; 
-    flex-flow: row wrap;
-    justify-content: center;
-    position: absolute;
-    z-index: -1;
-    left: 0;
-  }
+.projectContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+}
 
-  .project{
-    flex: 0 1 400px;
-    padding: 1em;
-    margin: 1em;
-  }
+.project {
+  flex: 0 1 400px;
+  padding: 1em;
+  margin: 1em;
+}
 
-  .projectImg {
-    width: 100%;
-  }
+.projectImg {
+  width: 100%;
+}
 
-  .label {
-    background-color: $secondary-color;
-    display: inline-block;
-    padding: .2em .6em .3em;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25em;
-  }
+.label {
+  background-color: $secondary-color;
+  display: inline-block;
+  padding: 0.2em 0.6em 0.3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25em;
+}
 
-  .projectUrlSpacer {
-    margin: 0 8px 0 8px;
-  }
+.projectUrlSpacer {
+  margin: 0 8px 0 8px;
+}
 </style>

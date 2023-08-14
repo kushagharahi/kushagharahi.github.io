@@ -12,79 +12,83 @@ require('static/robots.txt?raw')
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { 
-      path: '/', 
-      component: view('Home'), 
-      meta: { 
-        title: 'Kusha Gharahi', 
-        description: 'kusha.me is an assortment of blog posts and projects regarding software and maybe robotics, occasionally other stuff.' 
-      }
+    {
+      path: '/',
+      component: view('Home'),
+      meta: {
+        title: 'Kusha Gharahi',
+        description:
+          'kusha.me is an assortment of blog posts and projects regarding software and maybe robotics, occasionally other stuff.',
+      },
     },
-    { 
-      path: '/resume', 
-      component: view('Resume'), 
-      meta: { 
-        title: 'Resume', 
-        description: 'This my resume' 
-      }
+    {
+      path: '/resume',
+      component: view('Resume'),
+      meta: {
+        title: 'Resume',
+        description: 'This my resume',
+      },
     },
-    { 
-      path: '/open-source', 
-      component: view('OpenSource'), 
-      meta: { 
-        title: 'Open Source Contributions', 
-        description: 'Contributions I\'ve made to packages not owned or maintained by me' 
-      }
+    {
+      path: '/open-source',
+      component: view('OpenSource'),
+      meta: {
+        title: 'Open Source Contributions',
+        description:
+          "Contributions I've made to packages not owned or maintained by me",
+      },
     },
-    { 
-      path: '/projects', 
-      component: view('Projects'), 
-      meta: { 
-        title: 'Projects', 
-        description: 'A record of my open source projects' 
-      }
+    {
+      path: '/projects',
+      component: view('Projects'),
+      meta: {
+        title: 'Projects',
+        description: 'A record of my open source projects',
+      },
     },
-    { 
-      path: '/contact', 
-      component: view('Contact'), 
-      meta: { 
-        title: 'Contact Me', 
-        description: 'Get in touch with Kusha(.me)' 
-      }
+    {
+      path: '/contact',
+      component: view('Contact'),
+      meta: {
+        title: 'Contact Me',
+        description: 'Get in touch with Kusha(.me)',
+      },
     },
-    { 
-      path: '/blog', 
+    {
+      path: '/blog',
       component: { render: () => h(RouterView) },
       children: [
         {
           path: '',
           component: view('Blog'),
-          meta: { 
-            title: 'Blog', 
-            description: 'Blog about different software stuff' 
-          }
+          meta: {
+            title: 'Blog',
+            description: 'Blog about different software stuff',
+          },
         },
         {
-          path: '/blog/:name', 
-          component: view('BlogPost'), 
-          meta: { 
-            title: 'This is a generic blog post title because I didn\'t set a title', 
-            description: 'This is a generic blog post description because I didn\'t set a description' 
-          }, 
-          params: { 
-            name: '' 
-          }
-        }
-      ]
+          path: '/blog/:name',
+          component: view('BlogPost'),
+          meta: {
+            title:
+              "This is a generic blog post title because I didn't set a title",
+            description:
+              "This is a generic blog post description because I didn't set a description",
+          },
+          params: {
+            name: '',
+          },
+        },
+      ],
     },
-    { 
-      path: '/:pathMatch(.*)*', 
-      component: view('NotFound'), 
-      meta: { 
-        title: '404 Not Found' 
-      }
-    }
-  ]
+    {
+      path: '/:pathMatch(.*)*',
+      component: view('NotFound'),
+      meta: {
+        title: '404 Not Found',
+      },
+    },
+  ],
 })
 
 var root = createApp({
@@ -92,7 +96,7 @@ var root = createApp({
   render() {
     return h(App)
   },
-  replace: false
+  replace: false,
 })
 
 root.use(router)
@@ -104,14 +108,15 @@ document.addEventListener('DOMContentLoaded', function () {
 root.mixin({
   methods: {
     setMetaTags: (title, description) => setMetaTags(title, description),
-    setMetaImg: (image) => setMetaImg(image)
-  }
+    setMetaImg: (image) => setMetaImg(image),
+  },
 })
 
-function setMetaTags (title, description) {
+function setMetaTags(title, description) {
   document.title = title
   document.head.children['og:title'].content = title
-  document.head.children['og:url'].content = 'https://kusha.me' + window.location.pathname
+  document.head.children['og:url'].content =
+    'https://kusha.me' + window.location.pathname
   document.head.children['og:site_name'].content = 'kusha.me'
   document.head.children['og:description'].content = description
   document.head.children['description'].content = description
@@ -119,11 +124,11 @@ function setMetaTags (title, description) {
   document.head.children['twitter:description'].content = description
 }
 
-function setMetaImg (image) {
-  if (typeof image !== "undefined" && image !== null && image !== '') {
+function setMetaImg(image) {
+  if (typeof image !== 'undefined' && image !== null && image !== '') {
     document.head.children['og:image'].content = image
     document.head.children['og:image:alt'].content = image
-    document.head.children['twitter:image'].content =  image
+    document.head.children['twitter:image'].content = image
   } else {
     document.head.children['og:image'].content = logo
     document.head.children['og:image:alt'].content = 'logo'
@@ -131,9 +136,8 @@ function setMetaImg (image) {
   }
 }
 
-function view (name) {
-  return () =>
-    import('./views/' + name + 'Page.vue')
+function view(name) {
+  return () => import('./views/' + name + 'Page.vue')
 }
 
 router.afterEach((to) => {

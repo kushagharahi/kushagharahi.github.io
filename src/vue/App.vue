@@ -1,8 +1,5 @@
 <template>
-  <div
-    id="app"
-    class="layout"
-  >
+  <div id="app" class="layout">
     <nav-component />
     <div class="content">
       <router-view />
@@ -15,9 +12,8 @@ import NavComponent from './components/NavComponent.vue'
 
 export default {
   name: 'App',
-  components: { NavComponent }
+  components: { NavComponent },
 }
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

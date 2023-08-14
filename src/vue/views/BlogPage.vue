@@ -6,15 +6,15 @@
 </template>
 
 <script>
-  import BlogListingComponent from '../components/BlogListingComponent.vue'
-  export default {
-    components: { BlogListingComponent }
-  }
+import BlogListingComponent from '../components/BlogListingComponent.vue'
+export default {
+  components: { BlogListingComponent },
+}
 </script>
 
 <style lang="scss">
-  .blog {
-    margin: .5em;
-    padding: 1em;
-  }
+.blog {
+  margin: 0.5em;
+  padding: 1em;
+}
 </style>
