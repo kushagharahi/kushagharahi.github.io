@@ -1,4 +1,4 @@
-module.exports = [
+module.exports.paths = [
   '/',
   '/blog',
   '/open-source',
@@ -14,3 +14,11 @@ module.exports = [
   '/blog/wanhao_d6_config',
   '/blog/playing_with_stable_diffusion_xl',
 ]
+
+module.exports.pathsWithTrailingSlash = this.paths.map((path) => {
+  if (path !== '/') {
+    return `${path}/`
+  } else {
+    return path
+  }
+})
