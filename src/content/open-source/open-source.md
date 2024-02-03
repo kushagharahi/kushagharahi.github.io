@@ -4,6 +4,11 @@
 ### I also have a bunch of first party open source packages! Check out my [projects page](/projects) for a list of those!
 ![a git visual](~content/open-source/git.png)
 
+### [ente Authenticator (auth app)](https://github.com/ente-io/auth/) --- [Add Lastpass Authenticator import](https://github.com/ente-io/auth/commit/1f42338c2ac1010908bff97b457693ab9f1db501)
+- Pull Request: https://github.com/ente-io/auth/pull/437
+- This feature allows users to easily transfer their Time-Based One-Time Password (TOTP) 2-factor authentication codes from LastPass Authenticator to the ente Authenticator app.
+  - To use this feature, use the "Transfer accounts" option within Lastpass Authenticator Settings and press "Export accounts to file". Then import the JSON downloaded in the ente Authenticator app.
+
 ### [Prerenderer](https://github.com/Tofandel/prerenderer/) --- [add warning if html-webpack-plugin is not found](https://github.com/Tofandel/prerenderer/commit/410ae86a6ffb1022a3706877dbf2408ba9f87a50)
 - Pull Request: https://github.com/Tofandel/prerenderer/pull/75
 - This change addresses three things for the prerenderer webpack plugin:
