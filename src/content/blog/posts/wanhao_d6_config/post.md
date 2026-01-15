@@ -18,12 +18,13 @@ Mods:
   - Replaced the extruder motor with a pancake motor to prevent build area loss
   -  42x42x23mm, 1.8 deg. step angle (200 steps/rev), 1A/3.5ohms/4.1V, 13Ncm
 - BLTouch
-  - Mount: https://www.thingiverse.com/thing:4108601
+  - Mount: [is on my github wanhao-d6-config repo (bltouch_mount.stl)](https://github.com/kushagharahi/wanhao-d6-config/blob/main/parts/bltouch_mount.stl) 
+    - Model: [nik101968](cults3d.com/en/users/nik101968/3d-models) / [Cults3D](https://cults3d.com/en/3d-model/tool/wanhao-duplicator-6-d6-bltouch-support) / CC BY
   - wired to both the z limit connector and analog connector. Power is from the analog connector pins 2 and 3, servo signal is z limit pin 1, and limit function moved to analog pin 1.
   - Wiring diagram: ![Wiring diagram](~posts/wanhao_d6_config/bltouch-wiring.png) ([taken from dot bob](https://www.thingiverse.com/thing:2483813))
 - Left and right hand mounted 24v 4010 radial fans wired in parallel into PCB fan slot (no build area loss!)
   - Left mount: https://www.thingiverse.com/thing:4802449
-  - Right mount [is on my github wanhao-d6-config repo (fan_R_holder.stl)](https://github.com/kushagharahi/wanhao-d6-config/blob/main/fan_R-holder.stl) -- credit to tqzr from above thingiverse link for sending me the step file
+  - Right mount [is on my github wanhao-d6-config repo (fan_R_holder.stl)](https://github.com/kushagharahi/wanhao-d6-config/blob/main/parts/fan_R-holder.stl) -- credit to tqzr from above thingiverse link for sending me the step file
     - ![fan holder stl](~posts/wanhao_d6_config/fan_r_holder.png)
 - Silicone boot for hotend -- important to avoid cooling down the hotend and prevent errors: https://www.thingiverse.com/thing:2216683 
 - Wire management clip for the direct drive mount
