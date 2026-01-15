@@ -31,16 +31,16 @@
         ];
 
         shellHook = ''
-          echo "--- Dev Environment ---"
-          echo "Node version: $(node -v)"
-          echo "Python version: $(python3 --version)"
 
-          # Set CHROME_PATH automatically for Lighthouse as requested in README
-          export CHROME_PATH="${pkgs.chromium}/bin/chromium"
+          # 1. Provide the path to the Nix-installed Chromium
+          export PUPPETEER_EXECUTABLE_PATH="${pkgs.chromium}/bin/chromium"
 
-          # Prevent local npm from complaining about global directories
-          export npm_config_prefix=$PWD/.npm-global
-          export PATH=$PWD/node_modules/.bin:$PWD/.npm-global/bin:$PATH
+          # 2. Tell Puppeteer and plugins NOT to download their own broken chrome
+          export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+
+          # 3. Existing Lighthouse/Nix paths
+          export CHROME_PATH="$PUPPETEER_EXECUTABLE_PATH"
+          export PATH=$PWD/node_modules/.bin:$PATH
         '';
       };
     });
