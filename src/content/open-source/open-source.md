@@ -4,6 +4,11 @@
 ### I also have a bunch of first party open source packages! Check out my [projects page](/projects) for a list of those!
 ![a git visual](~content/open-source/git.png)
 
+### [ashell (Linux status bar)](https://github.com/MalpenZibo/ashell) --- [Fix VPN list when there are too many VPNs](https://github.com/MalpenZibo/ashell/commit/a6b22824c4b3c1f94539115b63a1d8c55f8a6a23)
+- Pull Request: https://github.com/MalpenZibo/ashell/pull/370
+- Resolved a bug where the VPN chooser appeared blank when handling a large number of NetworkManager VPN profiles.
+  - Improved the UX with alphabetical sorting, max-height limit, and padding so the scrollbar was not against the VPN toggle.
+
 ### [ente Authenticator (auth app)](https://github.com/ente-io/auth/) --- [Add Lastpass Authenticator import](https://github.com/ente-io/auth/commit/1f42338c2ac1010908bff97b457693ab9f1db501)
 - Pull Request: https://github.com/ente-io/auth/pull/437
 - This feature allows users to easily transfer their Time-Based One-Time Password (TOTP) 2-factor authentication codes from LastPass Authenticator to the ente Authenticator app.
