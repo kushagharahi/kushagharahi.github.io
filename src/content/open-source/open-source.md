@@ -4,6 +4,12 @@
 ### I also have a bunch of first party open source packages! Check out my [projects page](/projects) for a list of those!
 ![a git visual](~content/open-source/git.png)
 
+### [llama.cpp (LLM Inference tool)](https://github.com/ggml-org/llama.cpp) --- [server: Introduce LLAMA_BUILD_WEBUI build flag to allow disabling the embedded web ui](https://github.com/ggml-org/llama.cpp/commit/ff934e29bc1d102bb77418f4c83a79d954220753)
+- Pull Request: https://github.com/ggml-org/llama.cpp/pull/20158
+- Allows users to build a lighter binary for those who don't need the web ui embedded but still want a llama-server
+  - Added a CMAKE flag to disable building the embedded web ui
+    - Usage: Add `-DLLAMA_BUILD_WEBUI=OFF` to the list of build flags or set `useWebUi = false;` in package override for nix. 
+
 ### [ashell (Linux status bar)](https://github.com/MalpenZibo/ashell) --- [Fix VPN list when there are too many VPNs](https://github.com/MalpenZibo/ashell/commit/a6b22824c4b3c1f94539115b63a1d8c55f8a6a23)
 - Pull Request: https://github.com/MalpenZibo/ashell/pull/370
 - Resolved a bug where the VPN chooser appeared blank when handling a large number of NetworkManager VPN profiles.
