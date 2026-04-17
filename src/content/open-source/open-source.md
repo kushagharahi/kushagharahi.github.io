@@ -4,6 +4,12 @@
 ### I also have a bunch of first party open source packages! Check out my [projects page](/projects) for a list of those!
 ![a git visual](~content/open-source/git.png)
 
+### [llama.cpp (LLM Inference tool)](https://github.com/ggml-org/llama.cpp) --- [metal: Implement ROLL op](https://github.com/ggml-org/llama.cpp/commit/ae2d34899e2a9a172c7f2090ed4dd366bbf25d0d)
+- Pull Request: https://github.com/ggml-org/llama.cpp/pull/21946
+- Enables full hardware acceleration for vision models (like Gemma-4) on Apple Silicon by implementing the ROLL operation for the Metal backend.
+  - Instead of the Tensor roll (ROLL op) being simulated on the CPU, it will be done by Apple Silicon GPUs. This way the math can be done extremely fast in parallel instead of syncronously.
+  - The ROLL op is used by vision transformer architectures to break images into multiple smaller images (windows) while shifting those windows over time; this ensures the model maintains relationships across the boundaries of each window.
+
 ### [llama.cpp (LLM Inference tool)](https://github.com/ggml-org/llama.cpp) --- [server: Introduce LLAMA_BUILD_WEBUI build flag to allow disabling the embedded web ui](https://github.com/ggml-org/llama.cpp/commit/ff934e29bc1d102bb77418f4c83a79d954220753)
 - Pull Request: https://github.com/ggml-org/llama.cpp/pull/20158
 - Allows users to build a lighter binary for those who don't need the web ui embedded but still want a llama-server
