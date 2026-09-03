@@ -4,6 +4,10 @@
 ### I also have a bunch of first party open source packages! Check out my [projects page](/projects) for a list of those!
 ![a git visual](~content/open-source/git.png)
 
+### [Heimdall (self-hosted Dashboard)](https://github.com/linuxserver/Heimdall) --- [Add pinned & order to import/export](https://github.com/linuxserver/Heimdall/pull/1592)
+- Pull Request: https://github.com/linuxserver/Heimdall/pull/1592
+- Adds pinned status and display order to the import/export API, so backups fully preserve the home screen layout.
+
 ### [llama.cpp (LLM Inference tool)](https://github.com/ggml-org/llama.cpp) --- [metal: Implement ROLL op](https://github.com/ggml-org/llama.cpp/commit/ae2d34899e2a9a172c7f2090ed4dd366bbf25d0d)
 - Pull Request: https://github.com/ggml-org/llama.cpp/pull/21946
 - Enables full hardware acceleration for vision models (like Gemma-4) on Apple Silicon by implementing the ROLL operation for the Metal backend.
