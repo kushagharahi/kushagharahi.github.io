@@ -1,5 +1,11 @@
 [
     {
+        "title": "Preventing the MyQ Home Bridge (819LMB) from Rebooting When Blocked from the Internet",
+        "subtitle": "Reliable local Apple HomeKit control without Chamberlain cloud",
+        "name": "stop_myq_homebridge_819lmb_rebooting",
+        "date_posted": "November 10th 2026"
+    },
+    {
         "title": "Playing with Stable Diffusion XL 1.0",
         "subtitle": "Seeing what the latest and greatest image generation AI can do. Plus a quick tutorial on how to create your own!",
         "name": "playing_with_stable_diffusion_xl",
