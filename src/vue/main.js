@@ -109,8 +109,21 @@ root.mixin({
   methods: {
     setMetaTags: (title, description) => setMetaTags(title, description),
     setMetaImg: (image) => setMetaImg(image),
+    toAbsoluteUrl: (url) => toAbsoluteUrl(url),
   },
 })
+
+function toAbsoluteUrl(url) {
+  if (!url) return ''
+  const cleanUrl = url.replace(
+    /^https?:\/\/(127\.0\.0\.1|localhost)(:\d+)?/,
+    '',
+  )
+  if (cleanUrl.startsWith('http://') || cleanUrl.startsWith('https://')) {
+    return cleanUrl
+  }
+  return `https://kusha.me${cleanUrl.startsWith('/') ? '' : '/'}${cleanUrl}`
+}
 
 function setMetaTags(title, description) {
   document.title = title
@@ -126,13 +139,15 @@ function setMetaTags(title, description) {
 
 function setMetaImg(image) {
   if (typeof image !== 'undefined' && image !== null && image !== '') {
-    document.head.children['og:image'].content = image
-    document.head.children['og:image:alt'].content = image
-    document.head.children['twitter:image'].content = image
+    const absoluteImg = toAbsoluteUrl(image)
+    document.head.children['og:image'].content = absoluteImg
+    document.head.children['og:image:alt'].content = absoluteImg
+    document.head.children['twitter:image'].content = absoluteImg
   } else {
-    document.head.children['og:image'].content = logo
+    const absoluteLogo = toAbsoluteUrl(logo)
+    document.head.children['og:image'].content = absoluteLogo
     document.head.children['og:image:alt'].content = 'logo'
-    document.head.children['twitter:image'].content = logo
+    document.head.children['twitter:image'].content = absoluteLogo
   }
 }
 

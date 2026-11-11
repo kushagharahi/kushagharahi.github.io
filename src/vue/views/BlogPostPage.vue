@@ -52,7 +52,8 @@ export default {
     this.postMetaData = postsJson.filter(
       (p) => p.name == this.$route.params.name,
     )[0]
-    this.firstImage = this.getFirstImage(this.compiledMarkdown)
+    const firstImg = this.getFirstImage(this.compiledMarkdown)
+    this.firstImage = firstImg ? this.toAbsoluteUrl(firstImg) : ''
     this.setMetaImg(this.firstImage)
     this.setMetaTags(this.postMetaData.title, this.postMetaData.subtitle)
     this.iso8601DateCreated = new Date(
