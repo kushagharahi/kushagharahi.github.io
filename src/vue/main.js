@@ -92,16 +92,14 @@ const router = createRouter({
 })
 
 var root = createApp({
-  router: router,
   render() {
     return h(App)
   },
-  replace: false,
 })
 
 root.use(router)
 
-document.addEventListener('DOMContentLoaded', function () {
+router.isReady().then(() => {
   root.mount('#app')
 })
 

@@ -48,7 +48,8 @@ module.exports = merge(common, {
         //headless: false,
         //maxConcurrentRoutes: 1,
         timeout: 30000,
-        renderAfterTime: 2000,
+        renderAfterTime: 100,
+        inject: { isPrerender: true },
       },
       postProcess: function (renderedRoute) {
         renderedRoute.html = renderedRoute.html.replace(

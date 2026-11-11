@@ -1,9 +1,12 @@
 <template>
-  <div id="app">
+  <div class="console">
     <div id="shell-top-bar">
       {{ topBarText }}
     </div>
-    <div id="shell-body" />
+    <div id="shell-body">
+      <noscript v-html="noscriptContent" />
+      <span id="shell-output" />
+    </div>
   </div>
 </template>
 
@@ -17,36 +20,48 @@ export default {
       latestPostMetadata: posts[0],
     }
   },
+  computed: {
+    command() {
+      return 'man about | cat'
+    },
+    prompt() {
+      return 'kusha.me:/ vistor$ '
+    },
+    bioHtml() {
+      return `(about1)<br />
+        Hi,<br />
+        I'm Kusha, a software engineer <a href="/projects/">building really cool stuff</a> in my spare time.<br />
+        📃 Check out my <a href="/resume/">resume here</a>.<br />
+        📬 Drop me a line on my <a href="/contact/">contact page</a>.<br />
+        🍴 <a href="https://github.com/kushagharahi/kushagharahi.github.io">Fork this site here</a>!<br />
+        👀 Peep the latest blog post -&gt; <a href="/blog/${this.latestPostMetadata.name}/">${this.latestPostMetadata.title}</a><br /><br />
+        <span style="text-align: center; display: block">
+          &gt;&gt;&gt;&gt;<a href="/contact">PS. I freelance too</a>&lt;&lt;&lt;&lt;
+        </span>`
+    },
+    noscriptContent() {
+      return `${this.prompt}${this.command}<br />${this.bioHtml}`
+    },
+  },
   mounted: function () {
-    this.terminalOutCommand(
-      document.getElementById('shell-body'),
-      'man about | cat',
-    ).then(() => {
-      this.terminalOutHtml(
-        document.getElementById('shell-body'),
-        "<br />(about1)<br /> \
-          Hi,<br /> \
-          I'm Kusha, a software engineer <a href='/projects/'>building really cool stuff</a> in my spare time.<br /> \
-          📃 Check out my <a href='/resume/'>resume here</a>. <br /> \
-          📬 Drop me a line on my <a href='/contact/'>contact page</a>.<br /> \
-          🍴 <a href='https://github.com/kushagharahi/kushagharahi.github.io'>Fork this site here</a>!<br /> \
-          👀 Peep the latest blog post -> <a href='/blog/" +
-          this.latestPostMetadata.name +
-          "/'>" +
-          this.latestPostMetadata.title +
-          "</a> <br /><br /> \
-          <span style='text-align:center; display:block'> \
-            >>>><a href='/contact'>PS. I freelance too</a><<<< \
-          <span>",
-      )
+    if (
+      (typeof window !== 'undefined' && window.__PRERENDER_INJECTED) ||
+      (typeof navigator !== 'undefined' && navigator.webdriver)
+    ) {
+      return
+    }
+    const outputEl = document.getElementById('shell-output')
+    this.terminalOutCommand(outputEl, this.command).then(() => {
+      this.terminalOutHtml(outputEl, '<br />' + this.bioHtml)
     })
   },
   methods: {
-    terminalOutCommand: (domElement, statement) => {
+    terminalOutCommand(domElement, statement) {
       return new Promise((resolve) => {
         let terminal = domElement
+        if (!terminal) return resolve()
 
-        terminal.innerHTML += 'kusha.me:/ vistor$ '
+        terminal.innerHTML = this.prompt
 
         for (let i = 0; i < statement.length; i++) {
           setTimeout(function () {
@@ -63,7 +78,7 @@ export default {
         }
       })
     },
-    terminalOutHtml: (domElement, html) => {
+    terminalOutHtml(domElement, html) {
       return new Promise((resolve) => {
         domElement.innerHTML += html
         resolve()
@@ -131,6 +146,9 @@ export default {
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   min-height: 300px;
+  @media screen and (max-width: 900px) {
+    min-height: 350px;
+  }
 }
 
 #shell-body div:before {

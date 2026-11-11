@@ -1,10 +1,9 @@
 @import '_vars.scss';
 
-body {
-	font-family: 'Open Sans', Fallback, sans-serif;
+html, body {
   margin: 0;
-	font-family: $font;
-	line-height: 1.5;
+  font-family: $font;
+  line-height: 1.5;
   color: $text-color;
   background: $tertiary-color;
 }
