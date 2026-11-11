@@ -11,16 +11,18 @@ $pageMaxWidth: 900px;
 $mobileMaxWidth: 900px;
 
 @font-face {
-    font-family: "SF Display";
-    font-weight: 400;
-    src: url("~res/font/sf-ui-display-regular.otf");
-  }
+  font-family: "SF Display";
+  font-weight: 400;
+  font-display: swap;
+  src: url("~res/font/sf-ui-display-regular.otf");
+}
 
 /* open-sans-regular - latin */
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: url('~res/font/open-sans-v13-latin-regular.eot'); /* IE9 Compat Modes */
   src: local('Open Sans'), local('OpenSans'),
        url('~res/font/open-sans-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
