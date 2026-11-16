@@ -11,12 +11,12 @@ When isolated on an IoT VLAN with no WAN/internet access, the device constantly 
 
 If these domains are unresolved or sinkholed to a non-existent server / `0.0.0.0`, connection attempts hang and time out. Eventually, the internal watchdog reboots the device or its Wi-Fi module, causing it to go unavailable/unresponsive in HomeKit every 5–10 minutes.
 
-### Solution
+### Naive/Semi-Solution
 
-Provide the device DNS resolution for `connect.myqdevice.com` and `connect1.myqdevice.com` pointing to a local IP/service that will immediately refuse the connection (TCP RST).
+Provide the device DNS resolution for `connect.myqdevice.com` and `connect1.myqdevice.com` pointing to a local IP/service that will immediately refuse the connection (TCP RST). This is a half-baked solution: it stops the 5–10 minute crash loops, but still triggers a watchdog reboot every 30 minutes.
 
 
-### 30 minute watchdog timer and reboot loop
+### 100% Fix: 30-Minute Watchdog & Local Cloud Spoofing
 
 Unfortunately, there is a caveat to all of this. If the device doesn't successfully connect to the myQ cloud MQTT servers and receive a retained message (ping) back when subscribed to the appropriate topic, it reboots on a 30 minute timer. Meaning, every 30 minutes you have a small period of downtime where the homekit integration will be unresponsive.
 
@@ -99,4 +99,4 @@ In your local DNS server, point both domains to the IP of the machine running th
 1794793990: Client <extracted_serial_number> negotiated SSLv3 cipher PSK-AES128-CBC-SHA
 ```
 - Do a `GET` on `http://<device-local-ip>/jabout`, you should see `"internet_connected": "Yes",`. 
-  - Do another after 30 minutes and ensure your `powered_time` is over 30 minutes, meaning no reboots have occured.
+  - Do another after 30 minutes and ensure your `powered_time` is over 30 minutes, meaning no reboots have occurred.
