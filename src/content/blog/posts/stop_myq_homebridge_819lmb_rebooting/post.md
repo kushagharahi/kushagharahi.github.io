@@ -1,5 +1,7 @@
 ### Otherwise known as Chamberlain / LiftMaster 819LMB / MYQ-G0303 MyQ Home Bridge
 
+*Featured on [Hackaday](https://hackaday.com/2026/11/19/preventing-a-garage-door-opener-from-rebooting-when-offline/) • Discuss on [Hacker News](https://news.ycombinator.com/item?id=50525260)*
+
 ![819LMB](~posts/stop_myq_homebridge_819lmb_rebooting/homebridge.png)
 
 ### The Problem
